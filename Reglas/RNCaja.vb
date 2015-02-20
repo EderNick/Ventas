@@ -3,7 +3,7 @@
 
     Sub Registrar(ByVal wCaja As Caja)
         Dim pars As New List(Of CParametro)
-
+        'Esto ES PARA PROBAR GIT CSMMMM OJALA NO SE CAGE
         pars.Add(New CParametro("pNumero", wCaja.Numero))
         pars.Add(New CParametro("pDescripcion", wCaja.Descripcion))
         pars.Add(New CParametro("pFechaApertura", wCaja.FechaApertura))
