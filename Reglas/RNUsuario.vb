@@ -7,7 +7,7 @@
         pars.Add(New CParametro("pIdTipoUsuario", wUsuario.TipoUsuario.Codigo))
         pars.Add(New CParametro("pIdEmpleado", wUsuario.Empleado.Codigo))
         pars.Add(New CParametro("pNombre", wUsuario.Nombre))
-        pars.Add(New CParametro("pClave", wUsuario.Clave))
+        pars.Add(New CParametro("pClave", BCrypt.Net.BCrypt.HashPassword(wUsuario.Clave, BCrypt.Net.BCrypt.GenerateSalt())))
 
         Try
             Me.Conectar(True)
@@ -32,15 +32,16 @@
         Dim dr As NpgsqlDataReader = Nothing
 
         pars.Add(New CParametro("pNombre", wUsuario.Nombre))
-        pars.Add(New CParametro("pClave", wUsuario.clave))
+        pars.Add(New CParametro("pClave", wUsuario.Clave))
         Try
             Me.Conectar(False)
             dr = Me.PedirDataReader("fu_identificarusuario", pars)
             If dr.Read = True Then
+                'If (BCrypt.Net.BCrypt.Verify(wUsuario.Clave, dr.Item("clave"))) Then
                 usu = New Usuario
                 usu.Codigo = dr.Item("idusuario")
                 usu.Nombre = wUsuario.Nombre
-                usu.clave = wUsuario.clave
+                'End If
             End If
         Catch ex As Exception
             Throw ex
