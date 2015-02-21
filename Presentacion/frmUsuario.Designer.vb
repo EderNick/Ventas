@@ -29,6 +29,8 @@ Partial Class frmUsuario
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
+        Me.btnVerificarUserDisponible = New System.Windows.Forms.Button()
+        Me.txtclave = New System.Windows.Forms.TextBox()
         Me.btnAgregarEmpleado = New System.Windows.Forms.Button()
         Me.txtEmpleado = New System.Windows.Forms.Button()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
@@ -36,19 +38,16 @@ Partial Class frmUsuario
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.txtUser = New MetroFramework.Controls.MetroTextBox()
-        Me.txtClave = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.MetroTabControl2 = New MetroFramework.Controls.MetroTabControl()
         Me.gbListado = New MetroFramework.Controls.MetroTabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtUsuario = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroRadioButton4 = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -61,7 +60,7 @@ Partial Class frmUsuario
         Me.gbDatos.SuspendLayout()
         Me.MetroTabControl2.SuspendLayout()
         Me.gbListado.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -144,6 +143,8 @@ Partial Class frmUsuario
         '
         Me.gbDatos.BackColor = System.Drawing.Color.White
         Me.gbDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbDatos.Controls.Add(Me.btnVerificarUserDisponible)
+        Me.gbDatos.Controls.Add(Me.txtclave)
         Me.gbDatos.Controls.Add(Me.btnAgregarEmpleado)
         Me.gbDatos.Controls.Add(Me.txtEmpleado)
         Me.gbDatos.Controls.Add(Me.MetroLabel9)
@@ -151,7 +152,6 @@ Partial Class frmUsuario
         Me.gbDatos.Controls.Add(Me.MetroLabel7)
         Me.gbDatos.Controls.Add(Me.MetroLabel3)
         Me.gbDatos.Controls.Add(Me.txtUser)
-        Me.gbDatos.Controls.Add(Me.txtClave)
         Me.gbDatos.Controls.Add(Me.MetroLabel4)
         Me.gbDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -163,12 +163,34 @@ Partial Class frmUsuario
         Me.gbDatos.TabStop = False
         Me.gbDatos.Text = "DATOS"
         '
+        'btnVerificarUserDisponible
+        '
+        Me.btnVerificarUserDisponible.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerificarUserDisponible.Location = New System.Drawing.Point(419, 128)
+        Me.btnVerificarUserDisponible.Name = "btnVerificarUserDisponible"
+        Me.btnVerificarUserDisponible.Size = New System.Drawing.Size(78, 29)
+        Me.btnVerificarUserDisponible.TabIndex = 173
+        Me.btnVerificarUserDisponible.Text = "Verificar"
+        Me.btnVerificarUserDisponible.UseVisualStyleBackColor = True
+        '
+        'txtclave
+        '
+        Me.txtclave.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.txtclave.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtclave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer))
+        Me.txtclave.Location = New System.Drawing.Point(114, 177)
+        Me.txtclave.Name = "txtclave"
+        Me.txtclave.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtclave.Size = New System.Drawing.Size(299, 25)
+        Me.txtclave.TabIndex = 172
+        Me.txtclave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'btnAgregarEmpleado
         '
         Me.btnAgregarEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarEmpleado.Location = New System.Drawing.Point(419, 25)
         Me.btnAgregarEmpleado.Name = "btnAgregarEmpleado"
-        Me.btnAgregarEmpleado.Size = New System.Drawing.Size(72, 29)
+        Me.btnAgregarEmpleado.Size = New System.Drawing.Size(78, 29)
         Me.btnAgregarEmpleado.TabIndex = 171
         Me.btnAgregarEmpleado.Text = "Agregar"
         Me.btnAgregarEmpleado.UseVisualStyleBackColor = True
@@ -187,7 +209,7 @@ Partial Class frmUsuario
         Me.txtEmpleado.ForeColor = System.Drawing.Color.White
         Me.txtEmpleado.Location = New System.Drawing.Point(114, 25)
         Me.txtEmpleado.Name = "txtEmpleado"
-        Me.txtEmpleado.Size = New System.Drawing.Size(299, 34)
+        Me.txtEmpleado.Size = New System.Drawing.Size(299, 29)
         Me.txtEmpleado.TabIndex = 170
         Me.txtEmpleado.UseCompatibleTextRendering = True
         Me.txtEmpleado.UseVisualStyleBackColor = False
@@ -213,7 +235,7 @@ Partial Class frmUsuario
         Me.cboTipoUsuario.ItemHeight = 19
         Me.cboTipoUsuario.Location = New System.Drawing.Point(114, 78)
         Me.cboTipoUsuario.Name = "cboTipoUsuario"
-        Me.cboTipoUsuario.Size = New System.Drawing.Size(223, 25)
+        Me.cboTipoUsuario.Size = New System.Drawing.Size(299, 25)
         Me.cboTipoUsuario.TabIndex = 18
         Me.cboTipoUsuario.UseSelectable = True
         '
@@ -236,10 +258,10 @@ Partial Class frmUsuario
         Me.MetroLabel3.AutoSize = True
         Me.MetroLabel3.Location = New System.Drawing.Point(16, 131)
         Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(35, 19)
+        Me.MetroLabel3.Size = New System.Drawing.Size(71, 19)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel3.TabIndex = 13
-        Me.MetroLabel3.Text = "User"
+        Me.MetroLabel3.Text = "UserName"
         Me.MetroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel3.UseCustomBackColor = True
         Me.MetroLabel3.UseCustomForeColor = True
@@ -254,22 +276,9 @@ Partial Class frmUsuario
         Me.txtUser.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtUser.SelectedText = ""
-        Me.txtUser.Size = New System.Drawing.Size(223, 23)
+        Me.txtUser.Size = New System.Drawing.Size(299, 23)
         Me.txtUser.TabIndex = 3
         Me.txtUser.UseSelectable = True
-        '
-        'txtClave
-        '
-        Me.txtClave.Lines = New String(-1) {}
-        Me.txtClave.Location = New System.Drawing.Point(114, 180)
-        Me.txtClave.MaxLength = 32767
-        Me.txtClave.Name = "txtClave"
-        Me.txtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtClave.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtClave.SelectedText = ""
-        Me.txtClave.Size = New System.Drawing.Size(223, 23)
-        Me.txtClave.TabIndex = 4
-        Me.txtClave.UseSelectable = True
         '
         'MetroLabel4
         '
@@ -321,10 +330,9 @@ Partial Class frmUsuario
         '
         Me.gbListado.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.gbListado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.gbListado.Controls.Add(Me.DataGridView1)
-        Me.gbListado.Controls.Add(Me.Button2)
+        Me.gbListado.Controls.Add(Me.dgvUsuarios)
+        Me.gbListado.Controls.Add(Me.btnBuscar)
         Me.gbListado.Controls.Add(Me.txtUsuario)
-        Me.gbListado.Controls.Add(Me.MetroRadioButton4)
         Me.gbListado.Controls.Add(Me.MetroLabel1)
         Me.gbListado.ForeColor = System.Drawing.Color.DodgerBlue
         Me.gbListado.HorizontalScrollbarBarColor = True
@@ -340,18 +348,19 @@ Partial Class frmUsuario
         Me.gbListado.VerticalScrollbarHighlightOnWheel = False
         Me.gbListado.VerticalScrollbarSize = 10
         '
-        'DataGridView1
+        'dgvUsuarios
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.Column4, Me.Column6})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 94)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(483, 188)
-        Me.DataGridView1.TabIndex = 162
+        Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.Column4})
+        Me.dgvUsuarios.Location = New System.Drawing.Point(12, 94)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.Size = New System.Drawing.Size(499, 188)
+        Me.dgvUsuarios.TabIndex = 162
         '
         'Column3
         '
+        Me.Column3.DataPropertyName = "NombreEmpleado"
         Me.Column3.HeaderText = "EMPLEADO"
         Me.Column3.Name = "Column3"
         Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -359,6 +368,7 @@ Partial Class frmUsuario
         '
         'Column2
         '
+        Me.Column2.DataPropertyName = "NombTipoUsuario"
         Me.Column2.HeaderText = "TIPO"
         Me.Column2.Name = "Column2"
         Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -366,37 +376,33 @@ Partial Class frmUsuario
         '
         'Column4
         '
-        Me.Column4.HeaderText = "NOMBRE"
+        Me.Column4.DataPropertyName = "Nombre"
+        Me.Column4.HeaderText = "USERNAME"
         Me.Column4.Name = "Column4"
         '
-        'Column6
+        'btnBuscar
         '
-        Me.Column6.HeaderText = "VIGENCIA"
-        Me.Column6.Name = "Column6"
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(82, 45)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(37, 32)
-        Me.Button2.TabIndex = 161
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(420, 34)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(37, 32)
+        Me.btnBuscar.TabIndex = 161
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtUsuario
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtUsuario.ForeColor = System.Drawing.Color.DodgerBlue
         Me.txtUsuario.Lines = New String(-1) {}
-        Me.txtUsuario.Location = New System.Drawing.Point(143, 47)
+        Me.txtUsuario.Location = New System.Drawing.Point(118, 38)
         Me.txtUsuario.MaxLength = 32767
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -406,22 +412,12 @@ Partial Class frmUsuario
         Me.txtUsuario.TabIndex = 160
         Me.txtUsuario.UseSelectable = True
         '
-        'MetroRadioButton4
-        '
-        Me.MetroRadioButton4.AutoSize = True
-        Me.MetroRadioButton4.Location = New System.Drawing.Point(143, 17)
-        Me.MetroRadioButton4.Name = "MetroRadioButton4"
-        Me.MetroRadioButton4.Size = New System.Drawing.Size(72, 15)
-        Me.MetroRadioButton4.TabIndex = 158
-        Me.MetroRadioButton4.Text = "NOMBRE"
-        Me.MetroRadioButton4.UseSelectable = True
-        '
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel1.ForeColor = System.Drawing.Color.Black
-        Me.MetroLabel1.Location = New System.Drawing.Point(3, 13)
+        Me.MetroLabel1.Location = New System.Drawing.Point(3, 16)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(116, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -490,7 +486,7 @@ Partial Class frmUsuario
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Location = New System.Drawing.Point(558, 406)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(483, 68)
+        Me.Panel2.Size = New System.Drawing.Size(499, 68)
         Me.Panel2.TabIndex = 175
         '
         'btnSalir
@@ -505,7 +501,7 @@ Partial Class frmUsuario
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(408, -2)
+        Me.btnSalir.Location = New System.Drawing.Point(423, -1)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(72, 72)
         Me.btnSalir.TabIndex = 174
@@ -552,7 +548,7 @@ Partial Class frmUsuario
         Me.MetroTabControl2.ResumeLayout(False)
         Me.gbListado.ResumeLayout(False)
         Me.gbListado.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -569,26 +565,25 @@ Partial Class frmUsuario
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtUser As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtClave As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Public WithEvents txtEmpleado As System.Windows.Forms.Button
     Friend WithEvents MetroTabControl2 As MetroFramework.Controls.MetroTabControl
     Private WithEvents gbListado As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents dgvUsuarios As System.Windows.Forms.DataGridView
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtUsuario As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroRadioButton4 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnAgregarEmpleado As System.Windows.Forms.Button
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtclave As System.Windows.Forms.TextBox
+    Friend WithEvents btnVerificarUserDisponible As System.Windows.Forms.Button
 End Class

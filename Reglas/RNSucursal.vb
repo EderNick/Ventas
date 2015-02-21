@@ -12,7 +12,7 @@ Public Class RNSucursal
 
         Try
             Me.Conectar(False)
-            Me.EjecutarOrden("fu_isucursal", pars)
+            Me.EjecutarOrden("pr_isucursal", pars)
             Me.Cerrar(True)
         Catch ex As Exception
             Me.Cerrar(False)

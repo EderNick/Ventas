@@ -32,16 +32,15 @@
         Dim dr As NpgsqlDataReader = Nothing
 
         pars.Add(New CParametro("pNombre", wUsuario.Nombre))
-        pars.Add(New CParametro("pClave", wUsuario.Clave))
         Try
             Me.Conectar(False)
             dr = Me.PedirDataReader("fu_identificarusuario", pars)
             If dr.Read = True Then
-                'If (BCrypt.Net.BCrypt.Verify(wUsuario.Clave, dr.Item("clave"))) Then
-                usu = New Usuario
-                usu.Codigo = dr.Item("idusuario")
-                usu.Nombre = wUsuario.Nombre
-                'End If
+                If (BCrypt.Net.BCrypt.Verify(wUsuario.Clave, dr.Item("clave"))) Then
+                    usu = New Usuario
+                    usu.Codigo = dr.Item("idusuario")
+                    usu.Nombre = wUsuario.Nombre
+                End If
             End If
         Catch ex As Exception
             Throw ex
@@ -57,45 +56,68 @@
         Return usu
     End Function
 
+    Public Function VerificarUser(ByVal wUsuario As String) As Boolean
+        Dim pars As New List(Of CParametro)
+        Dim usu As Usuario = Nothing
+        Dim dr As NpgsqlDataReader = Nothing
+        Dim UserDisponible As Boolean = False
+        pars.Add(New CParametro("pNombre", wUsuario))
+        Try
+            Me.Conectar(False)
+            dr = Me.PedirDataReader("fu_identificarusuario", pars)
+            If dr.Read = True Then
+                UserDisponible = True
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            pars.Clear()
+            pars = Nothing
+            If dr IsNot Nothing Then
+                dr.Close()
+                dr = Nothing
+            End If
+        End Try
 
-    'Public Function ListarUsuarios() As List(Of Usuario)
-    '    Dim pars As New List(Of CParametro)
-    '    Dim usu As New List(Of Usuario)
-    '    Dim usua As Usuario = Nothing
-    '    Dim dr As NpgsqlDataReader = Nothing
+        Return UserDisponible
+    End Function
 
 
-    '    Try
-    '        Me.Conectar(False)
-    '        dr = Me.PedirDataReader("listar_usuario", pars)
-    '        usu = New List(Of Usuario)
-    '        While dr.Read = True
-    '            usua = New Usuario
-    '            usua.codigo = dr.Item("idusuario")
-    '            usua.usuario = dr.Item("usuario")
-    '            usua.clave = dr.Item("clave")
-    '            usua.estado = dr.Item("estado_u")
-    '            usua.persona = New Personal
-    '            With usua.persona
-    '                .codigo = dr.Item("personal")
-    '                .Nombres = dr.Item("nombres")
-    '                .ApellidoMaterno = dr.Item("apellidopaterno")
-    '                .ApellidoPaterno = dr.Item("apellidomaterno")
-    '            End With
-    '            usu.Add(usua)
-    '        End While
+    Public Function ListarUsuarios(ByVal wUsuario As String) As List(Of Usuario)
+        Dim pars As New List(Of CParametro)
+        Dim usu As New List(Of Usuario)
+        Dim usua As Usuario = Nothing
+        Dim dr As NpgsqlDataReader = Nothing
 
-    '        Me.Cerrar(True)
-    '    Catch ex As Exception
-    '        Me.Cerrar(False)
-    '        Throw ex
-    '    Finally
-    '        pars.Clear()
-    '        pars = Nothing
-    '    End Try
+        pars.Add(New CParametro("pnombre", wUsuario))
+        Try
+            Me.Conectar(True)
+            dr = Me.PedirDataReader("fu_liusuarios", pars)
+            usu = New List(Of Usuario)
+            While dr.Read = True
+                usua = New Usuario
+                usua.Codigo = dr.Item("idusuario")
+                usua.Nombre = dr.Item("username")
+                usua.Empleado = New Empleado
+                usua.Empleado.Nombres = dr.Item("nombres")
+                usua.Empleado.Ap_Paterno = dr.Item("ap_paterno")
+                usua.Empleado.Ap_Materno = dr.Item("ap_materno")
+                usua.TipoUsuario = New TipoUsuario
+                usua.TipoUsuario.Nombre = dr.Item("tipousuario")
+                usu.Add(usua)
+            End While
 
-    '    Return usu
-    'End Function
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Me.Cerrar(False)
+            Throw ex
+        Finally
+            pars.Clear()
+            pars = Nothing
+        End Try
+
+        Return usu
+    End Function
 
     'Public Function LeerUsuario(ByVal wUsuario As Usuario
     '                   ) As Usuario

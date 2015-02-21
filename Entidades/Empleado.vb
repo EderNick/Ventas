@@ -12,4 +12,15 @@
     Public Property Celular As String
     Public Property Correo As String
     Public Property Vigencia As Boolean
+
+    Public ReadOnly Property NombreEmpleado As String
+        Get
+            Dim nombre As String = ""
+
+            nombre = Me.Nombres + " " + Me.Ap_Paterno + " " + Me.Ap_Materno
+
+            Return nombre
+        End Get
+    End Property
+
 End Class

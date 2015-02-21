@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>Ventas.ModuloVentas.frmSucursal</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -86,6 +86,12 @@
     <Import Include="Ventas.Reglas" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarEmpleado.Designer.vb">
+      <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDocumentoVenta.Designer.vb">
       <DependentUpon>frmDocumentoVenta.vb</DependentUpon>
     </Compile>
@@ -257,6 +263,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmBancoVenta.resx">
       <DependentUpon>frmBancoVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarEmpleado.resx">
+      <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaja.resx">
       <DependentUpon>frmCaja.vb</DependentUpon>

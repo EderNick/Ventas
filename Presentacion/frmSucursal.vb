@@ -2,6 +2,10 @@
 Public Class frmSucursal
 
     Private Actual As Sucursal
+    Dim prov As Provincia
+    Dim DEP As Departamento
+    Dim Distri As Distrito
+
     Private Sub frmSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ToolTip1 As New ToolTip
         ToolTip1.SetToolTip(btnGuardar, "Guardar Datos")
@@ -10,7 +14,7 @@ Public Class frmSucursal
         ToolTip1.SetToolTip(btnSalir, "Salir")
         'Me.gbListado.Enabled = False
         ListarSucursales("")
-        ListarZonas()
+        ListarDepartamentos()
     End Sub
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
@@ -99,6 +103,14 @@ Public Class frmSucursal
             s.Correo = Me.txtCorreo.Text
             s.Direccion = Me.txtDireccion.Text
             s.Telefono = Me.txtTelefono.Text
+            s.zona = New zona
+            s.zona.Distrito = New Distrito
+            s.zona.Distrito = DirectCast(cboDistrito.SelectedItem, Distrito)
+            s.zona.Provincia = New Provincia
+            s.zona.Provincia = DirectCast(cboProvincia.SelectedItem, Provincia)
+            s.zona.Departamento = New Departamento
+            s.zona.Departamento = DirectCast(cboDepartamento.SelectedItem, Departamento)
+
             rn = New RNSucursal
             Try
                 If Me.Actual Is Nothing Then
@@ -126,13 +138,29 @@ Public Class frmSucursal
 
         End If
     End Sub
-    Private Sub ListarZonas()
-        Dim rn As New RNZona
-        Dim zonas As List(Of zona)
+    'Private Sub ListarZonas()
+    '    Dim rn As New RNZona
+    '    Dim zonas As List(Of zona)
+
+    '    Try
+    '        zonas = rn.Listar()
+    '        modFunciones.ListarComboBox(Me.cboZonas, zonas, "Codigo", "ZonaNombre")
+
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    Finally
+    '        rn = Nothing
+    '    End Try
+
+    'End Sub
+
+    Private Sub ListarDepartamentos()
+        Dim rn As New RNDepartamento
+        Dim Departamentos As List(Of Departamento)
 
         Try
-            zonas = rn.Listar()
-            modFunciones.ListarComboBox(Me.cboZonas, zonas, "Codigo", "ZonaNombre")
+            Departamentos = rn.Listar()
+            modFunciones.ListarComboBox(Me.cboDepartamento, Departamentos, "Codigo", "Nombre")
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -142,4 +170,45 @@ Public Class frmSucursal
 
     End Sub
 
+    Private Sub cboDepartamento_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboDepartamento.SelectedIndexChanged
+        If cboDepartamento.Text <> "" Then
+            Dim Provincias As List(Of Provincia)
+            Dim rn As RNProvincia
+            Try
+                DEP = New Departamento
+                DEP = DirectCast(Me.cboDepartamento.SelectedItem, Departamento)
+                rn = New RNProvincia
+                Provincias = rn.ListarxDepartamento(DEP)
+                modFunciones.ListarComboBox(Me.cboProvincia, Provincias, "Codigo", "Nombre")
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+
+        Else
+            cboDepartamento.Text = Nothing
+        End If
+    End Sub
+
+    Private Sub cboProvincia_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboProvincia.SelectedIndexChanged
+        If cboProvincia.Text <> "" Then
+            Dim Distritos As List(Of Distrito)
+            Dim rn As RNDistrito
+
+            Try
+                prov = New Provincia
+                prov = DirectCast(Me.cboProvincia.SelectedItem, Provincia)
+                rn = New RNDistrito
+                Distritos = rn.ListarxProvincia(prov)
+                modFunciones.ListarComboBox(Me.cboDistrito, Distritos, "Codigo", "Nombre")
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+        Else
+            cboProvincia.Text = Nothing
+        End If
+    End Sub
 End Class
