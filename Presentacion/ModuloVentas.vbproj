@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>Ventas.ModuloVentas.frmCaja</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>

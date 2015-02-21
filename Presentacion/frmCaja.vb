@@ -1,7 +1,21 @@
 ﻿Imports MetroFramework
 Public Class frmCaja
 
-    Private Sub btnRegistrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegistrar.Click
+    Private Sub ActivarControles(ByVal valor As Boolean)
+        gbCaja.Enabled = valor
+        dgvCaja.Enabled = Not valor
+    End Sub
+
+    Private Sub LimpiarControles()
+        txtNumero.Text = ""
+        txtDescripcion.Text = ""
+        txtMontoApertura.Text = ""
+        txtMontoCierre.Text = ""
+        dtpApertura.Value = Now
+        dtpCierre.Value = Now
+    End Sub
+
+    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         Dim rn As RNCaja
         Dim ca As Caja
 
@@ -30,27 +44,12 @@ Public Class frmCaja
         End If
     End Sub
 
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
-        Me.Close()
-    End Sub
-
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         ActivarControles(True)
         LimpiarControles()
     End Sub
 
-    Private Sub ActivarControles(ByVal valor As Boolean)
-        gbCaja.Enabled = valor
-        dgvCaja.Enabled = Not valor
+    Private Sub btnSalir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
-
-    Private Sub LimpiarControles()
-        txtNumero.Text = ""
-        txtDescripcion.Text = ""
-        txtMontoApertura.Text = ""
-        txtMontoCierre.Text = ""
-        dtpApertura.Value = Now
-        dtpCierre.Value = Now
-    End Sub
-
 End Class
