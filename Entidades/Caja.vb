@@ -2,7 +2,7 @@
     Public Property IdCaja As Integer
     Public Property Numero As Integer
     Public Property Descripcion As String
-    Public Property MontoApertua As Double
+    Public Property MontoApertura As Double
     Public Property MontoCierre As Double
     Public Property FechaApertura As Date
     Public Property FechaCierre As Date
