@@ -3,23 +3,36 @@ Public Class RNSucursal
     Inherits CADO
 
     Public Sub Registrar(ByVal wSucursal As Sucursal)
-        Dim pars As New List(Of CParametro)
+        Dim paramSucursal As New List(Of CParametro)
+        Dim paramZona As New List(Of CParametro)
+        Dim val As Integer = 0
 
-        pars.Add(New CParametro("pCorreo", wSucursal.Correo))
-        pars.Add(New CParametro("pDireccion", wSucursal.Direccion))
-        pars.Add(New CParametro("pTelefono", wSucursal.Telefono))
-
+        paramZona.Add(New CParametro("pcodigo", 0, CParametro.DireccionParametro.SALIDA))
+        paramZona.Add(New CParametro("piddepartamento", wSucursal.zona.Departamento.Codigo))
+        paramZona.Add(New CParametro("pidprovincia", wSucursal.zona.Provincia.Codigo))
+        paramZona.Add(New CParametro("piddistrito", wSucursal.zona.Distrito.Codigo))
 
         Try
-            Me.Conectar(False)
-            Me.EjecutarOrden("pr_isucursal", pars)
+            Me.Conectar(True)
+            Me.EjecutarOrden("fu_izona", paramZona)
+            val = CInt(paramZona.ElementAt(0).Valor)
+
+            paramSucursal.Add(New CParametro("pZona", val))
+            paramSucursal.Add(New CParametro("pempresa", wSucursal.Empresa.Codigo))
+            paramSucursal.Add(New CParametro("pnombre", wSucursal.Nombre))
+            paramSucursal.Add(New CParametro("pCorreo", wSucursal.Correo))
+            paramSucursal.Add(New CParametro("pDireccion", wSucursal.Direccion))
+            paramSucursal.Add(New CParametro("pTelefono", wSucursal.Telefono))
+            Me.EjecutarOrden("fu_isucursal", paramSucursal)
             Me.Cerrar(True)
         Catch ex As Exception
             Me.Cerrar(False)
             Throw ex
         Finally
-            pars.Clear()
-            pars = Nothing
+            paramSucursal.Clear()
+            paramSucursal = Nothing
+            paramZona.Clear()
+            paramZona = Nothing
         End Try
     End Sub
 

@@ -100,6 +100,7 @@ Public Class frmSucursal
 
         If Me.ValidateChildren = True Then
             s = New Sucursal
+            s.Nombre = Me.txtNombre.Text
             s.Correo = Me.txtCorreo.Text
             s.Direccion = Me.txtDireccion.Text
             s.Telefono = Me.txtTelefono.Text
@@ -110,7 +111,8 @@ Public Class frmSucursal
             s.zona.Provincia = DirectCast(cboProvincia.SelectedItem, Provincia)
             s.zona.Departamento = New Departamento
             s.zona.Departamento = DirectCast(cboDepartamento.SelectedItem, Departamento)
-
+            s.Empresa = New Empresa
+            s.Empresa.Codigo = 1
             rn = New RNSucursal
             Try
                 If Me.Actual Is Nothing Then
@@ -211,4 +213,8 @@ Public Class frmSucursal
             cboProvincia.Text = Nothing
         End If
     End Sub
+
+ 
+
+
 End Class

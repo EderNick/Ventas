@@ -68,6 +68,7 @@
     <Compile Include="Departamento.vb" />
     <Compile Include="Distrito.vb" />
     <Compile Include="Empleado.vb" />
+    <Compile Include="Empresa.vb" />
     <Compile Include="Provincia.vb" />
     <Compile Include="Sucursal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

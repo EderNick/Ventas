@@ -25,13 +25,16 @@ Partial Class frmSucursal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSucursal))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cboDistrito = New System.Windows.Forms.ComboBox()
@@ -52,26 +55,26 @@ Partial Class frmSucursal
         Me.txtSucursal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.dgvSucursal = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtNombre = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZonaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.MetroTabControl2.SuspendLayout()
         Me.gbListado.SuspendLayout()
         CType(Me.dgvSucursal, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -126,7 +129,7 @@ Partial Class frmSucursal
         Me.MetroTabControl1.Multiline = True
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 0
-        Me.MetroTabControl1.Size = New System.Drawing.Size(489, 398)
+        Me.MetroTabControl1.Size = New System.Drawing.Size(489, 431)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
         '
@@ -134,6 +137,7 @@ Partial Class frmSucursal
         '
         Me.MetroTabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.MetroTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MetroTabPage1.Controls.Add(Me.Panel1)
         Me.MetroTabPage1.Controls.Add(Me.gbDatos)
         Me.MetroTabPage1.ForeColor = System.Drawing.Color.DodgerBlue
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
@@ -142,17 +146,69 @@ Partial Class frmSucursal
         Me.MetroTabPage1.Location = New System.Drawing.Point(4, 41)
         Me.MetroTabPage1.Name = "MetroTabPage1"
         Me.MetroTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MetroTabPage1.Size = New System.Drawing.Size(481, 353)
+        Me.MetroTabPage1.Size = New System.Drawing.Size(481, 386)
         Me.MetroTabPage1.TabIndex = 0
         Me.MetroTabPage1.Text = "DATOS"
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.btnCancelar)
+        Me.Panel1.Controls.Add(Me.btnGuardar)
+        Me.Panel1.Location = New System.Drawing.Point(2, 314)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(479, 68)
+        Me.Panel1.TabIndex = 174
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCancelar.FlatAppearance.BorderSize = 0
+        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
+        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCancelar.Location = New System.Drawing.Point(397, -2)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(72, 72)
+        Me.btnCancelar.TabIndex = 5
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCancelar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnGuardar.Location = New System.Drawing.Point(299, -2)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(72, 72)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
         'gbDatos
         '
         Me.gbDatos.BackColor = System.Drawing.Color.White
         Me.gbDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbDatos.Controls.Add(Me.txtNombre)
+        Me.gbDatos.Controls.Add(Me.MetroLabel1)
         Me.gbDatos.Controls.Add(Me.GroupBox1)
         Me.gbDatos.Controls.Add(Me.txtCorreo)
         Me.gbDatos.Controls.Add(Me.txtTelefono)
@@ -165,7 +221,7 @@ Partial Class frmSucursal
         Me.gbDatos.ForeColor = System.Drawing.Color.Black
         Me.gbDatos.Location = New System.Drawing.Point(0, 3)
         Me.gbDatos.Name = "gbDatos"
-        Me.gbDatos.Size = New System.Drawing.Size(478, 280)
+        Me.gbDatos.Size = New System.Drawing.Size(478, 298)
         Me.gbDatos.TabIndex = 86
         Me.gbDatos.TabStop = False
         '
@@ -179,9 +235,9 @@ Partial Class frmSucursal
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 114)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 152)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(437, 102)
+        Me.GroupBox1.Size = New System.Drawing.Size(437, 94)
         Me.GroupBox1.TabIndex = 172
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ZONA"
@@ -241,7 +297,7 @@ Partial Class frmSucursal
         '
         Me.txtCorreo.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtCorreo.Lines = New String(-1) {}
-        Me.txtCorreo.Location = New System.Drawing.Point(109, 73)
+        Me.txtCorreo.Location = New System.Drawing.Point(109, 110)
         Me.txtCorreo.MaxLength = 32767
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -255,7 +311,7 @@ Partial Class frmSucursal
         '
         Me.txtTelefono.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtTelefono.Lines = New String(-1) {}
-        Me.txtTelefono.Location = New System.Drawing.Point(109, 237)
+        Me.txtTelefono.Location = New System.Drawing.Point(109, 261)
         Me.txtTelefono.MaxLength = 32767
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -269,7 +325,7 @@ Partial Class frmSucursal
         '
         Me.txtDireccion.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtDireccion.Lines = New String(-1) {}
-        Me.txtDireccion.Location = New System.Drawing.Point(109, 30)
+        Me.txtDireccion.Location = New System.Drawing.Point(109, 67)
         Me.txtDireccion.MaxLength = 32767
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -282,7 +338,7 @@ Partial Class frmSucursal
         'MetroLabel8
         '
         Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(16, 30)
+        Me.MetroLabel8.Location = New System.Drawing.Point(16, 67)
         Me.MetroLabel8.Name = "MetroLabel8"
         Me.MetroLabel8.Size = New System.Drawing.Size(77, 19)
         Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Green
@@ -296,7 +352,7 @@ Partial Class frmSucursal
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(19, 73)
+        Me.MetroLabel4.Location = New System.Drawing.Point(19, 110)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(63, 19)
         Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Green
@@ -310,7 +366,7 @@ Partial Class frmSucursal
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(16, 237)
+        Me.MetroLabel3.Location = New System.Drawing.Point(16, 261)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(75, 19)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Green
@@ -329,7 +385,7 @@ Partial Class frmSucursal
         Me.MetroTabControl2.Multiline = True
         Me.MetroTabControl2.Name = "MetroTabControl2"
         Me.MetroTabControl2.SelectedIndex = 0
-        Me.MetroTabControl2.Size = New System.Drawing.Size(543, 311)
+        Me.MetroTabControl2.Size = New System.Drawing.Size(543, 349)
         Me.MetroTabControl2.TabIndex = 168
         Me.MetroTabControl2.UseSelectable = True
         '
@@ -347,7 +403,7 @@ Partial Class frmSucursal
         Me.gbListado.HorizontalScrollbarSize = 10
         Me.gbListado.Location = New System.Drawing.Point(4, 41)
         Me.gbListado.Name = "gbListado"
-        Me.gbListado.Size = New System.Drawing.Size(535, 266)
+        Me.gbListado.Size = New System.Drawing.Size(535, 304)
         Me.gbListado.TabIndex = 0
         Me.gbListado.Text = "LISTA SUCURSAL"
         Me.gbListado.Theme = MetroFramework.MetroThemeStyle.Light
@@ -405,75 +461,25 @@ Partial Class frmSucursal
         '
         'dgvSucursal
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue
-        Me.dgvSucursal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue
+        Me.dgvSucursal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSucursal.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvSucursal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvSucursal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSucursal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Direccion, Me.ZonaNombre, Me.Correo, Me.Telefono})
+        Me.dgvSucursal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NOMBRE, Me.Direccion, Me.ZonaNombre, Me.Correo, Me.Telefono})
         Me.dgvSucursal.Location = New System.Drawing.Point(4, 76)
         Me.dgvSucursal.Name = "dgvSucursal"
-        Me.dgvSucursal.Size = New System.Drawing.Size(532, 187)
+        Me.dgvSucursal.Size = New System.Drawing.Size(532, 225)
         Me.dgvSucursal.TabIndex = 144
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Black
-        Me.Panel1.Controls.Add(Me.btnCancelar)
-        Me.Panel1.Controls.Add(Me.btnGuardar)
-        Me.Panel1.Location = New System.Drawing.Point(16, 413)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(479, 68)
-        Me.Panel1.TabIndex = 174
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
-        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancelar.Location = New System.Drawing.Point(397, -2)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(72, 72)
-        Me.btnCancelar.TabIndex = 5
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCancelar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
-        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
-        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardar.Location = New System.Drawing.Point(299, -2)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(72, 72)
-        Me.btnGuardar.TabIndex = 2
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
@@ -541,18 +547,52 @@ Partial Class frmSucursal
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Controls.Add(Me.btnModificar)
-        Me.Panel2.Location = New System.Drawing.Point(528, 412)
+        Me.Panel2.Location = New System.Drawing.Point(528, 438)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(532, 68)
         Me.Panel2.TabIndex = 175
         '
+        'txtNombre
+        '
+        Me.txtNombre.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtNombre.Lines = New String(-1) {}
+        Me.txtNombre.Location = New System.Drawing.Point(109, 26)
+        Me.txtNombre.MaxLength = 32767
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNombre.SelectedText = ""
+        Me.txtNombre.Size = New System.Drawing.Size(303, 23)
+        Me.txtNombre.TabIndex = 173
+        Me.txtNombre.UseSelectable = True
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(16, 26)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(65, 19)
+        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel1.TabIndex = 174
+        Me.MetroLabel1.Text = "NOMBRE"
+        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel1.UseCustomBackColor = True
+        Me.MetroLabel1.UseCustomForeColor = True
+        Me.MetroLabel1.UseStyleColors = True
+        '
+        'NOMBRE
+        '
+        Me.NOMBRE.DataPropertyName = "Nombre"
+        Me.NOMBRE.HeaderText = "SUCURSAL"
+        Me.NOMBRE.Name = "NOMBRE"
+        '
         'Direccion
         '
         Me.Direccion.DataPropertyName = "Direccion"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue
-        Me.Direccion.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue
+        Me.Direccion.DefaultCellStyle = DataGridViewCellStyle6
         Me.Direccion.HeaderText = "DIRECCION"
         Me.Direccion.Name = "Direccion"
         '
@@ -578,9 +618,8 @@ Partial Class frmSucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 492)
+        Me.ClientSize = New System.Drawing.Size(1067, 524)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MetroTabControl2)
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Controls.Add(Me.Button6)
@@ -588,6 +627,7 @@ Partial Class frmSucursal
         Me.Name = "frmSucursal"
         Me.MetroTabControl1.ResumeLayout(False)
         Me.MetroTabPage1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.gbDatos.ResumeLayout(False)
         Me.gbDatos.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -596,7 +636,6 @@ Partial Class frmSucursal
         Me.gbListado.ResumeLayout(False)
         Me.gbListado.PerformLayout()
         CType(Me.dgvSucursal, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -634,6 +673,9 @@ Partial Class frmSucursal
     Friend WithEvents cboDistrito As System.Windows.Forms.ComboBox
     Friend WithEvents cboProvincia As System.Windows.Forms.ComboBox
     Friend WithEvents cboDepartamento As System.Windows.Forms.ComboBox
+    Friend WithEvents txtNombre As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents NOMBRE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Direccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ZonaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Correo As System.Windows.Forms.DataGridViewTextBoxColumn

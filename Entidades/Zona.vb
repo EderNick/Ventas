@@ -6,7 +6,7 @@
     Public Property Departamento As Departamento
     Public Property Vigencia As Boolean
 
-    
+    Public Property Sucursales As List(Of Sucursal)
 
 
     Public ReadOnly Property ZonaNombre As String
