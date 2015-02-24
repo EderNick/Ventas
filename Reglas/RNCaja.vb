@@ -109,5 +109,37 @@
         Return cajAb
     End Function
 
+    Function BuscarPorNumero(ByVal wNumCaja As Integer)
+        Dim cajas As List(Of Caja) = Nothing
+        Dim param As New List(Of CParametro)
+        Dim dr As NpgsqlDataReader = Nothing
+        Dim ca As Caja
+
+        param.Add(New CParametro("pNumCaja", wNumCaja))
+
+        Try
+            Me.Conectar(True)
+            dr = Me.PedirDataReader("fu_buscarcaja", param)
+            cajas = New List(Of Caja)
+            Do While dr.Read = True
+                ca = New Caja
+                ca.Codigo = dr.Item("idcaja")
+                ca.Numero = dr.Item("numero")
+                ca.FechaApertura = CDate(dr.Item("fechaapertura"))
+                ca.FechaCierre = CDate(dr.Item("fechacierre"))
+                ca.MontoApertura = dr.Item("montoapertura")
+                ca.MontoCierre = dr.Item("montocierre")
+                ca.Estado = CBool(dr.Item("estado"))
+                cajas.Add(ca)
+            Loop
+
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return cajas
+    End Function
+
 End Class
 

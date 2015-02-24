@@ -25,8 +25,6 @@ Partial Class frmLogin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.Button4 = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -57,52 +55,24 @@ Partial Class frmLogin
         'btnSalir
         '
         Me.btnSalir.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue
         Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.ForeColor = System.Drawing.Color.Transparent
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnSalir.Location = New System.Drawing.Point(316, 248)
+        Me.btnSalir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.ForeColor = System.Drawing.Color.DimGray
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSalir.Location = New System.Drawing.Point(310, 248)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnSalir.Size = New System.Drawing.Size(50, 35)
+        Me.btnSalir.Size = New System.Drawing.Size(80, 80)
         Me.btnSalir.TabIndex = 3
+        Me.btnSalir.Text = "SALIR"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(319, 286)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(47, 19)
-        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroLabel1.TabIndex = 137
-        Me.MetroLabel1.Text = "SALIR"
-        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroLabel1.UseCustomBackColor = True
-        Me.MetroLabel1.UseStyleColors = True
-        '
-        'MetroLabel2
-        '
-        Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel2.Location = New System.Drawing.Point(177, 286)
-        Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(77, 19)
-        Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroLabel2.TabIndex = 136
-        Me.MetroLabel2.Text = "INGRESAR"
-        Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroLabel2.UseCustomBackColor = True
-        Me.MetroLabel2.UseStyleColors = True
         '
         'MetroTile1
         '
@@ -164,21 +134,23 @@ Partial Class frmLogin
         'btnIngresar
         '
         Me.btnIngresar.BackColor = System.Drawing.Color.Transparent
-        Me.btnIngresar.BackgroundImage = CType(resources.GetObject("btnIngresar.BackgroundImage"), System.Drawing.Image)
         Me.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue
         Me.btnIngresar.FlatAppearance.BorderSize = 0
-        Me.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-        Me.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AliceBlue
         Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIngresar.ForeColor = System.Drawing.Color.Transparent
-        Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnIngresar.Location = New System.Drawing.Point(191, 248)
+        Me.btnIngresar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.ForeColor = System.Drawing.Color.DimGray
+        Me.btnIngresar.Image = CType(resources.GetObject("btnIngresar.Image"), System.Drawing.Image)
+        Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnIngresar.Location = New System.Drawing.Point(177, 248)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnIngresar.Size = New System.Drawing.Size(50, 35)
+        Me.btnIngresar.Size = New System.Drawing.Size(80, 80)
         Me.btnIngresar.TabIndex = 2
+        Me.btnIngresar.Text = "INGRESAR"
+        Me.btnIngresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
         'txtPasword
@@ -209,11 +181,9 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(582, 328)
+        Me.ClientSize = New System.Drawing.Size(582, 356)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.MetroLabel1)
-        Me.Controls.Add(Me.MetroLabel2)
         Me.Controls.Add(Me.MetroTile1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.btnEliminar)
@@ -227,8 +197,6 @@ Partial Class frmLogin
     End Sub
     Public WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
