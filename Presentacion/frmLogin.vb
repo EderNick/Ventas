@@ -76,7 +76,6 @@
     End Sub
 
     Public Function Identificar()
-        'frmPrincipal.Show()
         Me.ShowDialog()
         Return Usuario
     End Function

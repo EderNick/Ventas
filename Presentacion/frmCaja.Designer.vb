@@ -24,10 +24,11 @@ Partial Class frmCaja
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCaja))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
@@ -50,10 +51,10 @@ Partial Class frmCaja
         Me.btnCancelarCierre = New System.Windows.Forms.Button()
         Me.btnGuardarCierre = New System.Windows.Forms.Button()
         Me.gbCierreCaja = New System.Windows.Forms.GroupBox()
+        Me.cboCajasAbiertas = New MetroFramework.Controls.MetroComboBox()
         Me.btnAhoraC = New System.Windows.Forms.Button()
         Me.dtpCierre = New MetroFramework.Controls.MetroDateTime()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.txtCajaSinCerrar = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.txtObservacion = New MetroFramework.Controls.MetroTextBox()
@@ -62,13 +63,6 @@ Partial Class frmCaja
         Me.MetroTabControl2 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.dgvCaja = New System.Windows.Forms.DataGridView()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.txtCaja = New MetroFramework.Controls.MetroTextBox()
         Me.MetroRadioButton4 = New MetroFramework.Controls.MetroRadioButton()
@@ -82,6 +76,12 @@ Partial Class frmCaja
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cdEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -146,7 +146,7 @@ Partial Class frmCaja
         Me.MetroTabControl1.Location = New System.Drawing.Point(0, 71)
         Me.MetroTabControl1.Multiline = True
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(519, 404)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -429,10 +429,10 @@ Partial Class frmCaja
         'gbCierreCaja
         '
         Me.gbCierreCaja.BackColor = System.Drawing.Color.White
+        Me.gbCierreCaja.Controls.Add(Me.cboCajasAbiertas)
         Me.gbCierreCaja.Controls.Add(Me.btnAhoraC)
         Me.gbCierreCaja.Controls.Add(Me.dtpCierre)
         Me.gbCierreCaja.Controls.Add(Me.MetroLabel5)
-        Me.gbCierreCaja.Controls.Add(Me.txtCajaSinCerrar)
         Me.gbCierreCaja.Controls.Add(Me.MetroLabel4)
         Me.gbCierreCaja.Controls.Add(Me.MetroLabel1)
         Me.gbCierreCaja.Controls.Add(Me.txtObservacion)
@@ -443,6 +443,17 @@ Partial Class frmCaja
         Me.gbCierreCaja.Size = New System.Drawing.Size(503, 280)
         Me.gbCierreCaja.TabIndex = 2
         Me.gbCierreCaja.TabStop = False
+        '
+        'cboCajasAbiertas
+        '
+        Me.cboCajasAbiertas.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.cboCajasAbiertas.FormattingEnabled = True
+        Me.cboCajasAbiertas.ItemHeight = 19
+        Me.cboCajasAbiertas.Location = New System.Drawing.Point(161, 48)
+        Me.cboCajasAbiertas.Name = "cboCajasAbiertas"
+        Me.cboCajasAbiertas.Size = New System.Drawing.Size(137, 25)
+        Me.cboCajasAbiertas.TabIndex = 192
+        Me.cboCajasAbiertas.UseSelectable = True
         '
         'btnAhoraC
         '
@@ -459,7 +470,7 @@ Partial Class frmCaja
         Me.dtpCierre.Location = New System.Drawing.Point(161, 136)
         Me.dtpCierre.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
         Me.dtpCierre.MinDate = New Date(2015, 1, 1, 0, 0, 0, 0)
-        Me.dtpCierre.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpCierre.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpCierre.Name = "dtpCierre"
         Me.dtpCierre.Size = New System.Drawing.Size(230, 29)
         Me.dtpCierre.TabIndex = 190
@@ -477,21 +488,6 @@ Partial Class frmCaja
         Me.MetroLabel5.UseCustomBackColor = True
         Me.MetroLabel5.UseCustomForeColor = True
         Me.MetroLabel5.UseStyleColors = True
-        '
-        'txtCajaSinCerrar
-        '
-        Me.txtCajaSinCerrar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.txtCajaSinCerrar.Enabled = False
-        Me.txtCajaSinCerrar.Lines = New String(-1) {}
-        Me.txtCajaSinCerrar.Location = New System.Drawing.Point(161, 48)
-        Me.txtCajaSinCerrar.MaxLength = 32767
-        Me.txtCajaSinCerrar.Name = "txtCajaSinCerrar"
-        Me.txtCajaSinCerrar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtCajaSinCerrar.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtCajaSinCerrar.SelectedText = ""
-        Me.txtCajaSinCerrar.Size = New System.Drawing.Size(137, 23)
-        Me.txtCajaSinCerrar.TabIndex = 188
-        Me.txtCajaSinCerrar.UseSelectable = True
         '
         'MetroLabel4
         '
@@ -600,74 +596,37 @@ Partial Class frmCaja
         '
         Me.dgvCaja.AllowUserToAddRows = False
         Me.dgvCaja.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCaja.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
+        Me.dgvCaja.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.cdEstado})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCaja.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCaja.Location = New System.Drawing.Point(3, 90)
         Me.dgvCaja.Name = "dgvCaja"
         Me.dgvCaja.ReadOnly = True
         Me.dgvCaja.Size = New System.Drawing.Size(616, 173)
         Me.dgvCaja.TabIndex = 162
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "Numero"
-        Me.Column3.HeaderText = "NUMERO"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 50
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "Descripcion"
-        Me.Column4.HeaderText = "DESCRIPCION"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "FechaApertura"
-        Me.Column5.HeaderText = "FECHA APERTURA"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "FechaCierre"
-        Me.Column6.HeaderText = "FECHA DE CIERRE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "MontoApertura"
-        Me.Column7.HeaderText = "MONTO APERTURA"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "MontoCierre"
-        Me.Column8.HeaderText = "MONTO CIERRE"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "Estado"
-        Me.Column9.HeaderText = "ESTADO"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
         '
         'Button3
         '
@@ -770,16 +729,16 @@ Partial Class frmCaja
         '
         'dgbCaja
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgbCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgbCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgbCaja.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgbCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgbCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgbCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbCaja.Location = New System.Drawing.Point(3, 90)
         Me.dgbCaja.Name = "dgbCaja"
@@ -878,6 +837,54 @@ Partial Class frmCaja
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button4.UseVisualStyleBackColor = False
         '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "Numero"
+        Me.Column3.HeaderText = "NUM."
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 40
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "FechaApertura"
+        Me.Column5.HeaderText = "FECHA APERTURA"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 160
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "Fecha_Cierre"
+        Me.Column6.HeaderText = "FECHA DE CIERRE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 160
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "MontoApertura"
+        Me.Column7.HeaderText = "MONTO APERTURA"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 70
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "Monto_Cierre"
+        Me.Column8.HeaderText = "MONTO CIERRE"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 70
+        '
+        'cdEstado
+        '
+        Me.cdEstado.DataPropertyName = "Estado_Caja"
+        Me.cdEstado.HeaderText = "ESTADO"
+        Me.cdEstado.Name = "cdEstado"
+        Me.cdEstado.ReadOnly = True
+        Me.cdEstado.Width = 70
+        '
         'frmCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -939,7 +946,6 @@ Partial Class frmCaja
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNumero As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtCajaSinCerrar As MetroFramework.Controls.MetroTextBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelarInicio As System.Windows.Forms.Button
     Friend WithEvents btnGuardarInicio As System.Windows.Forms.Button
@@ -955,11 +961,11 @@ Partial Class frmCaja
     Friend WithEvents dtpCierre As MetroFramework.Controls.MetroDateTime
     Friend WithEvents btnAhoraI As System.Windows.Forms.Button
     Friend WithEvents btnAhoraC As System.Windows.Forms.Button
+    Friend WithEvents cboCajasAbiertas As MetroFramework.Controls.MetroComboBox
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cdEstado As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

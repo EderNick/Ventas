@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Ventas.ModuloVentas.frmSucursal</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -72,6 +72,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="MetroFramework" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -102,6 +103,12 @@
       <DependentUpon>frmGestionCuentasCobrar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmGestionCuentasCobrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.designer.vb">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRegistroPagos.Designer.vb">
@@ -311,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModelo.resx">
       <DependentUpon>frmModelo.vb</DependentUpon>
