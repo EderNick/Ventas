@@ -28,26 +28,22 @@ Partial Class frmDetalleSucursal
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
+        Me.cmbModelo = New MetroFramework.Controls.MetroComboBox()
+        Me.cmbSucursal = New MetroFramework.Controls.MetroComboBox()
+        Me.txtPrecio = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.MetroTabControl2 = New MetroFramework.Controls.MetroTabControl()
-        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroRadioButton4 = New MetroFramework.Controls.MetroRadioButton()
+        Me.tblistado = New MetroFramework.Controls.MetroTabPage()
+        Me.txtBdetalle = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MetroRadioButton4 = New MetroFramework.Controls.MetroRadioButton()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.dgvDetalle = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
@@ -57,8 +53,8 @@ Partial Class frmDetalleSucursal
         Me.MetroTabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MetroTabControl2.SuspendLayout()
-        Me.MetroTabPage2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tblistado.SuspendLayout()
+        CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -113,7 +109,7 @@ Partial Class frmDetalleSucursal
         Me.MetroTabControl1.Multiline = True
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 0
-        Me.MetroTabControl1.Size = New System.Drawing.Size(561, 222)
+        Me.MetroTabControl1.Size = New System.Drawing.Size(469, 245)
         Me.MetroTabControl1.TabIndex = 168
         Me.MetroTabControl1.UseSelectable = True
         '
@@ -129,7 +125,7 @@ Partial Class frmDetalleSucursal
         Me.MetroTabPage1.Location = New System.Drawing.Point(4, 41)
         Me.MetroTabPage1.Name = "MetroTabPage1"
         Me.MetroTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MetroTabPage1.Size = New System.Drawing.Size(553, 177)
+        Me.MetroTabPage1.Size = New System.Drawing.Size(461, 200)
         Me.MetroTabPage1.TabIndex = 0
         Me.MetroTabPage1.Text = "DATOS"
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
@@ -140,69 +136,59 @@ Partial Class frmDetalleSucursal
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox2)
-        Me.GroupBox2.Controls.Add(Me.MetroLabel1)
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox1)
+        Me.GroupBox2.Controls.Add(Me.cmbModelo)
+        Me.GroupBox2.Controls.Add(Me.cmbSucursal)
+        Me.GroupBox2.Controls.Add(Me.txtPrecio)
         Me.GroupBox2.Controls.Add(Me.MetroLabel2)
         Me.GroupBox2.Controls.Add(Me.MetroLabel5)
         Me.GroupBox2.Controls.Add(Me.MetroLabel6)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox2.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 16)
+        Me.GroupBox2.Location = New System.Drawing.Point(49, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(547, 140)
+        Me.GroupBox2.Size = New System.Drawing.Size(345, 148)
         Me.GroupBox2.TabIndex = 86
         Me.GroupBox2.TabStop = False
         '
-        'MetroTextBox2
+        'cmbModelo
         '
-        Me.MetroTextBox2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTextBox2.Lines = New String(-1) {}
-        Me.MetroTextBox2.Location = New System.Drawing.Point(413, 73)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.Size = New System.Drawing.Size(114, 23)
-        Me.MetroTextBox2.TabIndex = 39
-        Me.MetroTextBox2.UseSelectable = True
+        Me.cmbModelo.FormattingEnabled = True
+        Me.cmbModelo.ItemHeight = 23
+        Me.cmbModelo.Location = New System.Drawing.Point(126, 65)
+        Me.cmbModelo.Name = "cmbModelo"
+        Me.cmbModelo.Size = New System.Drawing.Size(141, 29)
+        Me.cmbModelo.TabIndex = 208
+        Me.cmbModelo.UseSelectable = True
         '
-        'MetroLabel1
+        'cmbSucursal
         '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(326, 82)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(49, 19)
-        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel1.TabIndex = 38
-        Me.MetroLabel1.Text = "STOCK"
-        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel1.UseCustomBackColor = True
-        Me.MetroLabel1.UseCustomForeColor = True
-        Me.MetroLabel1.UseStyleColors = True
+        Me.cmbSucursal.FormattingEnabled = True
+        Me.cmbSucursal.ItemHeight = 23
+        Me.cmbSucursal.Location = New System.Drawing.Point(125, 28)
+        Me.cmbSucursal.Name = "cmbSucursal"
+        Me.cmbSucursal.Size = New System.Drawing.Size(141, 29)
+        Me.cmbSucursal.TabIndex = 207
+        Me.cmbSucursal.UseSelectable = True
         '
-        'MetroTextBox1
+        'txtPrecio
         '
-        Me.MetroTextBox1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTextBox1.Lines = New String(-1) {}
-        Me.MetroTextBox1.Location = New System.Drawing.Point(428, 30)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.Size = New System.Drawing.Size(99, 23)
-        Me.MetroTextBox1.TabIndex = 37
-        Me.MetroTextBox1.UseSelectable = True
+        Me.txtPrecio.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtPrecio.Lines = New String(-1) {}
+        Me.txtPrecio.Location = New System.Drawing.Point(165, 102)
+        Me.txtPrecio.MaxLength = 32767
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPrecio.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtPrecio.SelectedText = ""
+        Me.txtPrecio.Size = New System.Drawing.Size(99, 23)
+        Me.txtPrecio.TabIndex = 37
+        Me.txtPrecio.UseSelectable = True
         '
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(19, 73)
+        Me.MetroLabel2.Location = New System.Drawing.Point(19, 71)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(64, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
@@ -230,7 +216,7 @@ Partial Class frmDetalleSucursal
         'MetroLabel6
         '
         Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(305, 30)
+        Me.MetroLabel6.Location = New System.Drawing.Point(19, 109)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(98, 19)
         Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Green
@@ -241,118 +227,55 @@ Partial Class frmDetalleSucursal
         Me.MetroLabel6.UseCustomForeColor = True
         Me.MetroLabel6.UseStyleColors = True
         '
-        'Button1
-        '
-        Me.Button1.AutoSize = True
-        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(110, 30)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(154, 28)
-        Me.Button1.TabIndex = 171
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.AutoSize = True
-        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(110, 73)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(154, 28)
-        Me.Button2.TabIndex = 172
-        Me.Button2.UseCompatibleTextRendering = True
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'MetroTabControl2
         '
         Me.MetroTabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
-        Me.MetroTabControl2.Controls.Add(Me.MetroTabPage2)
-        Me.MetroTabControl2.Location = New System.Drawing.Point(600, 71)
+        Me.MetroTabControl2.Controls.Add(Me.tblistado)
+        Me.MetroTabControl2.Location = New System.Drawing.Point(513, 71)
         Me.MetroTabControl2.Multiline = True
         Me.MetroTabControl2.Name = "MetroTabControl2"
         Me.MetroTabControl2.SelectedIndex = 0
-        Me.MetroTabControl2.Size = New System.Drawing.Size(392, 311)
+        Me.MetroTabControl2.Size = New System.Drawing.Size(479, 269)
         Me.MetroTabControl2.TabIndex = 169
         Me.MetroTabControl2.UseSelectable = True
         '
-        'MetroTabPage2
+        'tblistado
         '
-        Me.MetroTabPage2.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.MetroTabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MetroTabPage2.Controls.Add(Me.DataGridView1)
-        Me.MetroTabPage2.Controls.Add(Me.Button7)
-        Me.MetroTabPage2.Controls.Add(Me.MetroTextBox3)
-        Me.MetroTabPage2.Controls.Add(Me.MetroRadioButton4)
-        Me.MetroTabPage2.Controls.Add(Me.MetroLabel10)
-        Me.MetroTabPage2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
-        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = True
-        Me.MetroTabPage2.HorizontalScrollbarSize = 10
-        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 41)
-        Me.MetroTabPage2.Name = "MetroTabPage2"
-        Me.MetroTabPage2.Size = New System.Drawing.Size(384, 266)
-        Me.MetroTabPage2.TabIndex = 0
-        Me.MetroTabPage2.Text = "LISTA DETALLE SUCURSAL MODELO"
-        Me.MetroTabPage2.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTabPage2.VerticalScrollbarBarColor = True
-        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage2.VerticalScrollbarSize = 10
+        Me.tblistado.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.tblistado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.tblistado.Controls.Add(Me.txtBdetalle)
+        Me.tblistado.Controls.Add(Me.MetroLabel10)
+        Me.tblistado.Controls.Add(Me.MetroRadioButton4)
+        Me.tblistado.Controls.Add(Me.btnBuscar)
+        Me.tblistado.Controls.Add(Me.dgvDetalle)
+        Me.tblistado.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.tblistado.HorizontalScrollbarBarColor = True
+        Me.tblistado.HorizontalScrollbarHighlightOnWheel = True
+        Me.tblistado.HorizontalScrollbarSize = 10
+        Me.tblistado.Location = New System.Drawing.Point(4, 41)
+        Me.tblistado.Name = "tblistado"
+        Me.tblistado.Size = New System.Drawing.Size(471, 224)
+        Me.tblistado.TabIndex = 0
+        Me.tblistado.Text = "LISTA DETALLE SUCURSAL MODELO"
+        Me.tblistado.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tblistado.VerticalScrollbarBarColor = True
+        Me.tblistado.VerticalScrollbarHighlightOnWheel = False
+        Me.tblistado.VerticalScrollbarSize = 10
         '
-        'Button7
+        'txtBdetalle
         '
-        Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
-        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(82, 45)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(37, 32)
-        Me.Button7.TabIndex = 161
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'MetroTextBox3
-        '
-        Me.MetroTextBox3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTextBox3.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(143, 45)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.Size = New System.Drawing.Size(194, 23)
-        Me.MetroTextBox3.TabIndex = 160
-        Me.MetroTextBox3.UseSelectable = True
-        '
-        'MetroRadioButton4
-        '
-        Me.MetroRadioButton4.AutoSize = True
-        Me.MetroRadioButton4.Location = New System.Drawing.Point(143, 17)
-        Me.MetroRadioButton4.Name = "MetroRadioButton4"
-        Me.MetroRadioButton4.Size = New System.Drawing.Size(80, 15)
-        Me.MetroRadioButton4.TabIndex = 158
-        Me.MetroRadioButton4.Text = "SUCURSAL"
-        Me.MetroRadioButton4.UseSelectable = True
+        Me.txtBdetalle.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtBdetalle.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.txtBdetalle.Lines = New String(-1) {}
+        Me.txtBdetalle.Location = New System.Drawing.Point(141, 37)
+        Me.txtBdetalle.MaxLength = 32767
+        Me.txtBdetalle.Name = "txtBdetalle"
+        Me.txtBdetalle.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtBdetalle.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtBdetalle.SelectedText = ""
+        Me.txtBdetalle.Size = New System.Drawing.Size(194, 23)
+        Me.txtBdetalle.TabIndex = 160
+        Me.txtBdetalle.UseSelectable = True
         '
         'MetroLabel10
         '
@@ -370,40 +293,62 @@ Partial Class frmDetalleSucursal
         Me.MetroLabel10.UseCustomForeColor = True
         Me.MetroLabel10.UseStyleColors = True
         '
-        'DataGridView1
+        'MetroRadioButton4
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column2, Me.Column1, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 98)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(378, 137)
-        Me.DataGridView1.TabIndex = 162
+        Me.MetroRadioButton4.AutoSize = True
+        Me.MetroRadioButton4.Location = New System.Drawing.Point(134, 13)
+        Me.MetroRadioButton4.Name = "MetroRadioButton4"
+        Me.MetroRadioButton4.Size = New System.Drawing.Size(80, 15)
+        Me.MetroRadioButton4.TabIndex = 158
+        Me.MetroRadioButton4.Text = "SUCURSAL"
+        Me.MetroRadioButton4.UseSelectable = True
         '
-        'Column3
+        'btnBuscar
         '
-        Me.Column3.HeaderText = "ID"
-        Me.Column3.Name = "Column3"
+        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(372, 28)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(37, 32)
+        Me.btnBuscar.TabIndex = 161
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'dgvDetalle
+        '
+        Me.dgvDetalle.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.precio})
+        Me.dgvDetalle.Location = New System.Drawing.Point(9, 65)
+        Me.dgvDetalle.Name = "dgvDetalle"
+        Me.dgvDetalle.Size = New System.Drawing.Size(466, 137)
+        Me.dgvDetalle.TabIndex = 162
         '
         'Column2
         '
+        Me.Column2.DataPropertyName = "NomSucursal"
         Me.Column2.HeaderText = "SUCURSAL"
         Me.Column2.Name = "Column2"
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Column1
         '
+        Me.Column1.DataPropertyName = "NomModelo"
         Me.Column1.HeaderText = "MODELO"
         Me.Column1.Name = "Column1"
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'Column4
+        'precio
         '
-        Me.Column4.HeaderText = "PRECIO VENTA"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "STOCK"
-        Me.Column5.Name = "Column5"
+        Me.precio.DataPropertyName = "precio"
+        Me.precio.HeaderText = "PRECIO VENTA"
+        Me.precio.Name = "precio"
         '
         'Panel1
         '
@@ -501,9 +446,9 @@ Partial Class frmDetalleSucursal
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.MetroTabControl2.ResumeLayout(False)
-        Me.MetroTabPage2.ResumeLayout(False)
-        Me.MetroTabPage2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tblistado.ResumeLayout(False)
+        Me.tblistado.PerformLayout()
+        CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -514,24 +459,15 @@ Partial Class frmDetalleSucursal
     Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
     Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtPrecio As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
-    Public WithEvents Button2 As System.Windows.Forms.Button
-    Public WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents MetroTabControl2 As MetroFramework.Controls.MetroTabControl
-    Private WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
+    Private WithEvents tblistado As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents dgvDetalle As System.Windows.Forms.DataGridView
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents txtBdetalle As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroRadioButton4 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -539,4 +475,9 @@ Partial Class frmDetalleSucursal
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
+    Friend WithEvents cmbModelo As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cmbSucursal As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

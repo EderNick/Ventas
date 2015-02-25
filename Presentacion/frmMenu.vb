@@ -18,4 +18,21 @@
         frm = New frmCaja
         frm.ShowDialog()
     End Sub
+
+    Private Sub btnSucursal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSucursal.Click
+        Dim frm As frmSucursal
+        frm = New frmSucursal
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub btnEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpleado.Click
+        Dim frm As frmEmpleado
+        frm = New frmEmpleado
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
+        Dim frm As New frmUsuario
+        frm.ShowDialog()
+    End Sub
 End Class

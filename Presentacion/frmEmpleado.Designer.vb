@@ -35,11 +35,15 @@ Partial Class frmEmpleado
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.txtNLicencia = New MetroFramework.Controls.MetroTextBox()
         Me.gbEmpleado = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cboVigencia = New MetroFramework.Controls.MetroComboBox()
+        Me.cboSucursal = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.txtCargo = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.txtCorreo = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.Vigencia = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
@@ -54,17 +58,8 @@ Partial Class frmEmpleado
         Me.txtNombres = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabControl3 = New MetroFramework.Controls.MetroTabControl()
-        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.gbListar = New MetroFramework.Controls.MetroTabPage()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.MetroRadioButton2 = New MetroFramework.Controls.MetroRadioButton()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.txtEmpleado = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroRadioButton4 = New MetroFramework.Controls.MetroRadioButton()
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.NombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,13 +67,22 @@ Partial Class frmEmpleado
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Celular = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.rbDNI = New MetroFramework.Controls.MetroRadioButton()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtEmpleado = New MetroFramework.Controls.MetroTextBox()
+        Me.rbNombre = New MetroFramework.Controls.MetroRadioButton()
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.gbLicencia.SuspendLayout()
         Me.gbEmpleado.SuspendLayout()
         Me.MetroTabControl3.SuspendLayout()
-        Me.MetroTabPage3.SuspendLayout()
+        Me.gbListar.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -219,7 +223,7 @@ Partial Class frmEmpleado
         Me.gbLicencia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbLicencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbLicencia.ForeColor = System.Drawing.Color.Black
-        Me.gbLicencia.Location = New System.Drawing.Point(151, 301)
+        Me.gbLicencia.Location = New System.Drawing.Point(151, 303)
         Me.gbLicencia.Name = "gbLicencia"
         Me.gbLicencia.Size = New System.Drawing.Size(454, 56)
         Me.gbLicencia.TabIndex = 171
@@ -267,11 +271,15 @@ Partial Class frmEmpleado
         '
         Me.gbEmpleado.BackColor = System.Drawing.Color.White
         Me.gbEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.gbEmpleado.Controls.Add(Me.Button1)
+        Me.gbEmpleado.Controls.Add(Me.cboVigencia)
+        Me.gbEmpleado.Controls.Add(Me.cboSucursal)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel1)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel10)
+        Me.gbEmpleado.Controls.Add(Me.txtCargo)
+        Me.gbEmpleado.Controls.Add(Me.MetroLabel2)
         Me.gbEmpleado.Controls.Add(Me.txtCorreo)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel5)
+        Me.gbEmpleado.Controls.Add(Me.Vigencia)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel6)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel13)
         Me.gbEmpleado.Controls.Add(Me.MetroLabel14)
@@ -288,35 +296,40 @@ Partial Class frmEmpleado
         Me.gbEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbEmpleado.ForeColor = System.Drawing.Color.Black
-        Me.gbEmpleado.Location = New System.Drawing.Point(0, 17)
+        Me.gbEmpleado.Location = New System.Drawing.Point(-1, 8)
         Me.gbEmpleado.Name = "gbEmpleado"
-        Me.gbEmpleado.Size = New System.Drawing.Size(605, 278)
+        Me.gbEmpleado.Size = New System.Drawing.Size(605, 289)
         Me.gbEmpleado.TabIndex = 53
         Me.gbEmpleado.TabStop = False
         Me.gbEmpleado.Text = "DATOS"
         '
-        'Button1
+        'cboVigencia
         '
-        Me.Button1.AutoSize = True
-        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(401, 73)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(181, 28)
-        Me.Button1.TabIndex = 170
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.cboVigencia.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.cboVigencia.FormattingEnabled = True
+        Me.cboVigencia.ItemHeight = 19
+        Me.cboVigencia.Items.AddRange(New Object() {"TRUE", "FALSE"})
+        Me.cboVigencia.Location = New System.Drawing.Point(194, 255)
+        Me.cboVigencia.Name = "cboVigencia"
+        Me.cboVigencia.Size = New System.Drawing.Size(178, 25)
+        Me.cboVigencia.TabIndex = 171
+        Me.cboVigencia.UseSelectable = True
+        '
+        'cboSucursal
+        '
+        Me.cboSucursal.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.cboSucursal.FormattingEnabled = True
+        Me.cboSucursal.ItemHeight = 19
+        Me.cboSucursal.Location = New System.Drawing.Point(401, 120)
+        Me.cboSucursal.Name = "cboSucursal"
+        Me.cboSucursal.Size = New System.Drawing.Size(178, 25)
+        Me.cboSucursal.TabIndex = 171
+        Me.cboSucursal.UseSelectable = True
         '
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(322, 77)
+        Me.MetroLabel1.Location = New System.Drawing.Point(309, 124)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -330,11 +343,38 @@ Partial Class frmEmpleado
         'MetroLabel10
         '
         Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(318, 169)
+        Me.MetroLabel10.Location = New System.Drawing.Point(318, 218)
         Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(64, 19)
+        Me.MetroLabel10.Size = New System.Drawing.Size(63, 19)
         Me.MetroLabel10.TabIndex = 31
         Me.MetroLabel10.Text = "CELULAR"
+        '
+        'txtCargo
+        '
+        Me.txtCargo.Lines = New String(-1) {}
+        Me.txtCargo.Location = New System.Drawing.Point(401, 77)
+        Me.txtCargo.MaxLength = 32767
+        Me.txtCargo.Name = "txtCargo"
+        Me.txtCargo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCargo.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtCargo.SelectedText = ""
+        Me.txtCargo.Size = New System.Drawing.Size(181, 23)
+        Me.txtCargo.TabIndex = 33
+        Me.txtCargo.UseSelectable = True
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(326, 77)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(55, 19)
+        Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel2.TabIndex = 32
+        Me.MetroLabel2.Text = "CARGO"
+        Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel2.UseCustomBackColor = True
+        Me.MetroLabel2.UseCustomForeColor = True
+        Me.MetroLabel2.UseStyleColors = True
         '
         'txtCorreo
         '
@@ -362,6 +402,20 @@ Partial Class frmEmpleado
         Me.MetroLabel5.UseCustomBackColor = True
         Me.MetroLabel5.UseCustomForeColor = True
         Me.MetroLabel5.UseStyleColors = True
+        '
+        'Vigencia
+        '
+        Me.Vigencia.AutoSize = True
+        Me.Vigencia.Location = New System.Drawing.Point(108, 255)
+        Me.Vigencia.Name = "Vigencia"
+        Me.Vigencia.Size = New System.Drawing.Size(67, 19)
+        Me.Vigencia.Style = MetroFramework.MetroColorStyle.Green
+        Me.Vigencia.TabIndex = 19
+        Me.Vigencia.Text = "VIGENCIA"
+        Me.Vigencia.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Vigencia.UseCustomBackColor = True
+        Me.Vigencia.UseCustomForeColor = True
+        Me.Vigencia.UseStyleColors = True
         '
         'MetroLabel6
         '
@@ -410,7 +464,7 @@ Partial Class frmEmpleado
         Me.MetroLabel15.AutoSize = True
         Me.MetroLabel15.Location = New System.Drawing.Point(12, 122)
         Me.MetroLabel15.Name = "MetroLabel15"
-        Me.MetroLabel15.Size = New System.Drawing.Size(92, 19)
+        Me.MetroLabel15.Size = New System.Drawing.Size(97, 19)
         Me.MetroLabel15.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel15.TabIndex = 14
         Me.MetroLabel15.Text = "AP. MATERNO"
@@ -424,7 +478,7 @@ Partial Class frmEmpleado
         Me.MetroLabel16.AutoSize = True
         Me.MetroLabel16.Location = New System.Drawing.Point(21, 77)
         Me.MetroLabel16.Name = "MetroLabel16"
-        Me.MetroLabel16.Size = New System.Drawing.Size(86, 19)
+        Me.MetroLabel16.Size = New System.Drawing.Size(93, 19)
         Me.MetroLabel16.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel16.TabIndex = 13
         Me.MetroLabel16.Text = "AP. PATERNO"
@@ -436,7 +490,7 @@ Partial Class frmEmpleado
         'txtDireccion
         '
         Me.txtDireccion.Lines = New String(-1) {}
-        Me.txtDireccion.Location = New System.Drawing.Point(401, 122)
+        Me.txtDireccion.Location = New System.Drawing.Point(401, 171)
         Me.txtDireccion.MaxLength = 32767
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -462,7 +516,7 @@ Partial Class frmEmpleado
         'txtCelular
         '
         Me.txtCelular.Lines = New String(-1) {}
-        Me.txtCelular.Location = New System.Drawing.Point(401, 169)
+        Me.txtCelular.Location = New System.Drawing.Point(401, 218)
         Me.txtCelular.MaxLength = 32767
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -529,9 +583,9 @@ Partial Class frmEmpleado
         'MetroLabel18
         '
         Me.MetroLabel18.AutoSize = True
-        Me.MetroLabel18.Location = New System.Drawing.Point(318, 122)
+        Me.MetroLabel18.Location = New System.Drawing.Point(306, 169)
         Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(77, 19)
+        Me.MetroLabel18.Size = New System.Drawing.Size(78, 19)
         Me.MetroLabel18.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel18.TabIndex = 0
         Me.MetroLabel18.Text = "DIRECCION"
@@ -543,39 +597,38 @@ Partial Class frmEmpleado
         'MetroTabControl3
         '
         Me.MetroTabControl3.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
-        Me.MetroTabControl3.Controls.Add(Me.MetroTabPage3)
+        Me.MetroTabControl3.Controls.Add(Me.gbListar)
         Me.MetroTabControl3.Location = New System.Drawing.Point(627, 72)
         Me.MetroTabControl3.Multiline = True
         Me.MetroTabControl3.Name = "MetroTabControl3"
         Me.MetroTabControl3.SelectedIndex = 0
-        Me.MetroTabControl3.Size = New System.Drawing.Size(532, 482)
+        Me.MetroTabControl3.Size = New System.Drawing.Size(532, 400)
         Me.MetroTabControl3.TabIndex = 170
         Me.MetroTabControl3.UseSelectable = True
         '
-        'MetroTabPage3
+        'gbListar
         '
-        Me.MetroTabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.MetroTabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MetroTabPage3.Controls.Add(Me.dgvEmpleados)
-        Me.MetroTabPage3.Controls.Add(Me.Panel2)
-        Me.MetroTabPage3.Controls.Add(Me.MetroRadioButton2)
-        Me.MetroTabPage3.Controls.Add(Me.btnBuscar)
-        Me.MetroTabPage3.Controls.Add(Me.txtEmpleado)
-        Me.MetroTabPage3.Controls.Add(Me.MetroRadioButton4)
-        Me.MetroTabPage3.Controls.Add(Me.MetroLabel7)
-        Me.MetroTabPage3.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
-        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = True
-        Me.MetroTabPage3.HorizontalScrollbarSize = 10
-        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 41)
-        Me.MetroTabPage3.Name = "MetroTabPage3"
-        Me.MetroTabPage3.Size = New System.Drawing.Size(524, 437)
-        Me.MetroTabPage3.TabIndex = 0
-        Me.MetroTabPage3.Text = "LISTA CATEGORIA CLIENTE"
-        Me.MetroTabPage3.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTabPage3.VerticalScrollbarBarColor = True
-        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.VerticalScrollbarSize = 10
+        Me.gbListar.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.gbListar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbListar.Controls.Add(Me.dgvEmpleados)
+        Me.gbListar.Controls.Add(Me.rbDNI)
+        Me.gbListar.Controls.Add(Me.btnBuscar)
+        Me.gbListar.Controls.Add(Me.txtEmpleado)
+        Me.gbListar.Controls.Add(Me.rbNombre)
+        Me.gbListar.Controls.Add(Me.MetroLabel7)
+        Me.gbListar.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.gbListar.HorizontalScrollbarBarColor = True
+        Me.gbListar.HorizontalScrollbarHighlightOnWheel = True
+        Me.gbListar.HorizontalScrollbarSize = 10
+        Me.gbListar.Location = New System.Drawing.Point(4, 41)
+        Me.gbListar.Name = "gbListar"
+        Me.gbListar.Size = New System.Drawing.Size(524, 355)
+        Me.gbListar.TabIndex = 0
+        Me.gbListar.Text = "LISTAR EMPLEADO"
+        Me.gbListar.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.gbListar.VerticalScrollbarBarColor = True
+        Me.gbListar.VerticalScrollbarHighlightOnWheel = False
+        Me.gbListar.VerticalScrollbarSize = 10
         '
         'dgvEmpleados
         '
@@ -584,147 +637,8 @@ Partial Class frmEmpleado
         Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreEmpleado, Me.Cargo, Me.Dni, Me.Direccion, Me.Telefono, Me.Celular, Me.Correo})
         Me.dgvEmpleados.Location = New System.Drawing.Point(3, 87)
         Me.dgvEmpleados.Name = "dgvEmpleados"
-        Me.dgvEmpleados.Size = New System.Drawing.Size(518, 270)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(518, 257)
         Me.dgvEmpleados.TabIndex = 177
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Controls.Add(Me.btnSalir)
-        Me.Panel2.Controls.Add(Me.btnModificar)
-        Me.Panel2.Controls.Add(Me.btnNuevo)
-        Me.Panel2.Location = New System.Drawing.Point(3, 366)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(518, 68)
-        Me.Panel2.TabIndex = 176
-        '
-        'btnSalir
-        '
-        Me.btnSalir.BackColor = System.Drawing.Color.Transparent
-        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(444, -1)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(72, 72)
-        Me.btnSalir.TabIndex = 174
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.Transparent
-        Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
-        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnModificar.Location = New System.Drawing.Point(106, -2)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(72, 72)
-        Me.btnModificar.TabIndex = 173
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.Color.Black
-        Me.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnNuevo.FlatAppearance.BorderSize = 0
-        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.ForeColor = System.Drawing.Color.White
-        Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
-        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnNuevo.Location = New System.Drawing.Point(18, -1)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(72, 72)
-        Me.btnNuevo.TabIndex = 172
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnNuevo.UseVisualStyleBackColor = False
-        '
-        'MetroRadioButton2
-        '
-        Me.MetroRadioButton2.AutoSize = True
-        Me.MetroRadioButton2.Location = New System.Drawing.Point(256, 18)
-        Me.MetroRadioButton2.Name = "MetroRadioButton2"
-        Me.MetroRadioButton2.Size = New System.Drawing.Size(43, 15)
-        Me.MetroRadioButton2.TabIndex = 158
-        Me.MetroRadioButton2.Text = "DNI"
-        Me.MetroRadioButton2.UseSelectable = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(396, 38)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(37, 32)
-        Me.btnBuscar.TabIndex = 156
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'txtEmpleado
-        '
-        Me.txtEmpleado.BackColor = System.Drawing.Color.DodgerBlue
-        Me.txtEmpleado.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.txtEmpleado.Lines = New String(-1) {}
-        Me.txtEmpleado.Location = New System.Drawing.Point(121, 43)
-        Me.txtEmpleado.MaxLength = 32767
-        Me.txtEmpleado.Name = "txtEmpleado"
-        Me.txtEmpleado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtEmpleado.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtEmpleado.SelectedText = ""
-        Me.txtEmpleado.Size = New System.Drawing.Size(256, 23)
-        Me.txtEmpleado.TabIndex = 155
-        Me.txtEmpleado.UseSelectable = True
-        '
-        'MetroRadioButton4
-        '
-        Me.MetroRadioButton4.AutoSize = True
-        Me.MetroRadioButton4.Location = New System.Drawing.Point(143, 18)
-        Me.MetroRadioButton4.Name = "MetroRadioButton4"
-        Me.MetroRadioButton4.Size = New System.Drawing.Size(72, 15)
-        Me.MetroRadioButton4.TabIndex = 153
-        Me.MetroRadioButton4.Text = "NOMBRE"
-        Me.MetroRadioButton4.UseSelectable = True
-        '
-        'MetroLabel7
-        '
-        Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.MetroLabel7.ForeColor = System.Drawing.Color.Black
-        Me.MetroLabel7.Location = New System.Drawing.Point(3, 14)
-        Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(116, 19)
-        Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel7.TabIndex = 152
-        Me.MetroLabel7.Text = "BUSQUEDA POR :"
-        Me.MetroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel7.UseCustomBackColor = True
-        Me.MetroLabel7.UseCustomForeColor = True
-        Me.MetroLabel7.UseStyleColors = True
         '
         'NombreEmpleado
         '
@@ -772,11 +686,151 @@ Partial Class frmEmpleado
         Me.Correo.HeaderText = "CORREO"
         Me.Correo.Name = "Correo"
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Black
+        Me.Panel2.Controls.Add(Me.btnSalir)
+        Me.Panel2.Controls.Add(Me.btnModificar)
+        Me.Panel2.Controls.Add(Me.btnNuevo)
+        Me.Panel2.Location = New System.Drawing.Point(634, 477)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(518, 68)
+        Me.Panel2.TabIndex = 176
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.Transparent
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.ForeColor = System.Drawing.Color.White
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSalir.Location = New System.Drawing.Point(446, 0)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(72, 72)
+        Me.btnSalir.TabIndex = 174
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.Transparent
+        Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Image = CType(resources.GetObject("btnModificar.Image"), System.Drawing.Image)
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnModificar.Location = New System.Drawing.Point(106, -2)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(72, 72)
+        Me.btnModificar.TabIndex = 173
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.Black
+        Me.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnNuevo.FlatAppearance.BorderSize = 0
+        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
+        Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnNuevo.Location = New System.Drawing.Point(18, -1)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(72, 72)
+        Me.btnNuevo.TabIndex = 172
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        '
+        'rbDNI
+        '
+        Me.rbDNI.AutoSize = True
+        Me.rbDNI.Location = New System.Drawing.Point(256, 18)
+        Me.rbDNI.Name = "rbDNI"
+        Me.rbDNI.Size = New System.Drawing.Size(43, 15)
+        Me.rbDNI.TabIndex = 158
+        Me.rbDNI.Text = "DNI"
+        Me.rbDNI.UseSelectable = True
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(396, 38)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(37, 32)
+        Me.btnBuscar.TabIndex = 156
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtEmpleado
+        '
+        Me.txtEmpleado.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtEmpleado.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.txtEmpleado.Lines = New String(-1) {}
+        Me.txtEmpleado.Location = New System.Drawing.Point(121, 43)
+        Me.txtEmpleado.MaxLength = 32767
+        Me.txtEmpleado.Name = "txtEmpleado"
+        Me.txtEmpleado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmpleado.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtEmpleado.SelectedText = ""
+        Me.txtEmpleado.Size = New System.Drawing.Size(256, 23)
+        Me.txtEmpleado.TabIndex = 155
+        Me.txtEmpleado.UseSelectable = True
+        '
+        'rbNombre
+        '
+        Me.rbNombre.AutoSize = True
+        Me.rbNombre.Location = New System.Drawing.Point(143, 18)
+        Me.rbNombre.Name = "rbNombre"
+        Me.rbNombre.Size = New System.Drawing.Size(72, 15)
+        Me.rbNombre.TabIndex = 153
+        Me.rbNombre.Text = "NOMBRE"
+        Me.rbNombre.UseSelectable = True
+        '
+        'MetroLabel7
+        '
+        Me.MetroLabel7.AutoSize = True
+        Me.MetroLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel7.ForeColor = System.Drawing.Color.Black
+        Me.MetroLabel7.Location = New System.Drawing.Point(3, 14)
+        Me.MetroLabel7.Name = "MetroLabel7"
+        Me.MetroLabel7.Size = New System.Drawing.Size(116, 19)
+        Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel7.TabIndex = 152
+        Me.MetroLabel7.Text = "BUSQUEDA POR :"
+        Me.MetroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel7.UseCustomBackColor = True
+        Me.MetroLabel7.UseCustomForeColor = True
+        Me.MetroLabel7.UseStyleColors = True
+        '
         'frmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1158, 556)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MetroTabControl3)
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Controls.Add(Me.Button6)
@@ -790,8 +844,8 @@ Partial Class frmEmpleado
         Me.gbEmpleado.ResumeLayout(False)
         Me.gbEmpleado.PerformLayout()
         Me.MetroTabControl3.ResumeLayout(False)
-        Me.MetroTabPage3.ResumeLayout(False)
-        Me.MetroTabPage3.PerformLayout()
+        Me.gbListar.ResumeLayout(False)
+        Me.gbListar.PerformLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -824,14 +878,10 @@ Partial Class frmEmpleado
     Friend WithEvents MetroRadioButton1 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNLicencia As MetroFramework.Controls.MetroTextBox
-    Public WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents MetroTabControl3 As MetroFramework.Controls.MetroTabControl
-    Private WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents txtEmpleado As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroRadioButton4 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroRadioButton2 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
@@ -847,4 +897,12 @@ Partial Class frmEmpleado
     Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Celular As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Correo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtCargo As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Vigencia As MetroFramework.Controls.MetroLabel
+    Friend WithEvents cboSucursal As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents cboVigencia As MetroFramework.Controls.MetroComboBox
+    Private WithEvents gbListar As MetroFramework.Controls.MetroTabPage
+    Private WithEvents rbDNI As MetroFramework.Controls.MetroRadioButton
+    Private WithEvents rbNombre As MetroFramework.Controls.MetroRadioButton
 End Class

@@ -11,7 +11,7 @@
         Dim empleado As List(Of Empleado)
 
         Try
-            empleado = rn.Listar(Me.txtEmpleado.Text)
+            empleado = rn.Listar(Me.txtEmpleado.Text, 1)
             modFunciones.EnlazarDatagridView(Me.dgvEmpleados, empleado)
             Me.dgvEmpleados.Focus()
             Me.AcceptButton = Me.btnSeleccionar
