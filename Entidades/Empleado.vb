@@ -6,7 +6,7 @@
     Public Property Ap_Materno As String
     Public Property Cargo As String
     Public Property Dni As String
-    Public Property Num_Liciencia As String
+    Public Property Num_Licencia As String
     Public Property Direccion As String
     Public Property Telefono As String
     Public Property Celular As String
@@ -22,5 +22,13 @@
             Return nombre
         End Get
     End Property
+    Public ReadOnly Property NombSucursal As String
+        Get
+            Dim nombre As String = ""
 
+            nombre = Me.Sucursal.ZonaNombre
+
+            Return nombre
+        End Get
+    End Property
 End Class

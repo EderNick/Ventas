@@ -1,10 +1,162 @@
 ﻿Public Class frmDetalleSucursal
 
-    Private Sub MetroLabel4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Actual As DetalleSucursal
+    Private Detallesucursal As DetalleSucursal
+
+    Private Sub frmDetalleSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        listarsucursales()
+        listartiposucursales()
+        listarmodelos()
+    End Sub
+    Sub listartiposucursales()
+        Dim rn As New RNSucursal
+        Dim Sucursal As List(Of Sucursal)
+
+        Try
+            Sucursal = rn.Listar("")
+            modFunciones.ListarComboBox(Me.cmbSucursal, Sucursal, "Codigo", "Direccion")
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            rn = Nothing
+        End Try
+    End Sub
+    Sub listarmodelos()
+        Dim rn As New RNModelo
+        Dim Modelo As List(Of Modelo)
+
+        Try
+            Modelo = rn.Listar()
+            modFunciones.ListarComboBox(Me.cmbModelo, Modelo, "Codigo", "Descripcion")
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            rn = Nothing
+        End Try
+    End Sub
+    Sub listarsucursales()
+        Dim rn As New RNDetalleSucursal
+        Dim DetalleSucursal As List(Of DetalleSucursal)
+
+        Try
+            DetalleSucursal = rn.ListarDetalle(Me.txtBdetalle.Text)
+            modFunciones.EnlazarDatagridView(Me.dgvDetalle, DetalleSucursal)
+            Me.dgvDetalle.Focus()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
+        listarsucursales()
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+        Dim rn As RNDetalleSucursal
+        Dim DS As DetalleSucursal
+
+        If Me.ValidateChildren = True Then
+            DS = New DetalleSucursal
+            DS.precio = CDbl(txtPrecio.Text)
+            DS.Modelo = DirectCast(Me.cmbModelo.SelectedItem, Modelo)
+            DS.Sucursal = DirectCast(Me.cmbSucursal.SelectedItem, Sucursal)
+            rn = New RNDetalleSucursal
+             Try
+                If Me.Actual Is Nothing Then
+                    rn.Registrar(DS)
+                    MessageBox.Show("Se Registro el Precio de Sucursal con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    limpiar()
+                    listarsucursales()
+                    controles(True)
+                Else
+                    If (MessageBox.Show("¿Esta seguro de Modificar los datos?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                        DS.Modelo.Codigo = Me.Actual.Modelo.Codigo
+                        DS.Sucursal.Codigo = Me.Actual.Sucursal.Codigo
+                        rn.Actualizar(DS)
+                        limpiar()
+                        listarsucursales()
+                    Else
+                        ' Me.ActivarControles(True)
+                    End If
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                rn = Nothing
+                DS = Nothing
+            End Try
+        End If
+    End Sub
+    Sub limpiar()
+        txtBdetalle.Clear()
+        txtPrecio.Clear()
+        cmbModelo.SelectedIndex = -1
+        cmbSucursal.SelectedIndex = -1
+    End Sub
+
+    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
+        limpiar()
+        listarmodelos()
+        listarsucursales()
+        listartiposucursales()
+    End Sub
+
+    Private Sub btnModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar.Click
+        controles(False)
+        If Me.dgvDetalle.CurrentRow IsNot Nothing Then
+            Me.Actual = DirectCast(Me.dgvDetalle.CurrentRow.DataBoundItem, DetalleSucursal)
+            Me.presentardatos()
+        Else
+            MessageBox.Show("Debe seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+    Sub presentardatos()
+        Dim rn As New RNDetalleSucursal
+        Try
+            Me.Actual = rn.Leer(Me.Actual)
+            If Me.Actual IsNot Nothing Then
+                With Me.Actual
+                    Me.txtPrecio.Text = .precio
+                    Me.cmbModelo.Text = .Modelo.Descripcion
+                    Me.cmbSucursal.Text = .Sucursal.Direccion
+                End With
+
+            Else
+                MessageBox.Show("No se encontró la sucursal", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+    Sub controles(ByVal val As Boolean)
+        btnNuevo.Enabled = val
+        tblistado.Enabled = val
 
     End Sub
 
-    Private Sub frmDetalleSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub txtPrecio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecio.KeyPress
+        teclear(e, False)
+    End Sub
 
+    Sub teclear(ByVal e As System.Windows.Forms.KeyPressEventArgs, ByVal val As Boolean)
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = val
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = val
+        ElseIf Char.IsSymbol(e.KeyChar) And val = True Then
+            e.Handled =  val
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = Not val
+        Else
+            e.Handled = Not val
+        End If
     End Sub
 End Class

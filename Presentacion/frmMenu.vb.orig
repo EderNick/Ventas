@@ -25,16 +25,26 @@
         frm.ShowDialog()
     End Sub
 
+<<<<<<< HEAD
+    Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
+        Dim frm As frmUsuario
+        frm = New frmUsuario
         frm.ShowDialog()
     End Sub
 
     Private Sub btnEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpresa.Click
         Dim frm As frmEmpresa
         frm = New frmEmpresa
-        frm.ShowDialog()
-    Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
-        Dim frm As New frmUsuario
+=======
+    Private Sub btnEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpleado.Click
+        Dim frm As frmEmpleado
+        frm = New frmEmpleado
         frm.ShowDialog()
     End Sub
+
+    Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
+        Dim frm As New frmUsuario
+>>>>>>> eef36eb50bedfc7eef05d5f4cb6b781e0c7464b8
+        frm.ShowDialog()
     End Sub
 End Class

@@ -20,8 +20,13 @@
                 emp = New Empleado
                 emp.Codigo = CInt(dr.Item("idempleado"))
                 emp.Nombres = dr.Item("nombres")
+<<<<<<< HEAD
                 emp.Ap_Paterno = dr.Item("ap_paterno")
                 emp.Ap_Materno = dr.Item("ap_materno")
+                emp.Cargo = dr.Item("cargo")
+=======
+                emp.Cargo = Convert.ToString(dr.Item("cargo"))
+>>>>>>> eef36eb50bedfc7eef05d5f4cb6b781e0c7464b8
                 emp.Dni = dr.Item("dni")
                 emp.Direccion = Convert.ToString(dr.Item("direccion"))
                 emp.Correo = Convert.ToString(dr.Item("correo"))
