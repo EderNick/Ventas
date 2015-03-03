@@ -10,6 +10,18 @@
     Public Property zona As zona
     Public Property Empresa As Empresa
 
-    
+    Public ReadOnly Property Estado As String
+        Get
+            Dim nombre As String = ""
+            If Vigencia = True Then
+                nombre = "Activa"
+            Else
+                nombre = "Inactiva"
+            End If
+
+            Return nombre
+        End Get
+
+    End Property
 
 End Class

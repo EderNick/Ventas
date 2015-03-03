@@ -9,6 +9,8 @@
         UsuarioActual = frm.Identificar()
         If UsuarioActual IsNot Nothing Then
             frmPrinc = New frmMenu
+            frmPrinc.lblEmpleado.Text = UsuarioActual.Empleado.NombreEmpleado
+            frmPrinc.lblSucursal.Text = UsuarioActual.Empleado.Sucursal.Nombre
             frmPrinc.ShowDialog()
         End If
 

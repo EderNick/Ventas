@@ -16,6 +16,8 @@
                 emp = New Empleado
                 emp.Codigo = CInt(dr.Item("idempleado"))
                 emp.Nombres = dr.Item("nombres")
+                emp.Ap_Paterno = dr.Item("ap_paterno")
+                emp.Ap_Materno = dr.Item("ap_materno")
                 emp.Cargo = dr.Item("cargo")
                 emp.Dni = dr.Item("dni")
                 emp.Direccion = dr.Item("direccion")

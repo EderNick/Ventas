@@ -45,6 +45,8 @@ Partial Class frmMenu
         Me.btnSucursal = New System.Windows.Forms.Button()
         Me.btnContactoEmpresa = New System.Windows.Forms.Button()
         Me.btnBanco = New System.Windows.Forms.Button()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
+        Me.lblSucursal = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,6 +58,8 @@ Partial Class frmMenu
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(142, Byte), Integer))
         Me.MetroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.MetroPanel1.Controls.Add(Me.lblSucursal)
+        Me.MetroPanel1.Controls.Add(Me.lblEmpleado)
         Me.MetroPanel1.Controls.Add(Me.Label1)
         Me.MetroPanel1.Controls.Add(Me.Button1)
         Me.MetroPanel1.Controls.Add(Me.Button3)
@@ -93,11 +97,11 @@ Partial Class frmMenu
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(20, 70)
+        Me.Label1.Location = New System.Drawing.Point(20, 101)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(150, 65)
+        Me.Label1.Size = New System.Drawing.Size(109, 47)
         Me.Label1.TabIndex = 215
         Me.Label1.Text = "Menu"
         '
@@ -504,6 +508,26 @@ Partial Class frmMenu
         Me.btnBanco.UseCompatibleTextRendering = True
         Me.btnBanco.UseVisualStyleBackColor = False
         '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpleado.Location = New System.Drawing.Point(255, 26)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(124, 29)
+        Me.lblEmpleado.TabIndex = 216
+        Me.lblEmpleado.Text = "Empleado"
+        '
+        'lblSucursal
+        '
+        Me.lblSucursal.AutoSize = True
+        Me.lblSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSucursal.Location = New System.Drawing.Point(255, 59)
+        Me.lblSucursal.Name = "lblSucursal"
+        Me.lblSucursal.Size = New System.Drawing.Size(106, 29)
+        Me.lblSucursal.TabIndex = 217
+        Me.lblSucursal.Text = "Sucursal"
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -540,4 +564,6 @@ Partial Class frmMenu
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblEmpleado As System.Windows.Forms.Label
+    Friend WithEvents lblSucursal As System.Windows.Forms.Label
 End Class

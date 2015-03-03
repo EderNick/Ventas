@@ -5,6 +5,7 @@ Public Class frmSucursal
     Dim prov As Provincia
     Dim DEP As Departamento
     Dim Distri As Distrito
+    Private campos_faltan As String
 
     Private Sub frmSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ToolTip1 As New ToolTip
@@ -12,7 +13,7 @@ Public Class frmSucursal
         ToolTip1.SetToolTip(btnModificar, "Modificar Datos")
         ToolTip1.SetToolTip(btnNuevo, "Nuevos Datos")
         ToolTip1.SetToolTip(btnSalir, "Salir")
-        'Me.gbListado.Enabled = False
+        Me.ActivarControles(False)
         ListarSucursales("")
         ListarDepartamentos()
     End Sub
@@ -24,17 +25,34 @@ Public Class frmSucursal
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         Me.ActivarControles(True)
         Me.Actual = Nothing
+        Me.txtSucursal.Text = ""
+        Me.txtNombre.Text = ""
         Me.txtDireccion.Text = ""
         Me.txtCorreo.Text = ""
         Me.txtTelefono.Text = ""
+        Me.cboDepartamento.SelectedIndex = -1
+        Me.cboProvincia.SelectedIndex = -1
+        Me.cboDistrito.SelectedIndex = -1
+        Me.ckVigencia.Checked = True
+        Me.ckVigencia.Enabled = False
+    End Sub
 
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+        Me.txtNombre.Text = ""
+        Me.txtDireccion.Text = ""
+        Me.txtCorreo.Text = ""
+        Me.txtTelefono.Text = ""
+        Me.cboDepartamento.SelectedIndex = -1
+        Me.cboProvincia.SelectedIndex = -1
+        Me.cboDistrito.SelectedIndex = -1
+        ActivarControles(False)
     End Sub
 
     Private Sub ActivarControles(ByVal wEstado As Boolean)
         Me.gbDatos.Enabled = wEstado
         Me.gbListado.Enabled = Not wEstado
         If wEstado = True Then
-            Me.txtDireccion.Focus()
+            Me.txtNombre.Focus()
         Else
             Me.txtSucursal.Focus()
         End If
@@ -46,7 +64,7 @@ Public Class frmSucursal
             Me.Actual = DirectCast(Me.dgvSucursal.CurrentRow.DataBoundItem, Sucursal)
             Me.PresentarDatos()
         Else
-            MessageBox.Show("Debe seleccionar una sucursal", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, "Debe seleccionar una sucursal", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -58,18 +76,23 @@ Public Class frmSucursal
             If Me.Actual IsNot Nothing Then
                 With Me.Actual
 
+                    Me.txtNombre.Text = .Nombre
                     Me.txtCorreo.Text = .Correo
+                    Me.cboDepartamento.Text = .zona.Departamento.Nombre
+                    Me.cboProvincia.Text = .zona.Provincia.Nombre
+                    Me.cboDistrito.Text = .zona.Distrito.nombre
                     Me.txtDireccion.Text = .Direccion
                     Me.txtTelefono.Text = .Telefono
-
+                    Me.ckVigencia.Enabled = True
+                    Me.ckVigencia.Checked = .Vigencia
                 End With
 
                 Me.ActivarControles(True)
             Else
-                MessageBox.Show("No se encontró la Sucursal solicitada", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "No se encontró la Sucursal solicitada", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -88,7 +111,7 @@ Public Class frmSucursal
             sucursal = rn.Listar(wNombre)
             modFunciones.EnlazarDatagridView(Me.dgvSucursal, sucursal)
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             rn = Nothing
         End Try
@@ -98,7 +121,7 @@ Public Class frmSucursal
         Dim rn As RNSucursal
         Dim s As Sucursal
 
-        If Me.ValidateChildren = True Then
+        If Me.CamposCompletos = True Then
             s = New Sucursal
             s.Nombre = Me.txtNombre.Text
             s.Correo = Me.txtCorreo.Text
@@ -117,12 +140,14 @@ Public Class frmSucursal
             Try
                 If Me.Actual Is Nothing Then
                     rn.Registrar(s)
-                    MessageBox.Show("Su Registro se Guardo con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MetroMessageBox.Show(Me, "Su Registro se Guardo con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     Me.ActivarControles(False)
                     ListarSucursales("")
                 Else
-                    If (MessageBox.Show("¿Esta seguro de Guardar los cambios de este registro?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question)) Then
+                    If (MetroMessageBox.Show(Me, "¿Esta seguro de Guardar los cambios de este registro?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question)) Then
                         s.Codigo = Me.Actual.Codigo
+                        s.zona.Codigo = Me.Actual.zona.Codigo
+                        s.Vigencia = ckVigencia.Checked
                         rn.Actualizar(s)
                         Me.ActivarControles(False)
                         ListarSucursales("")
@@ -132,29 +157,15 @@ Public Class frmSucursal
                 End If
 
             Catch ex As Exception
-                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 rn = Nothing
                 s = Nothing
             End Try
-
+        Else
+            MetroMessageBox.Show(Me, "Es necesario completar todos los campos" & vbNewLine & campos_faltan, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-    'Private Sub ListarZonas()
-    '    Dim rn As New RNZona
-    '    Dim zonas As List(Of zona)
-
-    '    Try
-    '        zonas = rn.Listar()
-    '        modFunciones.ListarComboBox(Me.cboZonas, zonas, "Codigo", "ZonaNombre")
-
-    '    Catch ex As Exception
-    '        MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    Finally
-    '        rn = Nothing
-    '    End Try
-
-    'End Sub
 
     Private Sub ListarDepartamentos()
         Dim rn As New RNDepartamento
@@ -165,7 +176,7 @@ Public Class frmSucursal
             modFunciones.ListarComboBox(Me.cboDepartamento, Departamentos, "Codigo", "Nombre")
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             rn = Nothing
         End Try
@@ -184,7 +195,7 @@ Public Class frmSucursal
                 modFunciones.ListarComboBox(Me.cboProvincia, Provincias, "Codigo", "Nombre")
 
             Catch ex As Exception
-                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
 
@@ -206,7 +217,7 @@ Public Class frmSucursal
                 modFunciones.ListarComboBox(Me.cboDistrito, Distritos, "Codigo", "Nombre")
 
             Catch ex As Exception
-                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
         Else
@@ -214,7 +225,65 @@ Public Class frmSucursal
         End If
     End Sub
 
- 
+
+   
+
+    Private Function CamposCompletos() As Boolean
+        Dim Completo As Boolean = True
+        If txtNombre.Text = "" Then
+            campos_faltan = campos_faltan & "  - Nombre Sucursal (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtCorreo.Text = "" Then
+            campos_faltan = campos_faltan & "  - Correo (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtDireccion.Text = "" Then
+            campos_faltan = campos_faltan & "  - Dirección (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtTelefono.Text = "" Then
+            campos_faltan = campos_faltan & "  - Telefono (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If cboDepartamento.Text = "" Then
+            campos_faltan = campos_faltan & "  - Departamento (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If cboProvincia.Text = "" Then
+            campos_faltan = campos_faltan & "  - Provincia (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If cboDistrito.Text = "" Then
+            campos_faltan = campos_faltan & "  - Distrito (Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        Return Completo
+    End Function
+
+
+    Private Sub dgvSucursal_RowPrePaint(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowPrePaintEventArgs) Handles dgvSucursal.RowPrePaint
+
+        Select Case dgvSucursal.Rows(e.RowIndex).Cells("Estado").Value
+            Case "Activa"
+                dgvSucursal.Rows(e.RowIndex).Cells("Estado").Style.ForeColor = Color.Black
+            Case "Inactiva"
+                dgvSucursal.Rows(e.RowIndex).Cells("Estado").Style.ForeColor = Color.Red
+            
+        End Select
+
+    End Sub
+
+    Private Sub txtTelefono_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTelefono.Click
+
+    End Sub
+
+    Private Sub txtTelefono_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelefono.KeyPress
+        If (e.KeyChar < "0" Or e.KeyChar > "9") And AscW(e.KeyChar) <> 8 Then ' ascw-->convierte la tecla a numero 
+            e.Handled = True ' no permite pasar al numero 
+        End If
+    End Sub
+
 
 
 End Class
