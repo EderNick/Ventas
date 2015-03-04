@@ -2,26 +2,14 @@
 
     Private Actual As DetalleSucursal
     Private Detallesucursal As DetalleSucursal
+    Private campos_faltan As String
+    Private idsucursal As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo
 
     Private Sub frmDetalleSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        listarsucursales()
-        listartiposucursales()
+        listar()
         listarmodelos()
     End Sub
-    Sub listartiposucursales()
-        Dim rn As New RNSucursal
-        Dim Sucursal As List(Of Sucursal)
 
-        Try
-            Sucursal = rn.Listar("")
-            modFunciones.ListarComboBox(Me.cmbSucursal, Sucursal, "Codigo", "Direccion")
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            rn = Nothing
-        End Try
-    End Sub
     Sub listarmodelos()
         Dim rn As New RNModelo
         Dim Modelo As List(Of Modelo)
@@ -36,12 +24,12 @@
             rn = Nothing
         End Try
     End Sub
-    Sub listarsucursales()
+    Sub listar()
         Dim rn As New RNDetalleSucursal
         Dim DetalleSucursal As List(Of DetalleSucursal)
 
         Try
-            DetalleSucursal = rn.ListarDetalle(Me.txtBdetalle.Text)
+            DetalleSucursal = rn.ListarDetalle(idsucursal)
             modFunciones.EnlazarDatagridView(Me.dgvDetalle, DetalleSucursal)
             Me.dgvDetalle.Focus()
         Catch ex As Exception
@@ -49,8 +37,8 @@
         End Try
     End Sub
 
-    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-        listarsucursales()
+    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        listar()
     End Sub
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
@@ -60,76 +48,99 @@
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
         Dim rn As RNDetalleSucursal
         Dim DS As DetalleSucursal
+        campos_faltan = ""
+        If CamposCompletos() = True Then
+            If Me.ValidateChildren = True Then
+                DS = New DetalleSucursal
+                DS.Modelo = DirectCast(Me.cmbModelo.SelectedItem, Modelo)
+                DS.precio = CDbl(txtPrecio.Text)
+                DS.cantidad = CInt(txtCantidad.Text)
 
-        If Me.ValidateChildren = True Then
-            DS = New DetalleSucursal
-            DS.precio = CDbl(txtPrecio.Text)
-            DS.Modelo = DirectCast(Me.cmbModelo.SelectedItem, Modelo)
-            DS.Sucursal = DirectCast(Me.cmbSucursal.SelectedItem, Sucursal)
-            rn = New RNDetalleSucursal
-             Try
-                If Me.Actual Is Nothing Then
-                    rn.Registrar(DS)
-                    MessageBox.Show("Se Registro el Precio de Sucursal con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    limpiar()
-                    listarsucursales()
-                    controles(True)
-                Else
-                    If (MessageBox.Show("¿Esta seguro de Modificar los datos?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-                        DS.Modelo.Codigo = Me.Actual.Modelo.Codigo
-                        DS.Sucursal.Codigo = Me.Actual.Sucursal.Codigo
-                        rn.Actualizar(DS)
+                rn = New RNDetalleSucursal
+                Try
+                    If Me.Actual Is Nothing Then
+                        rn.Registrar(DS, idsucursal)
+                        MessageBox.Show("Se Registro el Precio de Modelo con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         limpiar()
-                        listarsucursales()
+                        listar()
+                        controles(True)
                     Else
-                        ' Me.ActivarControles(True)
+                        If (MessageBox.Show("¿Esta seguro de Modificar los datos de los precios?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                            DS.Modelo.Codigo = Me.Actual.Modelo.Codigo
+                            rn.Actualizar(DS, idsucursal)
+                            limpiar()
+                            listar()
+                            listarmodelos()
+                        Else
+                            ' Me.ActivarControles(True)
+                        End If
                     End If
-                End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                rn = Nothing
-                DS = Nothing
-            End Try
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    rn = Nothing
+                    DS = Nothing
+                End Try
+            End If
+        Else
+            MessageBox.Show(Me, "Es necesario completar todos los campos" & vbNewLine & campos_faltan, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+
+    Private Function CamposCompletos() As Boolean
+        Dim Completo As Boolean = True
+        If cmbModelo.Text = "" Then
+            campos_faltan = campos_faltan & "  - Modelo(Falta seleccionar)." & vbNewLine
+            Completo = False
+        End If
+        If txtCantidad.Text = "" Then
+            campos_faltan = campos_faltan & "  - Cantidad( falta completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtPrecio.Text = "" Then
+            campos_faltan = campos_faltan & "  - Celular ( 9 digitos de celular)." & vbNewLine
+
+        End If
+        Return Completo
+    End Function
+
+
     Sub limpiar()
-        txtBdetalle.Clear()
         txtPrecio.Clear()
+        txtCantidad.Clear()
         cmbModelo.SelectedIndex = -1
-        cmbSucursal.SelectedIndex = -1
     End Sub
 
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
         limpiar()
         listarmodelos()
-        listarsucursales()
-        listartiposucursales()
+        listar()
     End Sub
 
     Private Sub btnModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar.Click
-        controles(False)
         If Me.dgvDetalle.CurrentRow IsNot Nothing Then
             Me.Actual = DirectCast(Me.dgvDetalle.CurrentRow.DataBoundItem, DetalleSucursal)
             Me.presentardatos()
         Else
-            MessageBox.Show("Debe seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Debe seleccionar un modelo", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
     Sub presentardatos()
         Dim rn As New RNDetalleSucursal
+
         Try
-            Me.Actual = rn.Leer(Me.Actual)
+            Me.Actual = rn.Leer(Me.Actual, idsucursal)
             If Me.Actual IsNot Nothing Then
                 With Me.Actual
                     Me.txtPrecio.Text = .precio
-                    Me.cmbModelo.Text = .Modelo.Descripcion
-                    Me.cmbSucursal.Text = .Sucursal.Direccion
+                    cmbModelo.Items.Add(.Modelo.Descripcion)
+                    Me.txtCantidad.Text = .cantidad
                 End With
 
             Else
-                MessageBox.Show("No se encontró la sucursal", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("No se encontró el modelo", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -142,7 +153,7 @@
 
     End Sub
 
-    Private Sub txtPrecio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecio.KeyPress
+    Private Sub txtPrecio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPrecio.KeyPress, txtCantidad.KeyPress
         teclear(e, False)
     End Sub
 
@@ -159,4 +170,6 @@
             e.Handled = Not val
         End If
     End Sub
+
+
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class frmBuscarEmpleado
 
     Private Empleado As Empleado
+    Private idsucursal As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         ListarEmpleados()
@@ -11,7 +12,7 @@
         Dim empleado As List(Of Empleado)
 
         Try
-            empleado = rn.Listar(Me.txtEmpleado.Text, 1)
+            empleado = rn.Listar(Me.txtEmpleado.Text, 1, idsucursal)
             modFunciones.EnlazarDatagridView(Me.dgvEmpleados, empleado)
             Me.dgvEmpleados.Focus()
             Me.AcceptButton = Me.btnSeleccionar

@@ -24,6 +24,8 @@ Partial Class frmMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.lblSucursal = New System.Windows.Forms.Label()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -45,8 +47,6 @@ Partial Class frmMenu
         Me.btnSucursal = New System.Windows.Forms.Button()
         Me.btnContactoEmpresa = New System.Windows.Forms.Button()
         Me.btnBanco = New System.Windows.Forms.Button()
-        Me.lblEmpleado = New System.Windows.Forms.Label()
-        Me.lblSucursal = New System.Windows.Forms.Label()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -84,15 +84,35 @@ Partial Class frmMenu
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(1, -1)
+        Me.MetroPanel1.Location = New System.Drawing.Point(1, 32)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(1380, 824)
+        Me.MetroPanel1.Size = New System.Drawing.Size(1306, 791)
         Me.MetroPanel1.TabIndex = 192
         Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.UseCustomForeColor = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'lblSucursal
+        '
+        Me.lblSucursal.AutoSize = True
+        Me.lblSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSucursal.Location = New System.Drawing.Point(255, 59)
+        Me.lblSucursal.Name = "lblSucursal"
+        Me.lblSucursal.Size = New System.Drawing.Size(106, 29)
+        Me.lblSucursal.TabIndex = 217
+        Me.lblSucursal.Text = "Sucursal"
+        '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.AutoSize = True
+        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpleado.Location = New System.Drawing.Point(255, 26)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(124, 29)
+        Me.lblEmpleado.TabIndex = 216
+        Me.lblEmpleado.Text = "Empleado"
         '
         'Label1
         '
@@ -340,7 +360,7 @@ Partial Class frmMenu
         Me.btnMarca.Name = "btnMarca"
         Me.btnMarca.Size = New System.Drawing.Size(136, 115)
         Me.btnMarca.TabIndex = 199
-        Me.btnMarca.Text = "Producto"
+        Me.btnMarca.Text = "Precios"
         Me.btnMarca.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnMarca.UseVisualStyleBackColor = False
         '
@@ -508,35 +528,16 @@ Partial Class frmMenu
         Me.btnBanco.UseCompatibleTextRendering = True
         Me.btnBanco.UseVisualStyleBackColor = False
         '
-        'lblEmpleado
-        '
-        Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmpleado.Location = New System.Drawing.Point(255, 26)
-        Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(124, 29)
-        Me.lblEmpleado.TabIndex = 216
-        Me.lblEmpleado.Text = "Empleado"
-        '
-        'lblSucursal
-        '
-        Me.lblSucursal.AutoSize = True
-        Me.lblSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSucursal.Location = New System.Drawing.Point(255, 59)
-        Me.lblSucursal.Name = "lblSucursal"
-        Me.lblSucursal.Size = New System.Drawing.Size(106, 29)
-        Me.lblSucursal.TabIndex = 217
-        Me.lblSucursal.Text = "Sucursal"
-        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1370, 772)
+        Me.ClientSize = New System.Drawing.Size(1308, 772)
         Me.Controls.Add(Me.MetroPanel1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Name = "frmMenu"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         Me.ResumeLayout(False)

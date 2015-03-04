@@ -77,7 +77,7 @@
         Dim UserDisponible As Boolean = False
         pars.Add(New CParametro("pNombre", wUsuario))
         Try
-            Me.Conectar(False)
+            Me.Conectar(True)
             dr = Me.PedirDataReader("fu_identificarusuario", pars)
             If dr.Read = True Then
                 UserDisponible = True

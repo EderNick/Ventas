@@ -1,7 +1,7 @@
 ﻿Public Class frmCaja
 
-    Private Empleado As Empleado
-    Private Sucursal As Sucursal
+    Private Empleado As Empleado = modPrincipal.UsuarioLogeado.Empleado
+    Private Sucursal As Sucursal = modPrincipal.UsuarioLogeado.Empleado.Sucursal
     Private campos_faltan As String
 
     Private Sub ActivarControles(ByVal valor As Boolean)
@@ -98,11 +98,11 @@
             ca.FechaCierre = ca.FechaApertura
             ca.Estado = True 'la caja esta abierta
             ca.Empleado = New Empleado
-            'ca.Empleado.Codigo = Empleado.Codigo
-            ca.Empleado.Codigo = 1
+            ca.Empleado.Codigo = Empleado.Codigo
+            'ca.Empleado.Codigo = 1
             ca.Sucursal = New Sucursal
-            'ca.Sucursal.Codigo = Sucursal.Codigo
-            ca.Sucursal.Codigo = 1
+            ca.Sucursal.Codigo = Sucursal.Codigo
+            'ca.Sucursal.Codigo = 1
             rn = New RNCaja
             Try
 

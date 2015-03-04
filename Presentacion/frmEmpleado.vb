@@ -1,21 +1,24 @@
-﻿Public Class frmEmpleado
+﻿Imports System.Text.RegularExpressions
+Public Class frmEmpleado
 
     Private Actual As Empleado
+    Private sucursal As New Sucursal
+    Private campos_faltan As String
+    Private idsucursal As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         If rbNombre.Checked = True Then
-            ListarEmpleados()
+            ListarTodosEmpleados()
         Else
             ListarEmpleadosDNI()
         End If
     End Sub
 
-    Private Sub ListarEmpleados()
+    Private Sub ListarTodosEmpleados()
         Dim rn As New RNEmpleado
         Dim empleado As List(Of Empleado)
-
         Try
-            empleado = rn.Listar(Me.txtEmpleado.Text, 1)
+            empleado = rn.Listar(Me.txtEmpleado.Text, 1, idsucursal)
             modFunciones.EnlazarDatagridView(Me.dgvEmpleados, empleado)
             Me.dgvEmpleados.Focus()
         Catch ex As Exception
@@ -26,7 +29,7 @@
         Dim rn As New RNEmpleado
         Dim empleado As List(Of Empleado)
         Try
-            empleado = rn.Listar(Me.txtEmpleado.Text, 0)
+            empleado = rn.Listar(Me.txtEmpleado.Text, 0, idsucursal)
             modFunciones.EnlazarDatagridView(Me.dgvEmpleados, empleado)
             Me.dgvEmpleados.Focus()
         Catch ex As Exception
@@ -35,25 +38,11 @@
     End Sub
 
     Private Sub frmEmpleado_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ListarEmpleados()
-        ListarSucursal()
+        Me.ListarTodosEmpleados()
+        gbEmpleado.Enabled = False
     End Sub
-    Private Sub ListarSucursal()
-        Dim rn As New RNSucursal
-        Dim sucursal As List(Of Sucursal)
-
-        Try
-            sucursal = rn.Listar("")
-            modFunciones.ListarComboBox(Me.cboSucursal, sucursal, "Codigo", "ZonaNombre")
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            rn = Nothing
-        End Try
-
-    End Sub
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+    
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 
@@ -61,53 +50,101 @@
 
         Dim rn As RNEmpleado
         Dim Em As Empleado
-
-
-        If Me.ValidateChildren = True Then
-            Em = New Empleado
-            Em.Nombres = Me.txtNombres.Text
-            Em.Ap_Paterno = Me.txtAPaterno.Text
-            Em.Ap_Materno = Me.txtAMaterno.Text
-            Em.Dni = Me.txtDNI.Text
-            Em.Telefono = Me.txtTelefono.Text
-            Em.Correo = Me.txtCorreo.Text
-            Em.Cargo = Me.txtCargo.Text
-            Em.Sucursal = DirectCast(Me.cboSucursal.SelectedItem, Sucursal)
-            Em.Direccion = Me.txtDireccion.Text
-            Em.Celular = Me.txtCelular.Text
-            Em.Vigencia = Me.cboVigencia.Text
-            Em.Num_Licencia = Me.txtNLicencia.Text
-
-            rn = New RNEmpleado
-            Try
-                If Me.Actual Is Nothing Then
-                    rn.Registrar(Em)
-                    MessageBox.Show("Se Registro el Empleado con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                    limpiar()
-                    Me.ActivarControles(False)
-                    ListarEmpleados()
-                    limpiar()
-                Else
-                    If (MessageBox.Show("¿Esta seguro de Modificar los datos del Empleado?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-                        Em.Codigo = Me.Actual.Codigo
-                        rn.Actualizar(Em)
+        campos_faltan = ""
+        If CamposCompletos() = True Then
+            If Me.ValidateChildren = True Then
+                Em = New Empleado
+                Em.Nombres = Me.txtNombres.Text
+                Em.Ap_Paterno = Me.txtAPaterno.Text
+                Em.Ap_Materno = Me.txtAMaterno.Text
+                Em.Dni = Me.txtDNI.Text
+                Em.Telefono = Me.txtTelefono.Text
+                Em.Correo = Me.txtCorreo.Text
+                Em.Cargo = Me.cmbTipo.Text
+                Em.Direccion = Me.txtDireccion.Text
+                Em.Celular = Me.txtCelular.Text
+                Em.Vigencia = Me.cboVigencia.Text
+                Em.Num_Licencia = Me.txtNLicencia.Text
+                rn = New RNEmpleado
+                Try
+                    If Me.Actual Is Nothing Then
+                        rn.Registrar(Em, idsucursal)
+                        MessageBox.Show("Se Registro el Empleado con Exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         limpiar()
                         Me.ActivarControles(False)
-                        ListarEmpleados()
+                        gbEmpleado.Enabled = False
+                        ListarTodosEmpleados()
+                        limpiar()
                     Else
-                        Me.ActivarControles(True)
+                        If (MessageBox.Show("¿Esta seguro de Modificar los datos del Empleado?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                            Em.Codigo = Me.Actual.Codigo
+                            rn.Actualizar(Em, idsucursal)
+                            limpiar()
+                            Me.ActivarControles(False)
+                            gbEmpleado.Enabled = False
+                            ListarTodosEmpleados()
+                        Else
+                            Me.ActivarControles(True)
+                        End If
                     End If
-                End If
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                rn = Nothing
-                e = Nothing
-            End Try
-
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    rn = Nothing
+                    e = Nothing
+                End Try
             End If
+        Else
+            MessageBox.Show(Me, "Es necesario completar todos los campos" & vbNewLine & campos_faltan, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
+
+    Private Function CamposCompletos() As Boolean
+        Dim Completo As Boolean = True
+        If txtNombres.Text = "" Then
+            campos_faltan = campos_faltan & "  - Nombre(Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtAPaterno.Text = "" Then
+            campos_faltan = campos_faltan & "  - Apellido-Paterno(Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtAMaterno.Text = "" Then
+            campos_faltan = campos_faltan & "  - Apellido-aterno(Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If txtDNI.Text = "" Or Len(txtDNI.Text) < 8 Then
+            campos_faltan = campos_faltan & "  - DNI(Debe tener 8 digitos de DNI)." & vbNewLine
+            Completo = False
+        End If
+        If txtDireccion.Text = "" Then
+            campos_faltan = campos_faltan & "  - Direccion( falta completar)." & vbNewLine
+            Completo = False
+        End If
+        If cmbTipo.Text = "" Then
+            campos_faltan = campos_faltan & "  - TipoEmpleado(Falta Completar)." & vbNewLine
+            Completo = False
+        End If
+        If cboVigencia.Text = "" Then
+            campos_faltan = campos_faltan & "  - Vigencia(Seleccionar Vigencia)." & vbNewLine
+            Completo = False
+        End If
+        If txtCelular.Text <> "" Then
+            If Len(txtCelular.Text) < 9 Then
+                campos_faltan = campos_faltan & "  - Celular ( 9 digitos de celular)." & vbNewLine
+                Completo = False
+            End If
+        End If
+        If txtTelefono.Text <> "" Then
+            If Len(txtTelefono.Text) < 6 Then
+                campos_faltan = campos_faltan & "  - telefono ( 6 digitos de celular)." & vbNewLine
+                Completo = False
+            End If
+        End If
+        Return Completo
+    End Function
+
 
     Private Sub btnModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar.Click
         If Me.dgvEmpleados.CurrentRow IsNot Nothing Then
@@ -121,21 +158,20 @@
     Private Sub PresentarDatos()
         Dim rn As New RNEmpleado
         Try
-            Me.Actual = rn.Leer(Me.Actual)
+            Me.Actual = rn.Leer(Me.Actual, idsucursal)
             If Me.Actual IsNot Nothing Then
                 With Me.Actual
                     Me.txtNombres.Text = .Nombres
                     Me.txtAPaterno.Text = .Ap_Paterno
                     Me.txtAMaterno.Text = .Ap_Materno
-                    Me.txtCargo.Text = .Cargo
+                    cmbTipo.SelectedItem = .Cargo
                     Me.txtDNI.Text = .Dni
                     Me.txtNLicencia.Text = .Num_Licencia
                     Me.txtDireccion.Text = .Direccion
                     Me.txtTelefono.Text = .Telefono
                     Me.txtCelular.Text = .Celular
                     Me.txtCorreo.Text = .Correo
-                    Me.cboVigencia.Text = .Vigencia
-                    Me.cboSucursal.Text = .Sucursal.Direccion
+                    Me.cboVigencia.SelectedItem = .Vigencia
                 End With
                 Me.ActivarControles(True)
             Else
@@ -153,13 +189,15 @@
         Me.txtDNI.Clear()
         Me.txtTelefono.Clear()
         Me.txtCorreo.Clear()
-        Me.txtCargo.Clear()
-        Me.cboSucursal.SelectedItem = -1
+        Me.cmbTipo.selecteditem = -1
         Me.txtDireccion.Clear()
         Me.txtCelular.Clear()
         Me.cboVigencia.SelectedItem = -1
         Me.txtNLicencia.Clear()
+        Me.MetroRadioButton1.Checked = False
+        Me.txtNLicencia.Enabled = False
         Me.txtEmpleado.Clear()
+    
     End Sub
 
     Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
@@ -177,11 +215,11 @@
         End If
     End Sub
 
-    Private Sub txtCelular_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCelular.KeyPress, txtTelefono.KeyPress, txtDNI.KeyPress
+    Private Sub txtCelular_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCelular.KeyPress, txtTelefono.KeyPress, txtDNI.KeyPress, txtNLicencia.KeyPress
         teclear(e, False)
     End Sub
 
-    Private Sub txtNombres_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombres.KeyPress, txtAMaterno.KeyPress, txtAPaterno.KeyPress, txtCargo.KeyPress
+    Private Sub txtNombres_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNombres.KeyPress, txtAMaterno.KeyPress, txtAPaterno.KeyPress
         teclear(e, True)
     End Sub
 
@@ -221,8 +259,34 @@
         End If
     End Sub
 
-    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         limpiar()
         Me.ActivarControles(False)
+    End Sub
+
+    Public Function validar_Mail(ByVal Mail As String) As Boolean
+        Return Regex.IsMatch(Mail, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
+    End Function
+
+
+
+    Private Sub txtCorreo_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCorreo.Leave
+        If validar_Mail(LCase(txtCorreo.Text)) = False Then
+            If (txtCorreo.Text <> "") Then
+                MessageBox.Show("Dirección de correo electronico no valida, el correo debe tener el formato: nombre@dominio.com, ingrese un correo valido", "Validación de correo electronico", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation)
+                txtCorreo.Focus()
+                txtCorreo.Clear()
+            End If
+        End If
+    End Sub
+
+
+    Private Sub btnSalir_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Close()
+    End Sub
+
+    Private Sub MetroRadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MetroRadioButton1.CheckedChanged
+        txtNLicencia.Enabled = True
     End Sub
 End Class

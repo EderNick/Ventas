@@ -1,13 +1,13 @@
 ﻿Public Class RNEmpleado
     Inherits CADO
-    Function Listar(ByVal wEmpleado As String, ByVal sw As Byte) As List(Of Empleado)
+    Function Listar(ByVal wEmpleado As String, ByVal sw As Byte, ByVal id As Integer) As List(Of Empleado)
         Dim param As New List(Of CParametro)
         Dim emp As Empleado = Nothing
         Dim empleados As List(Of Empleado) = Nothing
         Dim dr As Npgsql.NpgsqlDataReader = Nothing
 
         param.Add(New CParametro("pnombre", wEmpleado))
-
+        param.Add(New CParametro("pid", id))
         Try
             Me.Conectar(True)
             If (sw = 1) Then
@@ -22,6 +22,7 @@
                 emp.Nombres = dr.Item("nombres")
                 emp.Ap_Paterno = dr.Item("ap_paterno")
                 emp.Ap_Materno = dr.Item("ap_materno")
+                emp.Cargo = Convert.ToString(dr.Item("cargo"))
                 emp.Dni = dr.Item("dni")
                 emp.Direccion = Convert.ToString(dr.Item("direccion"))
                 emp.Correo = Convert.ToString(dr.Item("correo"))
@@ -39,7 +40,7 @@
         Return empleados
     End Function
 
-    Public Sub Registrar(ByVal wEmpleado As Empleado)
+    Public Sub Registrar(ByVal wEmpleado As Empleado, ByVal sucursal As Integer)
         Dim pars As New List(Of CParametro)
         pars.Add(New CParametro("pnombres", wEmpleado.Nombres))
         pars.Add(New CParametro("pPaterno", wEmpleado.Ap_Paterno))
@@ -48,7 +49,7 @@
         pars.Add(New CParametro("pfono", wEmpleado.Telefono))
         pars.Add(New CParametro("pcorreo", wEmpleado.Correo))
         pars.Add(New CParametro("pcargo", wEmpleado.Cargo))
-        pars.Add(New CParametro("pIdSucursal", wEmpleado.Sucursal.Codigo))
+        pars.Add(New CParametro("pIdSucursal", sucursal))
         pars.Add(New CParametro("pdireccion", wEmpleado.Direccion))
         pars.Add(New CParametro("pcelular", wEmpleado.Celular))
         pars.Add(New CParametro("pvigencia", wEmpleado.Vigencia))
@@ -70,12 +71,13 @@
         End Try
     End Sub
 
-    Public Function Leer(ByVal wEmpleado As Empleado) As Empleado
+    Public Function Leer(ByVal wEmpleado As Empleado, ByVal id As Integer) As Empleado
         Dim pars As New List(Of CParametro)
         Dim dr As NpgsqlDataReader = Nothing
         Dim Em As Empleado = Nothing
 
         pars.Add(New CParametro("pCodigo", wEmpleado.Codigo))
+        pars.Add(New CParametro("pid", id))
 
         Try
             Me.Conectar(False)
@@ -94,8 +96,6 @@
                 Em.Celular = Convert.ToString(dr.Item("celular"))
                 Em.Correo = Convert.ToString(dr.Item("correo"))
                 Em.Vigencia = dr.Item("vigencia")
-                Em.Sucursal = New Sucursal
-                Em.Sucursal.Direccion = dr.Item("direccion")
 
             End If
 
@@ -112,7 +112,7 @@
         Return Em
     End Function
 
-    Public Sub Actualizar(ByVal wEmpleado As Empleado)
+    Public Sub Actualizar(ByVal wEmpleado As Empleado, ByVal id As Integer)
 
         Dim pars As New List(Of CParametro)
 
@@ -124,7 +124,7 @@
         pars.Add(New CParametro("pfono", wEmpleado.Telefono))
         pars.Add(New CParametro("pcorreo", wEmpleado.Correo))
         pars.Add(New CParametro("pcargo", wEmpleado.Cargo))
-        pars.Add(New CParametro("pIdSucursal", wEmpleado.Sucursal.Codigo))
+        pars.Add(New CParametro("pIdSucursal", id))
         pars.Add(New CParametro("pdireccion", wEmpleado.Direccion))
         pars.Add(New CParametro("pcelular", wEmpleado.Celular))
         pars.Add(New CParametro("pvigencia", wEmpleado.Vigencia))

@@ -135,7 +135,7 @@ Public Class frmSucursal
             s.zona.Departamento = New Departamento
             s.zona.Departamento = DirectCast(cboDepartamento.SelectedItem, Departamento)
             s.Empresa = New Empresa
-            s.Empresa.Codigo = 1
+            s.Empresa.Codigo = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Empresa.Codigo
             rn = New RNSucursal
             Try
                 If Me.Actual Is Nothing Then

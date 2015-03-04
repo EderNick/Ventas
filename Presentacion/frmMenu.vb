@@ -25,16 +25,24 @@
         frm.ShowDialog()
     End Sub
 
-        frm.ShowDialog()
-    End Sub
 
     Private Sub btnEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpresa.Click
         Dim frm As frmEmpresa
         frm = New frmEmpresa
         frm.ShowDialog()
+    End Sub
     Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
         Dim frm As New frmUsuario
         frm.ShowDialog()
     End Sub
+
+    Private Sub btnEmpleado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpleado.Click
+        Dim frm As New frmEmpleado
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub btnMarca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMarca.Click
+        Dim frm As New frmDetalleSucursal
+        frm.ShowDialog()
     End Sub
 End Class

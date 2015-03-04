@@ -1,16 +1,17 @@
 ﻿Module modPrincipal
     Public nombre_user As String = ""
-    Public UsuarioActual As Usuario
+    Public UsuarioLogeado As New Usuario
 
     Public Sub Main()
         Dim frm As New frmLogin
         Dim frmPrinc As frmMenu
 
-        UsuarioActual = frm.Identificar()
-        If UsuarioActual IsNot Nothing Then
+        UsuarioLogeado = frm.Identificar()
+        If UsuarioLogeado IsNot Nothing Then
             frmPrinc = New frmMenu
-            frmPrinc.lblEmpleado.Text = UsuarioActual.Empleado.NombreEmpleado
-            frmPrinc.lblSucursal.Text = UsuarioActual.Empleado.Sucursal.Nombre
+
+            frmPrinc.lblEmpleado.Text = UsuarioLogeado.Empleado.NombreEmpleado
+            frmPrinc.lblSucursal.Text = UsuarioLogeado.Empleado.Sucursal.Nombre
             frmPrinc.ShowDialog()
         End If
 
