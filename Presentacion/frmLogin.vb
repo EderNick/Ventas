@@ -70,6 +70,7 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text,
                 MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Usuario = Nothing
         Finally
             rn = Nothing
         End Try

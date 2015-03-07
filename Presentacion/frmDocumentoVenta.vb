@@ -2,7 +2,7 @@
 
 
 
-    Private Sub MetroLabel18_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MetroLabel18.Click
+    Private Sub MetroLabel18_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -18,7 +18,7 @@
 
     End Sub
 
-    Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
+    Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 End Class

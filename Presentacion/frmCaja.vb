@@ -4,18 +4,11 @@
     Private Sucursal As Sucursal = modPrincipal.UsuarioLogeado.Empleado.Sucursal
     Private campos_faltan As String
 
-    Private Sub ActivarControles(ByVal valor As Boolean)
-        gbCaja.Enabled = valor
-        dgvCaja.Enabled = Not valor
-    End Sub
-
     Private Sub LimpiarControles()
         txtNumero.Text = ""
         txtDescripcion.Text = ""
         txtMontoApertura.Text = ""
         txtMontoCierre.Text = ""
-        dtpApertura.Value = Now
-        dtpCierre.Value = Now
     End Sub
 
     Private Sub CargarCajasAbiertas()
@@ -34,22 +27,6 @@
         End Try
     End Sub
 
-    Private Sub ListarCajas()
-        Dim rn As RNCaja
-        Dim cajas As List(Of Caja)
-
-        rn = New RNCaja
-
-        Try
-            cajas = rn.Listar()
-            modFunciones.EnlazarDatagridView(Me.dgvCaja, cajas)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            rn = Nothing
-        End Try
-    End Sub
-
     Private Function CamposCompletosIniciar() As Boolean
         Dim Completo As Boolean = True
         If txtNumero.Text = "" Then
@@ -58,10 +35,6 @@
         End If
         If txtMontoApertura.Text = "" Then
             campos_faltan = campos_faltan & "  - Monto de apertura (Falta completar)." & vbNewLine
-            Completo = False
-        End If
-        If dtpApertura.Value.Date < Now.Date Then
-            campos_faltan = campos_faltan & "  - Fecha de apertua (Es menor a la fecha de Hoy)." & vbNewLine
             Completo = False
         End If
         Return Completo
@@ -77,10 +50,6 @@
             campos_faltan = campos_faltan & "  - Monto de cierre (Falta completar)." & vbNewLine
             Completo = False
         End If
-        If dtpCierre.Value.Date < Now.Date Then
-            campos_faltan = campos_faltan & "  - Fecha de cierre (Es menor a la fecha de Hoy)." & vbNewLine
-            Completo = False
-        End If
         Return Completo
     End Function
 
@@ -94,7 +63,7 @@
             ca.Descripcion = Me.txtDescripcion.Text
             ca.MontoApertura = CDbl(txtMontoApertura.Text)
             ca.MontoCierre = ca.MontoApertura
-            ca.FechaApertura = dtpApertura.Value
+            ca.FechaApertura = Now
             ca.FechaCierre = ca.FechaApertura
             ca.Estado = True 'la caja esta abierta
             ca.Empleado = New Empleado
@@ -108,9 +77,7 @@
 
                 rn.Registrar(ca)
                 MetroMessageBox.Show(Me, "Se inició caja corectamente.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ListarCajas()
                 CargarCajasAbiertas()
-                Me.ActivarControles(False)
                 'ListarCajas("")
             Catch ex As Exception
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -125,28 +92,13 @@
         End If
     End Sub
 
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo.Click
-        ActivarControles(True)
-        LimpiarControles()
-    End Sub
-
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
-        Me.Close()
-    End Sub
-
-    Private Sub btnAhoraI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAhoraI.Click, btnAhoraC.Click
-        dtpApertura.Value = Now
-        dtpCierre.Value = Now
-    End Sub
-
     Private Sub frmCaja_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ListarCajas()
         CargarCajasAbiertas()
     End Sub
 
     Private Sub btnCancelarInicio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelarInicio.Click
         LimpiarControles()
-        ActivarControles(False)
+        Me.Close()
     End Sub
 
     Private Sub btnGuardarCierre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardarCierre.Click
@@ -159,7 +111,7 @@
             ca.Codigo = DirectCast(cboCajasAbiertas.SelectedItem, Caja).Codigo
             ca.Descripcion = Me.txtObservacion.Text
             ca.MontoCierre = CDbl(txtMontoCierre.Text)
-            ca.FechaCierre = dtpCierre.Value
+            ca.FechaCierre = Now
             ca.Estado = False 'la caja se cierra
 
             rn = New RNCaja
@@ -167,10 +119,7 @@
 
                 rn.Actualizar(ca)
                 MetroMessageBox.Show(Me, "Se cerró la caja " + cboCajasAbiertas.Text + " exitosamente.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ListarCajas()
                 CargarCajasAbiertas()
-                Me.ActivarControles(False)
-                'ListarCajas("")
             Catch ex As Exception
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
@@ -185,23 +134,6 @@
 
     Private Sub btnCancelarCierre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelarCierre.Click
         LimpiarControles()
+        Me.Close()
     End Sub
-
-    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim rn As RNCaja
-        Dim cajas As List(Of Caja)
-
-        Try
-            If Me.txtCaja.Text = "" Then
-                ListarCajas()
-            Else
-                rn = New RNCaja
-                cajas = rn.BuscarPorNumero(CInt(Me.txtCaja.Text))
-                modFunciones.EnlazarDatagridView(dgvCaja, cajas)
-            End If
-        Catch ex As Exception
-            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
 End Class
