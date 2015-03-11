@@ -23,8 +23,8 @@ Partial Class frmOrdenPedido
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOrdenPedido))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
@@ -124,7 +124,7 @@ Partial Class frmOrdenPedido
         Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.MetroTextBox2.SelectedText = ""
         Me.MetroTextBox2.Size = New System.Drawing.Size(129, 23)
-        Me.MetroTextBox2.TabIndex = 50
+        Me.MetroTextBox2.TabIndex = 1
         Me.MetroTextBox2.UseSelectable = True
         '
         'GroupBox3
@@ -158,7 +158,7 @@ Partial Class frmOrdenPedido
         Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.MetroTextBox1.SelectedText = ""
         Me.MetroTextBox1.Size = New System.Drawing.Size(129, 23)
-        Me.MetroTextBox1.TabIndex = 195
+        Me.MetroTextBox1.TabIndex = 1
         Me.MetroTextBox1.UseSelectable = True
         '
         'MetroButton1
@@ -166,7 +166,7 @@ Partial Class frmOrdenPedido
         Me.MetroButton1.Location = New System.Drawing.Point(734, 111)
         Me.MetroButton1.Name = "MetroButton1"
         Me.MetroButton1.Size = New System.Drawing.Size(75, 23)
-        Me.MetroButton1.TabIndex = 194
+        Me.MetroButton1.TabIndex = 2
         Me.MetroButton1.Text = "AGREGAR"
         Me.MetroButton1.UseSelectable = True
         '
@@ -198,7 +198,7 @@ Partial Class frmOrdenPedido
         Me.Button3.Location = New System.Drawing.Point(507, 25)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(37, 32)
-        Me.Button3.TabIndex = 183
+        Me.Button3.TabIndex = 0
         Me.Button3.UseVisualStyleBackColor = False
         '
         'MetroTextBox6
@@ -245,17 +245,17 @@ Partial Class frmOrdenPedido
         '
         'DataGridView1
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1, Me.DataGridViewTextBoxColumn5})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 440)
@@ -315,7 +315,7 @@ Partial Class frmOrdenPedido
         Me.MetroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.MetroTextBox9.SelectedText = ""
         Me.MetroTextBox9.Size = New System.Drawing.Size(322, 23)
-        Me.MetroTextBox9.TabIndex = 181
+        Me.MetroTextBox9.TabIndex = 0
         Me.MetroTextBox9.UseSelectable = True
         '
         'MetroButton2
@@ -323,7 +323,7 @@ Partial Class frmOrdenPedido
         Me.MetroButton2.Location = New System.Drawing.Point(811, 440)
         Me.MetroButton2.Name = "MetroButton2"
         Me.MetroButton2.Size = New System.Drawing.Size(39, 23)
-        Me.MetroButton2.TabIndex = 188
+        Me.MetroButton2.TabIndex = 2
         Me.MetroButton2.Text = "X"
         Me.MetroButton2.UseSelectable = True
         '
@@ -354,7 +354,7 @@ Partial Class frmOrdenPedido
         Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
         Me.MetroDateTime1.Name = "MetroDateTime1"
         Me.MetroDateTime1.Size = New System.Drawing.Size(157, 29)
-        Me.MetroDateTime1.TabIndex = 52
+        Me.MetroDateTime1.TabIndex = 1
         '
         'MetroTextBox5
         '
@@ -422,7 +422,7 @@ Partial Class frmOrdenPedido
         Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.MetroTextBox7.SelectedText = ""
         Me.MetroTextBox7.Size = New System.Drawing.Size(121, 23)
-        Me.MetroTextBox7.TabIndex = 40
+        Me.MetroTextBox7.TabIndex = 0
         Me.MetroTextBox7.UseCustomForeColor = True
         Me.MetroTextBox7.UseSelectable = True
         '
@@ -454,7 +454,7 @@ Partial Class frmOrdenPedido
         Me.Button2.Location = New System.Drawing.Point(721, 177)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(45, 44)
-        Me.Button2.TabIndex = 182
+        Me.Button2.TabIndex = 0
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button8
@@ -471,7 +471,7 @@ Partial Class frmOrdenPedido
         Me.Button8.Location = New System.Drawing.Point(158, 3)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(59, 46)
-        Me.Button8.TabIndex = 148
+        Me.Button8.TabIndex = 0
         Me.Button8.UseVisualStyleBackColor = False
         '
         'Button7

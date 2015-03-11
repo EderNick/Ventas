@@ -40,35 +40,39 @@
 
             If UCase(UsuarioLogeado.TipoUsuario.Nombre) = "NORMAL" Then
                 If UsuarioLogeado.TipoUsuario.Modulo.Trim = "Ventas" Then
-                    Dim frmC As New frmCajaInicio
-                    Dim frmV As New frmDocumentoVenta
 
+                    If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERO" Then
+                        Dim frmC As New frmCajaInicio
+                        Dim rn As New RNCaja
+                        Dim caja As New Caja
+                        caja = rn.CargarCajaAbiertaxEmpleado(UsuarioLogeado.Empleado.Codigo)
+                        If caja Is Nothing Then
+                            'si llega vacio, este usuario no tiene cajas abiertas
+                            CajaActualAbierta = frmC.IniciarCaja()
 
-                    Dim rn As New RNCaja
-                    Dim caja As New Caja
-                    caja = rn.CargarCajaAbiertaxEmpleado(UsuarioLogeado.Empleado.Codigo)
-                    If caja Is Nothing Then
-                        'si llega vacio, este usuario no tiene cajas abiertas
-                        CajaActualAbierta = frmC.IniciarCaja()
-
-                    Else
-                        CajaActualAbierta = caja
-                        MessageBox.Show("Su caja ha sido reanudada.", "Caja Reanudada", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-
-                    If CajaActualAbierta IsNot Nothing Then
-                        'CajaActualAbierta será Nothing si al momento de Iniciar Caja dan click en cancelar
-                        frmV.ShowDialog()
-
-                        'Una vez cerrado el formulairo de VENTAS debe preguntar si desea cerrar su caja:::
-                        If MessageBox.Show("¿Desea cerrar su caja ahora mismo?", "Cerrar Caja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then
-                            Dim frmCerrar As New frmCajaCierre
-                            frmCerrar.ShowDialog()
+                        Else
+                            CajaActualAbierta = caja
+                            MessageBox.Show("Su caja ha sido reanudada.", "Caja Reanudada", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
 
+                        If CajaActualAbierta IsNot Nothing Then
+                            Dim frmV As New frmDocumentoVenta
+                            'CajaActualAbierta será Nothing si al momento de Iniciar Caja dan click en cancelar
+                            frmV.ShowDialog()
+
+                            'Una vez cerrado el formulairo de VENTAS debe preguntar si desea cerrar su caja:::
+                            If MessageBox.Show("¿Desea cerrar su caja ahora mismo?", "Cerrar Caja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then
+                                Dim frmCerrar As New frmCajaCierre
+                                frmCerrar.ShowDialog()
+                            End If
+                        End If
                     End If
 
-                    
+                    If UCase(UsuarioLogeado.Empleado.Cargo) = "VENDEDOR" Then
+                        Dim frmOP As New frmOrdenPedido
+                        frmOP.ShowDialog()
+                    End If
+
                 End If
 
                 If UsuarioLogeado.TipoUsuario.Modulo = "Compras" Then

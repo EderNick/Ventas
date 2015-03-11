@@ -48,6 +48,7 @@
                     usu.Empleado.Nombres = dr.Item("nombres")
                     usu.Empleado.Ap_Paterno = dr.Item("ap_paterno")
                     usu.Empleado.Ap_Materno = dr.Item("ap_materno")
+                    usu.Empleado.Cargo = dr.Item("cargo")
                     usu.Empleado.Sucursal = New Sucursal
                     usu.Empleado.Sucursal.Codigo = dr.Item("idsucursal")
                     usu.Empleado.Sucursal.Nombre = dr.Item("sucursal")
