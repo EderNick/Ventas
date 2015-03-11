@@ -87,6 +87,12 @@
     <Import Include="Ventas.Reglas" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCajaCierre.Designer.vb">
+      <DependentUpon>frmCajaCierre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCajaCierre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBuscarEmpleado.Designer.vb">
       <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </Compile>
@@ -142,10 +148,10 @@
     <Compile Include="frmBancoVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCaja.Designer.vb">
-      <DependentUpon>frmCaja.vb</DependentUpon>
+    <Compile Include="frmCajaInicio.Designer.vb">
+      <DependentUpon>frmCajaInicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCaja.vb">
+    <Compile Include="frmCajaInicio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCategoriaCliente.Designer.vb">
@@ -286,14 +292,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCajaCierre.resx">
+      <DependentUpon>frmCajaCierre.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBancoVenta.resx">
       <DependentUpon>frmBancoVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarEmpleado.resx">
       <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCaja.resx">
-      <DependentUpon>frmCaja.vb</DependentUpon>
+    <EmbeddedResource Include="frmCajaInicio.resx">
+      <DependentUpon>frmCajaInicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaCliente.resx">
       <DependentUpon>frmCategoriaCliente.vb</DependentUpon>

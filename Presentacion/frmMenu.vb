@@ -14,8 +14,8 @@
     End Sub
 
     Private Sub btnCaja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCaja.Click
-        Dim frm As frmCaja
-        frm = New frmCaja
+        Dim frm As frmCajaInicio
+        frm = New frmCajaInicio
         frm.ShowDialog()
     End Sub
 

@@ -60,16 +60,13 @@
                 modPrincipal.nombre_user = txtUser.Text
                 'frmSucursal.Show()
             Else
-                MessageBox.Show("Datos Incorrectos",
-                  Me.Text, MessageBoxButtons.OK,
-                  MessageBoxIcon.Information)
+                MetroMessageBox.Show(Me, "Datos Incorrectos", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Me.txtUser.Text = ""
                 Me.txtPasword.Text = ""
                 Me.txtUser.Focus()
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text,
-                MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Usuario = Nothing
         Finally
             rn = Nothing

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmCaja
+Partial Class frmCajaInicio
 
     Inherits MetroFramework.Forms.MetroForm
 
@@ -23,9 +23,9 @@ Partial Class frmCaja
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCaja))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCajaInicio))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
@@ -40,17 +40,6 @@ Partial Class frmCaja
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.txtDescripcion = New MetroFramework.Controls.MetroTextBox()
         Me.txtNumero = New MetroFramework.Controls.MetroTextBox()
-        Me.tabCerrar = New MetroFramework.Controls.MetroTabPage()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnCancelarCierre = New System.Windows.Forms.Button()
-        Me.btnGuardarCierre = New System.Windows.Forms.Button()
-        Me.gbCierreCaja = New System.Windows.Forms.GroupBox()
-        Me.cboCajasAbiertas = New MetroFramework.Controls.MetroComboBox()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.txtObservacion = New MetroFramework.Controls.MetroTextBox()
-        Me.txtMontoCierre = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
@@ -60,9 +49,6 @@ Partial Class frmCaja
         Me.tabIniciar.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.gbCaja.SuspendLayout()
-        Me.tabCerrar.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.gbCierreCaja.SuspendLayout()
         CType(Me.dgbCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,10 +79,10 @@ Partial Class frmCaja
         Me.MetroTile2.ForeColor = System.Drawing.Color.DodgerBlue
         Me.MetroTile2.Location = New System.Drawing.Point(0, 1)
         Me.MetroTile2.Name = "MetroTile2"
-        Me.MetroTile2.Size = New System.Drawing.Size(523, 64)
+        Me.MetroTile2.Size = New System.Drawing.Size(516, 64)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile2.TabIndex = 158
-        Me.MetroTile2.Text = "REGISTRO DE CAJA"
+        Me.MetroTile2.Text = "INICIO DE CAJA"
         Me.MetroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.MetroTile2.Theme = MetroFramework.MetroThemeStyle.Light
         Me.MetroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -112,11 +98,10 @@ Partial Class frmCaja
         Me.MetroTabControl1.AllowDrop = True
         Me.MetroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.MetroTabControl1.Controls.Add(Me.tabIniciar)
-        Me.MetroTabControl1.Controls.Add(Me.tabCerrar)
         Me.MetroTabControl1.Location = New System.Drawing.Point(0, 71)
         Me.MetroTabControl1.Multiline = True
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(516, 283)
         Me.MetroTabControl1.TabIndex = 0
         Me.MetroTabControl1.UseSelectable = True
@@ -280,7 +265,7 @@ Partial Class frmCaja
         '
         'txtNumero
         '
-        Me.txtNumero.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtNumero.BackColor = System.Drawing.Color.White
         Me.txtNumero.Lines = New String(-1) {}
         Me.txtNumero.Location = New System.Drawing.Point(161, 25)
         Me.txtNumero.MaxLength = 32767
@@ -291,166 +276,6 @@ Partial Class frmCaja
         Me.txtNumero.Size = New System.Drawing.Size(137, 23)
         Me.txtNumero.TabIndex = 0
         Me.txtNumero.UseSelectable = True
-        '
-        'tabCerrar
-        '
-        Me.tabCerrar.Controls.Add(Me.Panel3)
-        Me.tabCerrar.Controls.Add(Me.gbCierreCaja)
-        Me.tabCerrar.HorizontalScrollbarBarColor = True
-        Me.tabCerrar.HorizontalScrollbarHighlightOnWheel = False
-        Me.tabCerrar.HorizontalScrollbarSize = 10
-        Me.tabCerrar.Location = New System.Drawing.Point(4, 41)
-        Me.tabCerrar.Name = "tabCerrar"
-        Me.tabCerrar.Size = New System.Drawing.Size(508, 238)
-        Me.tabCerrar.TabIndex = 1
-        Me.tabCerrar.Text = "Cerrar Caja"
-        Me.tabCerrar.VerticalScrollbarBarColor = True
-        Me.tabCerrar.VerticalScrollbarHighlightOnWheel = False
-        Me.tabCerrar.VerticalScrollbarSize = 10
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.Black
-        Me.Panel3.Controls.Add(Me.btnCancelarCierre)
-        Me.Panel3.Controls.Add(Me.btnGuardarCierre)
-        Me.Panel3.Location = New System.Drawing.Point(3, 169)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(500, 68)
-        Me.Panel3.TabIndex = 176
-        '
-        'btnCancelarCierre
-        '
-        Me.btnCancelarCierre.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelarCierre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCancelarCierre.FlatAppearance.BorderSize = 0
-        Me.btnCancelarCierre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancelarCierre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnCancelarCierre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelarCierre.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarCierre.ForeColor = System.Drawing.Color.White
-        Me.btnCancelarCierre.Image = CType(resources.GetObject("btnCancelarCierre.Image"), System.Drawing.Image)
-        Me.btnCancelarCierre.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancelarCierre.Location = New System.Drawing.Point(428, -2)
-        Me.btnCancelarCierre.Name = "btnCancelarCierre"
-        Me.btnCancelarCierre.Size = New System.Drawing.Size(72, 72)
-        Me.btnCancelarCierre.TabIndex = 1
-        Me.btnCancelarCierre.Text = "Cancelar"
-        Me.btnCancelarCierre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCancelarCierre.UseVisualStyleBackColor = False
-        '
-        'btnGuardarCierre
-        '
-        Me.btnGuardarCierre.BackColor = System.Drawing.Color.Transparent
-        Me.btnGuardarCierre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnGuardarCierre.FlatAppearance.BorderSize = 0
-        Me.btnGuardarCierre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnGuardarCierre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnGuardarCierre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardarCierre.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarCierre.ForeColor = System.Drawing.Color.White
-        Me.btnGuardarCierre.Image = CType(resources.GetObject("btnGuardarCierre.Image"), System.Drawing.Image)
-        Me.btnGuardarCierre.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardarCierre.Location = New System.Drawing.Point(279, -2)
-        Me.btnGuardarCierre.Name = "btnGuardarCierre"
-        Me.btnGuardarCierre.Size = New System.Drawing.Size(143, 72)
-        Me.btnGuardarCierre.TabIndex = 0
-        Me.btnGuardarCierre.Text = "Guardar Cierre de Caja"
-        Me.btnGuardarCierre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnGuardarCierre.UseVisualStyleBackColor = False
-        '
-        'gbCierreCaja
-        '
-        Me.gbCierreCaja.BackColor = System.Drawing.Color.White
-        Me.gbCierreCaja.Controls.Add(Me.cboCajasAbiertas)
-        Me.gbCierreCaja.Controls.Add(Me.MetroLabel5)
-        Me.gbCierreCaja.Controls.Add(Me.MetroLabel1)
-        Me.gbCierreCaja.Controls.Add(Me.txtObservacion)
-        Me.gbCierreCaja.Controls.Add(Me.txtMontoCierre)
-        Me.gbCierreCaja.Controls.Add(Me.MetroLabel8)
-        Me.gbCierreCaja.Location = New System.Drawing.Point(3, 3)
-        Me.gbCierreCaja.Name = "gbCierreCaja"
-        Me.gbCierreCaja.Size = New System.Drawing.Size(500, 160)
-        Me.gbCierreCaja.TabIndex = 2
-        Me.gbCierreCaja.TabStop = False
-        '
-        'cboCajasAbiertas
-        '
-        Me.cboCajasAbiertas.FontSize = MetroFramework.MetroComboBoxSize.Small
-        Me.cboCajasAbiertas.FormattingEnabled = True
-        Me.cboCajasAbiertas.ItemHeight = 19
-        Me.cboCajasAbiertas.Location = New System.Drawing.Point(161, 25)
-        Me.cboCajasAbiertas.Name = "cboCajasAbiertas"
-        Me.cboCajasAbiertas.Size = New System.Drawing.Size(137, 25)
-        Me.cboCajasAbiertas.TabIndex = 0
-        Me.cboCajasAbiertas.UseSelectable = True
-        '
-        'MetroLabel5
-        '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(27, 25)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(123, 19)
-        Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel5.TabIndex = 189
-        Me.MetroLabel5.Text = "NÚMERO DE CAJA"
-        Me.MetroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel5.UseCustomBackColor = True
-        Me.MetroLabel5.UseCustomForeColor = True
-        Me.MetroLabel5.UseStyleColors = True
-        '
-        'MetroLabel1
-        '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(27, 113)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(113, 19)
-        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel1.TabIndex = 186
-        Me.MetroLabel1.Text = "OBSERVACIONES"
-        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel1.UseCustomBackColor = True
-        Me.MetroLabel1.UseCustomForeColor = True
-        Me.MetroLabel1.UseStyleColors = True
-        '
-        'txtObservacion
-        '
-        Me.txtObservacion.Lines = New String(-1) {}
-        Me.txtObservacion.Location = New System.Drawing.Point(161, 113)
-        Me.txtObservacion.MaxLength = 25
-        Me.txtObservacion.Name = "txtObservacion"
-        Me.txtObservacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtObservacion.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtObservacion.SelectedText = ""
-        Me.txtObservacion.Size = New System.Drawing.Size(320, 23)
-        Me.txtObservacion.TabIndex = 4
-        Me.txtObservacion.UseSelectable = True
-        '
-        'txtMontoCierre
-        '
-        Me.txtMontoCierre.Lines = New String(-1) {}
-        Me.txtMontoCierre.Location = New System.Drawing.Point(161, 70)
-        Me.txtMontoCierre.MaxLength = 32767
-        Me.txtMontoCierre.Name = "txtMontoCierre"
-        Me.txtMontoCierre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtMontoCierre.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtMontoCierre.SelectedText = ""
-        Me.txtMontoCierre.Size = New System.Drawing.Size(137, 23)
-        Me.txtMontoCierre.TabIndex = 1
-        Me.txtMontoCierre.UseSelectable = True
-        '
-        'MetroLabel8
-        '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(27, 70)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(105, 19)
-        Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel8.TabIndex = 182
-        Me.MetroLabel8.Text = "MONTO CIERRE"
-        Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel8.UseCustomBackColor = True
-        Me.MetroLabel8.UseCustomForeColor = True
-        Me.MetroLabel8.UseStyleColors = True
         '
         'MetroTextBox3
         '
@@ -495,16 +320,16 @@ Partial Class frmCaja
         '
         'dgbCaja
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgbCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgbCaja.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgbCaja.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgbCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgbCaja.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgbCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgbCaja.Location = New System.Drawing.Point(3, 90)
         Me.dgbCaja.Name = "dgbCaja"
@@ -531,24 +356,20 @@ Partial Class frmCaja
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'frmCaja
+        'frmCajaInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(520, 365)
+        Me.ClientSize = New System.Drawing.Size(514, 358)
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.MetroTile2)
-        Me.Name = "frmCaja"
+        Me.Name = "frmCajaInicio"
         Me.MetroTabControl1.ResumeLayout(False)
         Me.tabIniciar.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.gbCaja.ResumeLayout(False)
         Me.gbCaja.PerformLayout()
-        Me.tabCerrar.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.gbCierreCaja.ResumeLayout(False)
-        Me.gbCierreCaja.PerformLayout()
         CType(Me.dgbCaja, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -567,21 +388,10 @@ Partial Class frmCaja
     Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents dgbCaja As System.Windows.Forms.DataGridView
-    Friend WithEvents tabCerrar As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents gbCierreCaja As System.Windows.Forms.GroupBox
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtObservacion As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtMontoCierre As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtNumero As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnCancelarInicio As System.Windows.Forms.Button
     Friend WithEvents btnGuardarInicio As System.Windows.Forms.Button
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents btnCancelarCierre As System.Windows.Forms.Button
-    Friend WithEvents btnGuardarCierre As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents cboCajasAbiertas As MetroFramework.Controls.MetroComboBox
 End Class

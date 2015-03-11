@@ -17,7 +17,7 @@
             Me.dgvEmpleados.Focus()
             Me.AcceptButton = Me.btnSeleccionar
         Catch ex As Exception
-            MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -52,7 +52,7 @@
             Me.Empleado = DirectCast(Me.dgvEmpleados.CurrentRow.DataBoundItem, Empleado)
             Me.Close()
         Else
-            MessageBox.Show("Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MetroMessageBox.Show(Me, "Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 End Class

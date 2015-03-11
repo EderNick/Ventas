@@ -84,29 +84,39 @@
         End Try
     End Sub
 
-    Function ListarCajasAbiertas() As List(Of Caja)
-        Dim cajAb As List(Of Caja) = Nothing
+    Function CargarCajaAbiertaxEmpleado(ByVal wIDEmpleado As Integer) As Caja
+        Dim pars As New List(Of CParametro)
         Dim dr As NpgsqlDataReader = Nothing
-        Dim ca As Caja
+        Dim ca As Caja = Nothing
+
+        pars.Add(New CParametro("pIdEmpleado", wIDEmpleado))
 
         Try
             Me.Conectar(True)
-            dr = Me.PedirDataReader("fu_licajasabiertas", Nothing)
-            cajAb = New List(Of Caja)
+            dr = Me.PedirDataReader("fu_licajaabierta", pars)
 
-            Do While dr.Read = True
+            While dr.Read = True
                 ca = New Caja
                 ca.Codigo = dr.Item("idcaja")
                 ca.Numero = dr.Item("numero")
-                cajAb.Add(ca)
-            Loop
+                ca.Descripcion = dr.Item("descripcion")
+                ca.FechaApertura = dr.Item("fechaapertura")
+                ca.FechaCierre = dr.Item("fechacierre")
+                ca.MontoApertura = CDbl(dr.Item("montoapertura"))
+                ca.MontoCierre = CDbl(dr.Item("montocierre"))
+            End While
 
             Me.Cerrar(True)
         Catch ex As Exception
             Throw ex
+        Finally
+            If dr IsNot Nothing Then
+                dr.Close()
+            End If
+            pars = Nothing
         End Try
 
-        Return cajAb
+        Return ca
     End Function
 
     Function BuscarPorNumero(ByVal wNumCaja As Integer)

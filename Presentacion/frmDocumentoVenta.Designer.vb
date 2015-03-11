@@ -902,7 +902,7 @@ Partial Class frmDocumentoVenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1378, 780)
+        Me.ClientSize = New System.Drawing.Size(1370, 772)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Panel2)
