@@ -46,7 +46,7 @@
         If Me.CamposCompletosCerrar = True Then
             ca = New Caja
 
-            ca.Codigo = CInt(txtNumCaja.Text)
+            ca.Codigo = CajaAbierta.Codigo
             ca.Descripcion = CajaAbierta.Descripcion & Me.txtObservacion.Text
             ca.MontoCierre = CDbl(txtMontoCierre.Text)
             If CajaAbierta.FechaApertura.Hour = CajaAbierta.FechaCierre.Hour Then 'la caja aun está abierta
@@ -54,10 +54,11 @@
                 ca.Estado = False 'la caja se cierra
             End If
             rn = New RNCaja
-            Try
 
+            Try
                 rn.Actualizar(ca)
                 MetroMessageBox.Show(Me, "Se cerró la caja " + txtNumCaja.Text + " exitosamente.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
             Catch ex As Exception
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
@@ -73,5 +74,6 @@
     Private Sub btnCancelarCierre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelarCierre.Click
         LimpiarControles()
         Me.Close()
+        'modPrincipal.CajaActualAbierta = Nothing
     End Sub
 End Class

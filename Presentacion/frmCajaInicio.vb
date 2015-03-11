@@ -70,5 +70,6 @@
     Private Sub btnCancelarInicio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelarInicio.Click
         LimpiarControles()
         Me.Close()
+        modPrincipal.CajaActualAbierta = Nothing
     End Sub
 End Class
