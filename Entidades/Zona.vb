@@ -1,4 +1,4 @@
-﻿Public Class zona
+﻿Public Class Zona
 
     Public Property Codigo As Integer
     Public Property Distrito As Distrito

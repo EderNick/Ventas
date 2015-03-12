@@ -65,12 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caja.vb" />
+    <Compile Include="CategoriaCliente.vb" />
+    <Compile Include="Cliente.vb" />
     <Compile Include="Departamento.vb" />
+    <Compile Include="DetalleCliente.vb" />
     <Compile Include="DetalleSucursal.vb" />
     <Compile Include="Distrito.vb" />
     <Compile Include="Empleado.vb" />
     <Compile Include="Empresa.vb" />
+    <Compile Include="EmpresaJuridica.vb" />
     <Compile Include="Modelo.vb" />
+    <Compile Include="Persona.vb" />
     <Compile Include="Provincia.vb" />
     <Compile Include="Sucursal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

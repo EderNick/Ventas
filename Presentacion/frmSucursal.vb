@@ -78,9 +78,9 @@ Public Class frmSucursal
 
                     Me.txtNombre.Text = .Nombre
                     Me.txtCorreo.Text = .Correo
-                    Me.cboDepartamento.Text = .zona.Departamento.Nombre
-                    Me.cboProvincia.Text = .zona.Provincia.Nombre
-                    Me.cboDistrito.Text = .zona.Distrito.nombre
+                    Me.cboDepartamento.Text = .Zona.Departamento.Nombre
+                    Me.cboProvincia.Text = .Zona.Provincia.Nombre
+                    Me.cboDistrito.Text = .Zona.Distrito.nombre
                     Me.txtDireccion.Text = .Direccion
                     Me.txtTelefono.Text = .Telefono
                     Me.ckVigencia.Enabled = True
@@ -127,7 +127,7 @@ Public Class frmSucursal
             s.Correo = Me.txtCorreo.Text
             s.Direccion = Me.txtDireccion.Text
             s.Telefono = Me.txtTelefono.Text
-            s.zona = New zona
+            s.zona = New Zona
             s.zona.Distrito = New Distrito
             s.zona.Distrito = DirectCast(cboDistrito.SelectedItem, Distrito)
             s.zona.Provincia = New Provincia

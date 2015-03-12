@@ -41,7 +41,7 @@
             If UCase(UsuarioLogeado.TipoUsuario.Nombre) = "NORMAL" Then
                 If UsuarioLogeado.TipoUsuario.Modulo.Trim = "Ventas" Then
 
-                    If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERO" Then
+                    If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERA" Then
                         Dim frmC As New frmCajaInicio
                         Dim rn As New RNCaja
                         Dim caja As New Caja

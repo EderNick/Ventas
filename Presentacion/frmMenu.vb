@@ -2,8 +2,6 @@
 
     Private Sub frmMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ToolTip1 As New ToolTip
-        ToolTip1.SetToolTip(btnBanco, "REGISTRAR BANCO")
-        ToolTip1.SetToolTip(btnCaja, "REGISTRAR CAJA")
         ToolTip1.SetToolTip(btnEmpresa, "REGISTRAR EMPRESA")
        
     End Sub
@@ -13,7 +11,7 @@
 
     End Sub
 
-    Private Sub btnCaja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCaja.Click
+    Private Sub btnCaja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim frm As frmCajaInicio
         frm = New frmCajaInicio
         frm.ShowDialog()

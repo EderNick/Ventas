@@ -49,7 +49,7 @@
             ca.Codigo = CajaAbierta.Codigo
             ca.Descripcion = CajaAbierta.Descripcion & Me.txtObservacion.Text
             ca.MontoCierre = CDbl(txtMontoCierre.Text)
-            If CajaAbierta.FechaApertura.Hour = CajaAbierta.FechaCierre.Hour Then 'la caja aun está abierta
+            If CajaAbierta.FechaApertura = CajaAbierta.FechaCierre Then 'la caja aun está abierta
                 ca.FechaCierre = Now
                 ca.Estado = False 'la caja se cierra
             End If

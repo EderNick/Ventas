@@ -79,14 +79,14 @@ Public Class RNSucursal
                     .Direccion = dr.Item("direccion")
                     .Telefono = dr.Item("telefono")
                     .Vigencia = dr.Item("vigencia")
-                    .zona = New zona
-                    .zona.Codigo = wSucursal.zona.Codigo
-                    .zona.Departamento = New Departamento
-                    .zona.Departamento.Nombre = dr.Item("departamento")
-                    .zona.Provincia = New Provincia
-                    .zona.Provincia.Nombre = dr.Item("provincia")
-                    .zona.Distrito = New Distrito
-                    .zona.Distrito.nombre = dr.Item("distrito")
+                    .zona = New Zona
+                    .Zona.Codigo = wSucursal.zona.Codigo
+                    .Zona.Departamento = New Departamento
+                    .Zona.Departamento.Nombre = dr.Item("departamento")
+                    .Zona.Provincia = New Provincia
+                    .Zona.Provincia.Nombre = dr.Item("provincia")
+                    .Zona.Distrito = New Distrito
+                    .Zona.Distrito.nombre = dr.Item("distrito")
                 End With
             End While
             Me.Cerrar(True)
@@ -117,7 +117,7 @@ Public Class RNSucursal
             Do While dr.Read = True
                 s = New Sucursal
                 s.Codigo = dr.Item("idsucursal")
-                s.zona = New zona
+                s.zona = New Zona
                 s.zona.Codigo = dr.Item("idzona")
                 s.Nombre = dr.Item("nombre")
                 s.Correo = dr.Item("correo")

@@ -35,7 +35,6 @@ Partial Class frmMenu
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.btnCaja = New System.Windows.Forms.Button()
         Me.btnCliente = New System.Windows.Forms.Button()
         Me.btnEmpleado = New System.Windows.Forms.Button()
         Me.btnMarca = New System.Windows.Forms.Button()
@@ -46,7 +45,6 @@ Partial Class frmMenu
         Me.Button6 = New System.Windows.Forms.Button()
         Me.btnSucursal = New System.Windows.Forms.Button()
         Me.btnContactoEmpresa = New System.Windows.Forms.Button()
-        Me.btnBanco = New System.Windows.Forms.Button()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,7 +67,6 @@ Partial Class frmMenu
         Me.MetroPanel1.Controls.Add(Me.Button10)
         Me.MetroPanel1.Controls.Add(Me.Button8)
         Me.MetroPanel1.Controls.Add(Me.Button7)
-        Me.MetroPanel1.Controls.Add(Me.btnCaja)
         Me.MetroPanel1.Controls.Add(Me.btnCliente)
         Me.MetroPanel1.Controls.Add(Me.btnEmpleado)
         Me.MetroPanel1.Controls.Add(Me.btnMarca)
@@ -80,11 +77,10 @@ Partial Class frmMenu
         Me.MetroPanel1.Controls.Add(Me.Button6)
         Me.MetroPanel1.Controls.Add(Me.btnSucursal)
         Me.MetroPanel1.Controls.Add(Me.btnContactoEmpresa)
-        Me.MetroPanel1.Controls.Add(Me.btnBanco)
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(1, 32)
+        Me.MetroPanel1.Location = New System.Drawing.Point(2, 32)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(1306, 791)
         Me.MetroPanel1.TabIndex = 192
@@ -137,12 +133,12 @@ Partial Class frmMenu
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1166, 154)
+        Me.Button1.Location = New System.Drawing.Point(1149, 154)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 230)
+        Me.Button1.Size = New System.Drawing.Size(130, 245)
         Me.Button1.TabIndex = 212
-        Me.Button1.Text = "REPORTES"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.Text = "Reportes"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button3
@@ -279,30 +275,9 @@ Partial Class frmMenu
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(312, 158)
         Me.Button7.TabIndex = 204
-        Me.Button7.Text = "Documento Venta"
+        Me.Button7.Text = "Venta"
         Me.Button7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button7.UseVisualStyleBackColor = False
-        '
-        'btnCaja
-        '
-        Me.btnCaja.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.btnCaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCaja.FlatAppearance.BorderSize = 0
-        Me.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(93, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCaja.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnCaja.ForeColor = System.Drawing.Color.White
-        Me.btnCaja.Image = CType(resources.GetObject("btnCaja.Image"), System.Drawing.Image)
-        Me.btnCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCaja.Location = New System.Drawing.Point(202, 154)
-        Me.btnCaja.Name = "btnCaja"
-        Me.btnCaja.Size = New System.Drawing.Size(153, 131)
-        Me.btnCaja.TabIndex = 202
-        Me.btnCaja.Text = "Caja"
-        Me.btnCaja.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnCaja.UseVisualStyleBackColor = False
         '
         'btnCliente
         '
@@ -506,28 +481,6 @@ Partial Class frmMenu
         Me.btnContactoEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnContactoEmpresa.UseVisualStyleBackColor = False
         '
-        'btnBanco
-        '
-        Me.btnBanco.AutoSize = True
-        Me.btnBanco.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.btnBanco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnBanco.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnBanco.FlatAppearance.BorderSize = 0
-        Me.btnBanco.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btnBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBanco.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBanco.ForeColor = System.Drawing.Color.White
-        Me.btnBanco.Image = CType(resources.GetObject("btnBanco.Image"), System.Drawing.Image)
-        Me.btnBanco.Location = New System.Drawing.Point(26, 151)
-        Me.btnBanco.Name = "btnBanco"
-        Me.btnBanco.Size = New System.Drawing.Size(156, 134)
-        Me.btnBanco.TabIndex = 190
-        Me.btnBanco.Text = "Banco"
-        Me.btnBanco.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnBanco.UseCompatibleTextRendering = True
-        Me.btnBanco.UseVisualStyleBackColor = False
-        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -547,7 +500,6 @@ Partial Class frmMenu
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents btnCaja As System.Windows.Forms.Button
     Friend WithEvents btnCliente As System.Windows.Forms.Button
     Friend WithEvents btnEmpleado As System.Windows.Forms.Button
     Friend WithEvents btnMarca As System.Windows.Forms.Button
@@ -556,7 +508,6 @@ Partial Class frmMenu
     Friend WithEvents btnEmpresa As System.Windows.Forms.Button
     Friend WithEvents btnSucursal As System.Windows.Forms.Button
     Friend WithEvents btnContactoEmpresa As System.Windows.Forms.Button
-    Public WithEvents btnBanco As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button

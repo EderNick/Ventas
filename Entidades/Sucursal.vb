@@ -7,7 +7,7 @@
     Public Property Telefono As String
     Public Property Vigencia As Boolean
     Public Property ZonaNombre As String
-    Public Property zona As zona
+    Public Property zona As Zona
     Public Property Empresa As Empresa
 
     Public ReadOnly Property Estado As String

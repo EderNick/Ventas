@@ -1,7 +1,7 @@
 ﻿Public Class RNZona
     Inherits CADO
 
-    Public Sub Registrar(ByVal wZona As zona)
+    Public Sub Registrar(ByVal wZona As Zona)
         Dim pars As New List(Of CParametro)
 
         pars.Add(New CParametro("pidDistrito", wZona.Distrito.Codigo))
