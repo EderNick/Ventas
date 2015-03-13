@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Ventas.ModuloVentas.frmOrdenPedido</StartupObject>
+    <StartupObject>Ventas.ModuloVentas.frmBuscarCliente</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -87,6 +87,12 @@
     <Import Include="Ventas.Reglas" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarCliente.Designer.vb">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCajaCierre.Designer.vb">
       <DependentUpon>frmCajaCierre.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCajaCierre.resx">
       <DependentUpon>frmCajaCierre.vb</DependentUpon>
     </EmbeddedResource>
