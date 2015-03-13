@@ -100,7 +100,7 @@ Partial Class frmOrdenPedido
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroLabel1.Location = New System.Drawing.Point(737, 615)
+        Me.MetroLabel1.Location = New System.Drawing.Point(737, 564)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -116,7 +116,7 @@ Partial Class frmOrdenPedido
         Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtSubTotal.Lines = New String() {"0.00"}
-        Me.txtSubTotal.Location = New System.Drawing.Point(737, 637)
+        Me.txtSubTotal.Location = New System.Drawing.Point(737, 586)
         Me.txtSubTotal.MaxLength = 10
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -143,7 +143,7 @@ Partial Class frmOrdenPedido
         Me.GroupBox3.Controls.Add(Me.MetroLabel4)
         Me.GroupBox3.Controls.Add(Me.MetroLabel9)
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox3.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Black
         Me.GroupBox3.Location = New System.Drawing.Point(9, 229)
         Me.GroupBox3.Name = "GroupBox3"
@@ -303,11 +303,11 @@ Partial Class frmOrdenPedido
         Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1, Me.DataGridViewTextBoxColumn5})
-        Me.dgvProductos.Location = New System.Drawing.Point(9, 414)
+        Me.dgvProductos.Location = New System.Drawing.Point(9, 393)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductos.Size = New System.Drawing.Size(722, 253)
+        Me.dgvProductos.Size = New System.Drawing.Size(722, 222)
         Me.dgvProductos.TabIndex = 173
         '
         'DataGridViewTextBoxColumn2
@@ -379,7 +379,7 @@ Partial Class frmOrdenPedido
         Me.GroupBox1.Controls.Add(Me.MetroTextBox7)
         Me.GroupBox1.Controls.Add(Me.MetroLabel17)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox1.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(559, 2)
         Me.GroupBox1.Name = "GroupBox1"
@@ -546,9 +546,9 @@ Partial Class frmOrdenPedido
         Me.btnEliminar.ForeColor = System.Drawing.Color.Black
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
         Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnEliminar.Location = New System.Drawing.Point(737, 435)
+        Me.btnEliminar.Location = New System.Drawing.Point(761, 393)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(66, 72)
+        Me.btnEliminar.Size = New System.Drawing.Size(82, 72)
         Me.btnEliminar.TabIndex = 219
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -560,7 +560,7 @@ Partial Class frmOrdenPedido
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnGuardarCierre)
-        Me.Panel2.Location = New System.Drawing.Point(1, 698)
+        Me.Panel2.Location = New System.Drawing.Point(1, 640)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(872, 71)
         Me.Panel2.TabIndex = 220
@@ -630,7 +630,7 @@ Partial Class frmOrdenPedido
         Me.AcceptButton = Me.btnBuscarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(866, 772)
+        Me.ClientSize = New System.Drawing.Size(866, 711)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Button6)
