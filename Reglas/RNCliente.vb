@@ -35,7 +35,7 @@
                 dcli.Cliente.Empleado.Ap_Paterno = dr.Item("epaterno")
                 dcli.Cliente.Empleado.Ap_Materno = dr.Item("ematerno")
                 dcli.Cliente.Zona = New Zona
-                dcli.Cliente.Zona.ZonaNombre = dr.Item("NomZona")
+                dcli.Cliente.Zona.ZonaNomb = dr.Item("NomZona")
                 detclientes.Add(dcli)
             End While
         Catch ex As Exception
@@ -79,7 +79,7 @@
                 dcli.Cliente.Empleado.Ap_Paterno = dr.Item("epaterno")
                 dcli.Cliente.Empleado.Ap_Materno = dr.Item("ematerno")
                 dcli.Cliente.Zona = New Zona
-                dcli.Cliente.Zona.ZonaNombre = dr.Item("NomZona")
+                dcli.Cliente.Zona.ZonaNomb = dr.Item("NomZona")
                 detclientes.Add(dcli)
             End While
         Catch ex As Exception

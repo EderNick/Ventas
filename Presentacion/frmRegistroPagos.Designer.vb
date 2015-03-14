@@ -42,7 +42,6 @@ Partial Class frmRegistroPagos
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroComboBox4 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel31 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel26 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel34 = New MetroFramework.Controls.MetroLabel()
@@ -169,7 +168,7 @@ Partial Class frmRegistroPagos
         Me.gbPago.Controls.Add(Me.chkbEfectivo)
         Me.gbPago.Controls.Add(Me.gbEfectivo)
         Me.gbPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.gbPago.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbPago.ForeColor = System.Drawing.Color.Black
         Me.gbPago.Location = New System.Drawing.Point(0, 212)
         Me.gbPago.Name = "gbPago"
@@ -190,7 +189,7 @@ Partial Class frmRegistroPagos
         Me.gbCheque.Controls.Add(Me.MetroTextBox19)
         Me.gbCheque.Controls.Add(Me.MetroLabel32)
         Me.gbCheque.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.gbCheque.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbCheque.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbCheque.ForeColor = System.Drawing.Color.Black
         Me.gbCheque.Location = New System.Drawing.Point(920, 85)
         Me.gbCheque.Name = "gbCheque"
@@ -307,13 +306,12 @@ Partial Class frmRegistroPagos
         Me.gbDeposito.Controls.Add(Me.MetroLabel15)
         Me.gbDeposito.Controls.Add(Me.MetroTextBox5)
         Me.gbDeposito.Controls.Add(Me.MetroLabel13)
-        Me.gbDeposito.Controls.Add(Me.MetroComboBox4)
         Me.gbDeposito.Controls.Add(Me.MetroLabel31)
         Me.gbDeposito.Controls.Add(Me.MetroTextBox17)
         Me.gbDeposito.Controls.Add(Me.MetroLabel26)
         Me.gbDeposito.Controls.Add(Me.MetroLabel34)
         Me.gbDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.gbDeposito.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbDeposito.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbDeposito.ForeColor = System.Drawing.Color.Black
         Me.gbDeposito.Location = New System.Drawing.Point(303, 83)
         Me.gbDeposito.Name = "gbDeposito"
@@ -376,16 +374,6 @@ Partial Class frmRegistroPagos
         Me.MetroLabel13.UseCustomForeColor = True
         Me.MetroLabel13.UseStyleColors = True
         '
-        'MetroComboBox4
-        '
-        Me.MetroComboBox4.FormattingEnabled = True
-        Me.MetroComboBox4.ItemHeight = 23
-        Me.MetroComboBox4.Location = New System.Drawing.Point(134, 76)
-        Me.MetroComboBox4.Name = "MetroComboBox4"
-        Me.MetroComboBox4.Size = New System.Drawing.Size(144, 29)
-        Me.MetroComboBox4.TabIndex = 219
-        Me.MetroComboBox4.UseSelectable = True
-        '
         'MetroLabel31
         '
         Me.MetroLabel31.AutoSize = True
@@ -442,7 +430,7 @@ Partial Class frmRegistroPagos
         Me.gbTarjeta.Controls.Add(Me.MetroLabel25)
         Me.gbTarjeta.Controls.Add(Me.MetroLabel29)
         Me.gbTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.gbTarjeta.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTarjeta.ForeColor = System.Drawing.Color.Black
         Me.gbTarjeta.Location = New System.Drawing.Point(612, 83)
         Me.gbTarjeta.Name = "gbTarjeta"
@@ -608,7 +596,7 @@ Partial Class frmRegistroPagos
         Me.gbEfectivo.Controls.Add(Me.MetroTextBox16)
         Me.gbEfectivo.Controls.Add(Me.MetroLabel27)
         Me.gbEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.gbEfectivo.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbEfectivo.ForeColor = System.Drawing.Color.Black
         Me.gbEfectivo.Location = New System.Drawing.Point(0, 83)
         Me.gbEfectivo.Name = "gbEfectivo"
@@ -822,7 +810,7 @@ Partial Class frmRegistroPagos
         Me.GroupBox4.Controls.Add(Me.MetroLabel14)
         Me.GroupBox4.Controls.Add(Me.btnBuscar)
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox4.Font = New System.Drawing.Font("Century Schoolbook", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
         Me.GroupBox4.Location = New System.Drawing.Point(253, 72)
         Me.GroupBox4.Name = "GroupBox4"
@@ -1150,7 +1138,6 @@ Partial Class frmRegistroPagos
     Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel31 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTextBox8 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
