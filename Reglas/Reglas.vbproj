@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RNCaja.vb" />
+    <Compile Include="RNCliente.vb" />
     <Compile Include="RNDepartamento.vb" />
     <Compile Include="RNDetalleSucursal.vb" />
     <Compile Include="RNDistrito.vb" />

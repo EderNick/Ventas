@@ -8,8 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Ventas.ModuloVentas.frmSucursal</StartupObject>
-    <StartupObject>Ventas.ModuloVentas.frmCaja</StartupObject>
+    <StartupObject>Ventas.ModuloVentas.frmBuscarCliente</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,6 +72,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="MetroFramework" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -87,10 +87,37 @@
     <Import Include="Ventas.Reglas" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarCliente.Designer.vb">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="frmBuscarProducto.Designer.vb">
+      <DependentUpon>frmBuscarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+=======
+>>>>>>> 5c8c8ccacaf1f6b7273d4f8622467dfc7d666ada
+    <Compile Include="frmCajaCierre.Designer.vb">
+      <DependentUpon>frmCajaCierre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCajaCierre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBuscarEmpleado.Designer.vb">
       <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="frmBuscarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlCaja.Designer.vb">
+      <DependentUpon>frmControlCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlCaja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDocumentoVenta.Designer.vb">
@@ -105,10 +132,28 @@
     <Compile Include="frmGestionCuentasCobrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMantenimientoTipoTarjetas.Designer.vb">
+      <DependentUpon>frmMantenimientoTipoTarjetas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoTipoTarjetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.designer.vb">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRegistroPagos.Designer.vb">
       <DependentUpon>frmRegistroPagos.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRegistroPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteProductoFecha.Designer.vb">
+      <DependentUpon>frmReporteProductoFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteProductoFecha.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modFunciones.vb" />
@@ -118,10 +163,10 @@
     <Compile Include="frmBancoVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCaja.Designer.vb">
-      <DependentUpon>frmCaja.vb</DependentUpon>
+    <Compile Include="frmCajaInicio.Designer.vb">
+      <DependentUpon>frmCajaInicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCaja.vb">
+    <Compile Include="frmCajaInicio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCategoriaCliente.Designer.vb">
@@ -262,14 +307,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="frmBuscarProducto.resx">
+      <DependentUpon>frmBuscarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> 5c8c8ccacaf1f6b7273d4f8622467dfc7d666ada
+    <EmbeddedResource Include="frmCajaCierre.resx">
+      <DependentUpon>frmCajaCierre.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBancoVenta.resx">
       <DependentUpon>frmBancoVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarEmpleado.resx">
       <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCaja.resx">
-      <DependentUpon>frmCaja.vb</DependentUpon>
+    <EmbeddedResource Include="frmCajaInicio.resx">
+      <DependentUpon>frmCajaInicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaCliente.resx">
       <DependentUpon>frmCategoriaCliente.vb</DependentUpon>
@@ -279,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmContactoVenta.resx">
       <DependentUpon>frmContactoVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlCaja.resx">
+      <DependentUpon>frmControlCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDepartamento.resx">
       <DependentUpon>frmDepartamento.vb</DependentUpon>
@@ -310,8 +370,14 @@
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoTipoTarjetas.resx">
+      <DependentUpon>frmMantenimientoTipoTarjetas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModelo.resx">
       <DependentUpon>frmModelo.vb</DependentUpon>
@@ -330,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroPagos.resx">
       <DependentUpon>frmRegistroPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteProductoFecha.resx">
+      <DependentUpon>frmReporteProductoFecha.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSucursal.resx">
       <DependentUpon>frmSucursal.vb</DependentUpon>
