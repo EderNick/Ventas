@@ -6,4 +6,5 @@
     Public Property Zona As Zona
     Public Property Empleado As Empleado
 
+
 End Class
