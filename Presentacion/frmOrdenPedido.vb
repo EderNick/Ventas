@@ -1,6 +1,7 @@
 ﻿Public Class frmOrdenPedido
 
     Private Cliente As Cliente
+    Private DetCliente As DetalleCliente
 
     Private Sub frmOrdenPedido_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         Try
@@ -36,8 +37,17 @@
     End Sub
 
     Private Sub btnBuscarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarCliente.Click
+        Dim frm As New frmBuscarCliente
+        DetCliente = frm.Buscar()
 
-
+        If DetCliente IsNot Nothing Then
+            If DetCliente.Cliente.Tipo = "N" Then
+                Me.txtCliente.Text = DetCliente.Persona.Nombres + " " + DetCliente.Persona.Ap_Paterno + " " + DetCliente.Persona.Ap_Materno
+            End If
+            If DetCliente.Cliente.Tipo = "J" Then
+                Me.txtCliente.Text = DetCliente.EmpresaJuridica.RazonSocial
+            End If
+            Me.AcceptButton = btnBuscarProducto
+        End If
     End Sub
-
 End Class

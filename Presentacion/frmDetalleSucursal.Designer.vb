@@ -147,9 +147,9 @@ Partial Class frmDetalleSucursal
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(49, 13)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 13)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(353, 218)
+        Me.GroupBox2.Size = New System.Drawing.Size(450, 218)
         Me.GroupBox2.TabIndex = 86
         Me.GroupBox2.TabStop = False
         '
@@ -157,9 +157,9 @@ Partial Class frmDetalleSucursal
         '
         Me.cmbModelo.FormattingEnabled = True
         Me.cmbModelo.ItemHeight = 23
-        Me.cmbModelo.Location = New System.Drawing.Point(126, 40)
+        Me.cmbModelo.Location = New System.Drawing.Point(118, 40)
         Me.cmbModelo.Name = "cmbModelo"
-        Me.cmbModelo.Size = New System.Drawing.Size(141, 29)
+        Me.cmbModelo.Size = New System.Drawing.Size(326, 29)
         Me.cmbModelo.TabIndex = 1
         Me.cmbModelo.UseSelectable = True
         '
@@ -167,7 +167,7 @@ Partial Class frmDetalleSucursal
         '
         Me.txtCantidad.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtCantidad.Lines = New String(-1) {}
-        Me.txtCantidad.Location = New System.Drawing.Point(127, 94)
+        Me.txtCantidad.Location = New System.Drawing.Point(118, 94)
         Me.txtCantidad.MaxLength = 32767
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -181,7 +181,7 @@ Partial Class frmDetalleSucursal
         '
         Me.txtPrecio.BackColor = System.Drawing.Color.DodgerBlue
         Me.txtPrecio.Lines = New String(-1) {}
-        Me.txtPrecio.Location = New System.Drawing.Point(127, 144)
+        Me.txtPrecio.Location = New System.Drawing.Point(118, 144)
         Me.txtPrecio.MaxLength = 32767
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -194,7 +194,7 @@ Partial Class frmDetalleSucursal
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.Location = New System.Drawing.Point(47, 94)
+        Me.MetroLabel1.Location = New System.Drawing.Point(14, 98)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(74, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -208,7 +208,7 @@ Partial Class frmDetalleSucursal
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(47, 44)
+        Me.MetroLabel2.Location = New System.Drawing.Point(14, 45)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(64, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
@@ -222,7 +222,7 @@ Partial Class frmDetalleSucursal
         'MetroLabel6
         '
         Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(6, 144)
+        Me.MetroLabel6.Location = New System.Drawing.Point(14, 144)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(98, 19)
         Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Green

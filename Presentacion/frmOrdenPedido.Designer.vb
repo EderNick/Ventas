@@ -23,8 +23,8 @@ Partial Class frmOrdenPedido
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOrdenPedido))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
@@ -100,7 +100,7 @@ Partial Class frmOrdenPedido
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroLabel1.Location = New System.Drawing.Point(737, 564)
+        Me.MetroLabel1.Location = New System.Drawing.Point(770, 564)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -116,7 +116,7 @@ Partial Class frmOrdenPedido
         Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtSubTotal.Lines = New String() {"0.00"}
-        Me.txtSubTotal.Location = New System.Drawing.Point(737, 586)
+        Me.txtSubTotal.Location = New System.Drawing.Point(776, 586)
         Me.txtSubTotal.MaxLength = 10
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -147,7 +147,7 @@ Partial Class frmOrdenPedido
         Me.GroupBox3.ForeColor = System.Drawing.Color.Black
         Me.GroupBox3.Location = New System.Drawing.Point(9, 229)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(845, 141)
+        Me.GroupBox3.Size = New System.Drawing.Size(884, 141)
         Me.GroupBox3.TabIndex = 117
         Me.GroupBox3.TabStop = False
         '
@@ -243,14 +243,14 @@ Partial Class frmOrdenPedido
         Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
         Me.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAgregar.FlatAppearance.BorderSize = 0
-        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
         Me.btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), System.Drawing.Image)
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnAgregar.Location = New System.Drawing.Point(752, 33)
+        Me.btnAgregar.Location = New System.Drawing.Point(782, 29)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(82, 89)
         Me.btnAgregar.TabIndex = 195
@@ -290,17 +290,17 @@ Partial Class frmOrdenPedido
         '
         Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1, Me.DataGridViewTextBoxColumn5})
         Me.dgvProductos.Location = New System.Drawing.Point(9, 393)
@@ -344,7 +344,7 @@ Partial Class frmOrdenPedido
         Me.MetroTile2.ForeColor = System.Drawing.Color.DodgerBlue
         Me.MetroTile2.Location = New System.Drawing.Point(-2, 2)
         Me.MetroTile2.Name = "MetroTile2"
-        Me.MetroTile2.Size = New System.Drawing.Size(875, 94)
+        Me.MetroTile2.Size = New System.Drawing.Size(914, 94)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Pink
         Me.MetroTile2.TabIndex = 174
         Me.MetroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -381,7 +381,7 @@ Partial Class frmOrdenPedido
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(559, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(598, 13)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(295, 70)
         Me.GroupBox1.TabIndex = 170
@@ -490,14 +490,14 @@ Partial Class frmOrdenPedido
         Me.btnBuscarCliente.BackgroundImage = CType(resources.GetObject("btnBuscarCliente.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnBuscarCliente.FlatAppearance.BorderSize = 0
-        Me.btnBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarCliente.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscarCliente.ForeColor = System.Drawing.Color.White
         Me.btnBuscarCliente.Location = New System.Drawing.Point(717, 131)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"
-        Me.btnBuscarCliente.Size = New System.Drawing.Size(50, 35)
+        Me.btnBuscarCliente.Size = New System.Drawing.Size(41, 35)
         Me.btnBuscarCliente.TabIndex = 182
         Me.btnBuscarCliente.UseVisualStyleBackColor = True
         '
@@ -507,7 +507,7 @@ Partial Class frmOrdenPedido
         Me.Label1.BackColor = System.Drawing.Color.DodgerBlue
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(166, 36)
+        Me.Label1.Location = New System.Drawing.Point(223, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(250, 38)
         Me.Label1.TabIndex = 216
@@ -539,8 +539,8 @@ Partial Class frmOrdenPedido
         Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnEliminar.FlatAppearance.BorderSize = 0
-        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.Black
@@ -562,7 +562,7 @@ Partial Class frmOrdenPedido
         Me.Panel2.Controls.Add(Me.btnGuardarCierre)
         Me.Panel2.Location = New System.Drawing.Point(1, 640)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(872, 71)
+        Me.Panel2.Size = New System.Drawing.Size(911, 71)
         Me.Panel2.TabIndex = 220
         '
         'btnNuevo
@@ -597,7 +597,7 @@ Partial Class frmOrdenPedido
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(790, 0)
+        Me.btnSalir.Location = New System.Drawing.Point(819, 0)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(73, 72)
         Me.btnSalir.TabIndex = 155
@@ -617,9 +617,9 @@ Partial Class frmOrdenPedido
         Me.btnGuardarCierre.ForeColor = System.Drawing.Color.White
         Me.btnGuardarCierre.Image = CType(resources.GetObject("btnGuardarCierre.Image"), System.Drawing.Image)
         Me.btnGuardarCierre.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardarCierre.Location = New System.Drawing.Point(407, 0)
+        Me.btnGuardarCierre.Location = New System.Drawing.Point(434, 0)
         Me.btnGuardarCierre.Name = "btnGuardarCierre"
-        Me.btnGuardarCierre.Size = New System.Drawing.Size(76, 72)
+        Me.btnGuardarCierre.Size = New System.Drawing.Size(111, 72)
         Me.btnGuardarCierre.TabIndex = 154
         Me.btnGuardarCierre.Text = "&Registrar"
         Me.btnGuardarCierre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -630,7 +630,7 @@ Partial Class frmOrdenPedido
         Me.AcceptButton = Me.btnBuscarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(866, 711)
+        Me.ClientSize = New System.Drawing.Size(900, 711)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Button6)

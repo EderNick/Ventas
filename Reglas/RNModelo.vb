@@ -7,6 +7,7 @@
         Dim dr As NpgsqlDataReader = Nothing
         Dim M As Modelo = Nothing
 
+        'pars.Add(New CParametro("pIdEmpresa", wIdEmpresa))
 
         Try
             Me.Conectar(True)
@@ -18,6 +19,15 @@
                 M.Codigo = dr.Item("idmodelo")
                 M.Descripcion = dr.Item("descripcion")
                 M.Vigencia = dr.Item("vigencia")
+                M.Marca = New Marca
+                M.Marca.Codigo = dr.Item("idmarca")
+                M.Marca.Descripcion = dr.Item("des_Marca")
+                M.Producto = New Producto
+                M.Producto.Codigo = dr.Item("idproducto")
+                M.Producto.Descripcion = dr.Item("des_Producto")
+                M.Producto.Categoria = New Categoria
+                M.Producto.Categoria.Codigo = dr.Item("idcategoria")
+                M.Producto.Categoria.Descripcion = dr.Item("des_Categoria")
                 Modelo.Add(M)
             Loop
 
@@ -29,4 +39,9 @@
 
         Return Modelo
     End Function
+
+    Function Buscar(ByVal wProducto As String) As List(Of Modelo)
+        Throw New NotImplementedException
+    End Function
+
 End Class

@@ -29,6 +29,7 @@
                 dcli.Persona.Telefono = dr.Item("telefono")
                 dcli.Cliente = New Cliente
                 dcli.Cliente.Codigo = CInt(dr.Item("idcliente"))
+                dcli.Cliente.Tipo = dr.Item("tipo")
                 dcli.Cliente.Empleado = New Empleado
                 dcli.Cliente.Empleado.Nombres = dr.Item("enombres")
                 dcli.Cliente.Empleado.Ap_Paterno = dr.Item("epaterno")
@@ -72,6 +73,7 @@
                 dcli.EmpresaJuridica.Correo = dr.Item("correo")
                 dcli.Cliente = New Cliente
                 dcli.Cliente.Codigo = CInt(dr.Item("idcliente"))
+                dcli.Cliente.Tipo = dr.Item("tipo")
                 dcli.Cliente.Empleado = New Empleado
                 dcli.Cliente.Empleado.Nombres = dr.Item("enombres")
                 dcli.Cliente.Empleado.Ap_Paterno = dr.Item("epaterno")

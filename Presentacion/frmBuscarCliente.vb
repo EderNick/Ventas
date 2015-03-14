@@ -1,5 +1,7 @@
 ﻿Public Class frmBuscarCliente
 
+    Private DetCliente As DetalleCliente
+
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
@@ -83,8 +85,30 @@
     End Sub
 
     Private Sub btnSeleccionar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSeleccionar.Click
-        Dim elem As DetalleCliente
-        elem = DirectCast(Me.dgvClientes.CurrentRow.DataBoundItem, DetalleCliente)
-        MessageBox.Show("Seleccionado: " & elem.Persona.NombrePersona)
+        If rdoDNI.Checked = True Then
+            If Me.dgvClientes.CurrentRow IsNot Nothing Then
+                DetCliente = DirectCast(Me.dgvClientes.CurrentRow.DataBoundItem, DetalleCliente)
+                'MessageBox.Show("Seleccionado: " & DetCliente.Persona.NombrePersona)
+                Me.Close()
+            Else
+                MetroMessageBox.Show(Me, "Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
+
+        If rdoRUC.Checked = True Then
+            If Me.dgvEmpresas.CurrentRow IsNot Nothing Then
+                DetCliente = DirectCast(Me.dgvEmpresas.CurrentRow.DataBoundItem, DetalleCliente)
+                'MessageBox.Show("Seleccionado: " & DetCliente.EmpresaJuridica.RazonSocial)
+                Me.Close()
+            Else
+                MetroMessageBox.Show(Me, "Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
     End Sub
+
+    Function Buscar() As DetalleCliente
+        Me.ShowDialog()
+        Return DetCliente
+    End Function
+
 End Class

@@ -4,6 +4,7 @@
     Private Detallesucursal As DetalleSucursal
     Private campos_faltan As String
     Private idsucursal As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo
+    'Private idEmpresa As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Empresa.Codigo
 
     Private Sub frmDetalleSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         listar()
@@ -16,7 +17,7 @@
 
         Try
             Modelo = rn.Listar()
-            modFunciones.ListarComboBox(Me.cmbModelo, Modelo, "Codigo", "Descripcion")
+            modFunciones.ListarComboBox(Me.cmbModelo, Modelo, "Codigo", "NombreCompletoProducto")
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
