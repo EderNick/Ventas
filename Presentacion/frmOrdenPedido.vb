@@ -14,7 +14,7 @@
             If e.KeyData = Keys.Control + Keys.N Then 'Nuevo
                 LimpiarControles()
             End If
-            If e.KeyData = Keys.Control + Keys.G Then 'Nuevo
+            If e.KeyData = Keys.Control + Keys.G Then 'guardar
                 'Registrar()
             End If
         Catch ex As Exception
@@ -29,14 +29,20 @@
     Private Sub LimpiarControles()
         txtCliente.Text = ""
         dtpFecha.Value = Now
-        txtProducto.Text = ""
-        txtPrecioUnitario.Text = ""
-        txtCantidad.Text = ""
-        txtMonto.Text = ""
+        LimpiarControlesProducto()
+        gbProducto.Enabled = False
         dgvProductos.DataSource = ""
         'dgvProductos.Rows.Clear()
         txtSubTotal.Text = "0.00"
         Me.AcceptButton = btnBuscarCliente
+    End Sub
+
+    Private Sub LimpiarControlesProducto()
+        txtProducto.Text = ""
+        txtPrecioUnitario.Text = ""
+        txtCantidad.Text = ""
+        txtCantidad.Enabled = False
+        txtMonto.Text = "0.00"
     End Sub
 
     Private Sub btnBuscarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarCliente.Click
@@ -51,7 +57,11 @@
                 Me.txtCliente.Text = DetCliente.EmpresaJuridica.RazonSocial
             End If
             gbProducto.Enabled = True
+            LimpiarControlesProducto()
             Me.AcceptButton = btnBuscarProducto
+        Else
+            LimpiarControles()
+            Me.AcceptButton = btnBuscarCliente
         End If
     End Sub
 
@@ -67,9 +77,13 @@
         If DetalleModeloSuc IsNot Nothing Then
             txtProducto.Text = DetalleModeloSuc.Modelo.NombreCompletoProducto
             txtPrecioUnitario.Text = DetalleModeloSuc.PrecioVenta
+            txtCantidad.Enabled = True
             txtCantidad.Focus()
             txtCantidad.Text = ""
             txtMonto.Text = "0.00"
+            Me.AcceptButton = btnAgregar
+        Else
+            LimpiarControlesProducto()
             Me.AcceptButton = btnBuscarProducto
         End If
     End Sub
@@ -93,6 +107,8 @@
                 ListaDetProd.Add(DetOrdenPedido)
 
                 modFunciones.EnlazarDatagridView(dgvProductos, ListaDetProd)
+                LimpiarControlesProducto()
+                Me.AcceptButton = btnBuscarProducto
             Else
                 MetroMessageBox.Show(Me, "La cantidad debe ser mayor a 0.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 txtCantidad.Focus()
@@ -105,8 +121,22 @@
     End Sub
 
     Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
+        EliminarProductoSeleccionado()
+    End Sub
+
+    Private Sub EliminarProductoSeleccionado()
+        Dim elemSelec As DetalleOrdenPedido
+
         If Me.dgvProductos.CurrentRow IsNot Nothing Then
-            dgvProductos.Rows.RemoveAt(dgvProductos.CurrentRow.Index)
+            elemSelec = DirectCast(dgvProductos.CurrentRow.DataBoundItem, DetalleOrdenPedido) 'capturo el elemento a eliminar
+            For i As Integer = 0 To ListaDetProd.Count - 1
+                If elemSelec.Modelo.Codigo = ListaDetProd(i).Modelo.Codigo Then
+                    ListaDetProd.Remove(elemSelec) 'elimina el elemento de la Lista
+                    modFunciones.EnlazarDatagridView(dgvProductos, ListaDetProd) 'Vuelve a cargar la lista sin el elemento eliminado
+                End If
+            Next
+
+            'dgvProductos.Rows.RemoveAt(dgvProductos.CurrentRow.Index) 'eliminacion directa sin DataSource
         End If
     End Sub
 End Class
