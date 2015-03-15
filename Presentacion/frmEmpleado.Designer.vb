@@ -253,10 +253,10 @@ Partial Class frmEmpleado
         Me.cmbTipo.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.ItemHeight = 19
-        Me.cmbTipo.Items.AddRange(New Object() {"SuperAdmin", "Administrador", "Cajero"})
-        Me.cmbTipo.Location = New System.Drawing.Point(418, 73)
+        Me.cmbTipo.Items.AddRange(New Object() {"CAJERO", "VENDEDOR", "JEFE VENTAS"})
+        Me.cmbTipo.Location = New System.Drawing.Point(401, 71)
         Me.cmbTipo.Name = "cmbTipo"
-        Me.cmbTipo.Size = New System.Drawing.Size(164, 25)
+        Me.cmbTipo.Size = New System.Drawing.Size(181, 25)
         Me.cmbTipo.TabIndex = 6
         Me.cmbTipo.UseSelectable = True
         '
@@ -284,12 +284,12 @@ Partial Class frmEmpleado
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(292, 77)
+        Me.MetroLabel2.Location = New System.Drawing.Point(334, 73)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(111, 19)
+        Me.MetroLabel2.Size = New System.Drawing.Size(55, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel2.TabIndex = 32
-        Me.MetroLabel2.Text = "TIPO EMPLEADO"
+        Me.MetroLabel2.Text = "CARGO"
         Me.MetroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel2.UseCustomBackColor = True
         Me.MetroLabel2.UseCustomForeColor = True

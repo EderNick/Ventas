@@ -24,6 +24,8 @@ Partial Class frmBuscarProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBuscarProducto))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.txtProducto = New MetroFramework.Controls.MetroTextBox()
@@ -38,6 +40,8 @@ Partial Class frmBuscarProducto
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -99,10 +103,11 @@ Partial Class frmBuscarProducto
         '
         'dgvProducto
         '
+        Me.dgvProducto.AllowUserToAddRows = False
         Me.dgvProducto.AllowUserToDeleteRows = False
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.Gray
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column6, Me.Column1, Me.Column5})
+        Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column6, Me.Column1, Me.Column5, Me.Column3, Me.Column4})
         Me.dgvProducto.Location = New System.Drawing.Point(23, 202)
         Me.dgvProducto.Name = "dgvProducto"
         Me.dgvProducto.ReadOnly = True
@@ -226,7 +231,7 @@ Partial Class frmBuscarProducto
         Me.Column2.HeaderText = "PRODUCTO"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 150
+        Me.Column2.Width = 110
         '
         'Column6
         '
@@ -234,7 +239,6 @@ Partial Class frmBuscarProducto
         Me.Column6.HeaderText = "MARCA"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 150
         '
         'Column1
         '
@@ -242,7 +246,7 @@ Partial Class frmBuscarProducto
         Me.Column1.HeaderText = "MODELO"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 150
+        Me.Column1.Width = 130
         '
         'Column5
         '
@@ -250,10 +254,31 @@ Partial Class frmBuscarProducto
         Me.Column5.HeaderText = "CATEGORIA"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 150
+        Me.Column5.Width = 110
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "PrecioVenta"
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Column3.HeaderText = "PRECIO UNIT."
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 70
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "Cantidad"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column4.HeaderText = "STOCK EN SUCURSAL"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 70
         '
         'frmBuscarProducto
         '
+        Me.AcceptButton = Me.btnBuscar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(680, 477)
@@ -285,4 +310,6 @@ Partial Class frmBuscarProducto
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

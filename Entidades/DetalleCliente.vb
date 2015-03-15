@@ -25,42 +25,62 @@
 
     Public ReadOnly Property ZonaNomb As String
         Get
-            Dim nombre As String = ""
-            nombre = Cliente.Zona.ZonaNomb
-            Return nombre
+            Return Cliente.Zona.ZonaNomb
         End Get
     End Property
 
     Public ReadOnly Property NombreEmpleado As String
         Get
-            Dim nombre As String = ""
-            nombre = Cliente.Empleado.NombreEmpleado
-            Return nombre
+            Return Cliente.Empleado.NombreEmpleado
         End Get
 
     End Property
 
     Public ReadOnly Property SexoCliente As String
         Get
-            Dim sexo As String = ""
-            sexo = Persona.Sexo_M_F
-            Return sexo
+            Return Persona.Sexo_M_F
         End Get
     End Property
 
     Public ReadOnly Property DireccionCliente As String
         Get
-            Dim direc As String = ""
-            direc = Persona.Direccion
-            Return direc
+            Return Persona.Direccion
         End Get
     End Property
 
     Public ReadOnly Property TelefonoCliente As String
         Get
-            Dim telef As String = ""
-            telef = Persona.Telefono
-            Return telef
+            Return Persona.Telefono
+        End Get
+    End Property
+
+    Public ReadOnly Property RazonSocialEmpresa As String
+        Get
+            Return EmpresaJuridica.RazonSocial
+        End Get
+    End Property
+
+    Public ReadOnly Property RUCEmpresa As String
+        Get
+            Return EmpresaJuridica.RUC
+        End Get
+    End Property
+
+    Public ReadOnly Property DireccionEmpresa As String
+        Get
+            Return EmpresaJuridica.Direccion
+        End Get
+    End Property
+
+    Public ReadOnly Property TelefonoEmpresa As String
+        Get
+            Return EmpresaJuridica.Telefono
+        End Get
+    End Property
+
+    Public ReadOnly Property CorreoEmpresa As String
+        Get
+            Return EmpresaJuridica.Correo
         End Get
     End Property
 End Class

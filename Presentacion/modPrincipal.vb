@@ -41,7 +41,7 @@
             If UCase(UsuarioLogeado.TipoUsuario.Nombre) = "NORMAL" Then
                 If UsuarioLogeado.TipoUsuario.Modulo.Trim = "Ventas" Then
 
-                    If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERA" Then
+                    If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERO" Then
                         Dim frmC As New frmCajaInicio
                         Dim rn As New RNCaja
                         Dim caja As New Caja
@@ -49,7 +49,9 @@
                         If caja Is Nothing Then
                             'si llega vacio, este usuario no tiene cajas abiertas
                             CajaActualAbierta = frmC.IniciarCaja()
-
+                            Dim frmV As New frmDocumentoVenta
+                            'CajaActualAbierta será Nothing si al momento de Iniciar Caja dan click en cancelar
+                            frmV.ShowDialog()
                         Else
                             CajaActualAbierta = caja
                             MessageBox.Show("Su caja ha sido reanudada.", "Caja Reanudada", MessageBoxButtons.OK, MessageBoxIcon.Information)

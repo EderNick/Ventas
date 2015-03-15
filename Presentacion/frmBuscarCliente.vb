@@ -91,7 +91,7 @@
                 'MessageBox.Show("Seleccionado: " & DetCliente.Persona.NombrePersona)
                 Me.Close()
             Else
-                MetroMessageBox.Show(Me, "Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MetroMessageBox.Show(Me, "Debe Seleccionar un Cliente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         End If
 
@@ -101,7 +101,7 @@
                 'MessageBox.Show("Seleccionado: " & DetCliente.EmpresaJuridica.RazonSocial)
                 Me.Close()
             Else
-                MetroMessageBox.Show(Me, "Debe Seleccionar un Empleado", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MetroMessageBox.Show(Me, "Debe Seleccionar un Cliente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
         End If
     End Sub

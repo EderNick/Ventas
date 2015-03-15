@@ -1,10 +1,9 @@
 ﻿Public Class frmDetalleSucursal
 
-    Private Actual As DetalleSucursal
-    Private Detallesucursal As DetalleSucursal
+    Private Actual As DetalleModeloSucursal
+    Private Detallesucursal As DetalleModeloSucursal
     Private campos_faltan As String
     Private idsucursal As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo
-    'Private idEmpresa As Integer = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Empresa.Codigo
 
     Private Sub frmDetalleSucursal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         listar()
@@ -16,7 +15,7 @@
         Dim Modelo As List(Of Modelo)
 
         Try
-            Modelo = rn.Listar()
+            Modelo = rn.Listar(idsucursal)
             modFunciones.ListarComboBox(Me.cmbModelo, Modelo, "Codigo", "NombreCompletoProducto")
 
         Catch ex As Exception
@@ -26,8 +25,8 @@
         End Try
     End Sub
     Sub listar()
-        Dim rn As New RNDetalleSucursal
-        Dim DetalleSucursal As List(Of DetalleSucursal)
+        Dim rn As New RNDetalleModeloSucursal
+        Dim DetalleSucursal As List(Of DetalleModeloSucursal)
 
         Try
             DetalleSucursal = rn.ListarDetalle(idsucursal)
@@ -47,17 +46,17 @@
     End Sub
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
-        Dim rn As RNDetalleSucursal
-        Dim DS As DetalleSucursal
+        Dim rn As RNDetalleModeloSucursal
+        Dim DS As DetalleModeloSucursal
         campos_faltan = ""
         If CamposCompletos() = True Then
             If Me.ValidateChildren = True Then
-                DS = New DetalleSucursal
+                DS = New DetalleModeloSucursal
                 DS.Modelo = DirectCast(Me.cmbModelo.SelectedItem, Modelo)
-                DS.precio = CDbl(txtPrecio.Text)
-                DS.cantidad = CInt(txtCantidad.Text)
+                DS.PrecioVenta = CDbl(txtPrecio.Text)
+                DS.Cantidad = CInt(txtCantidad.Text)
 
-                rn = New RNDetalleSucursal
+                rn = New RNDetalleModeloSucursal
                 Try
                     If Me.Actual Is Nothing Then
                         rn.Registrar(DS, idsucursal)
@@ -122,22 +121,22 @@
 
     Private Sub btnModificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar.Click
         If Me.dgvDetalle.CurrentRow IsNot Nothing Then
-            Me.Actual = DirectCast(Me.dgvDetalle.CurrentRow.DataBoundItem, DetalleSucursal)
+            Me.Actual = DirectCast(Me.dgvDetalle.CurrentRow.DataBoundItem, DetalleModeloSucursal)
             Me.presentardatos()
         Else
             MessageBox.Show("Debe seleccionar un modelo", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
     Sub presentardatos()
-        Dim rn As New RNDetalleSucursal
+        Dim rn As New RNDetalleModeloSucursal
 
         Try
             Me.Actual = rn.Leer(Me.Actual, idsucursal)
             If Me.Actual IsNot Nothing Then
                 With Me.Actual
-                    Me.txtPrecio.Text = .precio
+                    Me.txtPrecio.Text = .PrecioVenta
                     cmbModelo.Items.Add(.Modelo.Descripcion)
-                    Me.txtCantidad.Text = .cantidad
+                    Me.txtCantidad.Text = .Cantidad
                 End With
 
             Else

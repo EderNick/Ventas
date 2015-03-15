@@ -23,13 +23,16 @@ Partial Class frmOrdenPedido
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOrdenPedido))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.txtSubTotal = New MetroFramework.Controls.MetroTextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.gbProducto = New System.Windows.Forms.GroupBox()
         Me.txtPrecioUnitario = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.txtCantidad = New MetroFramework.Controls.MetroTextBox()
@@ -62,7 +65,7 @@ Partial Class frmOrdenPedido
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnGuardarCierre = New System.Windows.Forms.Button()
-        Me.GroupBox3.SuspendLayout()
+        Me.gbProducto.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -100,7 +103,7 @@ Partial Class frmOrdenPedido
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroLabel1.Location = New System.Drawing.Point(770, 564)
+        Me.MetroLabel1.Location = New System.Drawing.Point(737, 563)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
@@ -116,44 +119,45 @@ Partial Class frmOrdenPedido
         Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtSubTotal.Lines = New String() {"0.00"}
-        Me.txtSubTotal.Location = New System.Drawing.Point(776, 586)
+        Me.txtSubTotal.Location = New System.Drawing.Point(737, 585)
         Me.txtSubTotal.MaxLength = 10
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtSubTotal.SelectedText = ""
-        Me.txtSubTotal.Size = New System.Drawing.Size(117, 30)
+        Me.txtSubTotal.Size = New System.Drawing.Size(123, 30)
         Me.txtSubTotal.TabIndex = 50
         Me.txtSubTotal.Text = "0.00"
         Me.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtSubTotal.UseSelectable = True
         '
-        'GroupBox3
+        'gbProducto
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox3.Controls.Add(Me.txtPrecioUnitario)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel5)
-        Me.GroupBox3.Controls.Add(Me.txtCantidad)
-        Me.GroupBox3.Controls.Add(Me.txtProducto)
-        Me.GroupBox3.Controls.Add(Me.btnBuscarProducto)
-        Me.GroupBox3.Controls.Add(Me.txtMonto)
-        Me.GroupBox3.Controls.Add(Me.btnAgregar)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel2)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel4)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel9)
-        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox3.Location = New System.Drawing.Point(9, 229)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(884, 141)
-        Me.GroupBox3.TabIndex = 117
-        Me.GroupBox3.TabStop = False
+        Me.gbProducto.BackColor = System.Drawing.Color.White
+        Me.gbProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbProducto.Controls.Add(Me.txtPrecioUnitario)
+        Me.gbProducto.Controls.Add(Me.MetroLabel5)
+        Me.gbProducto.Controls.Add(Me.txtCantidad)
+        Me.gbProducto.Controls.Add(Me.txtProducto)
+        Me.gbProducto.Controls.Add(Me.btnBuscarProducto)
+        Me.gbProducto.Controls.Add(Me.txtMonto)
+        Me.gbProducto.Controls.Add(Me.btnAgregar)
+        Me.gbProducto.Controls.Add(Me.MetroLabel2)
+        Me.gbProducto.Controls.Add(Me.MetroLabel4)
+        Me.gbProducto.Controls.Add(Me.MetroLabel9)
+        Me.gbProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.gbProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbProducto.ForeColor = System.Drawing.Color.Black
+        Me.gbProducto.Location = New System.Drawing.Point(9, 229)
+        Me.gbProducto.Name = "gbProducto"
+        Me.gbProducto.Size = New System.Drawing.Size(884, 141)
+        Me.gbProducto.TabIndex = 117
+        Me.gbProducto.TabStop = False
         '
         'txtPrecioUnitario
         '
         Me.txtPrecioUnitario.Enabled = False
+        Me.txtPrecioUnitario.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtPrecioUnitario.Lines = New String(-1) {}
         Me.txtPrecioUnitario.Location = New System.Drawing.Point(140, 82)
         Me.txtPrecioUnitario.MaxLength = 32767
@@ -161,8 +165,9 @@ Partial Class frmOrdenPedido
         Me.txtPrecioUnitario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPrecioUnitario.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtPrecioUnitario.SelectedText = ""
-        Me.txtPrecioUnitario.Size = New System.Drawing.Size(107, 23)
+        Me.txtPrecioUnitario.Size = New System.Drawing.Size(67, 23)
         Me.txtPrecioUnitario.TabIndex = 198
+        Me.txtPrecioUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtPrecioUnitario.UseSelectable = True
         '
         'MetroLabel5
@@ -181,21 +186,24 @@ Partial Class frmOrdenPedido
         '
         'txtCantidad
         '
+        Me.txtCantidad.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtCantidad.Lines = New String(-1) {}
-        Me.txtCantidad.Location = New System.Drawing.Point(370, 82)
+        Me.txtCantidad.Location = New System.Drawing.Point(315, 83)
         Me.txtCantidad.MaxLength = 32767
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCantidad.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtCantidad.SelectedText = ""
-        Me.txtCantidad.Size = New System.Drawing.Size(131, 23)
+        Me.txtCantidad.Size = New System.Drawing.Size(73, 23)
         Me.txtCantidad.TabIndex = 196
+        Me.txtCantidad.Tag = "0"
         Me.txtCantidad.UseCustomBackColor = True
         Me.txtCantidad.UseSelectable = True
         '
         'txtProducto
         '
         Me.txtProducto.Enabled = False
+        Me.txtProducto.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtProducto.Lines = New String(-1) {}
         Me.txtProducto.Location = New System.Drawing.Point(140, 29)
         Me.txtProducto.MaxLength = 32767
@@ -213,8 +221,8 @@ Partial Class frmOrdenPedido
         Me.btnBuscarProducto.BackgroundImage = CType(resources.GetObject("btnBuscarProducto.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnBuscarProducto.FlatAppearance.BorderSize = 0
-        Me.btnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarProducto.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscarProducto.ForeColor = System.Drawing.Color.White
@@ -227,15 +235,18 @@ Partial Class frmOrdenPedido
         'txtMonto
         '
         Me.txtMonto.Enabled = False
+        Me.txtMonto.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtMonto.Lines = New String(-1) {}
-        Me.txtMonto.Location = New System.Drawing.Point(605, 82)
+        Me.txtMonto.Location = New System.Drawing.Point(491, 80)
         Me.txtMonto.MaxLength = 32767
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMonto.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtMonto.SelectedText = ""
-        Me.txtMonto.Size = New System.Drawing.Size(131, 23)
+        Me.txtMonto.Size = New System.Drawing.Size(102, 30)
         Me.txtMonto.TabIndex = 177
+        Me.txtMonto.Tag = ""
+        Me.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtMonto.UseSelectable = True
         '
         'btnAgregar
@@ -250,9 +261,9 @@ Partial Class frmOrdenPedido
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
         Me.btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), System.Drawing.Image)
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnAgregar.Location = New System.Drawing.Point(782, 29)
+        Me.btnAgregar.Location = New System.Drawing.Point(622, 37)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(82, 89)
+        Me.btnAgregar.Size = New System.Drawing.Size(117, 73)
         Me.btnAgregar.TabIndex = 195
         Me.btnAgregar.Text = "Agregar Producto"
         Me.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -261,7 +272,7 @@ Partial Class frmOrdenPedido
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(290, 86)
+        Me.MetroLabel2.Location = New System.Drawing.Point(235, 86)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(74, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
@@ -275,7 +286,7 @@ Partial Class frmOrdenPedido
         'MetroLabel9
         '
         Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(540, 86)
+        Me.MetroLabel9.Location = New System.Drawing.Point(426, 87)
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(59, 19)
         Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Green
@@ -290,17 +301,21 @@ Partial Class frmOrdenPedido
         '
         Me.dgvProductos.AllowUserToAddRows = False
         Me.dgvProductos.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Palatino Linotype", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1, Me.DataGridViewTextBoxColumn5})
         Me.dgvProductos.Location = New System.Drawing.Point(9, 393)
@@ -312,25 +327,35 @@ Partial Class frmOrdenPedido
         '
         'DataGridViewTextBoxColumn2
         '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreModelo"
         Me.DataGridViewTextBoxColumn2.HeaderText = "PRODUCTO"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 375
+        Me.DataGridViewTextBoxColumn2.Width = 370
         '
         'DataGridViewTextBoxColumn1
         '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Cantidad"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn1.HeaderText = "CANTIDAD"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'Column1
         '
-        Me.Column1.HeaderText = "PRECIO"
+        Me.Column1.DataPropertyName = "PrecioUnitario"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column1.HeaderText = "PRECIO UNIT."
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn5.HeaderText = "SUBTOTAL"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
@@ -358,6 +383,7 @@ Partial Class frmOrdenPedido
         'txtCliente
         '
         Me.txtCliente.Enabled = False
+        Me.txtCliente.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtCliente.Lines = New String(-1) {}
         Me.txtCliente.Location = New System.Drawing.Point(138, 137)
         Me.txtCliente.MaxLength = 32767
@@ -546,7 +572,7 @@ Partial Class frmOrdenPedido
         Me.btnEliminar.ForeColor = System.Drawing.Color.Black
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
         Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnEliminar.Location = New System.Drawing.Point(761, 393)
+        Me.btnEliminar.Location = New System.Drawing.Point(736, 411)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(82, 72)
         Me.btnEliminar.TabIndex = 219
@@ -627,7 +653,6 @@ Partial Class frmOrdenPedido
         '
         'frmOrdenPedido
         '
-        Me.AcceptButton = Me.btnBuscarCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(900, 711)
@@ -642,14 +667,14 @@ Partial Class frmOrdenPedido
         Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.MetroTile2)
         Me.Controls.Add(Me.MetroLabel8)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.gbProducto)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.txtSubTotal)
         Me.Controls.Add(Me.MetroLabel1)
         Me.KeyPreview = True
         Me.Name = "frmOrdenPedido"
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.gbProducto.ResumeLayout(False)
+        Me.gbProducto.PerformLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -662,7 +687,7 @@ Partial Class frmOrdenPedido
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtSubTotal As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents gbProducto As System.Windows.Forms.GroupBox
     Friend WithEvents txtMonto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
@@ -690,9 +715,9 @@ Partial Class frmOrdenPedido
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents txtPrecioUnitario As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnNuevo As System.Windows.Forms.Button
 End Class

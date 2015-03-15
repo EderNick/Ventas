@@ -1,17 +1,17 @@
 ﻿Public Class RNModelo
     Inherits CADO
 
-    Public Function Listar() As List(Of Modelo)
+    Public Function Listar(ByVal wIdSucursal As Integer) As List(Of Modelo)
         Dim Modelo As List(Of Modelo)
         Dim pars As New List(Of CParametro)
         Dim dr As NpgsqlDataReader = Nothing
         Dim M As Modelo = Nothing
 
-        'pars.Add(New CParametro("pIdEmpresa", wIdEmpresa))
+        pars.Add(New CParametro("pIdEmpresa", wIdSucursal))
 
         Try
             Me.Conectar(True)
-            dr = Me.PedirDataReader("fu_liModelo", Nothing)
+            dr = Me.PedirDataReader("fu_liModelo", pars)
             Modelo = New List(Of Modelo)
 
             Do While dr.Read = True
@@ -28,6 +28,7 @@
                 M.Producto.Categoria = New Categoria
                 M.Producto.Categoria.Codigo = dr.Item("idcategoria")
                 M.Producto.Categoria.Descripcion = dr.Item("des_Categoria")
+
                 Modelo.Add(M)
             Loop
 
@@ -38,10 +39,6 @@
         End Try
 
         Return Modelo
-    End Function
-
-    Function Buscar(ByVal wProducto As String) As List(Of Modelo)
-        Throw New NotImplementedException
     End Function
 
 End Class

@@ -14,7 +14,26 @@
 
     Public ReadOnly Property NombreCompletoProducto As String
         Get
-            Return Producto.Descripcion & "-" & Marca.Descripcion & "-" & Descripcion
+            Return Producto.Descripcion & " - " & Marca.Descripcion & " - " & Descripcion & " - " & Producto.Categoria.Descripcion
+        End Get
+    End Property
+
+    Public ReadOnly Property NombreMarca As String
+        Get
+            Return Marca.Descripcion
+        End Get
+    End Property
+
+    Public ReadOnly Property NombreProducto As String
+        Get
+            Return Producto.Descripcion
+        End Get
+    End Property
+
+
+    Public ReadOnly Property NombreCategoria As String
+        Get
+            Return Producto.Categoria.Descripcion
         End Get
     End Property
 End Class

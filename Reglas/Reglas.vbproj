@@ -78,7 +78,7 @@
     <Compile Include="RNCaja.vb" />
     <Compile Include="RNCliente.vb" />
     <Compile Include="RNDepartamento.vb" />
-    <Compile Include="RNDetalleSucursal.vb" />
+    <Compile Include="RNDetalleModeloSucursal.vb" />
     <Compile Include="RNDistrito.vb" />
     <Compile Include="RNEmpleado.vb" />
     <Compile Include="RNModelo.vb" />

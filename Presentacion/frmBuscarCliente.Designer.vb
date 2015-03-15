@@ -32,23 +32,12 @@ Partial Class frmBuscarCliente
         Me.Button6 = New System.Windows.Forms.Button()
         Me.txtDNI = New MetroFramework.Controls.MetroTextBox()
         Me.dgvEmpresas = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtRUC = New MetroFramework.Controls.MetroTextBox()
         Me.rdoRUC = New MetroFramework.Controls.MetroRadioButton()
         Me.rdoDNI = New MetroFramework.Controls.MetroRadioButton()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
-        Me.btnRegistrar = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnSeleccionar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,6 +45,17 @@ Partial Class frmBuscarCliente
         Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvEmpresas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,57 +144,6 @@ Partial Class frmBuscarCliente
         Me.dgvEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvEmpresas.Size = New System.Drawing.Size(857, 189)
         Me.dgvEmpresas.TabIndex = 163
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "RazonSocial"
-        Me.Column1.HeaderText = "RAZON SOCIAL"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 300
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "RUC"
-        Me.Column2.HeaderText = "RUC"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "Direccion"
-        Me.Column3.HeaderText = "DIRECCION"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "ZonaNomb"
-        Me.Column6.HeaderText = "ZONA"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "NombreEmpleado"
-        Me.Column7.HeaderText = "EMPLEADO"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 250
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "Telefono"
-        Me.Column4.HeaderText = "TELEFONO"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "Correo"
-        Me.Column5.HeaderText = "CORREO"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'GroupBox2
         '
@@ -298,6 +247,60 @@ Partial Class frmBuscarCliente
         Me.dgvClientes.Size = New System.Drawing.Size(857, 189)
         Me.dgvClientes.TabIndex = 163
         '
+        'DataGridViewTextBoxColumn45
+        '
+        Me.DataGridViewTextBoxColumn45.DataPropertyName = "NombreCliente"
+        Me.DataGridViewTextBoxColumn45.HeaderText = "NOMBRE COMPLETO"
+        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
+        Me.DataGridViewTextBoxColumn45.ReadOnly = True
+        Me.DataGridViewTextBoxColumn45.Width = 250
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "DniCliente"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "DNI"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn53
+        '
+        Me.DataGridViewTextBoxColumn53.DataPropertyName = "ZonaNomb"
+        Me.DataGridViewTextBoxColumn53.HeaderText = "ZONA"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        Me.DataGridViewTextBoxColumn53.ReadOnly = True
+        Me.DataGridViewTextBoxColumn53.Width = 200
+        '
+        'DataGridViewTextBoxColumn55
+        '
+        Me.DataGridViewTextBoxColumn55.DataPropertyName = "NombreEmpleado"
+        Me.DataGridViewTextBoxColumn55.HeaderText = "EMPLEADO"
+        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
+        Me.DataGridViewTextBoxColumn55.ReadOnly = True
+        Me.DataGridViewTextBoxColumn55.Width = 250
+        '
+        'DataGridViewTextBoxColumn50
+        '
+        Me.DataGridViewTextBoxColumn50.DataPropertyName = "SexoCliente"
+        Me.DataGridViewTextBoxColumn50.HeaderText = "SEXO"
+        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
+        Me.DataGridViewTextBoxColumn50.ReadOnly = True
+        Me.DataGridViewTextBoxColumn50.Width = 50
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.DataPropertyName = "DireccionCliente"
+        Me.DataGridViewTextBoxColumn48.HeaderText = "DIRECCION"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = True
+        Me.DataGridViewTextBoxColumn48.Width = 150
+        '
+        'DataGridViewTextBoxColumn51
+        '
+        Me.DataGridViewTextBoxColumn51.DataPropertyName = "TelefonoCliente"
+        Me.DataGridViewTextBoxColumn51.HeaderText = "TELEF."
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        Me.DataGridViewTextBoxColumn51.ReadOnly = True
+        '
         'btnRegistrar
         '
         Me.btnRegistrar.BackColor = System.Drawing.Color.Transparent
@@ -369,59 +372,56 @@ Partial Class frmBuscarCliente
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'DataGridViewTextBoxColumn45
+        'Column1
         '
-        Me.DataGridViewTextBoxColumn45.DataPropertyName = "NombreCliente"
-        Me.DataGridViewTextBoxColumn45.HeaderText = "NOMBRE COMPLETO"
-        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
-        Me.DataGridViewTextBoxColumn45.ReadOnly = True
-        Me.DataGridViewTextBoxColumn45.Width = 250
+        Me.Column1.DataPropertyName = "RazonSocialEmpresa"
+        Me.Column1.HeaderText = "RAZON SOCIAL"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 300
         '
-        'DataGridViewTextBoxColumn49
+        'Column2
         '
-        Me.DataGridViewTextBoxColumn49.DataPropertyName = "DniCliente"
-        Me.DataGridViewTextBoxColumn49.HeaderText = "DNI"
-        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
-        Me.DataGridViewTextBoxColumn49.ReadOnly = True
+        Me.Column2.DataPropertyName = "RUCEmpresa"
+        Me.Column2.HeaderText = "RUC"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn53
+        'Column3
         '
-        Me.DataGridViewTextBoxColumn53.DataPropertyName = "ZonaNomb"
-        Me.DataGridViewTextBoxColumn53.HeaderText = "ZONA"
-        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
-        Me.DataGridViewTextBoxColumn53.ReadOnly = True
-        Me.DataGridViewTextBoxColumn53.Width = 200
+        Me.Column3.DataPropertyName = "DireccionEmpresa"
+        Me.Column3.HeaderText = "DIRECCION"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn55
+        'Column6
         '
-        Me.DataGridViewTextBoxColumn55.DataPropertyName = "NombreEmpleado"
-        Me.DataGridViewTextBoxColumn55.HeaderText = "EMPLEADO"
-        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
-        Me.DataGridViewTextBoxColumn55.ReadOnly = True
-        Me.DataGridViewTextBoxColumn55.Width = 250
+        Me.Column6.DataPropertyName = "ZonaNomb"
+        Me.Column6.HeaderText = "ZONA"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn50
+        'Column7
         '
-        Me.DataGridViewTextBoxColumn50.DataPropertyName = "SexoCliente"
-        Me.DataGridViewTextBoxColumn50.HeaderText = "SEXO"
-        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
-        Me.DataGridViewTextBoxColumn50.ReadOnly = True
-        Me.DataGridViewTextBoxColumn50.Width = 50
+        Me.Column7.DataPropertyName = "NombreEmpleado"
+        Me.Column7.HeaderText = "EMPLEADO"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 250
         '
-        'DataGridViewTextBoxColumn48
+        'Column4
         '
-        Me.DataGridViewTextBoxColumn48.DataPropertyName = "DireccionCliente"
-        Me.DataGridViewTextBoxColumn48.HeaderText = "DIRECCION"
-        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
-        Me.DataGridViewTextBoxColumn48.ReadOnly = True
-        Me.DataGridViewTextBoxColumn48.Width = 150
+        Me.Column4.DataPropertyName = "TelefonoEmpresa"
+        Me.Column4.HeaderText = "TELEFONO"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn51
+        'Column5
         '
-        Me.DataGridViewTextBoxColumn51.DataPropertyName = "TelefonoCliente"
-        Me.DataGridViewTextBoxColumn51.HeaderText = "TELEF."
-        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
-        Me.DataGridViewTextBoxColumn51.ReadOnly = True
+        Me.Column5.DataPropertyName = "CorreoEmpresa"
+        Me.Column5.HeaderText = "CORREO"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'frmBuscarCliente
         '
@@ -458,13 +458,6 @@ Partial Class frmBuscarCliente
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnSeleccionar As System.Windows.Forms.Button
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn45 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn49 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn53 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -472,4 +465,11 @@ Partial Class frmBuscarCliente
     Friend WithEvents DataGridViewTextBoxColumn50 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn48 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn51 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

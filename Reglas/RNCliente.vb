@@ -68,6 +68,7 @@
                 dcli.EmpresaJuridica = New EmpresaJuridica
                 dcli.EmpresaJuridica.Codigo = CInt(dr.Item("idempresajuridica"))
                 dcli.EmpresaJuridica.RazonSocial = dr.Item("razonsocial")
+                dcli.EmpresaJuridica.RUC = wRUC
                 dcli.EmpresaJuridica.Direccion = dr.Item("direccion")
                 dcli.EmpresaJuridica.Telefono = dr.Item("telefono")
                 dcli.EmpresaJuridica.Correo = dr.Item("correo")
