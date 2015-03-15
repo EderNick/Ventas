@@ -44,13 +44,17 @@ Partial Class frmOrdenPedido
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.txtCliente = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtNumero = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
         Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
@@ -62,10 +66,6 @@ Partial Class frmOrdenPedido
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnGuardarCierre = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbProducto.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -212,7 +212,7 @@ Partial Class frmOrdenPedido
         Me.txtProducto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtProducto.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtProducto.SelectedText = ""
-        Me.txtProducto.Size = New System.Drawing.Size(361, 23)
+        Me.txtProducto.Size = New System.Drawing.Size(403, 23)
         Me.txtProducto.TabIndex = 184
         Me.txtProducto.UseSelectable = True
         '
@@ -227,7 +227,7 @@ Partial Class frmOrdenPedido
         Me.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarProducto.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscarProducto.ForeColor = System.Drawing.Color.White
-        Me.btnBuscarProducto.Location = New System.Drawing.Point(505, 21)
+        Me.btnBuscarProducto.Location = New System.Drawing.Point(549, 20)
         Me.btnBuscarProducto.Name = "btnBuscarProducto"
         Me.btnBuscarProducto.Size = New System.Drawing.Size(44, 39)
         Me.btnBuscarProducto.TabIndex = 183
@@ -326,6 +326,47 @@ Partial Class frmOrdenPedido
         Me.dgvProductos.Size = New System.Drawing.Size(722, 222)
         Me.dgvProductos.TabIndex = 173
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreModelo"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn2.HeaderText = "PRODUCTO"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 420
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Cantidad"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn1.HeaderText = "CANT."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 50
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "PrecioUnitario"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column1.HeaderText = "PRECIO UNIT."
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn5.HeaderText = "SUBTOTAL"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
         'MetroTile2
         '
         Me.MetroTile2.ActiveControl = Nothing
@@ -368,14 +409,14 @@ Partial Class frmOrdenPedido
         Me.GroupBox1.Controls.Add(Me.MetroTextBox5)
         Me.GroupBox1.Controls.Add(Me.MetroLabel10)
         Me.GroupBox1.Controls.Add(Me.MetroLabel12)
-        Me.GroupBox1.Controls.Add(Me.MetroTextBox7)
+        Me.GroupBox1.Controls.Add(Me.txtNumero)
         Me.GroupBox1.Controls.Add(Me.MetroLabel17)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(598, 13)
+        Me.GroupBox1.Location = New System.Drawing.Point(558, 13)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(295, 70)
+        Me.GroupBox1.Size = New System.Drawing.Size(335, 70)
         Me.GroupBox1.TabIndex = 170
         Me.GroupBox1.TabStop = False
         '
@@ -395,12 +436,12 @@ Partial Class frmOrdenPedido
         'MetroLabel10
         '
         Me.MetroLabel10.AutoSize = True
-        Me.MetroLabel10.Location = New System.Drawing.Point(33, 30)
+        Me.MetroLabel10.Location = New System.Drawing.Point(5, 30)
         Me.MetroLabel10.Name = "MetroLabel10"
-        Me.MetroLabel10.Size = New System.Drawing.Size(66, 19)
+        Me.MetroLabel10.Size = New System.Drawing.Size(137, 19)
         Me.MetroLabel10.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel10.TabIndex = 48
-        Me.MetroLabel10.Text = "NUMERO"
+        Me.MetroLabel10.Text = "NUMERO DE PEDIDO"
         Me.MetroLabel10.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel10.UseCustomBackColor = True
         Me.MetroLabel10.UseCustomForeColor = True
@@ -420,20 +461,23 @@ Partial Class frmOrdenPedido
         Me.MetroLabel12.UseCustomForeColor = True
         Me.MetroLabel12.UseStyleColors = True
         '
-        'MetroTextBox7
+        'txtNumero
         '
-        Me.MetroTextBox7.BackColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTextBox7.Lines = New String(-1) {}
-        Me.MetroTextBox7.Location = New System.Drawing.Point(138, 26)
-        Me.MetroTextBox7.MaxLength = 32767
-        Me.MetroTextBox7.Name = "MetroTextBox7"
-        Me.MetroTextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox7.SelectedText = ""
-        Me.MetroTextBox7.Size = New System.Drawing.Size(121, 23)
-        Me.MetroTextBox7.TabIndex = 40
-        Me.MetroTextBox7.UseCustomBackColor = True
-        Me.MetroTextBox7.UseSelectable = True
+        Me.txtNumero.BackColor = System.Drawing.Color.DodgerBlue
+        Me.txtNumero.Enabled = False
+        Me.txtNumero.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtNumero.Lines = New String() {"00000000001"}
+        Me.txtNumero.Location = New System.Drawing.Point(158, 24)
+        Me.txtNumero.MaxLength = 32767
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNumero.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNumero.SelectedText = ""
+        Me.txtNumero.Size = New System.Drawing.Size(161, 30)
+        Me.txtNumero.TabIndex = 40
+        Me.txtNumero.Text = "00000000001"
+        Me.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtNumero.UseSelectable = True
         '
         'MetroLabel17
         '
@@ -609,54 +653,13 @@ Partial Class frmOrdenPedido
         Me.btnGuardarCierre.ForeColor = System.Drawing.Color.White
         Me.btnGuardarCierre.Image = CType(resources.GetObject("btnGuardarCierre.Image"), System.Drawing.Image)
         Me.btnGuardarCierre.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardarCierre.Location = New System.Drawing.Point(434, 0)
+        Me.btnGuardarCierre.Location = New System.Drawing.Point(421, 0)
         Me.btnGuardarCierre.Name = "btnGuardarCierre"
         Me.btnGuardarCierre.Size = New System.Drawing.Size(111, 72)
         Me.btnGuardarCierre.TabIndex = 154
         Me.btnGuardarCierre.Text = "&Registrar"
         Me.btnGuardarCierre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnGuardarCierre.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreModelo"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn2.HeaderText = "PRODUCTO"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 420
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Cantidad"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn1.HeaderText = "CANT."
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 50
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "PrecioUnitario"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column1.HeaderText = "PRECIO UNIT."
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridViewTextBoxColumn5.HeaderText = "SUBTOTAL"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'frmOrdenPedido
         '
@@ -710,7 +713,7 @@ Partial Class frmOrdenPedido
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox7 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNumero As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtCantidad As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btnAgregar As System.Windows.Forms.Button

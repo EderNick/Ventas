@@ -7,6 +7,10 @@
     End Sub
 
     Private Sub rdoRUC_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdoRUC.CheckedChanged
+        SeleccionRUC()
+    End Sub
+
+    Private Sub SeleccionRUC()
         txtRUC.Enabled = True
         txtRUC.BackColor = Color.White 'cambiarlo a color blanco(activo)
         txtDNI.Enabled = False
@@ -19,6 +23,10 @@
     End Sub
 
     Private Sub rdoDNI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdoDNI.CheckedChanged
+        SeleccionDNI()
+    End Sub
+
+    Private Sub SeleccionDNI()
         txtDNI.Enabled = True
         txtDNI.BackColor = Color.White 'cambiarlo a color blanco(activo)
         txtRUC.Enabled = False
@@ -111,4 +119,16 @@
         Return DetCliente
     End Function
 
+    Private Sub frmBuscarCliente_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        Try
+            If e.KeyData = Keys.Control + Keys.D Then 'DNI
+                SeleccionDNI()
+            End If
+            If e.KeyData = Keys.Control + Keys.R Then 'RUC
+                SeleccionRUC()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

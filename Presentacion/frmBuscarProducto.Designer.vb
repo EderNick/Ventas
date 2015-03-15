@@ -23,8 +23,8 @@ Partial Class frmBuscarProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBuscarProducto))
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
@@ -55,7 +55,7 @@ Partial Class frmBuscarProducto
         Me.MetroTile2.ForeColor = System.Drawing.Color.DodgerBlue
         Me.MetroTile2.Location = New System.Drawing.Point(0, 0)
         Me.MetroTile2.Name = "MetroTile2"
-        Me.MetroTile2.Size = New System.Drawing.Size(684, 77)
+        Me.MetroTile2.Size = New System.Drawing.Size(715, 77)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile2.TabIndex = 172
         Me.MetroTile2.Text = "BUSQUEDA DE PRODUCTO"
@@ -112,7 +112,7 @@ Partial Class frmBuscarProducto
         Me.dgvProducto.Name = "dgvProducto"
         Me.dgvProducto.ReadOnly = True
         Me.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProducto.Size = New System.Drawing.Size(647, 182)
+        Me.dgvProducto.Size = New System.Drawing.Size(659, 182)
         Me.dgvProducto.TabIndex = 180
         '
         'Column2
@@ -149,8 +149,8 @@ Partial Class frmBuscarProducto
         'Column3
         '
         Me.Column3.DataPropertyName = "PrecioVenta"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column3.HeaderText = "PRECIO UNIT."
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -159,8 +159,8 @@ Partial Class frmBuscarProducto
         'Column4
         '
         Me.Column4.DataPropertyName = "Cantidad"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column4.HeaderText = "STOCK EN SUCURSAL"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -213,7 +213,7 @@ Partial Class frmBuscarProducto
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Location = New System.Drawing.Point(0, 398)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(684, 75)
+        Me.Panel2.Size = New System.Drawing.Size(724, 75)
         Me.Panel2.TabIndex = 222
         '
         'btnSeleccionar
@@ -228,7 +228,7 @@ Partial Class frmBuscarProducto
         Me.btnSeleccionar.ForeColor = System.Drawing.Color.White
         Me.btnSeleccionar.Image = CType(resources.GetObject("btnSeleccionar.Image"), System.Drawing.Image)
         Me.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSeleccionar.Location = New System.Drawing.Point(275, 1)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(291, 1)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(143, 72)
         Me.btnSeleccionar.TabIndex = 198
@@ -268,7 +268,7 @@ Partial Class frmBuscarProducto
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(597, 1)
+        Me.btnSalir.Location = New System.Drawing.Point(623, 1)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(73, 72)
         Me.btnSalir.TabIndex = 155
@@ -278,10 +278,10 @@ Partial Class frmBuscarProducto
         '
         'frmBuscarProducto
         '
-        Me.AcceptButton = Me.btnBuscar
+        Me.AcceptButton = Me.btnSeleccionar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(680, 477)
+        Me.ClientSize = New System.Drawing.Size(705, 477)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.dgvProducto)
