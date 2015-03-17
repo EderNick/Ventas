@@ -2,7 +2,7 @@
 
     Private Empleado As Empleado = modPrincipal.UsuarioLogeado.Empleado
     Private Sucursal As Sucursal = modPrincipal.UsuarioLogeado.Empleado.Sucursal
-    Private CajaAbierta As Caja
+    Private CajaAbierta As Caja = Nothing
     Private campos_faltan As String
 
     Private Sub LimpiarControles()
@@ -56,9 +56,9 @@
                 Me.Close()
             Catch ex As Exception
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                CajaAbierta = Nothing
             Finally
                 rn = Nothing
-                CajaAbierta = Nothing
             End Try
 
         Else

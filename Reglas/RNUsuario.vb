@@ -55,6 +55,7 @@
                     usu.Empleado.Sucursal.Empresa = New Empresa
                     usu.Empleado.Sucursal.Empresa.Codigo = dr.Item("idempresa")
                     usu.Empleado.Sucursal.Empresa.RazonSocial = dr.Item("razonsocial")
+                    usu.Empleado.Sucursal.Empresa.Ruc = dr.Item("ruc")
                 End If
             End If
         Catch ex As Exception

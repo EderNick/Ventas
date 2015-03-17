@@ -109,4 +109,6 @@
             dgvProductos.Rows.RemoveAt(dgvProductos.CurrentRow.Index)
         End If
     End Sub
+
+
 End Class

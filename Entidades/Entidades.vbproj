@@ -73,6 +73,7 @@
     <Compile Include="DetalleModeloSucursal.vb" />
     <Compile Include="DetalleOrdenPedido.vb" />
     <Compile Include="Distrito.vb" />
+    <Compile Include="DocumentoVenta.vb" />
     <Compile Include="Empleado.vb" />
     <Compile Include="Empresa.vb" />
     <Compile Include="EmpresaJuridica.vb" />
