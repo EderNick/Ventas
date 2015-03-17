@@ -32,6 +32,13 @@ Partial Class frmBuscarCliente
         Me.Button6 = New System.Windows.Forms.Button()
         Me.txtDNI = New MetroFramework.Controls.MetroTextBox()
         Me.dgvEmpresas = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtRUC = New MetroFramework.Controls.MetroTextBox()
         Me.rdoRUC = New MetroFramework.Controls.MetroRadioButton()
@@ -49,13 +56,6 @@ Partial Class frmBuscarCliente
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvEmpresas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,6 +144,57 @@ Partial Class frmBuscarCliente
         Me.dgvEmpresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvEmpresas.Size = New System.Drawing.Size(857, 189)
         Me.dgvEmpresas.TabIndex = 163
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "RazonSocialEmpresa"
+        Me.Column1.HeaderText = "RAZON SOCIAL"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 300
+        '
+        'Column2
+        '
+        Me.Column2.DataPropertyName = "RUCEmpresa"
+        Me.Column2.HeaderText = "RUC"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "DireccionEmpresa"
+        Me.Column3.HeaderText = "DIRECCION"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "ZonaNomb"
+        Me.Column6.HeaderText = "ZONA"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "NombreEmpleado"
+        Me.Column7.HeaderText = "EMPLEADO"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 250
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "TelefonoEmpresa"
+        Me.Column4.HeaderText = "TELEFONO"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "CorreoEmpresa"
+        Me.Column5.HeaderText = "CORREO"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'GroupBox2
         '
@@ -371,57 +422,6 @@ Partial Class frmBuscarCliente
         Me.btnSalir.Text = "&Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "RazonSocialEmpresa"
-        Me.Column1.HeaderText = "RAZON SOCIAL"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 300
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "RUCEmpresa"
-        Me.Column2.HeaderText = "RUC"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "DireccionEmpresa"
-        Me.Column3.HeaderText = "DIRECCION"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "ZonaNomb"
-        Me.Column6.HeaderText = "ZONA"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "NombreEmpleado"
-        Me.Column7.HeaderText = "EMPLEADO"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 250
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "TelefonoEmpresa"
-        Me.Column4.HeaderText = "TELEFONO"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "CorreoEmpresa"
-        Me.Column5.HeaderText = "CORREO"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'frmBuscarCliente
         '
