@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>Ventas.ModuloVentas.frmRegistroPagos</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -129,6 +129,18 @@
     <Compile Include="frmGestionCuentasCobrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmGestionNotificacionesCorreo.Designer.vb">
+      <DependentUpon>frmGestionNotificacionesCorreo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionNotificacionesCorreo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoCuentasBancarias.Designer.vb">
+      <DependentUpon>frmMantenimientoCuentasBancarias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimientoCuentasBancarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMantenimientoTipoTarjetas.Designer.vb">
       <DependentUpon>frmMantenimientoTipoTarjetas.vb</DependentUpon>
     </Compile>
@@ -154,12 +166,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modFunciones.vb" />
-    <Compile Include="frmBancoVenta.Designer.vb">
-      <DependentUpon>frmBancoVenta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmBancoVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmCajaInicio.Designer.vb">
       <DependentUpon>frmCajaInicio.vb</DependentUpon>
     </Compile>
@@ -313,9 +319,6 @@
     <EmbeddedResource Include="frmCajaCierre.resx">
       <DependentUpon>frmCajaCierre.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBancoVenta.resx">
-      <DependentUpon>frmBancoVenta.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarEmpleado.resx">
       <DependentUpon>frmBuscarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
@@ -358,11 +361,17 @@
     <EmbeddedResource Include="frmGestionCuentasCobrar.resx">
       <DependentUpon>frmGestionCuentasCobrar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionNotificacionesCorreo.resx">
+      <DependentUpon>frmGestionNotificacionesCorreo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoCuentasBancarias.resx">
+      <DependentUpon>frmMantenimientoCuentasBancarias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTipoTarjetas.resx">
       <DependentUpon>frmMantenimientoTipoTarjetas.vb</DependentUpon>
