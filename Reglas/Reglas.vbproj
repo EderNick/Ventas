@@ -83,6 +83,7 @@
     <Compile Include="RNDetalleModeloSucursal.vb" />
     <Compile Include="RNDetalleOrdenPedido.vb" />
     <Compile Include="RNDistrito.vb" />
+    <Compile Include="RNDocumentoVenta.vb" />
     <Compile Include="RNEmpleado.vb" />
     <Compile Include="RNModelo.vb" />
     <Compile Include="RNOrdenPedido.vb" />
