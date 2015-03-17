@@ -14,7 +14,7 @@ Public Class frmGestionNotificacionesCorreo
     End Sub
 
     Private Sub ListarClientes()
-        Dim rn As RNCliente
+        'Dim rn As RNCliente
 
     End Sub
 

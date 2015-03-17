@@ -4,6 +4,12 @@
     Public Property Cantidad As Integer
     Public Property Total As Double
 
+    Public ReadOnly Property CodigoModelo As String
+        Get
+            Return Modelo.Codigo
+        End Get
+    End Property
+
     Public ReadOnly Property NombreModelo As String
         Get
             Return Modelo.NombreCompletoProducto

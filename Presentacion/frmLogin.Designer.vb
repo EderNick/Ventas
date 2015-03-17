@@ -181,6 +181,7 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.ClientSize = New System.Drawing.Size(582, 356)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.btnSalir)
@@ -190,6 +191,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.txtPasword)
         Me.Controls.Add(Me.txtUser)
+        Me.Movable = False
         Me.Name = "frmLogin"
         Me.ResumeLayout(False)
         Me.PerformLayout()

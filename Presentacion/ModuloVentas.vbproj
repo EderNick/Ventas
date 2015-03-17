@@ -120,9 +120,7 @@
     <Compile Include="frmDocumentoVenta.Designer.vb">
       <DependentUpon>frmDocumentoVenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDocumentoVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmDocumentoVenta.vb" />
     <Compile Include="frmGestionCuentasCobrar.Designer.vb">
       <DependentUpon>frmGestionCuentasCobrar.vb</DependentUpon>
     </Compile>

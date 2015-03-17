@@ -47,9 +47,13 @@
                     .Empleado.Nombres = dr.Item("nombres")
                     .Empleado.Ap_Paterno = dr.Item("ap_paterno")
                     .Empleado.Ap_Materno = dr.Item("ap_materno")
+<<<<<<< HEAD
+                   
+=======
                     .Cliente = New Cliente
                     .Cliente.Codigo = dr.Item("idcliente")
                     .Cliente.Tipo = dr.Item("tipo")
+>>>>>>> 0acdf128e4a15a9a18094d0ae373533694752b92
 
                 End With
             End While
@@ -63,6 +67,12 @@
             End If
             pars = Nothing
         End Try
+<<<<<<< HEAD
+        Return s
+    End Function
+
+
+=======
         Return orden
     End Function
 
@@ -161,4 +171,5 @@
         End Try
         Return detallecliente
     End Function
+>>>>>>> 0acdf128e4a15a9a18094d0ae373533694752b92
 End Class
