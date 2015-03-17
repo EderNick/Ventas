@@ -29,5 +29,30 @@
         Return idOP
     End Function
 
+    Public Function BuscarNumOrdenPedido() As Integer
+        Dim pars As New List(Of CParametro)
+        Dim numero As Integer = Nothing
+        Dim dr As NpgsqlDataReader = Nothing
+
+        Try
+            Me.Conectar(True)
+            dr = Me.PedirDataReader("fu_leernumordenpedido", Nothing)
+            While dr.Read = True
+                numero = dr.Item("numero")
+            End While
+        Catch ex As Exception
+            Throw ex
+        Finally
+            pars.Clear()
+            pars = Nothing
+            If dr IsNot Nothing Then
+                dr.Close()
+                dr = Nothing
+            End If
+        End Try
+
+        Return numero
+    End Function
+
 End Class
 

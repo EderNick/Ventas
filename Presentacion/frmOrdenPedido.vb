@@ -53,10 +53,10 @@
         DetCliente = frm.Buscar()
 
         If DetCliente IsNot Nothing Then
-            If DetCliente.Cliente.Tipo = "N" Then
+            If DetCliente.Cliente.Tipo = "natural" Then
                 Me.txtCliente.Text = DetCliente.Persona.Nombres + " " + DetCliente.Persona.Ap_Paterno + " " + DetCliente.Persona.Ap_Materno
             End If
-            If DetCliente.Cliente.Tipo = "J" Then
+            If DetCliente.Cliente.Tipo = "juridico" Then
                 Me.txtCliente.Text = DetCliente.EmpresaJuridica.RazonSocial
             End If
             gbProducto.Enabled = True
@@ -71,6 +71,14 @@
     Private Sub frmOrdenPedido_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.AcceptButton = btnBuscarCliente
         gbProducto.Enabled = False
+        Dim rn As New RNOrdenPedido
+        Dim num As Integer = 0
+        If rn.BuscarNumOrdenPedido.ToString Is Nothing Then
+            txtNumero.Text = "0000000001"
+        Else
+            num = Val(rn.BuscarNumOrdenPedido) + 1
+            txtNumero.Text = String.Format("{0:0000000000}", num)
+        End If
     End Sub
 
     Private Sub btnBuscarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscarProducto.Click
