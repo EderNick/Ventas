@@ -1,22 +1,81 @@
 ﻿Public Class frmDocumentoVenta
+
+<<<<<<< HEAD
+    Private Sub frmDocumentoVenta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim rn As New RNDocumentoVenta
+        Dim num As Integer = 0
+        If rn.BuscarNumDocumento.ToString Is Nothing Then
+            txtNumero.Text = "0000000001"
+        Else
+            num = Val(rn.BuscarNumDocumento) + 1
+            txtNumero.Text = String.Format("{0:0000000000}", num)
+        End If
+
+        Me.txtSucursal.Text = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Nombre
+        Me.txtRuc.Text = modPrincipal.UsuarioLogeado.Empleado.Sucursal.Empresa.Ruc
+        Me.txtNumCaja.Text = modPrincipal.CajaActualAbierta.Numero
+        Me.txtCajero.Text = modPrincipal.UsuarioLogeado.Empleado.NombreEmpleado
         Me.txtSubTotal.Text = "0"
+        Me.txtIGV.Text = "0"
         Me.txtDescuento.Text = "0"
         Me.txtTotal.Text = "0"
         Me.txtMontoInicial.Text = "0"
         Me.txtMontoRestante.Text = "0"
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
 
-            txtMontoRestante.Text = txtTotal.Text
+
+    Private Sub cboTipoDoc_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDoc.SelectedIndexChanged
+        If cboTipoDoc.SelectedItem = "FACTURA" Then
+            lblCliente.Text = "RAZON SOCIAL"
+            lblDoc.Text = "RUC"
+        Else
+            lblCliente.Text = "      NOMBRE"
+            lblDoc.Text = "DNI"
+        End If
+    End Sub
+
+    Private Sub cboFormaPago_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboFormaPago.SelectedIndexChanged
+        If cboFormaPago.SelectedItem = "CREDITO" Then
+            gbCuotas.Enabled = True
+            txtMontoRestante.Text = txtSubTotal.Text
+            txtMontoInicial.Text = "0"
             btnEfectuarPago.Enabled = False
+        Else
+            gbCuotas.Enabled = False
             btnEfectuarPago.Enabled = True
             txtMontoInicial.Text = "0"
             txtMontoRestante.Text = "0"
             numCuotas.Value = 0
             dgvCuotas.Rows.Clear()
+        End If
+    End Sub
+
+
+    Private Sub txtMontoInicial_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMontoInicial.KeyPress
+        If (e.KeyChar < "0" Or e.KeyChar > "9") And AscW(e.KeyChar) <> 8 Then ' ascw-->convierte la tecla a numero 
+            e.Handled = True ' no permite pasar al numero 
+            
+        End If
+       
+    End Sub
+
+
+    Private Sub txtMontoInicial_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtMontoInicial.TextChanged
+        If txtMontoInicial.Text = "" Then
+            txtMontoInicial.Text = "0"
             btnEfectuarPago.Enabled = False
-            txtMontoRestante.Text = CDbl(txtTotal.Text) - CDbl(txtMontoInicial.Text)
+        Else
+            txtMontoRestante.Text = CDbl(txtSubTotal.Text) - CDbl(txtMontoInicial.Text)
             btnEfectuarPago.Enabled = True
+        End If
+    End Sub
+
+ 
+    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
         If txtNumOrdenPedido.Text = "" Then
             MetroMessageBox.Show(Me, "Debe ingresar un Numero de Orden", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
@@ -49,6 +108,7 @@
         End If
     End Sub
 
+
     Private Sub txtNumOrdenPedido_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumOrdenPedido.KeyPress
         If (e.KeyChar < "0" Or e.KeyChar > "9") And AscW(e.KeyChar) <> 8 Then ' ascw-->convierte la tecla a numero 
             e.Handled = True ' no permite pasar al numero 
@@ -77,4 +137,11 @@
         Else
             dgvCuotas.Rows.Clear()
         End If
+    End Sub
+=======
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Close()
+    End Sub
+
+>>>>>>> d6adc4561758b447001a95c2a9a58874c7dd96c3
 End Class

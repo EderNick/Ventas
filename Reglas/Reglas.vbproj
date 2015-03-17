@@ -75,8 +75,10 @@
     <Import Include="Ventas.Entidades" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RNBanco.vb" />
     <Compile Include="RNCaja.vb" />
     <Compile Include="RNCliente.vb" />
+    <Compile Include="RNCuentaVenta.vb" />
     <Compile Include="RNDepartamento.vb" />
     <Compile Include="RNDetalleModeloSucursal.vb" />
     <Compile Include="RNDetalleOrdenPedido.vb" />

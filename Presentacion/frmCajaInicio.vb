@@ -34,7 +34,6 @@
         'Dim ca As Caja
         If Me.CamposCompletosIniciar = True Then
             CajaAbierta = New Caja
-            CajaAbierta = New Caja
             CajaAbierta.Numero = Me.txtNumero.Text
             CajaAbierta.Descripcion = Me.txtDescripcion.Text
             CajaAbierta.MontoApertura = CDbl(txtMontoApertura.Text)
