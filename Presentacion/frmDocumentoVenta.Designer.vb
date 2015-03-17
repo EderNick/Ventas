@@ -29,92 +29,93 @@ Partial Class frmDocumentoVenta
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.lblCliente = New MetroFramework.Controls.MetroLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.MetroTextBox12 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtRuc = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox9 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtSucursal = New MetroFramework.Controls.MetroTextBox()
+        Me.txtSerie = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox4 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtNumero = New MetroFramework.Controls.MetroTextBox()
         Me.MetroTextBox5 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox6 = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroTextBox10 = New MetroFramework.Controls.MetroTextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.MetroTextBox7 = New MetroFramework.Controls.MetroTextBox()
+        Me.lblDoc = New MetroFramework.Controls.MetroLabel()
+        Me.txtDoc = New MetroFramework.Controls.MetroTextBox()
+        Me.txtCliente = New MetroFramework.Controls.MetroTextBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtTotal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel21 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox13 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtIGV = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox14 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtNumOrdenPedido = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.gbCuotas = New System.Windows.Forms.GroupBox()
+        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
+        Me.txtMontoRestante = New MetroFramework.Controls.MetroTextBox()
         Me.dgvCuotas = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCuota = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Interes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.numCuotas = New System.Windows.Forms.NumericUpDown()
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox16 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtMontoInicial = New MetroFramework.Controls.MetroTextBox()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.MetroTextBox8 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtDescuento = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox3 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtSubTotal = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtCajero = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox11 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtNumCaja = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox15 = New MetroFramework.Controls.MetroTextBox()
+        Me.txtVendedor = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroTextBox17 = New MetroFramework.Controls.MetroTextBox()
+        Me.cboFormaPago = New System.Windows.Forms.ComboBox()
+        Me.btnEfectuarPago = New System.Windows.Forms.Button()
+        Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
+        Me.cboTipoDoc = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.gbCuotas.SuspendLayout()
         CType(Me.dgvCuotas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numCuotas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroTile2
         '
         Me.MetroTile2.ActiveControl = Nothing
-        Me.MetroTile2.AutoSize = True
         Me.MetroTile2.BackColor = System.Drawing.Color.DodgerBlue
         Me.MetroTile2.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.MetroTile2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.MetroTile2.Location = New System.Drawing.Point(-1, 0)
+        Me.MetroTile2.Location = New System.Drawing.Point(0, 2)
         Me.MetroTile2.Name = "MetroTile2"
-        Me.MetroTile2.Size = New System.Drawing.Size(1134, 91)
+        Me.MetroTile2.Size = New System.Drawing.Size(1121, 86)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Pink
         Me.MetroTile2.TabIndex = 181
         Me.MetroTile2.Text = "                 DOCUMENTO DE VENTA"
@@ -126,32 +127,32 @@ Partial Class frmDocumentoVenta
         Me.MetroTile2.UseCustomBackColor = True
         Me.MetroTile2.UseSelectable = True
         '
-        'MetroLabel8
+        'lblCliente
         '
-        Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(7, 32)
-        Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(89, 19)
-        Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel8.TabIndex = 187
-        Me.MetroLabel8.Text = "      NOMBRE"
-        Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel8.UseCustomBackColor = True
-        Me.MetroLabel8.UseCustomForeColor = True
-        Me.MetroLabel8.UseStyleColors = True
+        Me.lblCliente.AutoSize = True
+        Me.lblCliente.Location = New System.Drawing.Point(7, 32)
+        Me.lblCliente.Name = "lblCliente"
+        Me.lblCliente.Size = New System.Drawing.Size(89, 19)
+        Me.lblCliente.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblCliente.TabIndex = 187
+        Me.lblCliente.Text = "      NOMBRE"
+        Me.lblCliente.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblCliente.UseCustomBackColor = True
+        Me.lblCliente.UseCustomForeColor = True
+        Me.lblCliente.UseStyleColors = True
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.DodgerBlue
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox1.Controls.Add(Me.MetroTextBox12)
+        Me.GroupBox1.Controls.Add(Me.txtRuc)
         Me.GroupBox1.Controls.Add(Me.MetroLabel11)
-        Me.GroupBox1.Controls.Add(Me.MetroTextBox9)
-        Me.GroupBox1.Controls.Add(Me.MetroTextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtSucursal)
+        Me.GroupBox1.Controls.Add(Me.txtSerie)
         Me.GroupBox1.Controls.Add(Me.MetroLabel10)
         Me.GroupBox1.Controls.Add(Me.MetroLabel1)
         Me.GroupBox1.Controls.Add(Me.MetroLabel7)
-        Me.GroupBox1.Controls.Add(Me.MetroTextBox4)
+        Me.GroupBox1.Controls.Add(Me.txtNumero)
         Me.GroupBox1.Controls.Add(Me.MetroTextBox5)
         Me.GroupBox1.Controls.Add(Me.MetroLabel12)
         Me.GroupBox1.Controls.Add(Me.MetroLabel17)
@@ -160,25 +161,25 @@ Partial Class frmDocumentoVenta
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(386, 1)
+        Me.GroupBox1.Location = New System.Drawing.Point(386, -1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(724, 82)
+        Me.GroupBox1.Size = New System.Drawing.Size(735, 82)
         Me.GroupBox1.TabIndex = 170
         Me.GroupBox1.TabStop = False
         '
-        'MetroTextBox12
+        'txtRuc
         '
-        Me.MetroTextBox12.Enabled = False
-        Me.MetroTextBox12.Lines = New String(-1) {}
-        Me.MetroTextBox12.Location = New System.Drawing.Point(320, 51)
-        Me.MetroTextBox12.MaxLength = 32767
-        Me.MetroTextBox12.Name = "MetroTextBox12"
-        Me.MetroTextBox12.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox12.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox12.SelectedText = ""
-        Me.MetroTextBox12.Size = New System.Drawing.Size(139, 23)
-        Me.MetroTextBox12.TabIndex = 226
-        Me.MetroTextBox12.UseSelectable = True
+        Me.txtRuc.Enabled = False
+        Me.txtRuc.Lines = New String(-1) {}
+        Me.txtRuc.Location = New System.Drawing.Point(320, 51)
+        Me.txtRuc.MaxLength = 32767
+        Me.txtRuc.Name = "txtRuc"
+        Me.txtRuc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRuc.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtRuc.SelectedText = ""
+        Me.txtRuc.Size = New System.Drawing.Size(139, 23)
+        Me.txtRuc.TabIndex = 226
+        Me.txtRuc.UseSelectable = True
         '
         'MetroLabel11
         '
@@ -194,33 +195,33 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel11.UseCustomForeColor = True
         Me.MetroLabel11.UseStyleColors = True
         '
-        'MetroTextBox9
+        'txtSucursal
         '
-        Me.MetroTextBox9.Enabled = False
-        Me.MetroTextBox9.Lines = New String(-1) {}
-        Me.MetroTextBox9.Location = New System.Drawing.Point(320, 18)
-        Me.MetroTextBox9.MaxLength = 32767
-        Me.MetroTextBox9.Name = "MetroTextBox9"
-        Me.MetroTextBox9.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox9.SelectedText = ""
-        Me.MetroTextBox9.Size = New System.Drawing.Size(390, 23)
-        Me.MetroTextBox9.TabIndex = 224
-        Me.MetroTextBox9.UseSelectable = True
+        Me.txtSucursal.Enabled = False
+        Me.txtSucursal.Lines = New String(-1) {}
+        Me.txtSucursal.Location = New System.Drawing.Point(320, 18)
+        Me.txtSucursal.MaxLength = 32767
+        Me.txtSucursal.Name = "txtSucursal"
+        Me.txtSucursal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSucursal.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSucursal.SelectedText = ""
+        Me.txtSucursal.Size = New System.Drawing.Size(390, 23)
+        Me.txtSucursal.TabIndex = 224
+        Me.txtSucursal.UseSelectable = True
         '
-        'MetroTextBox2
+        'txtSerie
         '
-        Me.MetroTextBox2.Enabled = False
-        Me.MetroTextBox2.Lines = New String(-1) {}
-        Me.MetroTextBox2.Location = New System.Drawing.Point(81, 50)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.Size = New System.Drawing.Size(139, 23)
-        Me.MetroTextBox2.TabIndex = 54
-        Me.MetroTextBox2.UseSelectable = True
+        Me.txtSerie.Enabled = False
+        Me.txtSerie.Lines = New String(-1) {}
+        Me.txtSerie.Location = New System.Drawing.Point(81, 50)
+        Me.txtSerie.MaxLength = 32767
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSerie.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSerie.SelectedText = ""
+        Me.txtSerie.Size = New System.Drawing.Size(139, 23)
+        Me.txtSerie.TabIndex = 54
+        Me.txtSerie.UseSelectable = True
         '
         'MetroLabel10
         '
@@ -253,7 +254,7 @@ Partial Class frmDocumentoVenta
         'MetroLabel7
         '
         Me.MetroLabel7.AutoSize = True
-        Me.MetroLabel7.Location = New System.Drawing.Point(6, 22)
+        Me.MetroLabel7.Location = New System.Drawing.Point(6, 20)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(66, 19)
         Me.MetroLabel7.Style = MetroFramework.MetroColorStyle.Green
@@ -264,19 +265,19 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel7.UseCustomForeColor = True
         Me.MetroLabel7.UseStyleColors = True
         '
-        'MetroTextBox4
+        'txtNumero
         '
-        Me.MetroTextBox4.Enabled = False
-        Me.MetroTextBox4.Lines = New String(-1) {}
-        Me.MetroTextBox4.Location = New System.Drawing.Point(81, 18)
-        Me.MetroTextBox4.MaxLength = 32767
-        Me.MetroTextBox4.Name = "MetroTextBox4"
-        Me.MetroTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox4.SelectedText = ""
-        Me.MetroTextBox4.Size = New System.Drawing.Size(139, 23)
-        Me.MetroTextBox4.TabIndex = 51
-        Me.MetroTextBox4.UseSelectable = True
+        Me.txtNumero.Enabled = False
+        Me.txtNumero.Lines = New String(-1) {}
+        Me.txtNumero.Location = New System.Drawing.Point(81, 18)
+        Me.txtNumero.MaxLength = 32767
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNumero.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNumero.SelectedText = ""
+        Me.txtNumero.Size = New System.Drawing.Size(139, 23)
+        Me.txtNumero.TabIndex = 51
+        Me.txtNumero.UseSelectable = True
         '
         'MetroTextBox5
         '
@@ -347,98 +348,98 @@ Partial Class frmDocumentoVenta
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.White
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox4.Controls.Add(Me.MetroLabel5)
-        Me.GroupBox4.Controls.Add(Me.MetroTextBox6)
-        Me.GroupBox4.Controls.Add(Me.MetroTextBox10)
-        Me.GroupBox4.Controls.Add(Me.MetroLabel8)
+        Me.GroupBox4.Controls.Add(Me.lblDoc)
+        Me.GroupBox4.Controls.Add(Me.txtDoc)
+        Me.GroupBox4.Controls.Add(Me.txtCliente)
+        Me.GroupBox4.Controls.Add(Me.lblCliente)
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox4.Location = New System.Drawing.Point(15, 205)
+        Me.GroupBox4.Location = New System.Drawing.Point(10, 191)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(697, 75)
+        Me.GroupBox4.Size = New System.Drawing.Size(748, 75)
         Me.GroupBox4.TabIndex = 199
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "CLIENTE"
         '
-        'MetroLabel5
+        'lblDoc
         '
-        Me.MetroLabel5.AutoSize = True
-        Me.MetroLabel5.Location = New System.Drawing.Point(481, 34)
-        Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(38, 19)
-        Me.MetroLabel5.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel5.TabIndex = 211
-        Me.MetroLabel5.Text = "DOC"
-        Me.MetroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel5.UseCustomBackColor = True
-        Me.MetroLabel5.UseCustomForeColor = True
-        Me.MetroLabel5.UseStyleColors = True
+        Me.lblDoc.AutoSize = True
+        Me.lblDoc.Location = New System.Drawing.Point(519, 34)
+        Me.lblDoc.Name = "lblDoc"
+        Me.lblDoc.Size = New System.Drawing.Size(38, 19)
+        Me.lblDoc.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblDoc.TabIndex = 211
+        Me.lblDoc.Text = "DOC"
+        Me.lblDoc.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblDoc.UseCustomBackColor = True
+        Me.lblDoc.UseCustomForeColor = True
+        Me.lblDoc.UseStyleColors = True
         '
-        'MetroTextBox6
+        'txtDoc
         '
-        Me.MetroTextBox6.Enabled = False
-        Me.MetroTextBox6.Lines = New String(-1) {}
-        Me.MetroTextBox6.Location = New System.Drawing.Point(529, 30)
-        Me.MetroTextBox6.MaxLength = 32767
-        Me.MetroTextBox6.Name = "MetroTextBox6"
-        Me.MetroTextBox6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox6.SelectedText = ""
-        Me.MetroTextBox6.Size = New System.Drawing.Size(154, 23)
-        Me.MetroTextBox6.TabIndex = 212
-        Me.MetroTextBox6.UseSelectable = True
+        Me.txtDoc.Enabled = False
+        Me.txtDoc.Lines = New String(-1) {}
+        Me.txtDoc.Location = New System.Drawing.Point(571, 32)
+        Me.txtDoc.MaxLength = 32767
+        Me.txtDoc.Name = "txtDoc"
+        Me.txtDoc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDoc.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtDoc.SelectedText = ""
+        Me.txtDoc.Size = New System.Drawing.Size(154, 23)
+        Me.txtDoc.TabIndex = 212
+        Me.txtDoc.UseSelectable = True
         '
-        'MetroTextBox10
+        'txtCliente
         '
-        Me.MetroTextBox10.Enabled = False
-        Me.MetroTextBox10.Lines = New String(-1) {}
-        Me.MetroTextBox10.Location = New System.Drawing.Point(119, 30)
-        Me.MetroTextBox10.MaxLength = 32767
-        Me.MetroTextBox10.Name = "MetroTextBox10"
-        Me.MetroTextBox10.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox10.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox10.SelectedText = ""
-        Me.MetroTextBox10.Size = New System.Drawing.Size(344, 23)
-        Me.MetroTextBox10.TabIndex = 199
-        Me.MetroTextBox10.UseSelectable = True
+        Me.txtCliente.Enabled = False
+        Me.txtCliente.Lines = New String(-1) {}
+        Me.txtCliente.Location = New System.Drawing.Point(119, 30)
+        Me.txtCliente.MaxLength = 32767
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCliente.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtCliente.SelectedText = ""
+        Me.txtCliente.Size = New System.Drawing.Size(344, 23)
+        Me.txtCliente.TabIndex = 199
+        Me.txtCliente.UseSelectable = True
         '
-        'Button2
+        'btnBuscar
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(262, 154)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(42, 28)
-        Me.Button2.TabIndex = 192
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(258, 144)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(42, 28)
+        Me.btnBuscar.TabIndex = 192
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'MetroTextBox7
+        'txtTotal
         '
-        Me.MetroTextBox7.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.MetroTextBox7.Lines = New String(-1) {}
-        Me.MetroTextBox7.Location = New System.Drawing.Point(125, 139)
-        Me.MetroTextBox7.MaxLength = 32767
-        Me.MetroTextBox7.Name = "MetroTextBox7"
-        Me.MetroTextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox7.SelectedText = ""
-        Me.MetroTextBox7.Size = New System.Drawing.Size(144, 30)
-        Me.MetroTextBox7.TabIndex = 177
-        Me.MetroTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox7.UseSelectable = True
+        Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtTotal.Lines = New String(-1) {}
+        Me.txtTotal.Location = New System.Drawing.Point(125, 135)
+        Me.txtTotal.MaxLength = 32767
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtTotal.SelectedText = ""
+        Me.txtTotal.Size = New System.Drawing.Size(144, 30)
+        Me.txtTotal.TabIndex = 177
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotal.UseSelectable = True
         '
         'MetroLabel21
         '
         Me.MetroLabel21.AutoSize = True
-        Me.MetroLabel21.Location = New System.Drawing.Point(69, 143)
+        Me.MetroLabel21.Location = New System.Drawing.Point(69, 139)
         Me.MetroLabel21.Name = "MetroLabel21"
         Me.MetroLabel21.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel21.Style = MetroFramework.MetroColorStyle.Green
@@ -449,25 +450,25 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel21.UseCustomForeColor = True
         Me.MetroLabel21.UseStyleColors = True
         '
-        'MetroTextBox13
+        'txtIGV
         '
-        Me.MetroTextBox13.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.MetroTextBox13.Lines = New String(-1) {}
-        Me.MetroTextBox13.Location = New System.Drawing.Point(125, 59)
-        Me.MetroTextBox13.MaxLength = 32767
-        Me.MetroTextBox13.Name = "MetroTextBox13"
-        Me.MetroTextBox13.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox13.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox13.SelectedText = ""
-        Me.MetroTextBox13.Size = New System.Drawing.Size(144, 30)
-        Me.MetroTextBox13.TabIndex = 176
-        Me.MetroTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox13.UseSelectable = True
+        Me.txtIGV.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtIGV.Lines = New String(-1) {}
+        Me.txtIGV.Location = New System.Drawing.Point(125, 55)
+        Me.txtIGV.MaxLength = 32767
+        Me.txtIGV.Name = "txtIGV"
+        Me.txtIGV.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtIGV.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtIGV.SelectedText = ""
+        Me.txtIGV.Size = New System.Drawing.Size(144, 30)
+        Me.txtIGV.TabIndex = 176
+        Me.txtIGV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtIGV.UseSelectable = True
         '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(85, 63)
+        Me.MetroLabel3.Location = New System.Drawing.Point(85, 59)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(29, 19)
         Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Green
@@ -478,25 +479,25 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel3.UseCustomForeColor = True
         Me.MetroLabel3.UseStyleColors = True
         '
-        'DataGridView1
+        'dgvProductos
         '
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Palatino Linotype", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvProductos.BackgroundColor = System.Drawing.Color.Gray
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Column4, Me.Column1, Me.Column2, Me.Column3})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 25)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1075, 149)
-        Me.DataGridView1.TabIndex = 208
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Column4, Me.Column1, Me.Column2, Me.Column3})
+        Me.dgvProductos.Location = New System.Drawing.Point(12, 25)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(1075, 127)
+        Me.dgvProductos.TabIndex = 208
         '
         'Codigo
         '
@@ -527,7 +528,7 @@ Partial Class frmDocumentoVenta
         'MetroLabel9
         '
         Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(23, 156)
+        Me.MetroLabel9.Location = New System.Drawing.Point(27, 150)
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(125, 19)
         Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Green
@@ -538,31 +539,31 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel9.UseCustomForeColor = True
         Me.MetroLabel9.UseStyleColors = True
         '
-        'MetroTextBox14
+        'txtNumOrdenPedido
         '
-        Me.MetroTextBox14.Lines = New String(-1) {}
-        Me.MetroTextBox14.Location = New System.Drawing.Point(154, 154)
-        Me.MetroTextBox14.MaxLength = 32767
-        Me.MetroTextBox14.Name = "MetroTextBox14"
-        Me.MetroTextBox14.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox14.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox14.SelectedText = ""
-        Me.MetroTextBox14.Size = New System.Drawing.Size(108, 23)
-        Me.MetroTextBox14.TabIndex = 214
-        Me.MetroTextBox14.UseCustomBackColor = True
-        Me.MetroTextBox14.UseSelectable = True
+        Me.txtNumOrdenPedido.Lines = New String(-1) {}
+        Me.txtNumOrdenPedido.Location = New System.Drawing.Point(158, 148)
+        Me.txtNumOrdenPedido.MaxLength = 32767
+        Me.txtNumOrdenPedido.Name = "txtNumOrdenPedido"
+        Me.txtNumOrdenPedido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNumOrdenPedido.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNumOrdenPedido.SelectedText = ""
+        Me.txtNumOrdenPedido.Size = New System.Drawing.Size(94, 23)
+        Me.txtNumOrdenPedido.TabIndex = 214
+        Me.txtNumOrdenPedido.UseCustomBackColor = True
+        Me.txtNumOrdenPedido.UseSelectable = True
         '
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.Color.White
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox10.Controls.Add(Me.DataGridView1)
+        Me.GroupBox10.Controls.Add(Me.dgvProductos)
         Me.GroupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox10.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox10.Location = New System.Drawing.Point(10, 294)
+        Me.GroupBox10.Location = New System.Drawing.Point(10, 273)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(1101, 188)
+        Me.GroupBox10.Size = New System.Drawing.Size(1101, 165)
         Me.GroupBox10.TabIndex = 215
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "PRODUCTOS"
@@ -574,9 +575,9 @@ Partial Class frmDocumentoVenta
         Me.Panel2.Controls.Add(Me.btnGuardar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Controls.Add(Me.btnSalir)
-        Me.Panel2.Location = New System.Drawing.Point(-1, 704)
+        Me.Panel2.Location = New System.Drawing.Point(1, 641)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1228, 68)
+        Me.Panel2.Size = New System.Drawing.Size(1120, 68)
         Me.Panel2.TabIndex = 216
         '
         'btnCancelar
@@ -651,34 +652,66 @@ Partial Class frmDocumentoVenta
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(1039, -2)
+        Me.btnSalir.Location = New System.Drawing.Point(1017, -2)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(72, 72)
+        Me.btnSalir.Size = New System.Drawing.Size(84, 72)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'GroupBox3
+        'gbCuotas
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox3.Controls.Add(Me.MetroLabel19)
-        Me.GroupBox3.Controls.Add(Me.MetroTextBox17)
-        Me.GroupBox3.Controls.Add(Me.dgvCuotas)
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown1)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel18)
-        Me.GroupBox3.Controls.Add(Me.MetroLabel16)
-        Me.GroupBox3.Controls.Add(Me.MetroTextBox16)
-        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox3.Location = New System.Drawing.Point(10, 542)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1101, 154)
-        Me.GroupBox3.TabIndex = 217
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "CUOTAS"
+        Me.gbCuotas.BackColor = System.Drawing.Color.White
+        Me.gbCuotas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbCuotas.Controls.Add(Me.MetroLabel19)
+        Me.gbCuotas.Controls.Add(Me.txtMontoRestante)
+        Me.gbCuotas.Controls.Add(Me.dgvCuotas)
+        Me.gbCuotas.Controls.Add(Me.numCuotas)
+        Me.gbCuotas.Controls.Add(Me.MetroLabel18)
+        Me.gbCuotas.Controls.Add(Me.MetroLabel16)
+        Me.gbCuotas.Controls.Add(Me.txtMontoInicial)
+        Me.gbCuotas.Enabled = False
+        Me.gbCuotas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.gbCuotas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbCuotas.ForeColor = System.Drawing.Color.Black
+        Me.gbCuotas.Location = New System.Drawing.Point(10, 481)
+        Me.gbCuotas.Name = "gbCuotas"
+        Me.gbCuotas.Size = New System.Drawing.Size(1101, 154)
+        Me.gbCuotas.TabIndex = 217
+        Me.gbCuotas.TabStop = False
+        Me.gbCuotas.Text = "CUOTAS"
+        '
+        'MetroLabel19
+        '
+        Me.MetroLabel19.AutoSize = True
+        Me.MetroLabel19.Location = New System.Drawing.Point(26, 74)
+        Me.MetroLabel19.Name = "MetroLabel19"
+        Me.MetroLabel19.Size = New System.Drawing.Size(123, 19)
+        Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel19.TabIndex = 220
+        Me.MetroLabel19.Text = "MONTO RESTANTE"
+        Me.MetroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel19.UseCustomBackColor = True
+        Me.MetroLabel19.UseCustomForeColor = True
+        Me.MetroLabel19.UseStyleColors = True
+        '
+        'txtMontoRestante
+        '
+        Me.txtMontoRestante.BackColor = System.Drawing.Color.Gainsboro
+        Me.txtMontoRestante.Enabled = False
+        Me.txtMontoRestante.Lines = New String(-1) {}
+        Me.txtMontoRestante.Location = New System.Drawing.Point(155, 74)
+        Me.txtMontoRestante.MaxLength = 32767
+        Me.txtMontoRestante.Name = "txtMontoRestante"
+        Me.txtMontoRestante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMontoRestante.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtMontoRestante.SelectedText = ""
+        Me.txtMontoRestante.Size = New System.Drawing.Size(120, 23)
+        Me.txtMontoRestante.TabIndex = 221
+        Me.txtMontoRestante.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtMontoRestante.UseCustomBackColor = True
+        Me.txtMontoRestante.UseSelectable = True
         '
         'dgvCuotas
         '
@@ -695,6 +728,7 @@ Partial Class frmDocumentoVenta
         Me.dgvCuotas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCuotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.NroCuota, Me.Interes, Me.Monto})
+        Me.dgvCuotas.Enabled = False
         Me.dgvCuotas.Location = New System.Drawing.Point(408, 25)
         Me.dgvCuotas.Name = "dgvCuotas"
         Me.dgvCuotas.RowHeadersVisible = False
@@ -725,12 +759,12 @@ Partial Class frmDocumentoVenta
         Me.Monto.Name = "Monto"
         Me.Monto.Width = 200
         '
-        'NumericUpDown1
+        'numCuotas
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(155, 108)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 23)
-        Me.NumericUpDown1.TabIndex = 219
+        Me.numCuotas.Location = New System.Drawing.Point(155, 108)
+        Me.numCuotas.Name = "numCuotas"
+        Me.numCuotas.Size = New System.Drawing.Size(120, 23)
+        Me.numCuotas.TabIndex = 219
         '
         'MetroLabel18
         '
@@ -760,20 +794,20 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel16.UseCustomForeColor = True
         Me.MetroLabel16.UseStyleColors = True
         '
-        'MetroTextBox16
+        'txtMontoInicial
         '
-        Me.MetroTextBox16.Lines = New String(-1) {}
-        Me.MetroTextBox16.Location = New System.Drawing.Point(155, 36)
-        Me.MetroTextBox16.MaxLength = 32767
-        Me.MetroTextBox16.Name = "MetroTextBox16"
-        Me.MetroTextBox16.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox16.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox16.SelectedText = ""
-        Me.MetroTextBox16.Size = New System.Drawing.Size(120, 23)
-        Me.MetroTextBox16.TabIndex = 217
-        Me.MetroTextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox16.UseCustomBackColor = True
-        Me.MetroTextBox16.UseSelectable = True
+        Me.txtMontoInicial.Lines = New String(-1) {}
+        Me.txtMontoInicial.Location = New System.Drawing.Point(155, 36)
+        Me.txtMontoInicial.MaxLength = 32767
+        Me.txtMontoInicial.Name = "txtMontoInicial"
+        Me.txtMontoInicial.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtMontoInicial.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtMontoInicial.SelectedText = ""
+        Me.txtMontoInicial.Size = New System.Drawing.Size(120, 23)
+        Me.txtMontoInicial.TabIndex = 217
+        Me.txtMontoInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtMontoInicial.UseCustomBackColor = True
+        Me.txtMontoInicial.UseSelectable = True
         '
         'Button6
         '
@@ -787,32 +821,32 @@ Partial Class frmDocumentoVenta
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(2, 0)
+        Me.Button6.Location = New System.Drawing.Point(1, 1)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(79, 83)
         Me.Button6.TabIndex = 218
         Me.Button6.UseCompatibleTextRendering = True
         Me.Button6.UseVisualStyleBackColor = False
         '
-        'MetroTextBox8
+        'txtDescuento
         '
-        Me.MetroTextBox8.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.MetroTextBox8.Lines = New String(-1) {}
-        Me.MetroTextBox8.Location = New System.Drawing.Point(125, 97)
-        Me.MetroTextBox8.MaxLength = 32767
-        Me.MetroTextBox8.Name = "MetroTextBox8"
-        Me.MetroTextBox8.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox8.SelectedText = ""
-        Me.MetroTextBox8.Size = New System.Drawing.Size(144, 30)
-        Me.MetroTextBox8.TabIndex = 220
-        Me.MetroTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox8.UseSelectable = True
+        Me.txtDescuento.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtDescuento.Lines = New String(-1) {}
+        Me.txtDescuento.Location = New System.Drawing.Point(125, 93)
+        Me.txtDescuento.MaxLength = 32767
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDescuento.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtDescuento.SelectedText = ""
+        Me.txtDescuento.Size = New System.Drawing.Size(144, 30)
+        Me.txtDescuento.TabIndex = 220
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtDescuento.UseSelectable = True
         '
         'MetroLabel4
         '
         Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(30, 101)
+        Me.MetroLabel4.Location = New System.Drawing.Point(30, 97)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(84, 19)
         Me.MetroLabel4.Style = MetroFramework.MetroColorStyle.Green
@@ -823,25 +857,25 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel4.UseCustomForeColor = True
         Me.MetroLabel4.UseStyleColors = True
         '
-        'MetroTextBox3
+        'txtSubTotal
         '
-        Me.MetroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.MetroTextBox3.Lines = New String(-1) {}
-        Me.MetroTextBox3.Location = New System.Drawing.Point(125, 18)
-        Me.MetroTextBox3.MaxLength = 32767
-        Me.MetroTextBox3.Name = "MetroTextBox3"
-        Me.MetroTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox3.SelectedText = ""
-        Me.MetroTextBox3.Size = New System.Drawing.Size(144, 30)
-        Me.MetroTextBox3.TabIndex = 222
-        Me.MetroTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox3.UseSelectable = True
+        Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
+        Me.txtSubTotal.Lines = New String(-1) {}
+        Me.txtSubTotal.Location = New System.Drawing.Point(125, 14)
+        Me.txtSubTotal.MaxLength = 32767
+        Me.txtSubTotal.Name = "txtSubTotal"
+        Me.txtSubTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtSubTotal.SelectedText = ""
+        Me.txtSubTotal.Size = New System.Drawing.Size(144, 30)
+        Me.txtSubTotal.TabIndex = 222
+        Me.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtSubTotal.UseSelectable = True
         '
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(41, 22)
+        Me.MetroLabel2.Location = New System.Drawing.Point(41, 18)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
@@ -852,26 +886,26 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel2.UseCustomForeColor = True
         Me.MetroLabel2.UseStyleColors = True
         '
-        'MetroTextBox1
+        'txtCajero
         '
-        Me.MetroTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.MetroTextBox1.Enabled = False
-        Me.MetroTextBox1.Lines = New String(-1) {}
-        Me.MetroTextBox1.Location = New System.Drawing.Point(407, 113)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.Size = New System.Drawing.Size(291, 23)
-        Me.MetroTextBox1.TabIndex = 224
-        Me.MetroTextBox1.UseCustomBackColor = True
-        Me.MetroTextBox1.UseSelectable = True
+        Me.txtCajero.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtCajero.Enabled = False
+        Me.txtCajero.Lines = New String(-1) {}
+        Me.txtCajero.Location = New System.Drawing.Point(230, 108)
+        Me.txtCajero.MaxLength = 32767
+        Me.txtCajero.Name = "txtCajero"
+        Me.txtCajero.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtCajero.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtCajero.SelectedText = ""
+        Me.txtCajero.Size = New System.Drawing.Size(248, 23)
+        Me.txtCajero.TabIndex = 224
+        Me.txtCajero.UseCustomBackColor = True
+        Me.txtCajero.UseSelectable = True
         '
         'MetroLabel6
         '
         Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(341, 117)
+        Me.MetroLabel6.Location = New System.Drawing.Point(163, 112)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(59, 19)
         Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Green
@@ -885,7 +919,7 @@ Partial Class frmDocumentoVenta
         'MetroLabel13
         '
         Me.MetroLabel13.AutoSize = True
-        Me.MetroLabel13.Location = New System.Drawing.Point(86, 117)
+        Me.MetroLabel13.Location = New System.Drawing.Point(23, 112)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(62, 19)
         Me.MetroLabel13.Style = MetroFramework.MetroColorStyle.Green
@@ -896,26 +930,27 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel13.UseCustomForeColor = True
         Me.MetroLabel13.UseStyleColors = True
         '
-        'MetroTextBox11
+        'txtNumCaja
         '
-        Me.MetroTextBox11.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.MetroTextBox11.Enabled = False
-        Me.MetroTextBox11.Lines = New String(-1) {}
-        Me.MetroTextBox11.Location = New System.Drawing.Point(151, 113)
-        Me.MetroTextBox11.MaxLength = 32767
-        Me.MetroTextBox11.Name = "MetroTextBox11"
-        Me.MetroTextBox11.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox11.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox11.SelectedText = ""
-        Me.MetroTextBox11.Size = New System.Drawing.Size(111, 23)
-        Me.MetroTextBox11.TabIndex = 226
-        Me.MetroTextBox11.UseCustomBackColor = True
-        Me.MetroTextBox11.UseSelectable = True
+        Me.txtNumCaja.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtNumCaja.Enabled = False
+        Me.txtNumCaja.Lines = New String(-1) {}
+        Me.txtNumCaja.Location = New System.Drawing.Point(91, 108)
+        Me.txtNumCaja.MaxLength = 32767
+        Me.txtNumCaja.Name = "txtNumCaja"
+        Me.txtNumCaja.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtNumCaja.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtNumCaja.SelectedText = ""
+        Me.txtNumCaja.Size = New System.Drawing.Size(51, 23)
+        Me.txtNumCaja.TabIndex = 226
+        Me.txtNumCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtNumCaja.UseCustomBackColor = True
+        Me.txtNumCaja.UseSelectable = True
         '
         'MetroLabel15
         '
         Me.MetroLabel15.AutoSize = True
-        Me.MetroLabel15.Location = New System.Drawing.Point(322, 157)
+        Me.MetroLabel15.Location = New System.Drawing.Point(370, 152)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(78, 19)
         Me.MetroLabel15.Style = MetroFramework.MetroColorStyle.Green
@@ -926,35 +961,35 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel15.UseCustomForeColor = True
         Me.MetroLabel15.UseStyleColors = True
         '
-        'MetroTextBox15
+        'txtVendedor
         '
-        Me.MetroTextBox15.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.MetroTextBox15.Enabled = False
-        Me.MetroTextBox15.Lines = New String(-1) {}
-        Me.MetroTextBox15.Location = New System.Drawing.Point(407, 154)
-        Me.MetroTextBox15.MaxLength = 32767
-        Me.MetroTextBox15.Name = "MetroTextBox15"
-        Me.MetroTextBox15.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox15.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox15.SelectedText = ""
-        Me.MetroTextBox15.Size = New System.Drawing.Size(291, 23)
-        Me.MetroTextBox15.TabIndex = 228
-        Me.MetroTextBox15.UseCustomBackColor = True
-        Me.MetroTextBox15.UseSelectable = True
+        Me.txtVendedor.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.txtVendedor.Enabled = False
+        Me.txtVendedor.Lines = New String(-1) {}
+        Me.txtVendedor.Location = New System.Drawing.Point(467, 149)
+        Me.txtVendedor.MaxLength = 32767
+        Me.txtVendedor.Name = "txtVendedor"
+        Me.txtVendedor.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtVendedor.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtVendedor.SelectedText = ""
+        Me.txtVendedor.Size = New System.Drawing.Size(291, 23)
+        Me.txtVendedor.TabIndex = 228
+        Me.txtVendedor.UseCustomBackColor = True
+        Me.txtVendedor.UseSelectable = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox7)
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox3)
+        Me.GroupBox2.Controls.Add(Me.txtTotal)
+        Me.GroupBox2.Controls.Add(Me.txtSubTotal)
         Me.GroupBox2.Controls.Add(Me.MetroLabel21)
         Me.GroupBox2.Controls.Add(Me.MetroLabel2)
         Me.GroupBox2.Controls.Add(Me.MetroLabel3)
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox8)
+        Me.GroupBox2.Controls.Add(Me.txtDescuento)
         Me.GroupBox2.Controls.Add(Me.MetroLabel4)
-        Me.GroupBox2.Controls.Add(Me.MetroTextBox13)
-        Me.GroupBox2.Location = New System.Drawing.Point(828, 97)
+        Me.GroupBox2.Controls.Add(Me.txtIGV)
+        Me.GroupBox2.Location = New System.Drawing.Point(828, 90)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(283, 183)
+        Me.GroupBox2.Size = New System.Drawing.Size(283, 176)
         Me.GroupBox2.TabIndex = 230
         Me.GroupBox2.TabStop = False
         '
@@ -962,97 +997,96 @@ Partial Class frmDocumentoVenta
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(23, 504)
+        Me.Label1.Location = New System.Drawing.Point(23, 454)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(119, 16)
         Me.Label1.TabIndex = 231
         Me.Label1.Text = "FORMA DE PAGO"
         '
-        'ComboBox1
+        'cboFormaPago
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"CONTADO", "CREDITO"})
-        Me.ComboBox1.Location = New System.Drawing.Point(148, 504)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(172, 21)
-        Me.ComboBox1.TabIndex = 232
+        Me.cboFormaPago.FormattingEnabled = True
+        Me.cboFormaPago.Items.AddRange(New Object() {"CONTADO", "CREDITO"})
+        Me.cboFormaPago.Location = New System.Drawing.Point(148, 454)
+        Me.cboFormaPago.Name = "cboFormaPago"
+        Me.cboFormaPago.Size = New System.Drawing.Size(172, 21)
+        Me.cboFormaPago.TabIndex = 232
         '
-        'Button1
+        'btnEfectuarPago
         '
-        Me.Button1.Location = New System.Drawing.Point(341, 494)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(139, 36)
-        Me.Button1.TabIndex = 233
-        Me.Button1.Text = "EFECTUAR PAGO"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnEfectuarPago.Location = New System.Drawing.Point(341, 447)
+        Me.btnEfectuarPago.Name = "btnEfectuarPago"
+        Me.btnEfectuarPago.Size = New System.Drawing.Size(139, 32)
+        Me.btnEfectuarPago.TabIndex = 233
+        Me.btnEfectuarPago.Text = "EFECTUAR PAGO"
+        Me.btnEfectuarPago.UseVisualStyleBackColor = True
         '
-        'MetroLabel19
+        'MetroLabel20
         '
-        Me.MetroLabel19.AutoSize = True
-        Me.MetroLabel19.Location = New System.Drawing.Point(26, 74)
-        Me.MetroLabel19.Name = "MetroLabel19"
-        Me.MetroLabel19.Size = New System.Drawing.Size(123, 19)
-        Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel19.TabIndex = 220
-        Me.MetroLabel19.Text = "MONTO RESTANTE"
-        Me.MetroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroLabel19.UseCustomBackColor = True
-        Me.MetroLabel19.UseCustomForeColor = True
-        Me.MetroLabel19.UseStyleColors = True
+        Me.MetroLabel20.AutoSize = True
+        Me.MetroLabel20.Location = New System.Drawing.Point(496, 108)
+        Me.MetroLabel20.Name = "MetroLabel20"
+        Me.MetroLabel20.Size = New System.Drawing.Size(126, 19)
+        Me.MetroLabel20.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel20.TabIndex = 234
+        Me.MetroLabel20.Text = "TIPO DOCUMENTO"
+        Me.MetroLabel20.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel20.UseCustomBackColor = True
+        Me.MetroLabel20.UseCustomForeColor = True
+        Me.MetroLabel20.UseStyleColors = True
         '
-        'MetroTextBox17
+        'cboTipoDoc
         '
-        Me.MetroTextBox17.Lines = New String(-1) {}
-        Me.MetroTextBox17.Location = New System.Drawing.Point(155, 74)
-        Me.MetroTextBox17.MaxLength = 32767
-        Me.MetroTextBox17.Name = "MetroTextBox17"
-        Me.MetroTextBox17.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox17.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox17.SelectedText = ""
-        Me.MetroTextBox17.Size = New System.Drawing.Size(120, 23)
-        Me.MetroTextBox17.TabIndex = 221
-        Me.MetroTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.MetroTextBox17.UseCustomBackColor = True
-        Me.MetroTextBox17.UseSelectable = True
+        Me.cboTipoDoc.FormattingEnabled = True
+        Me.cboTipoDoc.Items.AddRange(New Object() {"BOLETA", "FACTURA"})
+        Me.cboTipoDoc.Location = New System.Drawing.Point(629, 108)
+        Me.cboTipoDoc.Name = "cboTipoDoc"
+        Me.cboTipoDoc.Size = New System.Drawing.Size(125, 21)
+        Me.cboTipoDoc.TabIndex = 235
         '
         'frmDocumentoVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1121, 772)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle
+        Me.ClientSize = New System.Drawing.Size(1121, 709)
+        Me.Controls.Add(Me.cboTipoDoc)
+        Me.Controls.Add(Me.MetroLabel20)
+        Me.Controls.Add(Me.btnEfectuarPago)
+        Me.Controls.Add(Me.cboFormaPago)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.MetroLabel15)
-        Me.Controls.Add(Me.MetroTextBox15)
+        Me.Controls.Add(Me.txtVendedor)
         Me.Controls.Add(Me.MetroLabel13)
-        Me.Controls.Add(Me.MetroTextBox11)
+        Me.Controls.Add(Me.txtNumCaja)
         Me.Controls.Add(Me.MetroLabel6)
-        Me.Controls.Add(Me.MetroTextBox1)
+        Me.Controls.Add(Me.txtCajero)
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.gbCuotas)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.MetroLabel9)
-        Me.Controls.Add(Me.MetroTextBox14)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.txtNumOrdenPedido)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MetroTile2)
+        Me.MaximizeBox = False
+        Me.Movable = False
         Me.Name = "frmDocumentoVenta"
+        Me.Resizable = False
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox10.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.gbCuotas.ResumeLayout(False)
+        Me.gbCuotas.PerformLayout()
         CType(Me.dgvCuotas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numCuotas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -1060,42 +1094,42 @@ Partial Class frmDocumentoVenta
 
     End Sub
     Friend WithEvents MetroTile2 As MetroFramework.Controls.MetroTile
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents btnBuscar As System.Windows.Forms.Button
+    Friend WithEvents lblCliente As MetroFramework.Controls.MetroLabel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtSerie As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel10 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox4 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNumero As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroTextBox5 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents MetroTextBox10 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox7 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtCliente As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel21 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox13 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtIGV As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox6 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents dgvProductos As System.Windows.Forms.DataGridView
+    Friend WithEvents lblDoc As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtDoc As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox14 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNumOrdenPedido As MetroFramework.Controls.MetroTextBox
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents gbCuotas As System.Windows.Forms.GroupBox
     Public WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents MetroTextBox8 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtDescuento As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox3 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtSubTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents MetroTextBox12 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtRuc As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox9 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtSucursal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Codigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1104,25 +1138,27 @@ Partial Class frmDocumentoVenta
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents numCuotas As System.Windows.Forms.NumericUpDown
     Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox16 As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents MetroTextBox1 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtMontoInicial As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtCajero As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox11 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtNumCaja As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel15 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox15 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtVendedor As MetroFramework.Controls.MetroTextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents cboFormaPago As System.Windows.Forms.ComboBox
+    Friend WithEvents btnEfectuarPago As System.Windows.Forms.Button
     Friend WithEvents dgvCuotas As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NroCuota As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Interes As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Monto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTextBox17 As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtMontoRestante As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents cboTipoDoc As System.Windows.Forms.ComboBox
 End Class
