@@ -1,6 +1,41 @@
 ﻿Public Class RNDocumentoVenta
     Inherits CADO
 
+    Function Agregar(ByVal wDV As DocumentoVenta) As Integer
+        Dim pars As New List(Of CParametro)
+        Dim idDV As Integer = 0
+
+        pars.Add(New CParametro("pcodigo", 0, CParametro.DireccionParametro.SALIDA))
+        pars.Add(New CParametro("ptipodoc", wDV.TipoDoc))
+        pars.Add(New CParametro("pserie", wDV.Serie))
+        pars.Add(New CParametro("pnum", wDV.Numero))
+        pars.Add(New CParametro("pfechae", wDV.FechaEmision))
+        pars.Add(New CParametro("ptotal", wDV.Total))
+        pars.Add(New CParametro("pformapago", wDV.FormaPago))
+        pars.Add(New CParametro("pestado", wDV.Estado))
+        pars.Add(New CParametro("pidcaja", wDV.Caja.Codigo))
+        pars.Add(New CParametro("pidcliente", wDV.Cliente.Codigo))
+        pars.Add(New CParametro("pidempleado", wDV.Caja.Empleado.Codigo))
+        pars.Add(New CParametro("pidordenpedido", wDV.OrdenPedido.Codigo))
+        pars.Add(New CParametro("pidempresa", wDV.Empresa.Codigo))
+
+        Try
+            Me.Conectar(False)
+            Me.EjecutarOrden("fu_idocumentoventa", pars)
+            idDV = CInt(pars.ElementAt(0).Valor)
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Me.Cerrar(False)
+            Throw ex
+        Finally
+            pars.Clear()
+            pars = Nothing
+        End Try
+
+        Return idDV
+    End Function
+
+
     Public Function BuscarNumDocumento() As Integer
         Dim pars As New List(Of CParametro)
         Dim numero As Integer = Nothing
@@ -42,6 +77,7 @@
                     .Codigo = dr.Item("idordenpedido")
                     .Numero = wNumOrden
                     .Total = dr.Item("total")
+                    .Estado = dr.Item("estado")
                     .Empleado = New Empleado
                     .Empleado.Codigo = dr.Item("idempleado")
                     .Empleado.Nombres = dr.Item("nombres")
