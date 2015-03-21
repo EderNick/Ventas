@@ -1,6 +1,7 @@
 ﻿Public Class frmOrdenPedido
 
     Private idEmpleado As Integer = modPrincipal.UsuarioLogeado.Empleado.Codigo
+    'Private idEmpleado As Integer = 1
     Private DetCliente As DetalleCliente
     Private DetalleModeloSuc As DetalleModeloSucursal
 
@@ -36,7 +37,9 @@
         DetCliente = Nothing
         DetalleModeloSuc = Nothing
         'dgvProductos.Rows.Clear()
-        txtSubTotal.Text = "0.00"
+        lblSubTotal.Text = "0.00"
+        lblIGV.Text = "0.00"
+        lblTotal.Text = "0.00"
         Me.AcceptButton = btnBuscarCliente
     End Sub
 
@@ -53,10 +56,10 @@
         DetCliente = frm.Buscar()
 
         If DetCliente IsNot Nothing Then
-            If DetCliente.Cliente.Tipo = "natural" Then
+            If DetCliente.Cliente.Tipo.Trim = "natural" Then
                 Me.txtCliente.Text = DetCliente.Persona.Nombres + " " + DetCliente.Persona.Ap_Paterno + " " + DetCliente.Persona.Ap_Materno
             End If
-            If DetCliente.Cliente.Tipo = "juridico" Then
+            If DetCliente.Cliente.Tipo.Trim = "juridico" Then
                 Me.txtCliente.Text = DetCliente.EmpresaJuridica.RazonSocial
             End If
             gbProducto.Enabled = True
@@ -113,12 +116,15 @@
                 Dim DetOrdenPedido As New DetalleOrdenPedido
                 DetOrdenPedido.Modelo = DetalleModeloSuc.Modelo
                 DetOrdenPedido.Cantidad = CInt(txtCantidad.Text)
+                DetOrdenPedido.IGV = CDbl(txtMonto.Text) * 0.18
                 DetOrdenPedido.Total = CDbl(txtMonto.Text)
 
                 ListaDetProd.Add(DetOrdenPedido)
 
                 modFunciones.EnlazarDatagridView(dgvProductos, ListaDetProd)
                 SumarSubTotales()
+                SumarIGV()
+                SumarIGV_Subtotal()
                 LimpiarControlesProducto()
                 Me.AcceptButton = btnBuscarProducto
             Else
@@ -126,6 +132,9 @@
                 txtCantidad.Focus()
             End If
 
+        Else
+            MetroMessageBox.Show(Me, "La cantidad debe ser mayor a 0.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            txtCantidad.Focus()
         End If
 
 
@@ -134,6 +143,8 @@
     Private Sub btnEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar.Click
         EliminarProductoSeleccionado()
         SumarSubTotales()
+        SumarIGV()
+        SumarIGV_Subtotal()
     End Sub
 
     Private Sub EliminarProductoSeleccionado()
@@ -158,7 +169,21 @@
         For Each elem As DetalleOrdenPedido In ListaDetProd
             subTotal = subTotal + elem.Total
         Next
-        txtSubTotal.Text = Math.Round(subTotal, 2)
+        lblSubTotal.Text = Math.Round(subTotal, 2)
+    End Sub
+
+    Private Sub SumarIGV()
+        Dim igv As Double = 0.0
+        For Each elem As DetalleOrdenPedido In ListaDetProd
+            igv = igv + elem.IGV
+        Next
+        lblIGV.Text = Math.Round(igv, 2)
+    End Sub
+
+    Private Sub SumarIGV_Subtotal()
+        Dim total As Double = 0.0
+        total = CDbl(lblSubTotal.Text) + CDbl(lblIGV.Text)
+        lblTotal.Text = Math.Round(total, 2)
     End Sub
 
     Private Sub btnGuardarCierre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardarCierre.Click
@@ -171,7 +196,7 @@
             OP = New OrdenPedido
             OP.Numero = CInt(txtNumero.Text)
             OP.FechaEmision = dtpFecha.Value
-            OP.Total = CDbl(txtSubTotal.Text)
+            OP.Total = CDbl(lblTotal.Text)
             OP.Estado = "P"
             OP.Vigencia = True
             OP.Empleado = New Empleado
@@ -198,8 +223,7 @@
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
-        
-    End Sub
 
+    End Sub
 
 End Class

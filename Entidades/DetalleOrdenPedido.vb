@@ -2,6 +2,7 @@
     Public Property Modelo As Modelo
     Public Property OrdenPedido As OrdenPedido
     Public Property Cantidad As Integer
+    Public Property IGV As Double
     Public Property Total As Double
 
     Public ReadOnly Property CodigoModelo As String

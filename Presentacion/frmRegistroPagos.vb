@@ -69,7 +69,6 @@
         Return Tipos
     End Function
 
-
     Sub LimpiarEfectivo()
         numPagaCon.Value = 0.0
         txtVuelto.Text = "0.00"

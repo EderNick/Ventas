@@ -32,7 +32,6 @@ Partial Class frmOrdenPedido
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.txtSubTotal = New MetroFramework.Controls.MetroTextBox()
         Me.gbProducto = New System.Windows.Forms.GroupBox()
         Me.txtPrecioUnitario = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
@@ -44,10 +43,6 @@ Partial Class frmOrdenPedido
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.txtCliente = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -66,6 +61,15 @@ Partial Class frmOrdenPedido
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnGuardarCierre = New System.Windows.Forms.Button()
+        Me.lblIGV = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.lblTotal = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.lblSubTotal = New MetroFramework.Controls.MetroLabel()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbProducto.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -104,33 +108,16 @@ Partial Class frmOrdenPedido
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.MetroLabel1.Location = New System.Drawing.Point(737, 563)
+        Me.MetroLabel1.Location = New System.Drawing.Point(619, 621)
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(73, 19)
+        Me.MetroLabel1.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel1.TabIndex = 33
-        Me.MetroLabel1.Text = "SUB TOTAL"
+        Me.MetroLabel1.Text = "TOTAL"
         Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel1.UseCustomBackColor = True
         Me.MetroLabel1.UseCustomForeColor = True
         Me.MetroLabel1.UseStyleColors = True
-        '
-        'txtSubTotal
-        '
-        Me.txtSubTotal.Enabled = False
-        Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
-        Me.txtSubTotal.Lines = New String() {"0.00"}
-        Me.txtSubTotal.Location = New System.Drawing.Point(737, 585)
-        Me.txtSubTotal.MaxLength = 10
-        Me.txtSubTotal.Name = "txtSubTotal"
-        Me.txtSubTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubTotal.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtSubTotal.SelectedText = ""
-        Me.txtSubTotal.Size = New System.Drawing.Size(123, 30)
-        Me.txtSubTotal.TabIndex = 50
-        Me.txtSubTotal.Text = "0.00"
-        Me.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txtSubTotal.UseSelectable = True
         '
         'gbProducto
         '
@@ -149,7 +136,7 @@ Partial Class frmOrdenPedido
         Me.gbProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbProducto.ForeColor = System.Drawing.Color.Black
-        Me.gbProducto.Location = New System.Drawing.Point(9, 229)
+        Me.gbProducto.Location = New System.Drawing.Point(9, 210)
         Me.gbProducto.Name = "gbProducto"
         Me.gbProducto.Size = New System.Drawing.Size(884, 141)
         Me.gbProducto.TabIndex = 117
@@ -189,7 +176,7 @@ Partial Class frmOrdenPedido
         '
         Me.txtCantidad.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtCantidad.Lines = New String(-1) {}
-        Me.txtCantidad.Location = New System.Drawing.Point(315, 83)
+        Me.txtCantidad.Location = New System.Drawing.Point(304, 83)
         Me.txtCantidad.MaxLength = 32767
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -212,7 +199,7 @@ Partial Class frmOrdenPedido
         Me.txtProducto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtProducto.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtProducto.SelectedText = ""
-        Me.txtProducto.Size = New System.Drawing.Size(403, 23)
+        Me.txtProducto.Size = New System.Drawing.Size(427, 23)
         Me.txtProducto.TabIndex = 184
         Me.txtProducto.UseSelectable = True
         '
@@ -227,7 +214,7 @@ Partial Class frmOrdenPedido
         Me.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscarProducto.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscarProducto.ForeColor = System.Drawing.Color.White
-        Me.btnBuscarProducto.Location = New System.Drawing.Point(549, 20)
+        Me.btnBuscarProducto.Location = New System.Drawing.Point(573, 23)
         Me.btnBuscarProducto.Name = "btnBuscarProducto"
         Me.btnBuscarProducto.Size = New System.Drawing.Size(44, 39)
         Me.btnBuscarProducto.TabIndex = 183
@@ -238,7 +225,7 @@ Partial Class frmOrdenPedido
         Me.txtMonto.Enabled = False
         Me.txtMonto.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtMonto.Lines = New String(-1) {}
-        Me.txtMonto.Location = New System.Drawing.Point(491, 80)
+        Me.txtMonto.Location = New System.Drawing.Point(515, 80)
         Me.txtMonto.MaxLength = 32767
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -262,7 +249,7 @@ Partial Class frmOrdenPedido
         Me.btnAgregar.ForeColor = System.Drawing.Color.Black
         Me.btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), System.Drawing.Image)
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnAgregar.Location = New System.Drawing.Point(622, 37)
+        Me.btnAgregar.Location = New System.Drawing.Point(687, 39)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(117, 73)
         Me.btnAgregar.TabIndex = 195
@@ -273,7 +260,7 @@ Partial Class frmOrdenPedido
         'MetroLabel2
         '
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(235, 86)
+        Me.MetroLabel2.Location = New System.Drawing.Point(224, 86)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(74, 19)
         Me.MetroLabel2.Style = MetroFramework.MetroColorStyle.Green
@@ -287,12 +274,12 @@ Partial Class frmOrdenPedido
         'MetroLabel9
         '
         Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(426, 87)
+        Me.MetroLabel9.Location = New System.Drawing.Point(402, 87)
         Me.MetroLabel9.Name = "MetroLabel9"
-        Me.MetroLabel9.Size = New System.Drawing.Size(59, 19)
+        Me.MetroLabel9.Size = New System.Drawing.Size(107, 19)
         Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel9.TabIndex = 43
-        Me.MetroLabel9.Text = "MONTO"
+        Me.MetroLabel9.Text = "MONTO SIN IGV"
         Me.MetroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel9.UseCustomBackColor = True
         Me.MetroLabel9.UseCustomForeColor = True
@@ -319,53 +306,12 @@ Partial Class frmOrdenPedido
         Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn1, Me.Column1, Me.DataGridViewTextBoxColumn5})
-        Me.dgvProductos.Location = New System.Drawing.Point(9, 393)
+        Me.dgvProductos.Location = New System.Drawing.Point(9, 363)
         Me.dgvProductos.Name = "dgvProductos"
         Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProductos.Size = New System.Drawing.Size(722, 222)
+        Me.dgvProductos.Size = New System.Drawing.Size(804, 161)
         Me.dgvProductos.TabIndex = 173
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreModelo"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn2.HeaderText = "PRODUCTO"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 420
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Cantidad"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn1.HeaderText = "CANT."
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 50
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "PrecioUnitario"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column1.HeaderText = "PRECIO UNIT."
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridViewTextBoxColumn5.HeaderText = "SUBTOTAL"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'MetroTile2
         '
@@ -582,7 +528,7 @@ Partial Class frmOrdenPedido
         Me.btnEliminar.ForeColor = System.Drawing.Color.Black
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
         Me.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnEliminar.Location = New System.Drawing.Point(734, 411)
+        Me.btnEliminar.Location = New System.Drawing.Point(819, 363)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(74, 72)
         Me.btnEliminar.TabIndex = 219
@@ -596,9 +542,9 @@ Partial Class frmOrdenPedido
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Controls.Add(Me.btnSalir)
         Me.Panel2.Controls.Add(Me.btnGuardarCierre)
-        Me.Panel2.Location = New System.Drawing.Point(1, 640)
+        Me.Panel2.Location = New System.Drawing.Point(1, 651)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(911, 71)
+        Me.Panel2.Size = New System.Drawing.Size(911, 79)
         Me.Panel2.TabIndex = 220
         '
         'btnNuevo
@@ -613,7 +559,7 @@ Partial Class frmOrdenPedido
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnNuevo.Location = New System.Drawing.Point(8, 0)
+        Me.btnNuevo.Location = New System.Drawing.Point(8, 3)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(72, 72)
         Me.btnNuevo.TabIndex = 156
@@ -633,7 +579,7 @@ Partial Class frmOrdenPedido
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(819, 0)
+        Me.btnSalir.Location = New System.Drawing.Point(819, 3)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(73, 72)
         Me.btnSalir.TabIndex = 155
@@ -653,7 +599,7 @@ Partial Class frmOrdenPedido
         Me.btnGuardarCierre.ForeColor = System.Drawing.Color.White
         Me.btnGuardarCierre.Image = CType(resources.GetObject("btnGuardarCierre.Image"), System.Drawing.Image)
         Me.btnGuardarCierre.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardarCierre.Location = New System.Drawing.Point(421, 0)
+        Me.btnGuardarCierre.Location = New System.Drawing.Point(421, 3)
         Me.btnGuardarCierre.Name = "btnGuardarCierre"
         Me.btnGuardarCierre.Size = New System.Drawing.Size(111, 72)
         Me.btnGuardarCierre.TabIndex = 154
@@ -661,11 +607,143 @@ Partial Class frmOrdenPedido
         Me.btnGuardarCierre.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnGuardarCierre.UseVisualStyleBackColor = False
         '
+        'lblIGV
+        '
+        Me.lblIGV.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lblIGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblIGV.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblIGV.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.lblIGV.Location = New System.Drawing.Point(670, 569)
+        Me.lblIGV.Name = "lblIGV"
+        Me.lblIGV.Size = New System.Drawing.Size(123, 30)
+        Me.lblIGV.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblIGV.TabIndex = 233
+        Me.lblIGV.Text = "0.00"
+        Me.lblIGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblIGV.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblIGV.UseCustomBackColor = True
+        Me.lblIGV.UseCustomForeColor = True
+        Me.lblIGV.UseStyleColors = True
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroLabel3.Location = New System.Drawing.Point(595, 580)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(69, 19)
+        Me.MetroLabel3.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel3.TabIndex = 234
+        Me.MetroLabel3.Text = "IGV TOTAL"
+        Me.MetroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel3.UseCustomBackColor = True
+        Me.MetroLabel3.UseCustomForeColor = True
+        Me.MetroLabel3.UseStyleColors = True
+        '
+        'lblTotal
+        '
+        Me.lblTotal.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblTotal.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblTotal.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.lblTotal.Location = New System.Drawing.Point(670, 610)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(123, 30)
+        Me.lblTotal.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblTotal.TabIndex = 235
+        Me.lblTotal.Text = "0.00"
+        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblTotal.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblTotal.UseCustomBackColor = True
+        Me.lblTotal.UseCustomForeColor = True
+        Me.lblTotal.UseStyleColors = True
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MetroLabel6.Location = New System.Drawing.Point(591, 539)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(73, 19)
+        Me.MetroLabel6.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel6.TabIndex = 237
+        Me.MetroLabel6.Text = "SUB TOTAL"
+        Me.MetroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel6.UseCustomBackColor = True
+        Me.MetroLabel6.UseCustomForeColor = True
+        Me.MetroLabel6.UseStyleColors = True
+        '
+        'lblSubTotal
+        '
+        Me.lblSubTotal.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSubTotal.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblSubTotal.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.lblSubTotal.Location = New System.Drawing.Point(670, 530)
+        Me.lblSubTotal.Name = "lblSubTotal"
+        Me.lblSubTotal.Size = New System.Drawing.Size(123, 30)
+        Me.lblSubTotal.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblSubTotal.TabIndex = 236
+        Me.lblSubTotal.Text = "0.00"
+        Me.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblSubTotal.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblSubTotal.UseCustomBackColor = True
+        Me.lblSubTotal.UseCustomForeColor = True
+        Me.lblSubTotal.UseStyleColors = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NombreModelo"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn2.HeaderText = "PRODUCTO"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 420
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Cantidad"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn1.HeaderText = "CANT."
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 80
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "PrecioUnitario"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column1.HeaderText = "PRECIO UNIT."
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 120
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Total"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn5.HeaderText = "SUBTOTAL"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 120
+        '
         'frmOrdenPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(900, 711)
+        Me.ClientSize = New System.Drawing.Size(900, 729)
+        Me.Controls.Add(Me.MetroLabel6)
+        Me.Controls.Add(Me.lblSubTotal)
+        Me.Controls.Add(Me.lblTotal)
+        Me.Controls.Add(Me.MetroLabel3)
+        Me.Controls.Add(Me.lblIGV)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Button6)
@@ -679,7 +757,6 @@ Partial Class frmOrdenPedido
         Me.Controls.Add(Me.MetroLabel8)
         Me.Controls.Add(Me.gbProducto)
         Me.Controls.Add(Me.dgvProductos)
-        Me.Controls.Add(Me.txtSubTotal)
         Me.Controls.Add(Me.MetroLabel1)
         Me.KeyPreview = True
         Me.Name = "frmOrdenPedido"
@@ -696,7 +773,6 @@ Partial Class frmOrdenPedido
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtSubTotal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents gbProducto As System.Windows.Forms.GroupBox
     Friend WithEvents txtMonto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
@@ -726,6 +802,11 @@ Partial Class frmOrdenPedido
     Friend WithEvents txtPrecioUnitario As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
     Friend WithEvents btnNuevo As System.Windows.Forms.Button
+    Friend WithEvents lblIGV As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblTotal As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblSubTotal As MetroFramework.Controls.MetroLabel
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn

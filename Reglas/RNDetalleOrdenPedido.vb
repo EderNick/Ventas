@@ -7,6 +7,7 @@
         pars.Add(New CParametro("pIdOrdenPedido", wDetalleOP.OrdenPedido.Codigo))
         pars.Add(New CParametro("pIdModelo", wDetalleOP.Modelo.Codigo))
         pars.Add(New CParametro("pCantidad", wDetalleOP.Cantidad))
+        pars.Add(New CParametro("pIgv", wDetalleOP.IGV))
         pars.Add(New CParametro("pTotal", wDetalleOP.Total))
 
         Try
