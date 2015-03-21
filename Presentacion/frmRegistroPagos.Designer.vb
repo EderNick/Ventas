@@ -407,17 +407,17 @@ Partial Class frmRegistroPagos
         'numMontoTAR
         '
         Me.numMontoTAR.DecimalPlaces = 2
-        Me.numMontoTAR.Location = New System.Drawing.Point(152, 157)
+        Me.numMontoTAR.Location = New System.Drawing.Point(143, 157)
         Me.numMontoTAR.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
         Me.numMontoTAR.Name = "numMontoTAR"
-        Me.numMontoTAR.Size = New System.Drawing.Size(207, 23)
+        Me.numMontoTAR.Size = New System.Drawing.Size(216, 23)
         Me.numMontoTAR.TabIndex = 229
         Me.numMontoTAR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'MetroLabel19
         '
         Me.MetroLabel19.AutoSize = True
-        Me.MetroLabel19.Location = New System.Drawing.Point(30, 159)
+        Me.MetroLabel19.Location = New System.Drawing.Point(21, 161)
         Me.MetroLabel19.Name = "MetroLabel19"
         Me.MetroLabel19.Size = New System.Drawing.Size(116, 19)
         Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Green
@@ -486,7 +486,7 @@ Partial Class frmRegistroPagos
         'MetroLabel17
         '
         Me.MetroLabel17.AutoSize = True
-        Me.MetroLabel17.Location = New System.Drawing.Point(30, 116)
+        Me.MetroLabel17.Location = New System.Drawing.Point(21, 116)
         Me.MetroLabel17.Name = "MetroLabel17"
         Me.MetroLabel17.Size = New System.Drawing.Size(56, 19)
         Me.MetroLabel17.Style = MetroFramework.MetroColorStyle.Green
@@ -515,7 +515,7 @@ Partial Class frmRegistroPagos
         'MetroLabel8
         '
         Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(27, 25)
+        Me.MetroLabel8.Location = New System.Drawing.Point(21, 25)
         Me.MetroLabel8.Name = "MetroLabel8"
         Me.MetroLabel8.Size = New System.Drawing.Size(66, 19)
         Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Green
@@ -539,12 +539,12 @@ Partial Class frmRegistroPagos
         'MetroLabel30
         '
         Me.MetroLabel30.AutoSize = True
-        Me.MetroLabel30.Location = New System.Drawing.Point(30, 68)
+        Me.MetroLabel30.Location = New System.Drawing.Point(17, 69)
         Me.MetroLabel30.Name = "MetroLabel30"
-        Me.MetroLabel30.Size = New System.Drawing.Size(57, 19)
+        Me.MetroLabel30.Size = New System.Drawing.Size(110, 19)
         Me.MetroLabel30.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel30.TabIndex = 214
-        Me.MetroLabel30.Text = "TARJETA"
+        Me.MetroLabel30.Text = "TIPO DE TARJETA"
         Me.MetroLabel30.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel30.UseCustomBackColor = True
         Me.MetroLabel30.UseCustomForeColor = True

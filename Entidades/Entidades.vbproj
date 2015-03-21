@@ -71,6 +71,7 @@
     <Compile Include="ChequeVenta.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="CuentaVenta.vb" />
+    <Compile Include="CuotaPagoVenta.vb" />
     <Compile Include="CuotaVenta.vb" />
     <Compile Include="Departamento.vb" />
     <Compile Include="DepositoVenta.vb" />

@@ -110,6 +110,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="RNTarjetaVentas.vb" />
+    <Compile Include="RNTipoTarjeta.vb" />
     <Compile Include="RNTipoUsuario.vb" />
     <Compile Include="RNUsuario.vb" />
     <Compile Include="RNZona.vb" />

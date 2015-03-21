@@ -9,10 +9,10 @@
         Dim frm As New frmDocumentoVenta
         Me.ShowDialog()
         lblMontoAPagar.Text = Math.Round(wMonto, 2)
-        frm.Pago = Me.Pago
-        frm.Cheque = Me.Cheque
-        frm.Deposito = Me.Deposito
-        frm.Tarjeta = Me.Tarjeta
+        'frm.Pago = Me.Pago
+        'frm.Cheque = Me.Cheque
+        'frm.Deposito = Me.Deposito
+        'frm.Tarjeta = Me.Tarjeta
     End Sub
 
     Private Sub CalcularMontoEstaPagando()
@@ -22,20 +22,21 @@
         End If
     End Sub
 
-    Private Sub CargarBancos()
+    Private Function CargarBancos() As List(Of Banco)
         Dim rn As RNBanco
-        Dim Bancos As List(Of Banco)
+        Dim Bancos As List(Of Banco) = Nothing
 
         Try
             rn = New RNBanco
             Bancos = rn.Listar()
-            modFunciones.ListarComboBox(Me.cboBancoDEP, Bancos, "Codigo", "Nombre")
         Catch ex As Exception
             MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             rn = Nothing
         End Try
-    End Sub
+
+        Return Bancos
+    End Function
 
     Private Sub CargarCuentas(ByVal wCodBanco As Integer)
         Dim rn As RNCuentaVenta
@@ -51,6 +52,23 @@
             rn = Nothing
         End Try
     End Sub
+
+    Private Function CargarTipoTarjetas() As List(Of TipoTarjetaVentas)
+        Dim rn As RNTipoTarjeta
+        Dim Tipos As List(Of TipoTarjetaVentas) = Nothing
+
+        Try
+            rn = New RNTipoTarjeta
+            Tipos = rn.ListarTodo()
+        Catch ex As Exception
+            MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            rn = Nothing
+        End Try
+
+        Return Tipos
+    End Function
+
 
     Sub LimpiarEfectivo()
         numPagaCon.Value = 0.0
@@ -139,8 +157,10 @@
 
     Private Sub tglDeposito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglDeposito.CheckedChanged
         If tglDeposito.Checked = True Then
+            Dim Bancos As List(Of Banco)
             gbDeposito.Enabled = True
-            'CargarBancos()
+            Bancos = CargarBancos()
+            modFunciones.ListarComboBox(Me.cboBancoDEP, Bancos, "Codigo", "Nombre")
             cboBancoDEP.Focus()
         Else
             LimpiarDeposito()
@@ -151,8 +171,14 @@
 
     Private Sub tglTarjeta_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglTarjeta.CheckedChanged
         If tglTarjeta.Checked = True Then
+            Dim Bancos As List(Of Banco)
+            Dim TiposTar As List(Of TipoTarjetaVentas)
             gbTarjeta.Enabled = True
             txtNumTAR1.Focus()
+            TiposTar = CargarTipoTarjetas()
+            modFunciones.ListarComboBox(Me.cboTarjeta, TiposTar, "Codigo", "Nombre")
+            Bancos = CargarBancos()
+            modFunciones.ListarComboBox(Me.cboBancoTAR, Bancos, "Codigo", "Nombre")
         Else
             LimpiarTarjeta()
             gbTarjeta.Enabled = False
@@ -176,12 +202,6 @@
         Pago = Nothing
     End Sub
 
-    Private Sub btnRegistrarTarjeta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Dim frm As frmRegistrarTarjeta
-        'frm.Agregar()
-        'CargarTipoTarjeta()
-    End Sub
-
     Private Sub numPagaCon_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numPagaCon.ValueChanged
         If numPagaCon.Value = 0 Then
             txtVuelto.Text = "0.00"
@@ -198,9 +218,12 @@
     End Sub
 
     Private Sub cboBancoDEP_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboBancoDEP.SelectedIndexChanged
-        Dim selecc As Banco
-        selecc = DirectCast(cboBancoDEP.SelectedItem, Banco)
-        CargarCuentas(selecc.Codigo)
+        If cboBancoDEP.SelectedIndex >= 0 Then
+            Dim selecc As Banco
+            selecc = DirectCast(cboBancoDEP.SelectedItem, Banco)
+            CargarCuentas(selecc.Codigo)
+            cboCuentaDEP.Focus()
+        End If
     End Sub
 
     Private Sub txtNumTAR1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumTAR1.TextChanged
@@ -260,7 +283,7 @@
                 Tarjeta = New TarjetaVenta
                 Tarjeta.Monto = Math.Round(CDbl(numMontoTAR.Value), 2)
                 Tarjeta.NumeroCuenta = txtNumTAR1.Text & " " & txtNumTAR2.Text & " " & txtNumTAR3.Text & " " & txtNumTAR4.Text
-                Tarjeta.IdTipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVenta).Codigo
+                Tarjeta.IdTipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVentas).Codigo
                 Tarjeta.IdBanco = DirectCast(cboBancoTAR.SelectedItem, Banco).Codigo
                 Tarjeta.PagoVentas = New PagoVenta
             End If
@@ -279,4 +302,5 @@
             MetroMessageBox.Show(Me, "No se puede registrar un Pago vacío.", "REGISTRO DE PAGOS", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
 End Class
