@@ -28,20 +28,25 @@ Partial Class frmRegistroPagos
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.gbCheque = New System.Windows.Forms.GroupBox()
+        Me.numMontoCHE = New System.Windows.Forms.NumericUpDown()
+        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
         Me.dtpFechaGiro = New MetroFramework.Controls.MetroDateTime()
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.txtNumeroCH = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel35 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel33 = New MetroFramework.Controls.MetroLabel()
         Me.gbDeposito = New System.Windows.Forms.GroupBox()
+        Me.numMontoDEP = New System.Windows.Forms.NumericUpDown()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.cboBancoDEP = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
         Me.cboCuentaDEP = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel31 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel34 = New MetroFramework.Controls.MetroLabel()
         Me.gbTarjeta = New System.Windows.Forms.GroupBox()
+        Me.numMontoTAR = New System.Windows.Forms.NumericUpDown()
+        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
         Me.cboBancoTAR = New MetroFramework.Controls.MetroComboBox()
-        Me.btnRegistrarTarjeta = New System.Windows.Forms.Button()
         Me.txtNumTAR2 = New MetroFramework.Controls.MetroTextBox()
         Me.txtNumTAR3 = New MetroFramework.Controls.MetroTextBox()
         Me.txtNumTAR4 = New MetroFramework.Controls.MetroTextBox()
@@ -52,10 +57,10 @@ Partial Class frmRegistroPagos
         Me.MetroLabel30 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel29 = New MetroFramework.Controls.MetroLabel()
         Me.gbEfectivo = New System.Windows.Forms.GroupBox()
+        Me.numPagaCon = New System.Windows.Forms.NumericUpDown()
         Me.txtVuelto = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
-        Me.txtPagaCon = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel27 = New MetroFramework.Controls.MetroLabel()
         Me.MtxtDescripcion = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
@@ -80,11 +85,19 @@ Partial Class frmRegistroPagos
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnPagar = New System.Windows.Forms.Button()
+        Me.lblMontoPagando = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
+        Me.lblMontoFaltante = New MetroFramework.Controls.MetroLabel()
+        Me.lblMontoF = New MetroFramework.Controls.MetroLabel()
         Me.MetroTile2.SuspendLayout()
         Me.gbCheque.SuspendLayout()
+        CType(Me.numMontoCHE, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDeposito.SuspendLayout()
+        CType(Me.numMontoDEP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbTarjeta.SuspendLayout()
+        CType(Me.numMontoTAR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEfectivo.SuspendLayout()
+        CType(Me.numPagaCon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -139,7 +152,7 @@ Partial Class frmRegistroPagos
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(0, 2)
+        Me.Button6.Location = New System.Drawing.Point(0, 10)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(181, 78)
         Me.Button6.TabIndex = 165
@@ -150,6 +163,8 @@ Partial Class frmRegistroPagos
         '
         Me.gbCheque.BackColor = System.Drawing.Color.White
         Me.gbCheque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbCheque.Controls.Add(Me.numMontoCHE)
+        Me.gbCheque.Controls.Add(Me.MetroLabel16)
         Me.gbCheque.Controls.Add(Me.dtpFechaGiro)
         Me.gbCheque.Controls.Add(Me.MetroLabel10)
         Me.gbCheque.Controls.Add(Me.txtNumeroCH)
@@ -159,19 +174,43 @@ Partial Class frmRegistroPagos
         Me.gbCheque.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbCheque.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbCheque.ForeColor = System.Drawing.Color.Black
-        Me.gbCheque.Location = New System.Drawing.Point(618, 357)
+        Me.gbCheque.Location = New System.Drawing.Point(618, 415)
         Me.gbCheque.Name = "gbCheque"
-        Me.gbCheque.Size = New System.Drawing.Size(398, 125)
+        Me.gbCheque.Size = New System.Drawing.Size(398, 169)
         Me.gbCheque.TabIndex = 207
         Me.gbCheque.TabStop = False
         Me.gbCheque.Text = "CHEQUE"
         '
+        'numMontoCHE
+        '
+        Me.numMontoCHE.DecimalPlaces = 2
+        Me.numMontoCHE.Location = New System.Drawing.Point(143, 124)
+        Me.numMontoCHE.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
+        Me.numMontoCHE.Name = "numMontoCHE"
+        Me.numMontoCHE.Size = New System.Drawing.Size(153, 23)
+        Me.numMontoCHE.TabIndex = 227
+        Me.numMontoCHE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'MetroLabel16
+        '
+        Me.MetroLabel16.AutoSize = True
+        Me.MetroLabel16.Location = New System.Drawing.Point(25, 124)
+        Me.MetroLabel16.Name = "MetroLabel16"
+        Me.MetroLabel16.Size = New System.Drawing.Size(112, 19)
+        Me.MetroLabel16.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel16.TabIndex = 226
+        Me.MetroLabel16.Text = "MONTO GIRADO"
+        Me.MetroLabel16.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel16.UseCustomBackColor = True
+        Me.MetroLabel16.UseCustomForeColor = True
+        Me.MetroLabel16.UseStyleColors = True
+        '
         'dtpFechaGiro
         '
-        Me.dtpFechaGiro.Location = New System.Drawing.Point(133, 72)
+        Me.dtpFechaGiro.Location = New System.Drawing.Point(143, 72)
         Me.dtpFechaGiro.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpFechaGiro.Name = "dtpFechaGiro"
-        Me.dtpFechaGiro.Size = New System.Drawing.Size(205, 29)
+        Me.dtpFechaGiro.Size = New System.Drawing.Size(216, 29)
         Me.dtpFechaGiro.TabIndex = 1
         '
         'MetroLabel10
@@ -192,13 +231,13 @@ Partial Class frmRegistroPagos
         '
         Me.txtNumeroCH.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtNumeroCH.Lines = New String(-1) {}
-        Me.txtNumeroCH.Location = New System.Drawing.Point(133, 29)
+        Me.txtNumeroCH.Location = New System.Drawing.Point(143, 29)
         Me.txtNumeroCH.MaxLength = 32767
         Me.txtNumeroCH.Name = "txtNumeroCH"
         Me.txtNumeroCH.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumeroCH.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtNumeroCH.SelectedText = ""
-        Me.txtNumeroCH.Size = New System.Drawing.Size(144, 23)
+        Me.txtNumeroCH.Size = New System.Drawing.Size(134, 23)
         Me.txtNumeroCH.TabIndex = 0
         Me.txtNumeroCH.UseSelectable = True
         '
@@ -234,6 +273,8 @@ Partial Class frmRegistroPagos
         '
         Me.gbDeposito.BackColor = System.Drawing.Color.White
         Me.gbDeposito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbDeposito.Controls.Add(Me.numMontoDEP)
+        Me.gbDeposito.Controls.Add(Me.MetroLabel9)
         Me.gbDeposito.Controls.Add(Me.cboBancoDEP)
         Me.gbDeposito.Controls.Add(Me.MetroLabel15)
         Me.gbDeposito.Controls.Add(Me.cboCuentaDEP)
@@ -243,12 +284,36 @@ Partial Class frmRegistroPagos
         Me.gbDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbDeposito.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbDeposito.ForeColor = System.Drawing.Color.Black
-        Me.gbDeposito.Location = New System.Drawing.Point(98, 357)
+        Me.gbDeposito.Location = New System.Drawing.Point(98, 415)
         Me.gbDeposito.Name = "gbDeposito"
-        Me.gbDeposito.Size = New System.Drawing.Size(352, 125)
+        Me.gbDeposito.Size = New System.Drawing.Size(352, 169)
         Me.gbDeposito.TabIndex = 205
         Me.gbDeposito.TabStop = False
         Me.gbDeposito.Text = "DEPOSITO"
+        '
+        'numMontoDEP
+        '
+        Me.numMontoDEP.DecimalPlaces = 2
+        Me.numMontoDEP.Location = New System.Drawing.Point(166, 126)
+        Me.numMontoDEP.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
+        Me.numMontoDEP.Name = "numMontoDEP"
+        Me.numMontoDEP.Size = New System.Drawing.Size(140, 23)
+        Me.numMontoDEP.TabIndex = 225
+        Me.numMontoDEP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'MetroLabel9
+        '
+        Me.MetroLabel9.AutoSize = True
+        Me.MetroLabel9.Location = New System.Drawing.Point(18, 128)
+        Me.MetroLabel9.Name = "MetroLabel9"
+        Me.MetroLabel9.Size = New System.Drawing.Size(142, 19)
+        Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel9.TabIndex = 224
+        Me.MetroLabel9.Text = "MONTO DEPOSITADO"
+        Me.MetroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel9.UseCustomBackColor = True
+        Me.MetroLabel9.UseCustomForeColor = True
+        Me.MetroLabel9.UseStyleColors = True
         '
         'cboBancoDEP
         '
@@ -263,7 +328,7 @@ Partial Class frmRegistroPagos
         'MetroLabel15
         '
         Me.MetroLabel15.AutoSize = True
-        Me.MetroLabel15.Location = New System.Drawing.Point(29, 81)
+        Me.MetroLabel15.Location = New System.Drawing.Point(18, 81)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(73, 19)
         Me.MetroLabel15.Style = MetroFramework.MetroColorStyle.Green
@@ -287,7 +352,7 @@ Partial Class frmRegistroPagos
         'MetroLabel31
         '
         Me.MetroLabel31.AutoSize = True
-        Me.MetroLabel31.Location = New System.Drawing.Point(29, 33)
+        Me.MetroLabel31.Location = New System.Drawing.Point(18, 33)
         Me.MetroLabel31.Name = "MetroLabel31"
         Me.MetroLabel31.Size = New System.Drawing.Size(56, 19)
         Me.MetroLabel31.Style = MetroFramework.MetroColorStyle.Green
@@ -316,8 +381,9 @@ Partial Class frmRegistroPagos
         '
         Me.gbTarjeta.BackColor = System.Drawing.Color.White
         Me.gbTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbTarjeta.Controls.Add(Me.numMontoTAR)
+        Me.gbTarjeta.Controls.Add(Me.MetroLabel19)
         Me.gbTarjeta.Controls.Add(Me.cboBancoTAR)
-        Me.gbTarjeta.Controls.Add(Me.btnRegistrarTarjeta)
         Me.gbTarjeta.Controls.Add(Me.txtNumTAR2)
         Me.gbTarjeta.Controls.Add(Me.txtNumTAR3)
         Me.gbTarjeta.Controls.Add(Me.txtNumTAR4)
@@ -331,45 +397,52 @@ Partial Class frmRegistroPagos
         Me.gbTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbTarjeta.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTarjeta.ForeColor = System.Drawing.Color.Black
-        Me.gbTarjeta.Location = New System.Drawing.Point(618, 171)
+        Me.gbTarjeta.Location = New System.Drawing.Point(618, 203)
         Me.gbTarjeta.Name = "gbTarjeta"
-        Me.gbTarjeta.Size = New System.Drawing.Size(399, 162)
+        Me.gbTarjeta.Size = New System.Drawing.Size(399, 194)
         Me.gbTarjeta.TabIndex = 204
         Me.gbTarjeta.TabStop = False
         Me.gbTarjeta.Text = "TARJETA"
+        '
+        'numMontoTAR
+        '
+        Me.numMontoTAR.DecimalPlaces = 2
+        Me.numMontoTAR.Location = New System.Drawing.Point(152, 157)
+        Me.numMontoTAR.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
+        Me.numMontoTAR.Name = "numMontoTAR"
+        Me.numMontoTAR.Size = New System.Drawing.Size(207, 23)
+        Me.numMontoTAR.TabIndex = 229
+        Me.numMontoTAR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'MetroLabel19
+        '
+        Me.MetroLabel19.AutoSize = True
+        Me.MetroLabel19.Location = New System.Drawing.Point(30, 159)
+        Me.MetroLabel19.Name = "MetroLabel19"
+        Me.MetroLabel19.Size = New System.Drawing.Size(116, 19)
+        Me.MetroLabel19.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel19.TabIndex = 228
+        Me.MetroLabel19.Text = "MONTO PAGADO"
+        Me.MetroLabel19.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel19.UseCustomBackColor = True
+        Me.MetroLabel19.UseCustomForeColor = True
+        Me.MetroLabel19.UseStyleColors = True
         '
         'cboBancoTAR
         '
         Me.cboBancoTAR.FormattingEnabled = True
         Me.cboBancoTAR.ItemHeight = 23
-        Me.cboBancoTAR.Location = New System.Drawing.Point(132, 115)
+        Me.cboBancoTAR.Location = New System.Drawing.Point(133, 112)
         Me.cboBancoTAR.Name = "cboBancoTAR"
-        Me.cboBancoTAR.Size = New System.Drawing.Size(193, 29)
+        Me.cboBancoTAR.Size = New System.Drawing.Size(226, 29)
         Me.cboBancoTAR.TabIndex = 6
         Me.cboBancoTAR.UseSelectable = True
-        '
-        'btnRegistrarTarjeta
-        '
-        Me.btnRegistrarTarjeta.BackColor = System.Drawing.Color.Transparent
-        Me.btnRegistrarTarjeta.BackgroundImage = CType(resources.GetObject("btnRegistrarTarjeta.BackgroundImage"), System.Drawing.Image)
-        Me.btnRegistrarTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnRegistrarTarjeta.FlatAppearance.BorderSize = 0
-        Me.btnRegistrarTarjeta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btnRegistrarTarjeta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRegistrarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistrarTarjeta.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnRegistrarTarjeta.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrarTarjeta.Location = New System.Drawing.Point(332, 67)
-        Me.btnRegistrarTarjeta.Name = "btnRegistrarTarjeta"
-        Me.btnRegistrarTarjeta.Size = New System.Drawing.Size(27, 27)
-        Me.btnRegistrarTarjeta.TabIndex = 5
-        Me.btnRegistrarTarjeta.UseVisualStyleBackColor = True
         '
         'txtNumTAR2
         '
         Me.txtNumTAR2.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtNumTAR2.Lines = New String(-1) {}
-        Me.txtNumTAR2.Location = New System.Drawing.Point(195, 24)
+        Me.txtNumTAR2.Location = New System.Drawing.Point(195, 21)
         Me.txtNumTAR2.MaxLength = 4
         Me.txtNumTAR2.Name = "txtNumTAR2"
         Me.txtNumTAR2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -384,7 +457,7 @@ Partial Class frmRegistroPagos
         '
         Me.txtNumTAR3.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtNumTAR3.Lines = New String(-1) {}
-        Me.txtNumTAR3.Location = New System.Drawing.Point(257, 24)
+        Me.txtNumTAR3.Location = New System.Drawing.Point(257, 21)
         Me.txtNumTAR3.MaxLength = 4
         Me.txtNumTAR3.Name = "txtNumTAR3"
         Me.txtNumTAR3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -399,7 +472,7 @@ Partial Class frmRegistroPagos
         '
         Me.txtNumTAR4.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtNumTAR4.Lines = New String(-1) {}
-        Me.txtNumTAR4.Location = New System.Drawing.Point(319, 24)
+        Me.txtNumTAR4.Location = New System.Drawing.Point(319, 21)
         Me.txtNumTAR4.MaxLength = 4
         Me.txtNumTAR4.Name = "txtNumTAR4"
         Me.txtNumTAR4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -413,7 +486,7 @@ Partial Class frmRegistroPagos
         'MetroLabel17
         '
         Me.MetroLabel17.AutoSize = True
-        Me.MetroLabel17.Location = New System.Drawing.Point(25, 119)
+        Me.MetroLabel17.Location = New System.Drawing.Point(30, 116)
         Me.MetroLabel17.Name = "MetroLabel17"
         Me.MetroLabel17.Size = New System.Drawing.Size(56, 19)
         Me.MetroLabel17.Style = MetroFramework.MetroColorStyle.Green
@@ -428,7 +501,7 @@ Partial Class frmRegistroPagos
         '
         Me.txtNumTAR1.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.txtNumTAR1.Lines = New String(-1) {}
-        Me.txtNumTAR1.Location = New System.Drawing.Point(133, 24)
+        Me.txtNumTAR1.Location = New System.Drawing.Point(133, 21)
         Me.txtNumTAR1.MaxLength = 4
         Me.txtNumTAR1.Name = "txtNumTAR1"
         Me.txtNumTAR1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -442,12 +515,12 @@ Partial Class frmRegistroPagos
         'MetroLabel8
         '
         Me.MetroLabel8.AutoSize = True
-        Me.MetroLabel8.Location = New System.Drawing.Point(22, 28)
+        Me.MetroLabel8.Location = New System.Drawing.Point(27, 25)
         Me.MetroLabel8.Name = "MetroLabel8"
         Me.MetroLabel8.Size = New System.Drawing.Size(66, 19)
         Me.MetroLabel8.Style = MetroFramework.MetroColorStyle.Green
         Me.MetroLabel8.TabIndex = 216
-        Me.MetroLabel8.Text = "NUMERO"
+        Me.MetroLabel8.Text = "NÚMERO"
         Me.MetroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroLabel8.UseCustomBackColor = True
         Me.MetroLabel8.UseCustomForeColor = True
@@ -457,16 +530,16 @@ Partial Class frmRegistroPagos
         '
         Me.cboTarjeta.FormattingEnabled = True
         Me.cboTarjeta.ItemHeight = 23
-        Me.cboTarjeta.Location = New System.Drawing.Point(132, 67)
+        Me.cboTarjeta.Location = New System.Drawing.Point(133, 64)
         Me.cboTarjeta.Name = "cboTarjeta"
-        Me.cboTarjeta.Size = New System.Drawing.Size(193, 29)
+        Me.cboTarjeta.Size = New System.Drawing.Size(226, 29)
         Me.cboTarjeta.TabIndex = 4
         Me.cboTarjeta.UseSelectable = True
         '
         'MetroLabel30
         '
         Me.MetroLabel30.AutoSize = True
-        Me.MetroLabel30.Location = New System.Drawing.Point(25, 71)
+        Me.MetroLabel30.Location = New System.Drawing.Point(30, 68)
         Me.MetroLabel30.Name = "MetroLabel30"
         Me.MetroLabel30.Size = New System.Drawing.Size(57, 19)
         Me.MetroLabel30.Style = MetroFramework.MetroColorStyle.Green
@@ -495,21 +568,31 @@ Partial Class frmRegistroPagos
         '
         Me.gbEfectivo.BackColor = System.Drawing.Color.White
         Me.gbEfectivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gbEfectivo.Controls.Add(Me.numPagaCon)
         Me.gbEfectivo.Controls.Add(Me.txtVuelto)
         Me.gbEfectivo.Controls.Add(Me.MetroLabel11)
         Me.gbEfectivo.Controls.Add(Me.MetroLabel7)
-        Me.gbEfectivo.Controls.Add(Me.txtPagaCon)
         Me.gbEfectivo.Controls.Add(Me.MetroLabel27)
         Me.gbEfectivo.Enabled = False
         Me.gbEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.gbEfectivo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbEfectivo.ForeColor = System.Drawing.Color.Black
-        Me.gbEfectivo.Location = New System.Drawing.Point(98, 171)
+        Me.gbEfectivo.Location = New System.Drawing.Point(98, 214)
         Me.gbEfectivo.Name = "gbEfectivo"
         Me.gbEfectivo.Size = New System.Drawing.Size(352, 162)
         Me.gbEfectivo.TabIndex = 200
         Me.gbEfectivo.TabStop = False
         Me.gbEfectivo.Text = "EFECTIVO"
+        '
+        'numPagaCon
+        '
+        Me.numPagaCon.DecimalPlaces = 2
+        Me.numPagaCon.Location = New System.Drawing.Point(120, 47)
+        Me.numPagaCon.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
+        Me.numPagaCon.Name = "numPagaCon"
+        Me.numPagaCon.Size = New System.Drawing.Size(174, 25)
+        Me.numPagaCon.TabIndex = 228
+        Me.numPagaCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtVuelto
         '
@@ -555,22 +638,6 @@ Partial Class frmRegistroPagos
         Me.MetroLabel7.UseCustomBackColor = True
         Me.MetroLabel7.UseCustomForeColor = True
         Me.MetroLabel7.UseStyleColors = True
-        '
-        'txtPagaCon
-        '
-        Me.txtPagaCon.FontSize = MetroFramework.MetroTextBoxSize.Medium
-        Me.txtPagaCon.Lines = New String() {"0.00"}
-        Me.txtPagaCon.Location = New System.Drawing.Point(120, 43)
-        Me.txtPagaCon.MaxLength = 32767
-        Me.txtPagaCon.Name = "txtPagaCon"
-        Me.txtPagaCon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPagaCon.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtPagaCon.SelectedText = ""
-        Me.txtPagaCon.Size = New System.Drawing.Size(174, 23)
-        Me.txtPagaCon.TabIndex = 0
-        Me.txtPagaCon.Text = "0.00"
-        Me.txtPagaCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txtPagaCon.UseSelectable = True
         '
         'MetroLabel27
         '
@@ -740,7 +807,7 @@ Partial Class frmRegistroPagos
         Me.lblMontoAPagar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblMontoAPagar.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.lblMontoAPagar.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.lblMontoAPagar.Location = New System.Drawing.Point(857, 117)
+        Me.lblMontoAPagar.Location = New System.Drawing.Point(376, 119)
         Me.lblMontoAPagar.Name = "lblMontoAPagar"
         Me.lblMontoAPagar.Size = New System.Drawing.Size(159, 30)
         Me.lblMontoAPagar.Style = MetroFramework.MetroColorStyle.Green
@@ -756,7 +823,7 @@ Partial Class frmRegistroPagos
         '
         Me.MetroLabel12.AutoSize = True
         Me.MetroLabel12.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel12.Location = New System.Drawing.Point(689, 117)
+        Me.MetroLabel12.Location = New System.Drawing.Point(208, 119)
         Me.MetroLabel12.Name = "MetroLabel12"
         Me.MetroLabel12.Size = New System.Drawing.Size(149, 25)
         Me.MetroLabel12.Style = MetroFramework.MetroColorStyle.Green
@@ -769,6 +836,7 @@ Partial Class frmRegistroPagos
         '
         'dtFecha
         '
+        Me.dtFecha.Enabled = False
         Me.dtFecha.Location = New System.Drawing.Point(780, 61)
         Me.dtFecha.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtFecha.Name = "dtFecha"
@@ -778,7 +846,7 @@ Partial Class frmRegistroPagos
         'tglEfectivo
         '
         Me.tglEfectivo.AutoSize = True
-        Me.tglEfectivo.Location = New System.Drawing.Point(12, 191)
+        Me.tglEfectivo.Location = New System.Drawing.Point(12, 234)
         Me.tglEfectivo.Name = "tglEfectivo"
         Me.tglEfectivo.Size = New System.Drawing.Size(80, 17)
         Me.tglEfectivo.TabIndex = 0
@@ -788,7 +856,7 @@ Partial Class frmRegistroPagos
         'tglDeposito
         '
         Me.tglDeposito.AutoSize = True
-        Me.tglDeposito.Location = New System.Drawing.Point(12, 386)
+        Me.tglDeposito.Location = New System.Drawing.Point(12, 444)
         Me.tglDeposito.Name = "tglDeposito"
         Me.tglDeposito.Size = New System.Drawing.Size(80, 17)
         Me.tglDeposito.TabIndex = 1
@@ -798,7 +866,7 @@ Partial Class frmRegistroPagos
         'tglTarjeta
         '
         Me.tglTarjeta.AutoSize = True
-        Me.tglTarjeta.Location = New System.Drawing.Point(532, 191)
+        Me.tglTarjeta.Location = New System.Drawing.Point(532, 234)
         Me.tglTarjeta.Name = "tglTarjeta"
         Me.tglTarjeta.Size = New System.Drawing.Size(80, 17)
         Me.tglTarjeta.TabIndex = 2
@@ -808,7 +876,7 @@ Partial Class frmRegistroPagos
         'tglCheque
         '
         Me.tglCheque.AutoSize = True
-        Me.tglCheque.Location = New System.Drawing.Point(532, 386)
+        Me.tglCheque.Location = New System.Drawing.Point(532, 444)
         Me.tglCheque.Name = "tglCheque"
         Me.tglCheque.Size = New System.Drawing.Size(80, 17)
         Me.tglCheque.TabIndex = 3
@@ -821,7 +889,7 @@ Partial Class frmRegistroPagos
         Me.Panel3.Controls.Add(Me.btnNuevo)
         Me.Panel3.Controls.Add(Me.btnSalir)
         Me.Panel3.Controls.Add(Me.btnPagar)
-        Me.Panel3.Location = New System.Drawing.Point(0, 508)
+        Me.Panel3.Location = New System.Drawing.Point(0, 596)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1037, 80)
         Me.Panel3.TabIndex = 230
@@ -845,6 +913,7 @@ Partial Class frmRegistroPagos
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnNuevo.UseVisualStyleBackColor = False
+        Me.btnNuevo.Visible = False
         '
         'btnSalir
         '
@@ -886,11 +955,81 @@ Partial Class frmRegistroPagos
         Me.btnPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnPagar.UseVisualStyleBackColor = False
         '
+        'lblMontoPagando
+        '
+        Me.lblMontoPagando.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.lblMontoPagando.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblMontoPagando.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblMontoPagando.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.lblMontoPagando.Location = New System.Drawing.Point(857, 119)
+        Me.lblMontoPagando.Name = "lblMontoPagando"
+        Me.lblMontoPagando.Size = New System.Drawing.Size(159, 30)
+        Me.lblMontoPagando.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblMontoPagando.TabIndex = 233
+        Me.lblMontoPagando.Text = "0.00"
+        Me.lblMontoPagando.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblMontoPagando.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblMontoPagando.UseCustomBackColor = True
+        Me.lblMontoPagando.UseCustomForeColor = True
+        Me.lblMontoPagando.UseStyleColors = True
+        '
+        'MetroLabel13
+        '
+        Me.MetroLabel13.AutoSize = True
+        Me.MetroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel13.Location = New System.Drawing.Point(585, 119)
+        Me.MetroLabel13.Name = "MetroLabel13"
+        Me.MetroLabel13.Size = New System.Drawing.Size(266, 25)
+        Me.MetroLabel13.Style = MetroFramework.MetroColorStyle.Green
+        Me.MetroLabel13.TabIndex = 232
+        Me.MetroLabel13.Text = "MONTO QUE SE ESTÁ PAGANDO"
+        Me.MetroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroLabel13.UseCustomBackColor = True
+        Me.MetroLabel13.UseCustomForeColor = True
+        Me.MetroLabel13.UseStyleColors = True
+        '
+        'lblMontoFaltante
+        '
+        Me.lblMontoFaltante.BackColor = System.Drawing.Color.Gainsboro
+        Me.lblMontoFaltante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblMontoFaltante.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblMontoFaltante.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.lblMontoFaltante.Location = New System.Drawing.Point(857, 161)
+        Me.lblMontoFaltante.Name = "lblMontoFaltante"
+        Me.lblMontoFaltante.Size = New System.Drawing.Size(159, 30)
+        Me.lblMontoFaltante.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblMontoFaltante.TabIndex = 235
+        Me.lblMontoFaltante.Text = "0.00"
+        Me.lblMontoFaltante.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblMontoFaltante.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblMontoFaltante.UseCustomBackColor = True
+        Me.lblMontoFaltante.UseCustomForeColor = True
+        Me.lblMontoFaltante.UseStyleColors = True
+        '
+        'lblMontoF
+        '
+        Me.lblMontoF.AutoSize = True
+        Me.lblMontoF.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.lblMontoF.Location = New System.Drawing.Point(698, 161)
+        Me.lblMontoF.Name = "lblMontoF"
+        Me.lblMontoF.Size = New System.Drawing.Size(153, 25)
+        Me.lblMontoF.Style = MetroFramework.MetroColorStyle.Green
+        Me.lblMontoF.TabIndex = 234
+        Me.lblMontoF.Text = "MONTO FALTANTE"
+        Me.lblMontoF.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.lblMontoF.UseCustomBackColor = True
+        Me.lblMontoF.UseCustomForeColor = True
+        Me.lblMontoF.UseStyleColors = True
+        '
         'frmRegistroPagos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1029, 588)
+        Me.ClientSize = New System.Drawing.Size(1029, 676)
+        Me.Controls.Add(Me.lblMontoFaltante)
+        Me.Controls.Add(Me.lblMontoF)
+        Me.Controls.Add(Me.lblMontoPagando)
+        Me.Controls.Add(Me.MetroLabel13)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.tglCheque)
         Me.Controls.Add(Me.lblMontoAPagar)
@@ -910,12 +1049,16 @@ Partial Class frmRegistroPagos
         Me.MetroTile2.PerformLayout()
         Me.gbCheque.ResumeLayout(False)
         Me.gbCheque.PerformLayout()
+        CType(Me.numMontoCHE, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbDeposito.ResumeLayout(False)
         Me.gbDeposito.PerformLayout()
+        CType(Me.numMontoDEP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbTarjeta.ResumeLayout(False)
         Me.gbTarjeta.PerformLayout()
+        CType(Me.numMontoTAR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbEfectivo.ResumeLayout(False)
         Me.gbEfectivo.PerformLayout()
+        CType(Me.numPagaCon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -935,7 +1078,6 @@ Partial Class frmRegistroPagos
     Friend WithEvents MetroLabel29 As MetroFramework.Controls.MetroLabel
     Friend WithEvents gbEfectivo As System.Windows.Forms.GroupBox
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents txtPagaCon As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel27 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MtxtDescripcion As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
@@ -974,7 +1116,17 @@ Partial Class frmRegistroPagos
     Friend WithEvents txtNumTAR3 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtNumTAR4 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents cboBancoTAR As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents btnRegistrarTarjeta As System.Windows.Forms.Button
     Friend WithEvents txtVuelto As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblMontoPagando As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel13 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblMontoFaltante As MetroFramework.Controls.MetroLabel
+    Friend WithEvents lblMontoF As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel16 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel9 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel19 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents numMontoCHE As System.Windows.Forms.NumericUpDown
+    Friend WithEvents numMontoDEP As System.Windows.Forms.NumericUpDown
+    Friend WithEvents numMontoTAR As System.Windows.Forms.NumericUpDown
+    Friend WithEvents numPagaCon As System.Windows.Forms.NumericUpDown
 End Class

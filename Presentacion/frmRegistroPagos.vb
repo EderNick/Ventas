@@ -1,63 +1,23 @@
 ﻿Public Class frmRegistroPagos
 
-    Private Pago As PagoVenta
+    Private Pago As PagoVenta = Nothing
+    Private Cheque As ChequeVenta = Nothing
+    Private Deposito As DepositoVenta = Nothing
+    Private Tarjeta As TarjetaVenta = Nothing
 
-    Function AbrirPago(ByVal wMonto As Double)
+    Sub AbrirPago(ByVal wMonto As Double)
         Me.ShowDialog()
         lblMontoAPagar.Text = Math.Round(wMonto, 2)
-        Return Pago
-    End Function
-
-    Private Sub tglEfectivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglEfectivo.CheckedChanged
-        If tglEfectivo.Checked = True Then
-            gbEfectivo.Enabled = True
-            txtPagaCon.Focus()
-        Else
-            gbEfectivo.Enabled = False
-        End If
+        frmDocumentoVenta.Pago = Me.Pago
+        frmDocumentoVenta.Cheque = Me.Cheque
+        frmDocumentoVenta.Deposito = Me.Deposito
+        frmDocumentoVenta.Tarjeta = Me.Tarjeta
     End Sub
 
-    Private Sub tglDeposito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglDeposito.CheckedChanged
-        If tglDeposito.Enabled = True Then
-            gbDeposito.Enabled = True
-            CargarBancos()
-            cboBancoDEP.Focus()
-        Else
-            gbDeposito.Enabled = False
-        End If
-
-    End Sub
-
-    Private Sub tglTarjeta_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglTarjeta.CheckedChanged
-        gbTarjeta.Enabled = True
-    End Sub
-
-    Private Sub tglCheque_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglCheque.CheckedChanged
-        gbCheque.Enabled = True
-    End Sub
-
-    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
-        Me.Close()
-        Pago = Nothing
-    End Sub
-
-    Private Sub btnRegistrarTarjeta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRegistrarTarjeta.Click
-        'Dim frm As frmRegistrarTarjeta
-        'frm.Agregar()
-        'CargarTipoTarjeta()
-    End Sub
-
-    Private Sub txtPagaCon_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPagaCon.TextChanged
-        If txtPagaCon.Text = "" Then
-            txtVuelto.Text = "0.00"
-        Else
-            If lblMontoAPagar.Text <> "" Then
-                If CDbl(txtPagaCon.Text) - CDbl(lblMontoAPagar.Text) > 0 Then
-                    txtVuelto.Text = Math.Round(CDbl(txtPagaCon.Text) - CDbl(lblMontoAPagar.Text))
-                Else
-                    txtVuelto.Text = "0.00"
-                End If
-            End If
+    Private Sub CalcularMontoEstaPagando()
+        If lblMontoPagando.Text <> "" And lblMontoAPagar.Text <> "" And lblMontoFaltante.Text <> "" Then
+            lblMontoPagando.Text = Math.Round((CDbl(numPagaCon.Value) - CDbl(txtVuelto.Text) + CDbl(numMontoDEP.Value) + CDbl(numMontoTAR.Value) + CDbl(numMontoCHE.Value)), 2)
+            lblMontoFaltante.Text = Math.Round(CDbl(lblMontoAPagar.Text) - CDbl(lblMontoPagando.Text), 2)
         End If
     End Sub
 
@@ -91,9 +51,233 @@
         End Try
     End Sub
 
+    Sub LimpiarEfectivo()
+        numPagaCon.Value = 0.0
+        txtVuelto.Text = "0.00"
+    End Sub
+
+    Sub LimpiarDeposito()
+        numMontoDEP.Value = 0.0
+    End Sub
+
+    Sub LimpiarTarjeta()
+        txtNumTAR1.Text = ""
+        txtNumTAR2.Text = ""
+        txtNumTAR3.Text = ""
+        txtNumTAR4.Text = ""
+        numMontoTAR.Value = 0.0
+    End Sub
+
+    Sub LimpiarCheque()
+        txtNumeroCH.Text = ""
+        dtpFechaGiro.Value = Now
+        numMontoCHE.Value = 0.0
+    End Sub
+
+    Private Function AsignarMedioPago() As String
+        Dim medio As String = Nothing
+
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "EF"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "DE"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "TA"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "CH"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "C-D"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "C-T"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "C-E"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "D-T"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "D-E"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "T-E"
+        End If
+        If numPagaCon.Value <= 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "CDT"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value <= 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "CDE"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value <= 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "CTE"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value <= 0.0 Then
+            medio = "DTE"
+        End If
+        If numPagaCon.Value > 0.0 And numMontoDEP.Value > 0.0 And numMontoTAR.Value > 0.0 And numMontoCHE.Value > 0.0 Then
+            medio = "CDTE"
+        End If
+
+        Return medio
+    End Function
+
+    Private Sub tglEfectivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglEfectivo.CheckedChanged
+        If tglEfectivo.Checked = True Then
+            gbEfectivo.Enabled = True
+            numPagaCon.Focus()
+        Else
+            LimpiarEfectivo()
+            gbEfectivo.Enabled = False
+        End If
+    End Sub
+
+    Private Sub tglDeposito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglDeposito.CheckedChanged
+        If tglDeposito.Checked = True Then
+            gbDeposito.Enabled = True
+            'CargarBancos()
+            cboBancoDEP.Focus()
+        Else
+            LimpiarDeposito()
+            gbDeposito.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub tglTarjeta_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglTarjeta.CheckedChanged
+        If tglTarjeta.Checked = True Then
+            gbTarjeta.Enabled = True
+            txtNumTAR1.Focus()
+        Else
+            LimpiarTarjeta()
+            gbTarjeta.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub tglCheque_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tglCheque.CheckedChanged
+        If tglCheque.Checked = True Then
+            gbCheque.Enabled = True
+            txtNumeroCH.Focus()
+        Else
+            LimpiarCheque()
+            gbCheque.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
+        Me.Close()
+        Pago = Nothing
+    End Sub
+
+    Private Sub btnRegistrarTarjeta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'Dim frm As frmRegistrarTarjeta
+        'frm.Agregar()
+        'CargarTipoTarjeta()
+    End Sub
+
+    Private Sub numPagaCon_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numPagaCon.ValueChanged
+        If numPagaCon.Value = 0 Then
+            txtVuelto.Text = "0.00"
+        Else
+            If lblMontoAPagar.Text <> "" Then
+                If CDbl(numPagaCon.Value) - CDbl(lblMontoAPagar.Text) > 0 Then
+                    txtVuelto.Text = Math.Round(CDbl(numPagaCon.Value) - CDbl(lblMontoAPagar.Text), 2)
+                Else
+                    txtVuelto.Text = "0.00"
+                End If
+            End If
+        End If
+        CalcularMontoEstaPagando()
+    End Sub
+
     Private Sub cboBancoDEP_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboBancoDEP.SelectedIndexChanged
         Dim selecc As Banco
         selecc = DirectCast(cboBancoDEP.SelectedItem, Banco)
         CargarCuentas(selecc.Codigo)
+    End Sub
+
+    Private Sub txtNumTAR1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumTAR1.TextChanged
+        If txtNumTAR1.Text.Length = 4 Then
+            txtNumTAR2.Focus()
+        End If
+    End Sub
+
+    Private Sub txtNumTAR2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumTAR2.TextChanged
+        If txtNumTAR2.Text.Length = 4 Then
+            txtNumTAR3.Focus()
+        End If
+        If txtNumTAR2.Text.Length = 0 Then
+            txtNumTAR1.Focus()
+        End If
+    End Sub
+
+    Private Sub txtNumTAR3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumTAR3.TextChanged
+        If txtNumTAR3.Text.Length = 4 Then
+            txtNumTAR4.Focus()
+        End If
+        If txtNumTAR3.Text.Length = 0 Then
+            txtNumTAR2.Focus()
+        End If
+    End Sub
+
+    Private Sub txtNumTAR4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumTAR4.TextChanged
+        If txtNumTAR4.Text.Length = 0 Then
+            txtNumTAR3.Focus()
+        End If
+    End Sub
+
+    Private Sub txtVuelto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtVuelto.TextChanged
+        
+    End Sub
+
+    Private Sub numMontoDEP_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles numMontoDEP.ValueChanged, numMontoTAR.ValueChanged, numMontoCHE.ValueChanged
+        CalcularMontoEstaPagando()
+    End Sub
+
+    Private Sub btnPagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPagar.Click
+        If CDbl(lblMontoPagando.Text) > 0.0 Then
+            'REGISTRO DEL PAGO:
+            Pago = New PagoVenta
+            Pago.FechaPago = dtFecha.Value
+            Pago.MedioPago = AsignarMedioPago()
+            Pago.Monto = Math.Round(CDbl(lblMontoPagando.Text), 2)
+
+            If numMontoDEP.Value > 0.0 Then 'Si paga con DEPÓSITO
+                Deposito = New DepositoVenta
+                Deposito.Monto = Math.Round(CDbl(numMontoDEP.Value), 2)
+                Deposito.IdCuenta = DirectCast(cboCuentaDEP.SelectedItem, CuentaVenta).Codigo
+                Deposito.PagoVentas = New PagoVenta
+            End If
+
+            If numMontoTAR.Value > 0.0 Then 'Si paga con TARJETA DE CRÉDITO
+                Tarjeta = New TarjetaVenta
+                Tarjeta.Monto = Math.Round(CDbl(numMontoTAR.Value), 2)
+                Tarjeta.NumeroCuenta = txtNumTAR1.Text & " " & txtNumTAR2.Text & " " & txtNumTAR3.Text & " " & txtNumTAR4.Text
+                Tarjeta.TipoTarjeta = New TipoTarjetaVenta
+                Tarjeta.TipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVenta)
+                Tarjeta.Banco = New Banco
+                Tarjeta.Banco = DirectCast(cboBancoTAR.SelectedItem, Banco)
+                Tarjeta.PagoVentas = New PagoVenta
+            End If
+
+            If numMontoCHE.Value > 0.0 Then 'Si paga con CHEQUE
+                Cheque = New ChequeVenta
+                Cheque.Numero = txtNumeroCH.Text
+                Cheque.Monto = Math.Round(CDbl(numMontoCHE.Value), 2)
+                Cheque.FechaGiro = dtpFechaGiro.Text
+                Cheque.Vigencia = True
+                Cheque.PagoVentas = New PagoVenta
+            End If
+
+            Me.Close()
+        Else
+            MetroMessageBox.Show(Me, "No se puede registrar un Pago vacío.", "REGISTRO DE PAGOS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class

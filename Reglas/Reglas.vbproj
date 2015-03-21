@@ -87,6 +87,7 @@
     <Compile Include="RNEmpleado.vb" />
     <Compile Include="RNModelo.vb" />
     <Compile Include="RNOrdenPedido.vb" />
+    <Compile Include="RNPagoVentas.vb" />
     <Compile Include="RNProvincia.vb" />
     <Compile Include="RNSucursal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -68,9 +68,11 @@
     <Compile Include="Caja.vb" />
     <Compile Include="Categoria.vb" />
     <Compile Include="CategoriaCliente.vb" />
+    <Compile Include="ChequeVenta.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="CuentaVenta.vb" />
     <Compile Include="Departamento.vb" />
+    <Compile Include="DepositoVenta.vb" />
     <Compile Include="DetalleCliente.vb" />
     <Compile Include="DetalleModeloSucursal.vb" />
     <Compile Include="DetalleOrdenPedido.vb" />
@@ -102,6 +104,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TarjetaVenta.vb" />
+    <Compile Include="TipoTarjetaVenta.vb" />
     <Compile Include="TipoUsuario.vb" />
     <Compile Include="Usuario.vb" />
     <Compile Include="Zona.vb" />
