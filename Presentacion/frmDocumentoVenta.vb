@@ -7,6 +7,10 @@
     Dim num As Integer = 0
     Dim rn As New RNDocumentoVenta
     Dim Pago As New PagoVenta
+    Dim Cheque As New ChequeVenta
+    Dim Deposito As New DepositoVenta
+    Dim Tarjeta As New TarjetaVenta
+
 
 
     Private Sub frmDocumentoVenta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
