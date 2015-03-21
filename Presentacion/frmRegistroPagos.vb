@@ -6,12 +6,13 @@
     Private Tarjeta As TarjetaVenta = Nothing
 
     Sub AbrirPago(ByVal wMonto As Double)
+        Dim frm As New frmDocumentoVenta
         Me.ShowDialog()
         lblMontoAPagar.Text = Math.Round(wMonto, 2)
-        frmDocumentoVenta.Pago = Me.Pago
-        frmDocumentoVenta.Cheque = Me.Cheque
-        frmDocumentoVenta.Deposito = Me.Deposito
-        frmDocumentoVenta.Tarjeta = Me.Tarjeta
+        frm.Pago = Me.Pago
+        frm.Cheque = Me.Cheque
+        frm.Deposito = Me.Deposito
+        frm.Tarjeta = Me.Tarjeta
     End Sub
 
     Private Sub CalcularMontoEstaPagando()

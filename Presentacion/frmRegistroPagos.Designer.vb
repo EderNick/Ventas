@@ -812,7 +812,7 @@ Partial Class frmRegistroPagos
         Me.lblMontoAPagar.Size = New System.Drawing.Size(159, 30)
         Me.lblMontoAPagar.Style = MetroFramework.MetroColorStyle.Green
         Me.lblMontoAPagar.TabIndex = 231
-        Me.lblMontoAPagar.Text = "1000.00"
+        Me.lblMontoAPagar.Text = "0.00"
         Me.lblMontoAPagar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblMontoAPagar.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.lblMontoAPagar.UseCustomBackColor = True
