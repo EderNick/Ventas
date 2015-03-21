@@ -38,7 +38,7 @@
 
 
 
-            If UCase(UsuarioLogeado.TipoUsuario.Nombre) = "NORMAL" Then
+            If UCase(UsuarioLogeado.TipoUsuario.Nombre) = "USUARIO" Then
                 If UsuarioLogeado.TipoUsuario.Modulo.Trim = "Ventas" Then
 
                     If UCase(UsuarioLogeado.Empleado.Cargo) = "CAJERO" Then

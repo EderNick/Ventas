@@ -20,6 +20,7 @@
     End Sub
 
     Private Sub FrmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Focus()
         txtUser.Text = "USUARIO"
         txtPasword.Text = "CONTRASEÑA"
         txtPasword.ForeColor = Color.Gray

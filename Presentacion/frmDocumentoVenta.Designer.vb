@@ -45,7 +45,7 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroDateTime1 = New MetroFramework.Controls.MetroDateTime()
+        Me.dtFecha = New MetroFramework.Controls.MetroDateTime()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.lblDoc = New MetroFramework.Controls.MetroLabel()
         Me.txtDoc = New MetroFramework.Controls.MetroTextBox()
@@ -56,8 +56,8 @@ Partial Class frmDocumentoVenta
         Me.txtIGV = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
-        'Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        'Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,7 +65,7 @@ Partial Class frmDocumentoVenta
         Me.txtNumOrdenPedido = New MetroFramework.Controls.MetroTextBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -159,13 +159,13 @@ Partial Class frmDocumentoVenta
         Me.GroupBox1.Controls.Add(Me.MetroLabel12)
         Me.GroupBox1.Controls.Add(Me.MetroLabel17)
         Me.GroupBox1.Controls.Add(Me.MetroLabel14)
-        Me.GroupBox1.Controls.Add(Me.MetroDateTime1)
+        Me.GroupBox1.Controls.Add(Me.dtFecha)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(386, -1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(735, 82)
+        Me.GroupBox1.Size = New System.Drawing.Size(725, 82)
         Me.GroupBox1.TabIndex = 170
         Me.GroupBox1.TabStop = False
         '
@@ -336,15 +336,15 @@ Partial Class frmDocumentoVenta
         Me.MetroLabel14.UseCustomForeColor = True
         Me.MetroLabel14.UseStyleColors = True
         '
-        'MetroDateTime1
+        'dtFecha
         '
-        Me.MetroDateTime1.Enabled = False
-        Me.MetroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.MetroDateTime1.Location = New System.Drawing.Point(552, 46)
-        Me.MetroDateTime1.MinimumSize = New System.Drawing.Size(0, 29)
-        Me.MetroDateTime1.Name = "MetroDateTime1"
-        Me.MetroDateTime1.Size = New System.Drawing.Size(158, 29)
-        Me.MetroDateTime1.TabIndex = 196
+        Me.dtFecha.Enabled = False
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtFecha.Location = New System.Drawing.Point(552, 46)
+        Me.dtFecha.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(158, 29)
+        Me.dtFecha.TabIndex = 196
         '
         'GroupBox4
         '
@@ -357,7 +357,7 @@ Partial Class frmDocumentoVenta
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox4.Location = New System.Drawing.Point(10, 191)
+        Me.GroupBox4.Location = New System.Drawing.Point(10, 190)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(748, 75)
         Me.GroupBox4.TabIndex = 199
@@ -417,7 +417,7 @@ Partial Class frmDocumentoVenta
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(258, 144)
+        Me.btnBuscar.Location = New System.Drawing.Point(230, 147)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(42, 28)
         Me.btnBuscar.TabIndex = 192
@@ -425,6 +425,7 @@ Partial Class frmDocumentoVenta
         '
         'txtTotal
         '
+        Me.txtTotal.Enabled = False
         Me.txtTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtTotal.Lines = New String(-1) {}
         Me.txtTotal.Location = New System.Drawing.Point(125, 135)
@@ -454,6 +455,7 @@ Partial Class frmDocumentoVenta
         '
         'txtIGV
         '
+        Me.txtIGV.Enabled = False
         Me.txtIGV.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtIGV.Lines = New String(-1) {}
         Me.txtIGV.Location = New System.Drawing.Point(125, 55)
@@ -485,8 +487,11 @@ Partial Class frmDocumentoVenta
         '
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue
         Me.dgvProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProductos.BackgroundColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
@@ -494,24 +499,25 @@ Partial Class frmDocumentoVenta
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        'Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Column4, Me.Column1, Me.Column2, Me.Column3})
+        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Column4, Me.Column1, Me.Column2, Me.Column3})
         Me.dgvProductos.Location = New System.Drawing.Point(12, 25)
         Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.RowHeadersVisible = False
         Me.dgvProductos.Size = New System.Drawing.Size(1075, 127)
         Me.dgvProductos.TabIndex = 208
         '
         'Codigo
         '
-        'Me.Codigo.DataPropertyName = "CodigoModelo"
-        'Me.Codigo.HeaderText = "CODIGO"
-        'Me.Codigo.Name = "Codigo"
+        Me.Codigo.DataPropertyName = "CodigoModelo"
+        Me.Codigo.HeaderText = "CODIGO"
+        Me.Codigo.Name = "Codigo"
         '
         'Column4
         '
-        'Me.Column4.DataPropertyName = "NombreModelo"
-        'Me.Column4.HeaderText = "PRODUCTO"
-        'Me.Column4.Name = "Column4"
-        'Me.Column4.Width = 440
+        Me.Column4.DataPropertyName = "NombreModelo"
+        Me.Column4.HeaderText = "PRODUCTO"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 440
         '
         'Column1
         '
@@ -534,7 +540,7 @@ Partial Class frmDocumentoVenta
         'MetroLabel9
         '
         Me.MetroLabel9.AutoSize = True
-        Me.MetroLabel9.Location = New System.Drawing.Point(27, 150)
+        Me.MetroLabel9.Location = New System.Drawing.Point(23, 151)
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(125, 19)
         Me.MetroLabel9.Style = MetroFramework.MetroColorStyle.Green
@@ -554,8 +560,9 @@ Partial Class frmDocumentoVenta
         Me.txtNumOrdenPedido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumOrdenPedido.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtNumOrdenPedido.SelectedText = ""
-        Me.txtNumOrdenPedido.Size = New System.Drawing.Size(94, 23)
+        Me.txtNumOrdenPedido.Size = New System.Drawing.Size(64, 23)
         Me.txtNumOrdenPedido.TabIndex = 214
+        Me.txtNumOrdenPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.txtNumOrdenPedido.UseCustomBackColor = True
         Me.txtNumOrdenPedido.UseSelectable = True
         '
@@ -577,7 +584,7 @@ Partial Class frmDocumentoVenta
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Controls.Add(Me.btnCancelar)
+        Me.Panel2.Controls.Add(Me.btnImprimir)
         Me.Panel2.Controls.Add(Me.btnGuardar)
         Me.Panel2.Controls.Add(Me.btnNuevo)
         Me.Panel2.Controls.Add(Me.btnSalir)
@@ -586,25 +593,25 @@ Partial Class frmDocumentoVenta
         Me.Panel2.Size = New System.Drawing.Size(1120, 68)
         Me.Panel2.TabIndex = 216
         '
-        'btnCancelar
+        'btnImprimir
         '
-        Me.btnCancelar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCancelar.FlatAppearance.BorderSize = 0
-        Me.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), System.Drawing.Image)
-        Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCancelar.Location = New System.Drawing.Point(110, -2)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(72, 72)
-        Me.btnCancelar.TabIndex = 7
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCancelar.UseVisualStyleBackColor = False
+        Me.btnImprimir.BackColor = System.Drawing.Color.Transparent
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnImprimir.FlatAppearance.BorderSize = 0
+        Me.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimir.ForeColor = System.Drawing.Color.White
+        Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
+        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnImprimir.Location = New System.Drawing.Point(912, -2)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(72, 72)
+        Me.btnImprimir.TabIndex = 7
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnImprimir.UseVisualStyleBackColor = False
         '
         'btnGuardar
         '
@@ -618,7 +625,7 @@ Partial Class frmDocumentoVenta
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnGuardar.Location = New System.Drawing.Point(535, -2)
+        Me.btnGuardar.Location = New System.Drawing.Point(801, -1)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(72, 72)
         Me.btnGuardar.TabIndex = 6
@@ -638,7 +645,7 @@ Partial Class frmDocumentoVenta
         Me.btnNuevo.ForeColor = System.Drawing.Color.White
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
         Me.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnNuevo.Location = New System.Drawing.Point(16, -1)
+        Me.btnNuevo.Location = New System.Drawing.Point(685, -2)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(72, 72)
         Me.btnNuevo.TabIndex = 0
@@ -736,7 +743,7 @@ Partial Class frmDocumentoVenta
         Me.dgvCuotas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCuotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.NroCuota, Me.Interes, Me.Monto})
-        Me.dgvCuotas.Enabled = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
@@ -744,7 +751,7 @@ Partial Class frmDocumentoVenta
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvCuotas.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvCuotas.Location = New System.Drawing.Point(408, 25)
+        Me.dgvCuotas.Location = New System.Drawing.Point(331, 25)
         Me.dgvCuotas.Name = "dgvCuotas"
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
@@ -755,7 +762,7 @@ Partial Class frmDocumentoVenta
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCuotas.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCuotas.RowHeadersVisible = False
-        Me.dgvCuotas.Size = New System.Drawing.Size(678, 113)
+        Me.dgvCuotas.Size = New System.Drawing.Size(755, 113)
         Me.dgvCuotas.TabIndex = 209
         '
         'DataGridViewTextBoxColumn1
@@ -786,8 +793,9 @@ Partial Class frmDocumentoVenta
         '
         Me.numCuotas.Location = New System.Drawing.Point(155, 108)
         Me.numCuotas.Name = "numCuotas"
-        Me.numCuotas.Size = New System.Drawing.Size(120, 23)
+        Me.numCuotas.Size = New System.Drawing.Size(57, 23)
         Me.numCuotas.TabIndex = 219
+        Me.numCuotas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'MetroLabel18
         '
@@ -853,6 +861,7 @@ Partial Class frmDocumentoVenta
         '
         'txtDescuento
         '
+        Me.txtDescuento.Enabled = False
         Me.txtDescuento.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtDescuento.Lines = New String(-1) {}
         Me.txtDescuento.Location = New System.Drawing.Point(125, 93)
@@ -882,6 +891,7 @@ Partial Class frmDocumentoVenta
         '
         'txtSubTotal
         '
+        Me.txtSubTotal.Enabled = False
         Me.txtSubTotal.FontSize = MetroFramework.MetroTextBoxSize.Tall
         Me.txtSubTotal.Lines = New String(-1) {}
         Me.txtSubTotal.Location = New System.Drawing.Point(125, 14)
@@ -973,7 +983,7 @@ Partial Class frmDocumentoVenta
         'MetroLabel15
         '
         Me.MetroLabel15.AutoSize = True
-        Me.MetroLabel15.Location = New System.Drawing.Point(370, 152)
+        Me.MetroLabel15.Location = New System.Drawing.Point(341, 150)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(78, 19)
         Me.MetroLabel15.Style = MetroFramework.MetroColorStyle.Green
@@ -989,13 +999,13 @@ Partial Class frmDocumentoVenta
         Me.txtVendedor.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtVendedor.Enabled = False
         Me.txtVendedor.Lines = New String(-1) {}
-        Me.txtVendedor.Location = New System.Drawing.Point(467, 149)
+        Me.txtVendedor.Location = New System.Drawing.Point(425, 149)
         Me.txtVendedor.MaxLength = 32767
         Me.txtVendedor.Name = "txtVendedor"
         Me.txtVendedor.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtVendedor.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtVendedor.SelectedText = ""
-        Me.txtVendedor.Size = New System.Drawing.Size(291, 23)
+        Me.txtVendedor.Size = New System.Drawing.Size(333, 23)
         Me.txtVendedor.TabIndex = 228
         Me.txtVendedor.UseCustomBackColor = True
         Me.txtVendedor.UseSelectable = True
@@ -1028,6 +1038,7 @@ Partial Class frmDocumentoVenta
         '
         'cboFormaPago
         '
+        Me.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormaPago.FormattingEnabled = True
         Me.cboFormaPago.Items.AddRange(New Object() {"CONTADO", "CREDITO"})
         Me.cboFormaPago.Location = New System.Drawing.Point(148, 454)
@@ -1060,9 +1071,10 @@ Partial Class frmDocumentoVenta
         '
         'cboTipoDoc
         '
+        Me.cboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoDoc.FormattingEnabled = True
         Me.cboTipoDoc.Items.AddRange(New Object() {"BOLETA", "FACTURA"})
-        Me.cboTipoDoc.Location = New System.Drawing.Point(629, 108)
+        Me.cboTipoDoc.Location = New System.Drawing.Point(633, 106)
         Me.cboTipoDoc.Name = "cboTipoDoc"
         Me.cboTipoDoc.Size = New System.Drawing.Size(125, 21)
         Me.cboTipoDoc.TabIndex = 235
@@ -1128,7 +1140,7 @@ Partial Class frmDocumentoVenta
     Friend WithEvents MetroLabel12 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel17 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel14 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroDateTime1 As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents dtFecha As MetroFramework.Controls.MetroDateTime
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents txtCliente As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtTotal As MetroFramework.Controls.MetroTextBox
@@ -1154,7 +1166,7 @@ Partial Class frmDocumentoVenta
     Friend WithEvents MetroLabel11 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtSucursal As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents numCuotas As System.Windows.Forms.NumericUpDown
     Friend WithEvents MetroLabel18 As MetroFramework.Controls.MetroLabel
@@ -1179,6 +1191,8 @@ Partial Class frmDocumentoVenta
     Friend WithEvents txtMontoRestante As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel20 As MetroFramework.Controls.MetroLabel
     Friend WithEvents cboTipoDoc As System.Windows.Forms.ComboBox
+    Friend WithEvents Codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn

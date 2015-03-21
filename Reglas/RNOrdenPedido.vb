@@ -54,5 +54,20 @@
         Return numero
     End Function
 
+    Public Sub Actualizar(ByVal wOrdenPedido As OrdenPedido)
+        Dim pars As New List(Of CParametro)
+        pars.Add(New CParametro("pcodigo", wOrdenPedido.Codigo))
+        pars.Add(New CParametro("pestado", "E"))
+
+        Try
+            Me.Conectar(False)
+            Me.EjecutarOrden("fu_aordenpedido", pars)
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Me.Cerrar(False)
+            Throw ex
+        End Try
+    End Sub
+
 End Class
 
