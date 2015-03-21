@@ -259,10 +259,8 @@
                 Tarjeta = New TarjetaVenta
                 Tarjeta.Monto = Math.Round(CDbl(numMontoTAR.Value), 2)
                 Tarjeta.NumeroCuenta = txtNumTAR1.Text & " " & txtNumTAR2.Text & " " & txtNumTAR3.Text & " " & txtNumTAR4.Text
-                Tarjeta.TipoTarjeta = New TipoTarjetaVenta
-                Tarjeta.TipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVenta)
-                Tarjeta.Banco = New Banco
-                Tarjeta.Banco = DirectCast(cboBancoTAR.SelectedItem, Banco)
+                Tarjeta.IdTipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVenta).Codigo
+                Tarjeta.IdBanco = DirectCast(cboBancoTAR.SelectedItem, Banco).Codigo
                 Tarjeta.PagoVentas = New PagoVenta
             End If
 
