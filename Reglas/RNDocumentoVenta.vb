@@ -129,7 +129,7 @@
                     .Modelo.Producto.Categoria = New Categoria
                     .Modelo.Producto.Categoria.Descripcion = dr.Item("categoria")
                     .Cantidad = dr.Item("cantidad")
-                    '.PrecioUnitario = dr.Item("precio")
+                    .IGV = dr.Item("igv")
                     .Total = dr.Item("total")
                 End With
                 Ordenes_Pedido.Add(detalle_orden)

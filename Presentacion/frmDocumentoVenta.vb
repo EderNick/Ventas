@@ -6,10 +6,11 @@
     Dim MontoCuota As Double
     Dim num As Integer = 0
     Dim rn As New RNDocumentoVenta
-    Dim Pago As New PagoVenta
-    Dim Cheque As New ChequeVenta
-    Dim Deposito As New DepositoVenta
-    Dim Tarjeta As New TarjetaVenta
+    Dim rnPago As New RNPagoVentas
+    Public Pago As New PagoVenta
+    Public Cheque As New ChequeVenta
+    Public Deposito As New DepositoVenta
+    Public Tarjeta As New TarjetaVenta
 
 
 
@@ -70,7 +71,7 @@
     Private Sub cboFormaPago_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboFormaPago.SelectedIndexChanged
         If cboFormaPago.SelectedItem = "CREDITO" Then
             gbCuotas.Enabled = True
-            txtMontoRestante.Text = txtSubTotal.Text
+            txtMontoRestante.Text = txtTotal.Text
             txtMontoInicial.Text = "0"
             btnEfectuarPago.Enabled = False
         Else
@@ -114,7 +115,8 @@
             orden_pedido = rn.Buscar_Orden_de_Pedido(txtNumOrdenPedido.Text)
             If orden_pedido IsNot Nothing Then
                 txtVendedor.Text = orden_pedido.Empleado.NombreEmpleado
-                txtSubTotal.Text = orden_pedido.Total
+                txtTotal.Text = Math.Round(orden_pedido.Total, 2)
+
                 Dim detalle_cliente As New DetalleCliente
                 detalle_cliente = rn.Buscar_cliente_x_id(orden_pedido.Cliente.Codigo, orden_pedido.Cliente.Tipo)
                 If orden_pedido.Cliente.Tipo = "natural" Then
@@ -124,8 +126,11 @@
                     txtCliente.Text = detalle_cliente.EmpresaJuridica.RazonSocial
                     txtDoc.Text = detalle_cliente.EmpresaJuridica.RUC
                 End If
+               
                 Lista_detalle_orden_pedido = rn.Buscar_detalle_de_orden(orden_pedido.Codigo)
                 modFunciones.EnlazarDatagridView(dgvProductos, Lista_detalle_orden_pedido)
+                SumarIGV()
+                SumarSubTotales()
             Else
                 MetroMessageBox.Show(Me, "Este numero de Orden de Pedido ya esta facturado. Ingrese un numero de Orden de Pedido aun Pendiente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtNumOrdenPedido.Text = ""
@@ -138,7 +143,9 @@
     Private Sub btnEfectuarPago_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEfectuarPago.Click
         If cboFormaPago.SelectedItem <> "" Then
             Dim frm As New frmRegistroPagos
+            frm.lblMontoAPagar.Text = txtTotal.Text
             frm.ShowDialog()
+
         Else
             MetroMessageBox.Show(Me, "Debe Seleccionar una forma de Pago", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -186,11 +193,15 @@
             Dim rnDV As New RNDocumentoVenta
             Dim rnDDV As New RNDetalleDocumentoVenta
             Dim idDocVenta As Integer = 0
+            Dim idPagoVenta As Integer = 0
             Dim DV As DocumentoVenta
             Dim DDV As DetalleDocumentoVenta
             Dim Lista_DetalleDocVenta As New List(Of DetalleDocumentoVenta)
             Dim CV As CuotaVenta
             Dim rnCV As New RNCuotaVenta
+            Dim rnCheque As New RNChequeVentas
+            Dim rnDeposito As New RNDepositoVentas
+            Dim rnTarjeta As New RNTarjetaVentas
 
             If Lista_detalle_orden_pedido IsNot Nothing Then
                 DV = New DocumentoVenta
@@ -225,13 +236,30 @@
                         DDV.Modelo.Codigo = elem.CodigoModelo
                         DDV.DocVenta = New DocumentoVenta
                         DDV.DocVenta.Codigo = idDocVenta
-                        DDV.IGV = 0.18
+                        DDV.IGV = elem.IGV
                         DDV.Cantidad = elem.Cantidad
                         DDV.Total = elem.Total
                         rnDDV.Agregar(DDV)
                     Next
+                    '****Registramos el Pago***
+                    idPagoVenta = rnPago.Registrar(Pago)
+                    '***********Registramos el tipo de pago****************
+                    If Cheque IsNot Nothing Then
+                        Cheque.PagoVentas = New PagoVenta
+                        Cheque.PagoVentas.Codigo = idPagoVenta
+                        rnCheque.Registrar(Cheque)
+                    End If
+                    If Deposito IsNot Nothing Then
+                        Deposito.PagoVentas = New PagoVenta
+                        Deposito.PagoVentas.Codigo = idPagoVenta
+                        rnDeposito.Registrar(Deposito)
+                    End If
+                    If Tarjeta IsNot Nothing Then
+                        Tarjeta.PagoVentas = New PagoVenta
+                        Tarjeta.PagoVentas.Codigo = idPagoVenta
+                        rnTarjeta.Registrar(Tarjeta)
+                    End If
 
-                    'rnPago.Agregar(Pago)
                     If cboFormaPago.SelectedItem = "CREDITO" Then
                         For i As Integer = 1 To numCuotas.Value
                             CV = New CuotaVenta
@@ -274,6 +302,22 @@
         End If
     End Sub
 
+    Private Sub SumarIGV()
+        Dim igv As Double = 0.0
+        For Each elem As DetalleOrdenPedido In Lista_detalle_orden_pedido
+            igv = igv + elem.IGV
+        Next
+        txtIGV.Text = Math.Round(igv, 2)
+    End Sub
+
+    Private Sub SumarSubTotales()
+        Dim subTotal As Double = 0.0
+        For Each elem As DetalleOrdenPedido In Lista_detalle_orden_pedido
+            subTotal = subTotal + elem.Total
+        Next
+        txtSubTotal.Text = Math.Round(subTotal, 2)
+    End Sub
+
     Private Function CamposCompletos() As Boolean
         Dim Completo As Boolean = True
         If cboTipoDoc.SelectedItem = "" Then
@@ -302,4 +346,5 @@
             btnGuardar.Enabled = False
         End If
     End Sub
+
 End Class
