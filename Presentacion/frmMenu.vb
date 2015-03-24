@@ -23,12 +23,6 @@
         frm.ShowDialog()
     End Sub
 
-
-    Private Sub btnEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim frm As frmEmpresa
-        frm = New frmEmpresa
-        frm.ShowDialog()
-    End Sub
     Private Sub btnUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUsuario.Click
         Dim frm As New frmUsuario
         frm.ShowDialog()
