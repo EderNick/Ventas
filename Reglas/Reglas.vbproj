@@ -80,6 +80,7 @@
     <Compile Include="RNChequeVentas.vb" />
     <Compile Include="RNCliente.vb" />
     <Compile Include="RNCuentaVenta.vb" />
+    <Compile Include="RNCuotaPagoVenta.vb" />
     <Compile Include="RNCuotaVenta.vb" />
     <Compile Include="RNDepartamento.vb" />
     <Compile Include="RNDepositoVentas.vb" />

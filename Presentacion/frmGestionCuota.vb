@@ -1,7 +1,7 @@
 ﻿Public Class frmGestionCuota
     Dim rn As New RNCliente
     Dim cuotaventa As New CuotaVenta
-    Dim cuotapago As New CuotaPagoVenta
+    Dim cuotapago As New CuotaPagoVentas
     Dim detacliente As List(Of DetalleCliente)
     Dim codcliente As String
 
@@ -130,7 +130,7 @@
 
     Private Sub btnpagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnpagar.Click
         cuotaventa = New CuotaVenta
-        cuotapago = New CuotaPagoVenta
+        cuotapago = New CuotaPagoVentas
 
         If Me.dgvcuota.CurrentRow IsNot Nothing Then
             If Me.dgvcuota.CurrentRow.Cells(3).Value = "Pagado" Then
@@ -157,4 +157,5 @@
         End If
 
     End Sub
+
 End Class

@@ -121,9 +121,9 @@ Partial Class frmGestionCuota
         Me.Panel3.Controls.Add(Me.Button3)
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.btnSalir)
-        Me.Panel3.Location = New System.Drawing.Point(2, 458)
+        Me.Panel3.Location = New System.Drawing.Point(2, 455)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(807, 68)
+        Me.Panel3.Size = New System.Drawing.Size(807, 86)
         Me.Panel3.TabIndex = 229
         '
         'btnlimpiar
@@ -138,9 +138,9 @@ Partial Class frmGestionCuota
         Me.btnlimpiar.ForeColor = System.Drawing.Color.White
         Me.btnlimpiar.Image = CType(resources.GetObject("btnlimpiar.Image"), System.Drawing.Image)
         Me.btnlimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnlimpiar.Location = New System.Drawing.Point(75, 0)
+        Me.btnlimpiar.Location = New System.Drawing.Point(104, 6)
         Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(65, 72)
+        Me.btnlimpiar.Size = New System.Drawing.Size(76, 72)
         Me.btnlimpiar.TabIndex = 1
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -158,9 +158,9 @@ Partial Class frmGestionCuota
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(3, -4)
+        Me.Button3.Location = New System.Drawing.Point(3, 6)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(66, 72)
+        Me.Button3.Size = New System.Drawing.Size(74, 72)
         Me.Button3.TabIndex = 0
         Me.Button3.Text = "Exportar"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -178,9 +178,9 @@ Partial Class frmGestionCuota
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(634, -3)
+        Me.Button2.Location = New System.Drawing.Point(623, 6)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(66, 72)
+        Me.Button2.Size = New System.Drawing.Size(71, 72)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Imprimir"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -198,9 +198,9 @@ Partial Class frmGestionCuota
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(724, -4)
+        Me.btnSalir.Location = New System.Drawing.Point(724, 9)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(54, 69)
+        Me.btnSalir.Size = New System.Drawing.Size(64, 69)
         Me.btnSalir.TabIndex = 3
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter

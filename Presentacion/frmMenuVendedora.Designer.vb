@@ -25,7 +25,6 @@ Partial Class frmCajero
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCajero))
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.btnOrdenPedido = New System.Windows.Forms.Button()
-        Me.btnCaja = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnUsuario = New System.Windows.Forms.Button()
@@ -43,7 +42,6 @@ Partial Class frmCajero
         Me.MetroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.MetroPanel1.Controls.Add(Me.btnOrdenPedido)
-        Me.MetroPanel1.Controls.Add(Me.btnCaja)
         Me.MetroPanel1.Controls.Add(Me.Label1)
         Me.MetroPanel1.Controls.Add(Me.btnSalir)
         Me.MetroPanel1.Controls.Add(Me.btnUsuario)
@@ -79,27 +77,6 @@ Partial Class frmCajero
         Me.btnOrdenPedido.Text = "Orden Pedido"
         Me.btnOrdenPedido.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnOrdenPedido.UseVisualStyleBackColor = False
-        '
-        'btnCaja
-        '
-        Me.btnCaja.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.btnCaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCaja.FlatAppearance.BorderSize = 0
-        Me.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(93, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCaja.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnCaja.ForeColor = System.Drawing.Color.White
-        Me.btnCaja.Image = CType(resources.GetObject("btnCaja.Image"), System.Drawing.Image)
-        Me.btnCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCaja.Location = New System.Drawing.Point(185, 349)
-        Me.btnCaja.Name = "btnCaja"
-        Me.btnCaja.Size = New System.Drawing.Size(266, 132)
-        Me.btnCaja.TabIndex = 216
-        Me.btnCaja.Text = "Caja"
-        Me.btnCaja.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnCaja.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -142,7 +119,7 @@ Partial Class frmCajero
         Me.btnUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnUsuario.ForeColor = System.Drawing.Color.White
         Me.btnUsuario.Image = CType(resources.GetObject("btnUsuario.Image"), System.Drawing.Image)
-        Me.btnUsuario.Location = New System.Drawing.Point(185, 209)
+        Me.btnUsuario.Location = New System.Drawing.Point(185, 172)
         Me.btnUsuario.Name = "btnUsuario"
         Me.btnUsuario.Size = New System.Drawing.Size(266, 124)
         Me.btnUsuario.TabIndex = 198
@@ -189,6 +166,5 @@ Partial Class frmCajero
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents btnUsuario As System.Windows.Forms.Button
-    Friend WithEvents btnCaja As System.Windows.Forms.Button
     Friend WithEvents btnOrdenPedido As System.Windows.Forms.Button
 End Class

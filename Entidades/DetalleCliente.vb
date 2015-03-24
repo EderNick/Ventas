@@ -83,4 +83,17 @@
             Return EmpresaJuridica.Correo
         End Get
     End Property
+
+    Public ReadOnly Property Cliente_N_J As String
+        Get
+            Dim cli As String = Nothing
+            If Cliente.Tipo = "natural" Then
+                cli = Persona.NombrePersona
+            End If
+            If Cliente.Tipo = "juridico" Then
+                cli = EmpresaJuridica.RazonSocial
+            End If
+            Return cli
+        End Get
+    End Property
 End Class

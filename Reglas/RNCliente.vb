@@ -93,5 +93,53 @@
         Return detclientes
     End Function
 
+    Function ListarClientexCuota() As List(Of DetalleCliente)
+        Dim DetalleCli As List(Of DetalleCliente) = Nothing
+        Dim DC As DetalleCliente = Nothing
+        Dim dr As Npgsql.NpgsqlDataReader = Nothing
+
+        Try
+            Me.Conectar(True)
+
+            dr = Me.PedirDataReader("fu_liCuotaClientesNaturales", Nothing)
+
+            DetalleCli = New List(Of DetalleCliente)
+            While dr.Read
+                DC = New DetalleCliente
+                DC.Codigo = CInt(dr.Item("iddetallecliente"))
+                DC.Cliente = New Cliente
+                DC.Cliente.Codigo = CInt(dr.Item("idcliente"))
+                DC.Cliente.Tipo = dr.Item("tipo")
+                DC.Persona = New Persona
+                DC.Persona.Codigo = CInt(dr.Item("idcliente"))
+                DC.Persona.Nombres = dr.Item("nombres")
+                DC.Persona.Ap_Paterno = dr.Item("ap_paterno")
+                DC.Persona.Ap_Materno = dr.Item("ap_materno")
+                DC.Persona.Correo = dr.Item("correo")
+                DetalleCli.Add(DC)
+            End While
+
+
+            dr = Me.PedirDataReader("fu_licuotaclientesjuridicos", Nothing)
+
+            While dr.Read
+                DC = New DetalleCliente
+                DC.Codigo = CInt(dr.Item("iddetallecliente"))
+                DC.Cliente = New Cliente
+                DC.Cliente.Codigo = CInt(dr.Item("idcliente"))
+                DC.Cliente.Tipo = dr.Item("tipo")
+                DC.EmpresaJuridica = New EmpresaJuridica
+                DC.EmpresaJuridica.Codigo = CInt(dr.Item("idempresajuridica"))
+                DC.EmpresaJuridica.RazonSocial = dr.Item("razonsocial")
+                DC.EmpresaJuridica.Correo = dr.Item("correo")
+                DetalleCli.Add(DC)
+            End While
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return DetalleCli
+    End Function
+
 
 End Class

@@ -196,4 +196,40 @@
         End Try
     End Sub
 
+    Public Function ListarEmpleado(ByVal wSucursal As String) As List(Of Usuario)
+        Dim pars As New List(Of CParametro)
+        Dim usu As New List(Of Usuario)
+        Dim usua As Usuario = Nothing
+        Dim dr As NpgsqlDataReader = Nothing
+
+        pars.Add(New CParametro("psucursal", wSucursal))
+        Try
+            Me.Conectar(True)
+            dr = Me.PedirDataReader("fu_LiEmpleadoSucur", pars)
+            usu = New List(Of Usuario)
+            While dr.Read = True
+                usua.TipoUsuario = New TipoUsuario
+                usua.TipoUsuario.Modulo = dr.Item("modulo")
+                usua.TipoUsuario.Nombre = dr.Item("nombre")
+                usua.Empleado = New Empleado
+                usua.Empleado.Codigo = dr.Item("idempleado")
+                usua.Empleado.Sucursal = dr.Item("idsucursal")
+                usua.Empleado.Nombres = dr.Item("nombres")
+                usua.Empleado.Ap_Paterno = dr.Item("ap_paterno")
+                usua.Empleado.Ap_Materno = dr.Item("ap_materno")
+                usua.Empleado.Num_Licencia = dr.Item("num_licencia")
+                usu.Add(usua)
+            End While
+
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Me.Cerrar(False)
+            Throw ex
+        Finally
+            pars.Clear()
+            pars = Nothing
+        End Try
+
+        Return usu
+    End Function
 End Class

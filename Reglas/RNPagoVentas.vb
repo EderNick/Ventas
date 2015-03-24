@@ -26,4 +26,40 @@
 
         Return idPago
     End Function
+
+    Function ListarVentaMes(ByVal wAñoMes As String) As List(Of PagoVenta)
+        Dim param As New List(Of CParametro)
+        Dim pv As PagoVenta = Nothing
+        Dim pagov As List(Of PagoVenta) = Nothing
+        Dim dr As Npgsql.NpgsqlDataReader = Nothing
+
+        param.Add(New CParametro("pAñoMes", wAñoMes))
+
+        Try
+            Me.Conectar(True)
+
+            dr = Me.PedirDataReader("fu_ListarVentaMes", param)
+
+            pagov = New List(Of PagoVenta)
+            While dr.Read
+                pv.DocumVenta.Cliente = New Cliente
+                pv.DocumVenta.Cliente.Codigo = CInt(dr.Item("idcliente"))
+                pv = New PagoVenta
+                pv.Codigo = CInt(dr.Item("idpagoventas"))
+                pv.FechaPago = dr.Item("fechapago")
+                pv.MedioPago = dr.Item("mediopago")
+                pv.Monto = dr.Item("monto")
+                pv.DocumVenta = dr.Item("iddocumentoventa")
+                pagov.Add(pv)
+            End While
+        Catch ex As Exception
+            Throw ex
+        Finally
+            param.Clear()
+            param = Nothing
+        End Try
+
+        Return pagov
+    End Function
+
 End Class

@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CB55867B-6BD9-4A4A-8D58-9F0D4AC7F388}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Ventas.ModuloVentas.frmOrdenPedido</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>Ventas.ModuloVentas</RootNamespace>
     <AssemblyName>ModuloVentas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -111,22 +111,10 @@
     <Compile Include="frmBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmControlCaja.Designer.vb">
-      <DependentUpon>frmControlCaja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmControlCaja.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmDocumentoVenta.Designer.vb">
       <DependentUpon>frmDocumentoVenta.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDocumentoVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGestionCuentasCobrar.Designer.vb">
-      <DependentUpon>frmGestionCuentasCobrar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmGestionCuentasCobrar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionCuota.Designer.vb">
@@ -159,16 +147,46 @@
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMenuCajero.Designer.vb">
+      <DependentUpon>frmMenuCajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuCajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuVendedora.Designer.vb">
+      <DependentUpon>frmMenuVendedora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuVendedora.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRegistroPagos.Designer.vb">
       <DependentUpon>frmRegistroPagos.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRegistroPagos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporteEmpleadoSucursal.Designer.vb">
+      <DependentUpon>frmReporteEmpleadoSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteEmpleadoSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMorosos.Designer.vb">
+      <DependentUpon>frmReporteMorosos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMorosos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmReporteProductoFecha.Designer.vb">
       <DependentUpon>frmReporteProductoFecha.vb</DependentUpon>
     </Compile>
     <Compile Include="frmReporteProductoFecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteVentasMes.Designer.vb">
+      <DependentUpon>frmReporteVentasMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteVentasMes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTipoTarjeta.Designer.vb">
@@ -202,22 +220,10 @@
     <Compile Include="frmContactoVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDepartamento.Designer.vb">
-      <DependentUpon>frmDepartamento.vb</DependentUpon>
+    <Compile Include="frmDetalleModeloSucursal.Designer.vb">
+      <DependentUpon>frmDetalleModeloSucursal.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDepartamento.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDetalleSucursal.Designer.vb">
-      <DependentUpon>frmDetalleSucursal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmDetalleSucursal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDistrito.Designer.vb">
-      <DependentUpon>frmDistrito.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmDistrito.vb">
+    <Compile Include="frmDetalleModeloSucursal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpleado.Designer.vb">
@@ -226,64 +232,16 @@
     <Compile Include="frmEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmpresa.Designer.vb">
-      <DependentUpon>frmEmpresa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmEmpresa.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEmpresaContacto.Designer.vb">
-      <DependentUpon>frmEmpresaContacto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmEmpresaContacto.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategoria.Designer.vb">
-      <DependentUpon>frmCategoria.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCategoria.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMarca.Designer.vb">
-      <DependentUpon>frmMarca.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMarca.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModelo.Designer.vb">
-      <DependentUpon>frmModelo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmModelo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmOrdenPedido.Designer.vb">
       <DependentUpon>frmOrdenPedido.vb</DependentUpon>
     </Compile>
     <Compile Include="frmOrdenPedido.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPais.Designer.vb">
-      <DependentUpon>frmPais.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPais.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProducto.Designer.vb">
-      <DependentUpon>frmProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProvincia.Designer.vb">
-      <DependentUpon>frmProvincia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmProvincia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSucursal.Designer.vb">
@@ -296,12 +254,6 @@
       <DependentUpon>frmUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="frmUsuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmZona.Designer.vb">
-      <DependentUpon>frmZona.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmZona.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modPrincipal.vb" />
@@ -346,32 +298,14 @@
     <EmbeddedResource Include="frmContactoVenta.resx">
       <DependentUpon>frmContactoVenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmControlCaja.resx">
-      <DependentUpon>frmControlCaja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDepartamento.resx">
-      <DependentUpon>frmDepartamento.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDetalleSucursal.resx">
-      <DependentUpon>frmDetalleSucursal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDistrito.resx">
-      <DependentUpon>frmDistrito.vb</DependentUpon>
+    <EmbeddedResource Include="frmDetalleModeloSucursal.resx">
+      <DependentUpon>frmDetalleModeloSucursal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocumentoVenta.resx">
       <DependentUpon>frmDocumentoVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleado.resx">
       <DependentUpon>frmEmpleado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpresa.resx">
-      <DependentUpon>frmEmpresa.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpresaContacto.resx">
-      <DependentUpon>frmEmpresaContacto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionCuentasCobrar.resx">
-      <DependentUpon>frmGestionCuentasCobrar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuota.resx">
       <DependentUpon>frmGestionCuota.vb</DependentUpon>
@@ -382,41 +316,38 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategoria.resx">
-      <DependentUpon>frmCategoria.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCuentasBancarias.resx">
       <DependentUpon>frmMantenimientoCuentasBancarias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTipoTarjetas.resx">
       <DependentUpon>frmMantenimientoTipoTarjetas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMarca.resx">
-      <DependentUpon>frmMarca.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModelo.resx">
-      <DependentUpon>frmModelo.vb</DependentUpon>
+    <EmbeddedResource Include="frmMenuCajero.resx">
+      <DependentUpon>frmMenuCajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuVendedora.resx">
+      <DependentUpon>frmMenuVendedora.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrdenPedido.resx">
       <DependentUpon>frmOrdenPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPais.resx">
-      <DependentUpon>frmPais.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProducto.resx">
-      <DependentUpon>frmProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProvincia.resx">
-      <DependentUpon>frmProvincia.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroPagos.resx">
       <DependentUpon>frmRegistroPagos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteEmpleadoSucursal.resx">
+      <DependentUpon>frmReporteEmpleadoSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMorosos.resx">
+      <DependentUpon>frmReporteMorosos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteProductoFecha.resx">
       <DependentUpon>frmReporteProductoFecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteVentasMes.resx">
+      <DependentUpon>frmReporteVentasMes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSucursal.resx">
       <DependentUpon>frmSucursal.vb</DependentUpon>
@@ -426,9 +357,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmZona.resx">
-      <DependentUpon>frmZona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

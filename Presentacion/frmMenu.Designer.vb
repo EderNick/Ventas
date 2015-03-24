@@ -24,27 +24,25 @@ Partial Class frmMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.lblSucursal = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.btnCliente = New System.Windows.Forms.Button()
         Me.btnEmpleado = New System.Windows.Forms.Button()
-        Me.btnMarca = New System.Windows.Forms.Button()
+        Me.btnPrecioProd = New System.Windows.Forms.Button()
         Me.btnUsuario = New System.Windows.Forms.Button()
         Me.btnOrdenPedido = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
-        Me.btnEmpresa = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.btnSucursal = New System.Windows.Forms.Button()
-        Me.btnContactoEmpresa = New System.Windows.Forms.Button()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,27 +54,25 @@ Partial Class frmMenu
         Me.MetroPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(142, Byte), Integer))
         Me.MetroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.MetroPanel1.Controls.Add(Me.Button4)
+        Me.MetroPanel1.Controls.Add(Me.Button1)
+        Me.MetroPanel1.Controls.Add(Me.Button3)
+        Me.MetroPanel1.Controls.Add(Me.Button2)
         Me.MetroPanel1.Controls.Add(Me.lblSucursal)
         Me.MetroPanel1.Controls.Add(Me.lblEmpleado)
         Me.MetroPanel1.Controls.Add(Me.Label1)
-        Me.MetroPanel1.Controls.Add(Me.Button1)
-        Me.MetroPanel1.Controls.Add(Me.Button3)
         Me.MetroPanel1.Controls.Add(Me.Button21)
         Me.MetroPanel1.Controls.Add(Me.btnSalir)
         Me.MetroPanel1.Controls.Add(Me.Button15)
-        Me.MetroPanel1.Controls.Add(Me.Button10)
-        Me.MetroPanel1.Controls.Add(Me.Button8)
         Me.MetroPanel1.Controls.Add(Me.Button7)
         Me.MetroPanel1.Controls.Add(Me.btnCliente)
         Me.MetroPanel1.Controls.Add(Me.btnEmpleado)
-        Me.MetroPanel1.Controls.Add(Me.btnMarca)
+        Me.MetroPanel1.Controls.Add(Me.btnPrecioProd)
         Me.MetroPanel1.Controls.Add(Me.btnUsuario)
         Me.MetroPanel1.Controls.Add(Me.btnOrdenPedido)
         Me.MetroPanel1.Controls.Add(Me.Button11)
-        Me.MetroPanel1.Controls.Add(Me.btnEmpresa)
         Me.MetroPanel1.Controls.Add(Me.Button6)
         Me.MetroPanel1.Controls.Add(Me.btnSucursal)
-        Me.MetroPanel1.Controls.Add(Me.btnContactoEmpresa)
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
@@ -90,36 +86,25 @@ Partial Class frmMenu
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
         '
-        'lblSucursal
+        'Button4
         '
-        Me.lblSucursal.AutoSize = True
-        Me.lblSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSucursal.Location = New System.Drawing.Point(255, 59)
-        Me.lblSucursal.Name = "lblSucursal"
-        Me.lblSucursal.Size = New System.Drawing.Size(106, 29)
-        Me.lblSucursal.TabIndex = 217
-        Me.lblSucursal.Text = "Sucursal"
-        '
-        'lblEmpleado
-        '
-        Me.lblEmpleado.AutoSize = True
-        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmpleado.Location = New System.Drawing.Point(255, 26)
-        Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(124, 29)
-        Me.lblEmpleado.TabIndex = 216
-        Me.lblEmpleado.Text = "Empleado"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(20, 101)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 47)
-        Me.Label1.TabIndex = 215
-        Me.Label1.Text = "Menu"
+        Me.Button4.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(612, 557)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(247, 125)
+        Me.Button4.TabIndex = 221
+        Me.Button4.Text = "Reporte de Ventas por Mes"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -131,35 +116,87 @@ Partial Class frmMenu
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1149, 154)
+        Me.Button1.Location = New System.Drawing.Point(334, 557)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(130, 245)
-        Me.Button1.TabIndex = 212
-        Me.Button1.Text = "Reportes"
+        Me.Button1.Size = New System.Drawing.Size(247, 125)
+        Me.Button1.TabIndex = 220
+        Me.Button1.Text = "Reporte de Clientes Morosos"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button3
         '
         Me.Button3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(142, Byte), Integer))
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(1132, 577)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button3.Location = New System.Drawing.Point(334, 295)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(147, 120)
-        Me.Button3.TabIndex = 211
-        Me.Button3.Text = "AUTOR"
+        Me.Button3.Size = New System.Drawing.Size(247, 125)
+        Me.Button3.TabIndex = 219
+        Me.Button3.Text = "Cartera de Clientes"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(187, Byte), Integer))
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(54, 425)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(247, 125)
+        Me.Button2.TabIndex = 218
+        Me.Button2.Text = "Reporte de Empleado por Sucursal"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'lblSucursal
+        '
+        Me.lblSucursal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSucursal.Location = New System.Drawing.Point(597, 81)
+        Me.lblSucursal.Name = "lblSucursal"
+        Me.lblSucursal.Size = New System.Drawing.Size(634, 29)
+        Me.lblSucursal.TabIndex = 217
+        Me.lblSucursal.Text = "Sucursal"
+        Me.lblSucursal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblEmpleado
+        '
+        Me.lblEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpleado.Location = New System.Drawing.Point(597, 38)
+        Me.lblEmpleado.Name = "lblEmpleado"
+        Me.lblEmpleado.Size = New System.Drawing.Size(634, 29)
+        Me.lblEmpleado.TabIndex = 216
+        Me.lblEmpleado.Text = "Empleado"
+        Me.lblEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(17, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(574, 65)
+        Me.Label1.TabIndex = 215
+        Me.Label1.Text = ".: Menú - Módulo Ventas :."
         '
         'Button21
         '
@@ -170,14 +207,14 @@ Partial Class frmMenu
         Me.Button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(142, Byte), Integer))
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button21.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button21.ForeColor = System.Drawing.Color.White
         Me.Button21.Image = CType(resources.GetObject("Button21.Image"), System.Drawing.Image)
-        Me.Button21.Location = New System.Drawing.Point(833, 286)
+        Me.Button21.Location = New System.Drawing.Point(889, 294)
         Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(297, 113)
+        Me.Button21.Size = New System.Drawing.Size(247, 125)
         Me.Button21.TabIndex = 209
-        Me.Button21.Text = "Cuenta Bancaria"
+        Me.Button21.Text = "Mantenimiento de Cuentas"
         Me.Button21.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button21.UseVisualStyleBackColor = False
         '
@@ -208,56 +245,17 @@ Partial Class frmMenu
         Me.Button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(133, Byte), Integer))
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button15.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button15.ForeColor = System.Drawing.Color.White
         Me.Button15.Image = CType(resources.GetObject("Button15.Image"), System.Drawing.Image)
-        Me.Button15.Location = New System.Drawing.Point(833, 151)
+        Me.Button15.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button15.Location = New System.Drawing.Point(334, 426)
         Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(143, 121)
+        Me.Button15.Size = New System.Drawing.Size(247, 125)
         Me.Button15.TabIndex = 207
-        Me.Button15.Text = "Cartera Clientes"
+        Me.Button15.Text = "Gestión de Categoría"
         Me.Button15.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button15.UseVisualStyleBackColor = False
-        '
-        'Button10
-        '
-        Me.Button10.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Image = CType(resources.GetObject("Button10.Image"), System.Drawing.Image)
-        Me.Button10.Location = New System.Drawing.Point(1020, 416)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(259, 144)
-        Me.Button10.TabIndex = 206
-        Me.Button10.Text = "Cuentas"
-        Me.Button10.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(131, Byte), Integer))
-        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(837, 577)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(262, 120)
-        Me.Button8.TabIndex = 205
-        Me.Button8.Text = "Productos Vendidos"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button8.UseVisualStyleBackColor = False
         '
         'Button7
         '
@@ -268,14 +266,14 @@ Partial Class frmMenu
         Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(136, Byte), Integer))
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(384, 539)
+        Me.Button7.Location = New System.Drawing.Point(612, 358)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(312, 158)
+        Me.Button7.Size = New System.Drawing.Size(247, 192)
         Me.Button7.TabIndex = 204
-        Me.Button7.Text = "Venta"
+        Me.Button7.Text = "Registro de Ventas"
         Me.Button7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button7.UseVisualStyleBackColor = False
         '
@@ -287,15 +285,15 @@ Partial Class frmMenu
         Me.btnCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCliente.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCliente.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCliente.ForeColor = System.Drawing.Color.White
         Me.btnCliente.Image = CType(resources.GetObject("btnCliente.Image"), System.Drawing.Image)
         Me.btnCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCliente.Location = New System.Drawing.Point(384, 154)
+        Me.btnCliente.Location = New System.Drawing.Point(334, 164)
         Me.btnCliente.Name = "btnCliente"
-        Me.btnCliente.Size = New System.Drawing.Size(154, 169)
+        Me.btnCliente.Size = New System.Drawing.Size(247, 125)
         Me.btnCliente.TabIndex = 201
-        Me.btnCliente.Text = "Cliente"
+        Me.btnCliente.Text = "Registrar Cliente"
         Me.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCliente.UseVisualStyleBackColor = False
         '
@@ -309,35 +307,35 @@ Partial Class frmMenu
         Me.btnEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(52, Byte), Integer))
         Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpleado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnEmpleado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEmpleado.ForeColor = System.Drawing.Color.White
-        Me.btnEmpleado.Location = New System.Drawing.Point(384, 347)
+        Me.btnEmpleado.Location = New System.Drawing.Point(54, 294)
         Me.btnEmpleado.Name = "btnEmpleado"
-        Me.btnEmpleado.Size = New System.Drawing.Size(154, 162)
+        Me.btnEmpleado.Size = New System.Drawing.Size(121, 125)
         Me.btnEmpleado.TabIndex = 200
         Me.btnEmpleado.Text = "Empleado"
         Me.btnEmpleado.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnEmpleado.UseVisualStyleBackColor = False
         '
-        'btnMarca
+        'btnPrecioProd
         '
-        Me.btnMarca.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.btnMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.btnMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnMarca.FlatAppearance.BorderSize = 0
-        Me.btnMarca.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.btnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMarca.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnMarca.ForeColor = System.Drawing.Color.White
-        Me.btnMarca.Image = CType(resources.GetObject("btnMarca.Image"), System.Drawing.Image)
-        Me.btnMarca.Location = New System.Drawing.Point(560, 394)
-        Me.btnMarca.Name = "btnMarca"
-        Me.btnMarca.Size = New System.Drawing.Size(136, 115)
-        Me.btnMarca.TabIndex = 199
-        Me.btnMarca.Text = "Precios"
-        Me.btnMarca.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnMarca.UseVisualStyleBackColor = False
+        Me.btnPrecioProd.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
+        Me.btnPrecioProd.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.btnPrecioProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnPrecioProd.FlatAppearance.BorderSize = 0
+        Me.btnPrecioProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnPrecioProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.btnPrecioProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrecioProd.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrecioProd.ForeColor = System.Drawing.Color.White
+        Me.btnPrecioProd.Image = CType(resources.GetObject("btnPrecioProd.Image"), System.Drawing.Image)
+        Me.btnPrecioProd.Location = New System.Drawing.Point(889, 164)
+        Me.btnPrecioProd.Name = "btnPrecioProd"
+        Me.btnPrecioProd.Size = New System.Drawing.Size(247, 125)
+        Me.btnPrecioProd.TabIndex = 199
+        Me.btnPrecioProd.Text = "Fijar Precios de Productos"
+        Me.btnPrecioProd.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnPrecioProd.UseVisualStyleBackColor = False
         '
         'btnUsuario
         '
@@ -348,12 +346,12 @@ Partial Class frmMenu
         Me.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnUsuario.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuario.ForeColor = System.Drawing.Color.White
         Me.btnUsuario.Image = CType(resources.GetObject("btnUsuario.Image"), System.Drawing.Image)
-        Me.btnUsuario.Location = New System.Drawing.Point(26, 577)
+        Me.btnUsuario.Location = New System.Drawing.Point(181, 294)
         Me.btnUsuario.Name = "btnUsuario"
-        Me.btnUsuario.Size = New System.Drawing.Size(188, 120)
+        Me.btnUsuario.Size = New System.Drawing.Size(120, 125)
         Me.btnUsuario.TabIndex = 198
         Me.btnUsuario.Text = "Usuario"
         Me.btnUsuario.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -368,14 +366,14 @@ Partial Class frmMenu
         Me.btnOrdenPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnOrdenPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.btnOrdenPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrdenPedido.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnOrdenPedido.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOrdenPedido.ForeColor = System.Drawing.Color.White
         Me.btnOrdenPedido.Image = CType(resources.GetObject("btnOrdenPedido.Image"), System.Drawing.Image)
-        Me.btnOrdenPedido.Location = New System.Drawing.Point(229, 447)
+        Me.btnOrdenPedido.Location = New System.Drawing.Point(612, 164)
         Me.btnOrdenPedido.Name = "btnOrdenPedido"
-        Me.btnOrdenPedido.Size = New System.Drawing.Size(126, 250)
+        Me.btnOrdenPedido.Size = New System.Drawing.Size(247, 188)
         Me.btnOrdenPedido.TabIndex = 197
-        Me.btnOrdenPedido.Text = "Orden Pedido"
+        Me.btnOrdenPedido.Text = "Registro de Orden Pedido"
         Me.btnOrdenPedido.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnOrdenPedido.UseVisualStyleBackColor = False
         '
@@ -388,37 +386,16 @@ Partial Class frmMenu
         Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button11.ForeColor = System.Drawing.Color.White
         Me.Button11.Image = CType(resources.GetObject("Button11.Image"), System.Drawing.Image)
-        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button11.Location = New System.Drawing.Point(837, 416)
+        Me.Button11.Location = New System.Drawing.Point(889, 557)
         Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(158, 144)
+        Me.Button11.Size = New System.Drawing.Size(247, 125)
         Me.Button11.TabIndex = 196
-        Me.Button11.Text = " Pagos"
+        Me.Button11.Text = "Gestión de Pago de Cuotas"
         Me.Button11.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button11.UseVisualStyleBackColor = False
-        '
-        'btnEmpresa
-        '
-        Me.btnEmpresa.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.btnEmpresa.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(191, Byte), Integer))
-        Me.btnEmpresa.BackgroundImage = CType(resources.GetObject("btnEmpresa.BackgroundImage"), System.Drawing.Image)
-        Me.btnEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnEmpresa.FlatAppearance.BorderSize = 0
-        Me.btnEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpresa.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnEmpresa.ForeColor = System.Drawing.Color.White
-        Me.btnEmpresa.Location = New System.Drawing.Point(26, 301)
-        Me.btnEmpresa.Name = "btnEmpresa"
-        Me.btnEmpresa.Size = New System.Drawing.Size(329, 131)
-        Me.btnEmpresa.TabIndex = 195
-        Me.btnEmpresa.Text = "Empresa"
-        Me.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnEmpresa.UseVisualStyleBackColor = False
         '
         'Button6
         '
@@ -429,14 +406,14 @@ Partial Class frmMenu
         Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(991, 151)
+        Me.Button6.Location = New System.Drawing.Point(889, 425)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(143, 121)
+        Me.Button6.Size = New System.Drawing.Size(247, 125)
         Me.Button6.TabIndex = 194
-        Me.Button6.Text = "Tarjeta"
+        Me.Button6.Text = "Gestion de Tarjetas"
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.Button6.UseVisualStyleBackColor = False
         '
@@ -449,37 +426,16 @@ Partial Class frmMenu
         Me.btnSucursal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.btnSucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnSucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSucursal.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSucursal.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSucursal.ForeColor = System.Drawing.Color.White
         Me.btnSucursal.Image = CType(resources.GetObject("btnSucursal.Image"), System.Drawing.Image)
-        Me.btnSucursal.Location = New System.Drawing.Point(26, 447)
+        Me.btnSucursal.Location = New System.Drawing.Point(54, 163)
         Me.btnSucursal.Name = "btnSucursal"
-        Me.btnSucursal.Size = New System.Drawing.Size(186, 113)
+        Me.btnSucursal.Size = New System.Drawing.Size(247, 125)
         Me.btnSucursal.TabIndex = 192
-        Me.btnSucursal.Text = "Sucursal"
+        Me.btnSucursal.Text = "Registro de Sucursal"
         Me.btnSucursal.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnSucursal.UseVisualStyleBackColor = False
-        '
-        'btnContactoEmpresa
-        '
-        Me.btnContactoEmpresa.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip
-        Me.btnContactoEmpresa.BackColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(184, Byte), Integer))
-        Me.btnContactoEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnContactoEmpresa.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btnContactoEmpresa.FlatAppearance.BorderSize = 0
-        Me.btnContactoEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnContactoEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(106, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.btnContactoEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContactoEmpresa.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnContactoEmpresa.ForeColor = System.Drawing.Color.White
-        Me.btnContactoEmpresa.Image = CType(resources.GetObject("btnContactoEmpresa.Image"), System.Drawing.Image)
-        Me.btnContactoEmpresa.Location = New System.Drawing.Point(560, 151)
-        Me.btnContactoEmpresa.Name = "btnContactoEmpresa"
-        Me.btnContactoEmpresa.Size = New System.Drawing.Size(136, 222)
-        Me.btnContactoEmpresa.TabIndex = 191
-        Me.btnContactoEmpresa.Text = "Contacto"
-        Me.btnContactoEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnContactoEmpresa.UseVisualStyleBackColor = False
         '
         'frmMenu
         '
@@ -489,6 +445,7 @@ Partial Class frmMenu
         Me.ClientSize = New System.Drawing.Size(1308, 772)
         Me.Controls.Add(Me.MetroPanel1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMenu"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MetroPanel1.ResumeLayout(False)
@@ -502,20 +459,18 @@ Partial Class frmMenu
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents btnCliente As System.Windows.Forms.Button
     Friend WithEvents btnEmpleado As System.Windows.Forms.Button
-    Friend WithEvents btnMarca As System.Windows.Forms.Button
+    Friend WithEvents btnPrecioProd As System.Windows.Forms.Button
     Friend WithEvents btnUsuario As System.Windows.Forms.Button
     Friend WithEvents btnOrdenPedido As System.Windows.Forms.Button
-    Friend WithEvents btnEmpresa As System.Windows.Forms.Button
     Friend WithEvents btnSucursal As System.Windows.Forms.Button
-    Friend WithEvents btnContactoEmpresa As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
-    Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblEmpleado As System.Windows.Forms.Label
     Friend WithEvents lblSucursal As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

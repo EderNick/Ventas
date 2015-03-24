@@ -1,4 +1,4 @@
-﻿Public Class frmDetalleSucursal
+﻿Public Class frmDetalleModeloSucursal
 
     Private Actual As DetalleModeloSucursal
     Private Detallesucursal As DetalleModeloSucursal
@@ -163,7 +163,7 @@
         ElseIf Char.IsPunctuation(e.KeyChar) Then
             e.Handled = val
         ElseIf Char.IsSymbol(e.KeyChar) And val = True Then
-            e.Handled =  val
+            e.Handled = val
         ElseIf Char.IsSeparator(e.KeyChar) Then
             e.Handled = Not val
         Else
