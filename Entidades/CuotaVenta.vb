@@ -21,8 +21,8 @@
     Public ReadOnly Property estadodeuda As String
         Get
             Dim estad As String
-            If estado = True Then
-                estad = "Pendiente"
+            If Estado = False Then
+                estad = "Debe"
             Else
                 estad = "Pagado"
             End If

@@ -5,8 +5,9 @@
         Dim pars As New List(Of CParametro)
 
         pars.Add(New CParametro("pmonto", wDeposito.Monto))
-        pars.Add(New CParametro("pidcuenta", wDeposito.IdCuenta))
         pars.Add(New CParametro("pidpagoventas", wDeposito.PagoVentas.Codigo))
+        pars.Add(New CParametro("pidcuenta", wDeposito.IdCuenta))
+
 
         Try
             Me.Conectar(False)

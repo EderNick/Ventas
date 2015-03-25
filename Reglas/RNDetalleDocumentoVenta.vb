@@ -23,4 +23,21 @@
         End Try
     End Sub
 
+    Public Sub ActualizarStok(ByVal pidmodelo As Integer, ByVal pidsucursal As Integer, ByVal pcantidad As Integer)
+        Dim pars As New List(Of CParametro)
+
+        pars.Add(New CParametro("pidsucursal", pidsucursal))
+        pars.Add(New CParametro("pidmodelo", pidmodelo))
+        pars.Add(New CParametro("pcantidad", pcantidad))
+       
+        Try
+            Me.Conectar(False)
+            Me.EjecutarOrden("fu_astokdetallemodelosucursal", pars)
+            Me.Cerrar(True)
+        Catch ex As Exception
+            Me.Cerrar(False)
+            Throw ex
+        End Try
+    End Sub
+
 End Class

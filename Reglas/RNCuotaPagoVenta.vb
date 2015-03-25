@@ -33,4 +33,28 @@
         Return cuotapv
     End Function
 
+    Sub Registrar(ByVal CuotaPagoV As CuotaPagoVentas)
+        Dim pars As New List(Of CParametro)
+
+        pars.Add(New CParametro("pidcuotaventa", CuotaPagoV.CuotaVenta.Codigo))
+        pars.Add(New CParametro("pidpagoventa", CuotaPagoV.PagoVenta.Codigo))
+
+        Try
+            Me.Conectar(True)
+            Me.EjecutarOrden("fu_icuotapagoventa", pars)
+
+            Me.Cerrar(True)
+        Catch ex As Exception
+
+            Me.Cerrar(False)
+            Throw ex
+
+        Finally
+            pars.Clear()
+            pars = Nothing
+        End Try
+    End Sub
+
+
+
 End Class

@@ -4,7 +4,8 @@
     'Private idEmpleado As Integer = 1
     Private DetCliente As DetalleCliente
     Private DetalleModeloSuc As DetalleModeloSucursal
-
+    Dim rn As New RNOrdenPedido
+    Dim num As Integer = 0
     Private ListaDetProd As New List(Of DetalleOrdenPedido)
 
     Private Sub frmOrdenPedido_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -25,6 +26,7 @@
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
+      
     End Sub
 
     Private Sub LimpiarControles()
@@ -74,8 +76,8 @@
     Private Sub frmOrdenPedido_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.AcceptButton = btnBuscarCliente
         gbProducto.Enabled = False
-        Dim rn As New RNOrdenPedido
-        Dim num As Integer = 0
+
+
         If rn.BuscarNumOrdenPedido.ToString Is Nothing Then
             txtNumero.Text = "0000000001"
         Else
@@ -218,7 +220,10 @@
                                      "ODEN DE PEDIDO REGISTRADA",
                                      MessageBoxButtons.OK,
                                      MessageBoxIcon.Information)
+
                 LimpiarControles()
+                num = Val(rn.BuscarNumOrdenPedido) + 1
+                txtNumero.Text = String.Format("{0:0000000000}", num)
             Catch ex As Exception
                 MetroMessageBox.Show(Me, ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try

@@ -96,4 +96,17 @@
             Return cli
         End Get
     End Property
+
+    Public ReadOnly Property Correo As String
+        Get
+            Dim corr As String = Nothing
+            If Cliente.Tipo = "natural" Then
+                corr = Persona.Correo
+            End If
+            If Cliente.Tipo = "juridico" Then
+                corr = EmpresaJuridica.Correo
+            End If
+            Return corr
+        End Get
+    End Property
 End Class

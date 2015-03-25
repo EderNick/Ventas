@@ -43,7 +43,7 @@
             CuotasVenta = New List(Of CuotaVenta)
             While dr.Read = True
                 cuota = New CuotaVenta
-                cuota.codigo = dr.Item("idCuotaVenta")
+                cuota.Codigo = dr.Item("idcuotaVentas")
                 cuota.numerocuota = dr.Item("NumeroCuota")
                 cuota.monto = dr.Item("monto")
                 cuota.fecha = dr.Item("fecha")

@@ -71,11 +71,14 @@ Partial Class frmGestionCuota
         '
         'dgvcuota
         '
+        Me.dgvcuota.AllowUserToAddRows = False
+        Me.dgvcuota.AllowUserToDeleteRows = False
         Me.dgvcuota.BackgroundColor = System.Drawing.Color.Gray
         Me.dgvcuota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvcuota.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cuota, Me.fecha, Me.monto, Me.estado, Me.iddocumentoventa})
         Me.dgvcuota.Location = New System.Drawing.Point(14, 33)
         Me.dgvcuota.Name = "dgvcuota"
+        Me.dgvcuota.ReadOnly = True
         Me.dgvcuota.Size = New System.Drawing.Size(645, 161)
         Me.dgvcuota.TabIndex = 163
         '
@@ -84,6 +87,7 @@ Partial Class frmGestionCuota
         Me.cuota.DataPropertyName = "numerocuota"
         Me.cuota.HeaderText = "NROCUOTA"
         Me.cuota.Name = "cuota"
+        Me.cuota.ReadOnly = True
         Me.cuota.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'fecha
@@ -91,20 +95,23 @@ Partial Class frmGestionCuota
         Me.fecha.DataPropertyName = "fecha"
         Me.fecha.HeaderText = "FECHACOBRANZA"
         Me.fecha.Name = "fecha"
+        Me.fecha.ReadOnly = True
         Me.fecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.fecha.Width = 150
         '
         'monto
         '
-        Me.monto.DataPropertyName = "monto"
+        Me.monto.DataPropertyName = "Monto"
         Me.monto.HeaderText = "MONTO"
         Me.monto.Name = "monto"
+        Me.monto.ReadOnly = True
         '
         'estado
         '
         Me.estado.DataPropertyName = "estadodeuda"
         Me.estado.HeaderText = "ESTADO"
         Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
         Me.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.estado.Width = 150
         '
@@ -113,6 +120,7 @@ Partial Class frmGestionCuota
         Me.iddocumentoventa.DataPropertyName = "codigodocumento"
         Me.iddocumentoventa.HeaderText = "DOCUMENTOVENTA"
         Me.iddocumentoventa.Name = "iddocumentoventa"
+        Me.iddocumentoventa.ReadOnly = True
         '
         'Panel3
         '

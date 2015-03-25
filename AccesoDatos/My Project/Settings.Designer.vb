@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;UserId=postgres;Password=1234;Database=BDVentas")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;UserId=postgres;Password=1234;Database=BDEmpresa")>  _
         Public ReadOnly Property Conexion() As String
             Get
                 Return CType(Me("Conexion"),String)
@@ -76,7 +76,6 @@ Namespace My
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
         Friend ReadOnly Property Settings() As Global.Ventas.AccesoDatos.My.MySettings
             Get
-
                 Return Global.Ventas.AccesoDatos.My.MySettings.Default
             End Get
         End Property

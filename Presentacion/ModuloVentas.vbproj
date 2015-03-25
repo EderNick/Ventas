@@ -111,6 +111,12 @@
     <Compile Include="frmBuscarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDetalleModeloSucursal.Designer.vb">
+      <DependentUpon>frmDetalleModeloSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleModeloSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDocumentoVenta.Designer.vb">
       <DependentUpon>frmDocumentoVenta.vb</DependentUpon>
     </Compile>
@@ -151,12 +157,6 @@
       <DependentUpon>frmMenuCajero.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMenuCajero.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuVendedora.Designer.vb">
-      <DependentUpon>frmMenuVendedora.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMenuVendedora.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRegistroPagos.Designer.vb">
@@ -218,12 +218,6 @@
       <DependentUpon>frmContactoVenta.vb</DependentUpon>
     </Compile>
     <Compile Include="frmContactoVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDetalleModeloSucursal.Designer.vb">
-      <DependentUpon>frmDetalleModeloSucursal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmDetalleModeloSucursal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpleado.Designer.vb">
@@ -327,9 +321,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuCajero.resx">
       <DependentUpon>frmMenuCajero.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuVendedora.resx">
-      <DependentUpon>frmMenuVendedora.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOrdenPedido.resx">
       <DependentUpon>frmOrdenPedido.vb</DependentUpon>

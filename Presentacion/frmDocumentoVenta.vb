@@ -7,10 +7,10 @@
     Dim num As Integer = 0
     Dim rn As New RNDocumentoVenta
     Dim rnPago As New RNPagoVentas
-    Public Pago As New PagoVenta
-    Public Cheque As New ChequeVenta
-    Public Deposito As New DepositoVenta
-    Public Tarjeta As New TarjetaVenta
+    Public Pago As PagoVenta
+    Public Cheque As ChequeVenta
+    Public Deposito As DepositoVenta
+    Public Tarjeta As TarjetaVenta
 
 
 
@@ -32,6 +32,7 @@
 
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         Me.Close()
+      
     End Sub
 
     Private Sub LimpiarControles()
@@ -55,7 +56,7 @@
         cboTipoDoc.Enabled = True
         txtNumOrdenPedido.Enabled = True
         cboFormaPago.Enabled = True
-        Pago = Nothing
+        'Pago = Nothing
     End Sub
 
     Private Sub cboTipoDoc_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDoc.SelectedIndexChanged
@@ -143,9 +144,13 @@
     Private Sub btnEfectuarPago_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEfectuarPago.Click
         If cboFormaPago.SelectedItem <> "" Then
             Dim frm As New frmRegistroPagos
-            frm.lblMontoAPagar.Text = txtTotal.Text
+            If cboFormaPago.SelectedItem = "CREDITO" Then
+                frm.lblMontoAPagar.Text = txtMontoInicial.Text
+            Else
+                frm.lblMontoAPagar.Text = txtTotal.Text
+            End If
             frm.ShowDialog()
-
+            Pago = modPrincipal.Pago
         Else
             MetroMessageBox.Show(Me, "Debe Seleccionar una forma de Pago", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -240,24 +245,42 @@
                         DDV.Cantidad = elem.Cantidad
                         DDV.Total = elem.Total
                         rnDDV.Agregar(DDV)
+                        rnDDV.ActualizarStok(elem.CodigoModelo, modPrincipal.UsuarioLogeado.Empleado.Sucursal.Codigo, elem.Cantidad)
                     Next
                     '****Registramos el Pago***
-                    idPagoVenta = rnPago.Registrar(Pago)
+                    If cboFormaPago.SelectedItem = "CONTADO" Then
+                        Pago.DocumVenta = New DocumentoVenta
+                        Pago.DocumVenta.Codigo = idDocVenta
+                        idPagoVenta = rnPago.Registrar(Pago)
+                        modPrincipal.Pago = Nothing
+                    End If
+                    If cboFormaPago.SelectedItem = "CREDITO" And CDbl(txtMontoInicial.Text) <> 0.0 Then
+                        Pago.DocumVenta = New DocumentoVenta
+                        Pago.DocumVenta.Codigo = idDocVenta
+                        idPagoVenta = rnPago.Registrar(Pago)
+                        modPrincipal.Pago = Nothing
+                    End If
                     '***********Registramos el tipo de pago****************
-                    If Cheque IsNot Nothing Then
+                    If modPrincipal.Cheque.Monto IsNot Nothing Then
+                        Cheque = modPrincipal.Cheque
                         Cheque.PagoVentas = New PagoVenta
                         Cheque.PagoVentas.Codigo = idPagoVenta
                         rnCheque.Registrar(Cheque)
+                        modPrincipal.Cheque = Nothing
                     End If
-                    If Deposito IsNot Nothing Then
+                    If modPrincipal.Deposito.Monto <> 0.0 Then
+                        Deposito = modPrincipal.Deposito
                         Deposito.PagoVentas = New PagoVenta
                         Deposito.PagoVentas.Codigo = idPagoVenta
                         rnDeposito.Registrar(Deposito)
+                        modPrincipal.Deposito = Nothing
                     End If
-                    If Tarjeta IsNot Nothing Then
+                    If modPrincipal.Tarjeta.Monto <> 0.0 Then
+                        Tarjeta = modPrincipal.Tarjeta
                         Tarjeta.PagoVentas = New PagoVenta
                         Tarjeta.PagoVentas.Codigo = idPagoVenta
                         rnTarjeta.Registrar(Tarjeta)
+                        modPrincipal.Tarjeta = Nothing
                     End If
 
                     If cboFormaPago.SelectedItem = "CREDITO" Then
@@ -274,7 +297,7 @@
                             rnCV.Registrar(CV)
                         Next
                     End If
-
+                    '**********************CAMBIA EL ESTADO DE LA ORDEN DE PEDIDO A EMITIDA****************************
                     Dim rnOrden As New RNOrdenPedido
                     rnOrden.Actualizar(orden_pedido)
 

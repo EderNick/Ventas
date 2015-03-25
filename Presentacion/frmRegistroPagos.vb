@@ -270,13 +270,13 @@
             Pago.FechaPago = dtFecha.Value
             Pago.MedioPago = AsignarMedioPago()
             Pago.Monto = Math.Round(CDbl(lblMontoPagando.Text), 2)
-            frmDocumentoVenta.Pago = Pago
+            modPrincipal.Pago = Pago
 
             If numMontoDEP.Value > 0.0 Then 'Si paga con DEPÓSITO
                 Deposito = New DepositoVenta
                 Deposito.Monto = Math.Round(CDbl(numMontoDEP.Value), 2)
                 Deposito.IdCuenta = DirectCast(cboCuentaDEP.SelectedItem, CuentaVenta).Codigo
-                frmDocumentoVenta.Deposito = Deposito
+                modPrincipal.Deposito = Deposito
             End If
 
             If numMontoTAR.Value > 0.0 Then 'Si paga con TARJETA DE CRÉDITO
@@ -285,7 +285,7 @@
                 Tarjeta.NumeroCuenta = txtNumTAR1.Text & " " & txtNumTAR2.Text & " " & txtNumTAR3.Text & " " & txtNumTAR4.Text
                 Tarjeta.IdTipoTarjeta = DirectCast(cboTarjeta.SelectedItem, TipoTarjetaVentas).Codigo
                 Tarjeta.IdBanco = DirectCast(cboBancoTAR.SelectedItem, Banco).Codigo
-                frmDocumentoVenta.Tarjeta = Tarjeta
+                modPrincipal.Tarjeta = Tarjeta
             End If
 
             If numMontoCHE.Value > 0.0 Then 'Si paga con CHEQUE
@@ -294,10 +294,10 @@
                 Cheque.Monto = Math.Round(CDbl(numMontoCHE.Value), 2)
                 Cheque.FechaGiro = dtpFechaGiro.Text
                 Cheque.Vigencia = True
-                frmDocumentoVenta.Cheque = Cheque
+                modPrincipal.Cheque = Cheque
             End If
 
-            Me.Close()
+            Me.Hide()
         Else
             MetroMessageBox.Show(Me, "No se puede registrar un Pago vacío.", "REGISTRO DE PAGOS", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If

@@ -10,8 +10,6 @@
         Me.Close()
     End Sub
 
-
-
     Private Sub btnbusqueda_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnbusqueda.Click
         If rbDNI.Checked = True Then
             listarCliDNI()
@@ -21,6 +19,7 @@
             MessageBox.Show("Seleccione un método de busqueda ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
     Private Sub listarCliDNI()
         Try
             detacliente = rn.BuscarxDNI(Me.txtBuscar.Text)
@@ -33,6 +32,7 @@
                 listarcuotas()
             Else
                 MessageBox.Show("no existe el cliente ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                dgvcuota.DataSource = ""
             End If
 
         Catch ex As Exception
@@ -68,6 +68,7 @@
             cuotas = rn.ListarCuotas(codcliente)
             If cuotas Is Nothing Then
                 MessageBox.Show("no existen cuotas a pagar para este cliente ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                dgvcuota.DataSource = ""
             Else
                 modFunciones.EnlazarDatagridView(Me.dgvCuota, cuotas)
                 Me.dgvCuota.Focus()
@@ -116,6 +117,7 @@
     Private Sub btnlimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlimpiar.Click
         limpiar()
     End Sub
+
     Sub limpiar()
         rn = New RNCliente
         detacliente = New List(Of DetalleCliente)()
@@ -131,29 +133,80 @@
     Private Sub btnpagar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnpagar.Click
         cuotaventa = New CuotaVenta
         cuotapago = New CuotaPagoVentas
+        Dim rnPago As New RNPagoVentas
+        Dim idPagoVenta As Integer = 0
+        Dim rnCheque As New RNChequeVentas
+        Dim rnDeposito As New RNDepositoVentas
+        Dim rnTarjeta As New RNTarjetaVentas
+        Dim cuotaApagar As CuotaVenta = Nothing
+        Dim rnCuotaPago As RNCuotaPagoVenta = Nothing
+        Dim CuotaPagoV As CuotaPagoVentas
 
         If Me.dgvcuota.CurrentRow IsNot Nothing Then
-            If Me.dgvcuota.CurrentRow.Cells(3).Value = "Pagado" Then
+            cuotaApagar = DirectCast(dgvcuota.CurrentRow.DataBoundItem, CuotaVenta)
+            If cuotaApagar.estadodeuda = "Debe" Then
                 Me.cuotaventa = DirectCast(Me.dgvcuota.CurrentRow.DataBoundItem, CuotaVenta)
 
                 Dim frm As New frmRegistroPagos
-                cuotapago = Nothing
+                frm.lblMontoAPagar.Text = cuotaApagar.Monto
+                frm.ShowDialog()
+                Pago = modPrincipal.Pago
 
-                If cuotapago Is Nothing Then
-                    MessageBox.Show("no se realizo el pago de la cuota ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                If Pago Is Nothing Then
+                    MetroMessageBox.Show(Me, "No se realizò el pago de la cuota ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Else
-                    MessageBox.Show("cuota pagada correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                End If
+                    '****Registramos el Pago***
+                    Pago.DocumVenta = New DocumentoVenta
+                    Pago.DocumVenta.Codigo = cuotaApagar.DocVenta.Codigo
+                    idPagoVenta = rnPago.Registrar(Pago)
 
-                listarcuotas()
+                    modPrincipal.Pago = Nothing
+                    '***********Registramos el tipo de pago****************
+                    If modPrincipal.Cheque.Monto IsNot Nothing Then
+                        Cheque = modPrincipal.Cheque
+                        Cheque.PagoVentas = New PagoVenta
+                        Cheque.PagoVentas.Codigo = idPagoVenta
+                        rnCheque.Registrar(Cheque)
+                        modPrincipal.Cheque = Nothing
+                    End If
+                    If modPrincipal.Deposito.Monto <> 0.0 Then
+                        Deposito = modPrincipal.Deposito
+                        Deposito.PagoVentas = New PagoVenta
+                        Deposito.PagoVentas.Codigo = idPagoVenta
+                        rnDeposito.Registrar(Deposito)
+                        modPrincipal.Deposito = Nothing
+                    End If
+                    If modPrincipal.Tarjeta.Monto <> 0.0 Then
+                        Tarjeta = modPrincipal.Tarjeta
+                        Tarjeta.PagoVentas = New PagoVenta
+                        Tarjeta.PagoVentas.Codigo = idPagoVenta
+                        rnTarjeta.Registrar(Tarjeta)
+                        modPrincipal.Tarjeta = Nothing
+                    End If
+
+                    If idPagoVenta <> 0 Then
+                        CuotaPagoV = New CuotaPagoVentas
+                        CuotaPagoV.CuotaVenta = New CuotaVenta
+                        CuotaPagoV.CuotaVenta = cuotaApagar
+                        CuotaPagoV.PagoVenta = New PagoVenta
+                        CuotaPagoV.PagoVenta.Codigo = idPagoVenta
+                        rnCuotaPago = New RNCuotaPagoVenta
+                        rnCuotaPago.Registrar(CuotaPagoV)
+
+                        MetroMessageBox.Show(Me, "Cuota pagada correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        listarcuotas()
+                    End If
+                    End If
+
+
 
 
             Else
-                MessageBox.Show("Debe Seleccionar una cuota que no este pagada", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MetroMessageBox.Show(Me, "Debe Seleccionar una cuota que no este pagada", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
         Else
-            MessageBox.Show("Debe Seleccionar una cuota ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MetroMessageBox.Show(Me, "Debe Seleccionar una cuota ", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
 
     End Sub
